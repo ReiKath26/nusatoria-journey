@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-[System.Serializable]
 public class Item
 {
-    public Sprite itemSprite;
+    public string itemSprite;
     public string itemName;
     public string itemDesc;
+    public int itemCount;
 }
