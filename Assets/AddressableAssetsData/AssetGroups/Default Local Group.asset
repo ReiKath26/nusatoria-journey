@@ -38,7 +38,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: b85caff235ce04994b460839ad04b594
-    m_Address: Assets/Items/Police badge.png
+    m_Address: Police badge
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 38dd858ff9b62433183039f7dae76056
@@ -63,6 +63,94 @@ MonoBehaviour:
     m_SerializedLabels: []
   - m_GUID: 0fa2bc30d20034136ad00faf2f23b54c
     m_Address: Karung_gula
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2a7463b768bf3f04d914fffa72fe8eb7
+    m_Address: angry_mc_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d52cb38faa1532e4e83dde1442cabc3a
+    m_Address: happy_mc_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8e61b42ff9f3f0d4498e49a8c04215c0
+    m_Address: hurt_mc_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 892722cba7e80ec43a62ba0f1813642b
+    m_Address: normal_mc_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6a3355340eef8e1478256e8e84313ff4
+    m_Address: sad_mc_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c1b6ca89b260ccd49b1ea8f17358dd46
+    m_Address: shook_mc_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: cea812a0ef09fb94399909f7f19ee831
+    m_Address: sike_mc_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 66d9de2c39f87024c9fd51258411a3dd
+    m_Address: think_mc_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 74ce8e8becf3a7d42b6237fadd8e71d5
+    m_Address: angry_mc_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a4dc5bde44907644d93ebc1862cdad53
+    m_Address: happy_mc_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: da2408d98d04b5942b046c11632a1e85
+    m_Address: hurt_mc_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8614dcef6ab453041970566033717b01
+    m_Address: think_mc_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f605de54e5983cb4f8d0541ff125f23c
+    m_Address: neutral_mc_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 20d4f4652646e174eb006f7a0a61a566
+    m_Address: yikes_mc_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c42302b64bc4f7b4e8ff7e27c2fea607
+    m_Address: sad_mc_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 42f84ead0a069844f835ad1265c7e8e2
+    m_Address: happy_yudha
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c87745781e4e6e74e8fa129f3ebb3561
+    m_Address: neutral_yudha
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3981926de8ceef14e979983f31bd03ee
+    m_Address: oops_yudha
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a99c7184594b1e348bde81d7e89d5a05
+    m_Address: serious_yudha
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a67bb8746f5349045b886332d9a91ec4
+    m_Address: smug_yudha
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e8305aa408018a9448feddda7c7ace6a
+    m_Address: whoops_yudha
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 98da002dbad44174a93b590fbe20882d
+    m_Address: wistful_yudha
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

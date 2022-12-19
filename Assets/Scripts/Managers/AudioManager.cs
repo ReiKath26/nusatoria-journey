@@ -45,6 +45,7 @@ public class AudioManager : MonoBehaviour
 
                 case Sound.AudioTypes.music:
                     s.source.outputAudioMixerGroup = musicMixerGroup;
+                    s.source.Play();
                     break;
             }
         }

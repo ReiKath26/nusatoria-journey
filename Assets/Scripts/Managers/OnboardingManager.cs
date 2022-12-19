@@ -6,8 +6,8 @@ using TMPro;
 
 public class OnboardingManager : MonoBehaviour
 {
-    public int genderChoose = 0;
-    public string chooseName;
+    private int genderChoose = 0;
+    private string chooseName;
 
     [SerializeField] private GameObject onboardPanelOne;
     [SerializeField] private GameObject onboardPanelTwo;
@@ -19,7 +19,7 @@ public class OnboardingManager : MonoBehaviour
 
     [SerializeField] private GameObject female_picture;
     [SerializeField] private GameObject male_picture;
-    [SerializeField] private TextMeshPro player_name_text;
+    [SerializeField] private TextMeshProUGUI player_name_text;
 
     [SerializeField] private SceneManage onboardingSceneManager;
 
@@ -43,6 +43,11 @@ public class OnboardingManager : MonoBehaviour
     public void saveName()
     {
         chooseName = userNameInput.GetComponent<InputField>().text;
+
+        if (chooseName == "")
+        {
+            return;
+        }
         onboardingSceneManager.loadPopUp(onboardPanelThree);
         onboardingSceneManager.closePopUp(onboardPanelTwo);
         displayData();

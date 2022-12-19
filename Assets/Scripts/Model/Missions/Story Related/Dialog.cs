@@ -2,17 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dialog : MonoBehaviour
+public class Dialog
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   public enum DialogTypes {storyDialogue, questDialogue}
+
+   public DialogTypes dialogType;
+
+   public enum SpeakerTypes {mainCharacter, npc}
+
+   public SpeakerTypes speakerType;
+
+   public string sprite;
+
+   public string background;
+
+   public string name;
+
+   public string dialog;
+
+   public bool autoPlay;
+
 }
