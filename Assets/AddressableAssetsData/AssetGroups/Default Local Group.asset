@@ -16,7 +16,55 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 8616409228a814aa9aa8e473bf3a58c6
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 4e80f0aac945348b5ad325332b14e6e1
+    m_Address: Wanted_Poster
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 06f11f0f8a79949aea13f7fe8fc458f7
+    m_Address: Hint_coin
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 924e7c3c386b64914b0b77fed747f66b
+    m_Address: Assets/Items/S1_1tem_TornP1cture_1con-01.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 77e1bad26d37a46fc87d3024466c8ee8
+    m_Address: Watch
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b5113ff06b5cc446c8c2d8b3542e7673
+    m_Address: Pen
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b85caff235ce04994b460839ad04b594
+    m_Address: Assets/Items/Police badge.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 38dd858ff9b62433183039f7dae76056
+    m_Address: Map
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5fbba733739a946e5943ed16611b33ef
+    m_Address: Journal
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ffd48ac5c84a54fa296abcb5117f1ce9
+    m_Address: Coconut
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 37a61e9757d0a45b9a9ee44749c3f83e
+    m_Address: Cow
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3bcb394b2f512477d96ccbf72af43e26
+    m_Address: Karung_beras
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0fa2bc30d20034136ad00faf2f23b54c
+    m_Address: Karung_gula
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: c262d5abd0c88492d970a9fff3c5e10a, type: 2}
   m_SchemaSet:
