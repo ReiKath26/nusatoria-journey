@@ -7,7 +7,7 @@ using System.IO;
 
 public static class SaveManager
 {
-    public static readonly string save_folder = Application.persistentDataPath + "/GameSaves/";
+    public static readonly string save_folder = Application.dataPath + "/GameSaves/";
 
     public static void Init()
     {
@@ -24,14 +24,15 @@ public static class SaveManager
 
     public static string LoadSettings()
     {
-         if (File.Exists(save_folder + "/playersettings.json"))
+         if (File.Exists(save_folder + "/playersetting.json"))
         {
-            string contents = File.ReadAllText(save_folder + "/playersettings.json");
+            string contents = File.ReadAllText(save_folder + "/playersetting.json");
             return contents;
         }
 
         else
         {
+            Debug.Log("File Not Found");
             return null;
         }
     }

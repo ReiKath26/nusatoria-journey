@@ -21,6 +21,7 @@ public class SaveHandler : MonoBehaviour
     public void loadSettings()
     {
         string contents = SaveManager.LoadSettings();
+        Debug.Log("Loaded: " + contents);
 
         if (contents != null)
         {
@@ -37,7 +38,7 @@ public class SaveHandler : MonoBehaviour
     public void saveSettings()
     {
         string jsonString = JsonUtility.ToJson(playerSettings);
-
+        Debug.Log("Saved" + jsonString);
         SaveManager.SaveSettings(jsonString);
         
     }

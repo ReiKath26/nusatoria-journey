@@ -9,7 +9,6 @@ public class OnboardingEvent : MonoBehaviour
     public ActiveSlotData [] activeSlots;
 
 
-
     void Start()
     {
           int i = 0;
@@ -63,8 +62,28 @@ public class OnboardingEvent : MonoBehaviour
        
    }
 
-   public void continueGame()
+   public void continueGame(int slotSelected)
    {
-     //TBA
+
+     PlayerPrefs.SetInt("choosenSlot", slotSelected);
+
+      SaveSlots slot = SaveHandler.instance.loadSlot(slotSelected);
+
+     switch(slot.chapterNumber)
+     {
+          case 0:
+          SceneManage.instance.LoadScene(4);
+          break;
+
+          case 1:
+          SceneManage.instance.LoadScene(5);
+          break;
+
+          case 2:
+          SceneManage.instance.LoadScene(6);
+          break;
+
+          default: break;
+     }
    }
 }

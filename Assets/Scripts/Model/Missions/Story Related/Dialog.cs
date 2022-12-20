@@ -19,7 +19,15 @@ public class Dialog
 
    public Expression expression;
 
+   //will try to find better implementation
+
+   //======================================
+
    public bool changeScenery;
+
+   public string[] highLightedPhrases;
+
+   //======================================
 
    public string dialog;
 
