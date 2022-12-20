@@ -8,6 +8,13 @@ public class SceneManage : MonoBehaviour
 {
     public GameObject loadingScreen;
     public Slider slider;
+
+    public static SceneManage instance;
+
+    void Awake()
+    {
+        instance = this;
+    }
     
     public void LoadScene(int sceneindex)
     {

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class SaveSlots
 {
    public int slot;
@@ -10,11 +11,11 @@ public class SaveSlots
    public float time;
    public int chapterNumber;
 
-   public PlayerPosition lastPosition = new PlayerPosition() {x_pos = 0, y_pos = 0, z_pos = 0};
+   public PlayerPosition lastPosition;
    public int understandingLevel;
    public int missionNumber;
    public int storyNumber;
 
-   public Glossary player_glossary = new Glossary();
-   public Inventory player_inventory = new Inventory();
+   public Glossary player_glossary;
+   public Inventory player_inventory;
 }

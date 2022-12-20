@@ -7,6 +7,7 @@ using TMPro;
 public class OnboardingManager : MonoBehaviour
 {
     private int genderChoose = 0;
+    private int slotNumber = 1;
     private string chooseName;
 
     [SerializeField] private GameObject onboardPanelOne;
@@ -21,7 +22,10 @@ public class OnboardingManager : MonoBehaviour
     [SerializeField] private GameObject male_picture;
     [SerializeField] private TextMeshProUGUI player_name_text;
 
-    [SerializeField] private SceneManage onboardingSceneManager;
+    void Awake()
+    {
+        slotNumber = PlayerPrefs.GetInt("choosenSlot");
+    }
 
     public void choosePicture(int choosen)
     {
@@ -40,16 +44,20 @@ public class OnboardingManager : MonoBehaviour
         genderChoose = choosen;
     }
 
+    public void ReadStringInput(string s)
+    {
+        chooseName = s;
+    }
+
     public void saveName()
     {
-        chooseName = userNameInput.GetComponent<InputField>().text;
 
         if (chooseName == "")
         {
             return;
         }
-        onboardingSceneManager.loadPopUp(onboardPanelThree);
-        onboardingSceneManager.closePopUp(onboardPanelTwo);
+        SceneManage.instance.loadPopUp(onboardPanelThree);
+        SceneManage.instance.closePopUp(onboardPanelTwo);
         displayData();
     }
 
@@ -70,20 +78,33 @@ public class OnboardingManager : MonoBehaviour
         player_name_text.text = chooseName;
     }
 
-    public void startGame()
+    public void initGame()
     {
-        SaveManager.instance.saveData.list.Add(new SaveSlots() {slot = 0, playerName = chooseName, playerGender = genderChoose, time = 0, chapterNumber = 0, understandingLevel = 0, missionNumber = 0, storyNumber = 0});
-        SaveManager.instance.saveFile();
-        onboardingSceneManager.LoadScene(4);
-    
+        Glossary glossary = new Glossary();
+
+        glossary.conceptList.Add(new KeyConcepts() {keyNumber = 0, keyName = "", keyDesc = ""});
+
+        Inventory inventory = new Inventory();
+        inventory.slotList.Add(new InventorySlots() {slotNumber = 0, itemSaved = null});
+        inventory.slotList.Add(new InventorySlots() {slotNumber = 1, itemSaved = null});
+        inventory.slotList.Add(new InventorySlots() {slotNumber = 2, itemSaved = null});
+        inventory.slotList.Add(new InventorySlots() {slotNumber = 3, itemSaved = null});
+        inventory.slotList.Add(new InventorySlots() {slotNumber = 4, itemSaved = null});
+
+        PlayerPosition initialPosition = new PlayerPosition() {x_pos = 0, y_pos = 0, z_pos = 0};
+        SaveSlots slot = new SaveSlots() {slot = slotNumber, playerName = chooseName, playerGender = genderChoose,
+        time = 0, chapterNumber = 0, lastPosition = initialPosition, understandingLevel = 0, missionNumber = 0, storyNumber = 0, 
+        player_glossary = glossary, player_inventory = inventory};
+        SaveHandler.instance.saveSlot(slot, slotNumber);
+        SceneManage.instance.LoadScene(4);
     }
 
     public void resetData()
     {
         genderChoose = 0;
         chooseName = "";
-        onboardingSceneManager.loadPopUp(onboardPanelOne);
-        onboardingSceneManager.closePopUp(onboardPanelThree);
+        SceneManage.instance.loadPopUp(onboardPanelOne);
+        SceneManage.instance.closePopUp(onboardPanelThree);
     }
 
 }

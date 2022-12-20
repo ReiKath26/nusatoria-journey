@@ -153,6 +153,14 @@ MonoBehaviour:
     m_Address: wistful_yudha
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 19bf703709596425599bca31dcf76533
+    m_Address: langit_mendung
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8eddd98b1092643c5b74fe00dc460b65
+    m_Address: rumah_kosong
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: c262d5abd0c88492d970a9fff3c5e10a, type: 2}
   m_SchemaSet:

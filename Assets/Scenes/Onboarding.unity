@@ -704,7 +704,19 @@ MonoBehaviour:
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 606929292}
+        m_TargetAssemblyTypeName: OnboardingManager, Assembly-CSharp
+        m_MethodName: ReadStringInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnSubmit:
     m_PersistentCalls:
       m_Calls: []
@@ -828,11 +840,10 @@ MonoBehaviour:
   onboardPanelThree: {fileID: 695009110}
   female_picture_highlight: {fileID: 1603633009}
   male_picture_highlight: {fileID: 1336009129}
-  userNameInput: {fileID: 1378033619}
+  userNameInput: {fileID: 546369628}
   female_picture: {fileID: 1194697604}
   male_picture: {fileID: 1537820296}
   player_name_text: {fileID: 455697992}
-  onboardingSceneManager: {fileID: 267727013}
 --- !u!1 &643538363
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[System.Serializable]
 public class Dialog
 {
 
-   public enum DialogTypes {storyDialogue, questDialogue}
+   public enum DialogTypes {storyDialogue, questDialogue, cutsceneDialogue}
 
    public DialogTypes dialogType;
 
@@ -15,12 +17,10 @@ public class Dialog
 
    public string sprite;
 
-   public string background;
+   public bool changeScenery;
 
    public string name;
 
    public string dialog;
-
-   public bool autoPlay;
 
 }
