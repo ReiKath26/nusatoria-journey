@@ -4,7 +4,28 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/HomePage.unity
+    guid: b93784d9ac0da498cbf973b3abba4811
+  - enabled: 1
+    path: Assets/Scenes/SaveSlot.unity
+    guid: abcd27ce422c347618a84f3f81f3be77
+  - enabled: 1
+    path: Assets/Scenes/Onboarding.unity
+    guid: 7559d4705208ab74a95e525d9d273c47
+  - enabled: 1
+    path: Assets/Scenes/CreditScene.unity
+    guid: 84ec572ef514a411785a7a9ff2f89c17
+  - enabled: 1
+    path: Assets/Scenes/PrologueStory.unity
+    guid: 35eede88b60a50240b0f969755eeae94
+  - enabled: 1
+    path: Assets/Scenes/Chapter1.unity
+    guid: aee0bed85d2e34c588c406730d20cad1
+  - enabled: 1
+    path: Assets/Scenes/Chapter2.unity
+    guid: 06cffdb67d34a421097092fb0d71b60b
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
       guid: 3df210fb87a8d48538550fce249f2550, type: 2}
