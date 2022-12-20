@@ -89,10 +89,6 @@ MonoBehaviour:
     m_Address: shook_mc_1
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: cea812a0ef09fb94399909f7f19ee831
-    m_Address: sike_mc_1
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 66d9de2c39f87024c9fd51258411a3dd
     m_Address: think_mc_1
     m_ReadOnly: 0
@@ -118,7 +114,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 20d4f4652646e174eb006f7a0a61a566
-    m_Address: yikes_mc_0
+    m_Address: shook_mc_0
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: c42302b64bc4f7b4e8ff7e27c2fea607
@@ -134,23 +130,23 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 3981926de8ceef14e979983f31bd03ee
-    m_Address: oops_yudha
+    m_Address: shook_yudha
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: a99c7184594b1e348bde81d7e89d5a05
-    m_Address: serious_yudha
+    m_Address: angry_yudha
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: a67bb8746f5349045b886332d9a91ec4
-    m_Address: smug_yudha
+    m_Address: think_yudha
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: e8305aa408018a9448feddda7c7ace6a
-    m_Address: whoops_yudha
+    m_Address: hurt_yudha
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 98da002dbad44174a93b590fbe20882d
-    m_Address: wistful_yudha
+    m_Address: sad_yudha
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 19bf703709596425599bca31dcf76533

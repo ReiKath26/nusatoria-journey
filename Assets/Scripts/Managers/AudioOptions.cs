@@ -12,10 +12,15 @@ public class AudioOptions: MonoBehaviour
     void Awake()
     {
         SaveHandler.instance.loadSettings();
-        musicVolume = SaveHandler.instance.playerSettings.music_vol;
-        soundEffectsVolume = SaveHandler.instance.playerSettings.sfx_vol;
 
-        AudioManager.instance.UpdateMixerVolume();
+        if (SaveHandler.instance.playerSettings != null)
+        {
+            musicVolume = SaveHandler.instance.playerSettings.music_vol;
+            soundEffectsVolume = SaveHandler.instance.playerSettings.sfx_vol;
+
+            AudioManager.instance.UpdateMixerVolume();
+        }
+
     }
 
     public void OnMusicSliderValueChange(float value)

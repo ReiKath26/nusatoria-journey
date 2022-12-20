@@ -326,232 +326,150 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogues:
   - dialogType: 0
-    speakerType: 0
-    sprite: 
-    background: 
-    name: 
-    dialog: 
+    speaker: 3
+    expression: 5
+    changeScenery: 0
+    dialog: 14 November 2195, 11:00 - Jalanan Kota Jakarta
   - dialogType: 0
-    speakerType: 0
-    sprite: 
-    background: 
-    name: 
-    dialog: 
+    speaker: 0
+    expression: 4
+    changeScenery: 0
+    dialog: "Huftt\u2026huft\u2026lelah sekali\u2026 "
   - dialogType: 0
-    speakerType: 0
-    sprite: 
-    background: 
-    name: 
-    dialog: 
+    speaker: 0
+    expression: 5
+    changeScenery: 0
+    dialog: '(Namaku Player, aku adalah siswa di sekolah menengah ternama di Jakarta) '
   - dialogType: 0
-    speakerType: 0
-    sprite: 
-    background: 
-    name: 
-    dialog: 
+    speaker: 0
+    expression: 1
+    changeScenery: 0
+    dialog: "(Atau setidaknya\u2026aku harap akan tetap seperti itu melihat kondisi
+      kota sekarang\u2026) "
   - dialogType: 0
-    speakerType: 0
-    sprite: 
-    background: 
-    name: 
-    dialog: 
+    speaker: 0
+    expression: 1
+    changeScenery: 0
+    dialog: "(Orang-orang anti penjelajah waktu dan yang pro penjelajahan waktu itu
+      bertengkar terus menerus\u2026) "
   - dialogType: 0
-    speakerType: 0
-    sprite: 
-    background: 
-    name: 
-    dialog: 
+    speaker: 0
+    expression: 5
+    changeScenery: 0
+    dialog: "(Kalau mereka mau ribut bawa keributan di tempat lain saja, aku tidak
+      mau tau\u2026) "
   - dialogType: 0
-    speakerType: 0
-    sprite: 
-    background: 
-    name: 
-    dialog: 
+    speaker: 0
+    expression: 5
+    changeScenery: 0
+    dialog: "(Lagian kalau kota ini hancur karena mereka, itu bukan urusanku\u2026) "
   - dialogType: 0
-    speakerType: 0
-    sprite: 
-    background: 
-    name: 
-    dialog: 
+    speaker: 0
+    expression: 5
+    changeScenery: 0
+    dialog: Hmmmm?
   - dialogType: 0
-    speakerType: 0
-    sprite: 
-    background: 
-    name: 
-    dialog: 
+    speaker: 0
+    expression: 6
+    changeScenery: 0
+    dialog: "Dicari penjelajah waktu ilegal\u2026bila melihat tanda-tanda penjelajahan
+      waktu ilegal\u2026. "
   - dialogType: 0
-    speakerType: 0
-    sprite: 
-    background: 
-    name: 
-    dialog: 
+    speaker: 0
+    expression: 3
+    changeScenery: 0
+    dialog: "Tapi bagaimana kita bisa tau orang itu penjelajah waktu ilegal atau
+      tidak\u2026 "
   - dialogType: 0
-    speakerType: 0
-    sprite: 
-    background: 
-    name: 
-    dialog: 
+    speaker: 0
+    expression: 5
+    changeScenery: 0
+    dialog: 'Lagian kenapa mereka anti sekali dengan penjelajahan waktu '
   - dialogType: 0
-    speakerType: 0
-    sprite: 
-    background: 
-    name: 
-    dialog: 
+    speaker: 0
+    expression: 0
+    changeScenery: 0
+    dialog: "Kalau aku punya dana, aku pasti mau melakukan perjalanan\u2026 "
   - dialogType: 0
-    speakerType: 0
-    sprite: 
-    background: 
-    name: 
-    dialog: 
+    speaker: 1
+    expression: 5
+    changeScenery: 0
+    dialog: .....
   - dialogType: 0
-    speakerType: 0
-    sprite: 
-    background: 
-    name: 
-    dialog: 
+    speaker: 0
+    expression: 3
+    changeScenery: 0
+    dialog: '!!'
   - dialogType: 0
-    speakerType: 0
-    sprite: 
-    background: 
-    name: 
-    dialog: 
+    speaker: 0
+    expression: 3
+    changeScenery: 0
+    dialog: "Orang itu\u2026baru saja masuk ke rumah yang lama tak berpenghuni itu\u2026aku
+      tidak salah lihat kan?"
   - dialogType: 0
-    speakerType: 0
-    sprite: 
-    background: 
-    name: 
-    dialog: 
+    speaker: 0
+    expression: 5
+    changeScenery: 0
+    dialog: 'Aku sebaiknya mengikutinya untuk memastikan '
   - dialogType: 0
-    speakerType: 0
-    sprite: 
-    background: 
-    name: 
-    dialog: 
+    speaker: 3
+    expression: 5
+    changeScenery: 1
+    dialog: '14 November 2195, 11.20, Rumah Terpencil '
   - dialogType: 0
-    speakerType: 0
-    sprite: 
-    background: 
-    name: 
-    dialog: 
+    speaker: 0
+    expression: 3
+    changeScenery: 0
+    dialog: "Apa yang orang itu lakukan disini\u2026"
+  - dialogType: 2
+    speaker: 3
+    expression: 5
+    changeScenery: 0
+    dialog: .....
   - dialogType: 0
-    speakerType: 0
-    sprite: 
-    background: 
-    name: 
-    dialog: 
+    speaker: 0
+    expression: 3
+    changeScenery: 0
+    dialog: '!!!'
   - dialogType: 0
-    speakerType: 0
-    sprite: 
-    background: 
-    name: 
-    dialog: 
+    speaker: 1
+    expression: 6
+    changeScenery: 0
+    dialog: Hmmm...
   - dialogType: 0
-    speakerType: 0
-    sprite: 
-    background: 
-    name: 
-    dialog: 
+    speaker: 0
+    expression: 3
+    changeScenery: 0
+    dialog: "(Apa itu\u2026tidak mungkin\u2026mesin waktu?!) "
   - dialogType: 0
-    speakerType: 0
-    sprite: 
-    background: 
-    name: 
-    dialog: 
+    speaker: 1
+    expression: 5
+    changeScenery: 0
+    dialog: "Baiklah\u2026sekarang melakukannya seperti biasa\u2026 "
   - dialogType: 0
-    speakerType: 0
-    sprite: 
-    background: 
-    name: 
-    dialog: 
+    speaker: 0
+    expression: 3
+    changeScenery: 0
+    dialog: "(Apa yang dia..jangan-jangan\u2026)"
   - dialogType: 0
-    speakerType: 0
-    sprite: 
-    background: 
-    name: 
-    dialog: 
+    speaker: 1
+    expression: 6
+    changeScenery: 0
+    dialog: 'Bagus, sekarang saatnya bekerja '
   - dialogType: 0
-    speakerType: 0
-    sprite: 
-    background: 
-    name: 
-    dialog: 
+    speaker: 0
+    expression: 5
+    changeScenery: 0
+    dialog: "(Apa dia menghidupkan mesin waktu itu\u2026) "
   - dialogType: 0
-    speakerType: 0
-    sprite: 
-    background: 
-    name: 
-    dialog: 
-  - dialogType: 0
-    speakerType: 0
-    sprite: 
-    background: 
-    name: 
-    dialog: 
-  - dialogType: 0
-    speakerType: 0
-    sprite: 
-    background: 
-    name: 
-    dialog: 
-  - dialogType: 0
-    speakerType: 0
-    sprite: 
-    background: 
-    name: 
-    dialog: 
-  - dialogType: 0
-    speakerType: 0
-    sprite: 
-    background: 
-    name: 
-    dialog: 
-  - dialogType: 0
-    speakerType: 0
-    sprite: 
-    background: 
-    name: 
-    dialog: 
-  - dialogType: 0
-    speakerType: 0
-    sprite: 
-    background: 
-    name: 
-    dialog: 
-  - dialogType: 0
-    speakerType: 0
-    sprite: 
-    background: 
-    name: 
-    dialog: 
-  - dialogType: 0
-    speakerType: 0
-    sprite: 
-    background: 
-    name: 
-    dialog: 
-  - dialogType: 0
-    speakerType: 0
-    sprite: 
-    background: 
-    name: 
-    dialog: 
-  - dialogType: 0
-    speakerType: 0
-    sprite: 
-    background: 
-    name: 
-    dialog: 
-  - dialogType: 0
-    speakerType: 0
-    sprite: 
-    background: 
-    name: 
-    dialog: 
-  - dialogType: 0
-    speakerType: 0
-    sprite: 
-    background: 
-    name: 
+    speaker: 0
+    expression: 3
+    changeScenery: 0
+    dialog: "(Aku sebaiknya\u2026.ah!!!) "
+  - dialogType: 3
+    speaker: 4
+    expression: 5
+    changeScenery: 0
     dialog: 
 --- !u!1 &362406757
 GameObject:

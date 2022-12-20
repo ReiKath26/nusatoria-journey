@@ -7,19 +7,19 @@ using UnityEngine;
 public class Dialog
 {
 
-   public enum DialogTypes {storyDialogue, questDialogue, cutsceneDialogue}
+   public enum DialogTypes {prologueDialogue, questDialogue, cutsceneDialogue, lightTransition, glitchTransition}
 
    public DialogTypes dialogType;
 
-   public enum SpeakerTypes {mainCharacter, npc}
+   public enum Speaker {mainCharacter, yudhaUnknown, yudha, npc, other}
 
-   public SpeakerTypes speakerType;
+   public Speaker speaker;
 
-   public string sprite;
+   public enum Expression {happy, sad, angry, shook, hurt, neutral, think}
+
+   public Expression expression;
 
    public bool changeScenery;
-
-   public string name;
 
    public string dialog;
 

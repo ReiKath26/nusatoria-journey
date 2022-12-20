@@ -13,5 +13,7 @@ public class PrologueManager : MonoBehaviour
     {
         slot = SaveHandler.instance.loadSlot(PlayerPrefs.GetInt("choosenSlot"));
     }
+
+    
     
 }
