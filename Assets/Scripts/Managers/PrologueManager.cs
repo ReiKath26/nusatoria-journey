@@ -21,7 +21,7 @@ public class PrologueManager : MonoBehaviour
 
     public float textSpeed;
 
-    private int lineCount = 0;
+    private int lineCount = 1;
 
     private Coroutine typeNextCoroutine;
 
