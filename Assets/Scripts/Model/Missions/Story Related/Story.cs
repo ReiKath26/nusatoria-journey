@@ -6,4 +6,6 @@ public class Story : MonoBehaviour
 {
     public int storyNumber;
    [SerializeField] private Dialog [] dialogues;
+    public int[] unlockKeyconcepts;
+    public Item getItem;
 }
