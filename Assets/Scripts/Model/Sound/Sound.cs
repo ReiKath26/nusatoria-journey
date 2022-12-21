@@ -18,6 +18,7 @@ public class Sound
     public float volume;
 
     public bool loop;
+    public bool playOnAwake;
 
     [HideInInspector]
     public AudioSource source;

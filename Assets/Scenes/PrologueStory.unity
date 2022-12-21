@@ -1562,19 +1562,22 @@ MonoBehaviour:
     name: Crowd
     clip: {fileID: 8300000, guid: 063e7fa207b544426a2e256b16984414, type: 3}
     volume: 0.7
-    loop: 0
+    loop: 1
+    playOnAwake: 1
     source: {fileID: 0}
   - audioType: 0
     name: Click
     clip: {fileID: 8300000, guid: 89ea8f1d1cffb4c349edd8884e46c741, type: 3}
     volume: 0.7
     loop: 0
+    playOnAwake: 0
     source: {fileID: 0}
   - audioType: 0
     name: Typewritter
     clip: {fileID: 8300000, guid: cedb5d90efd154b0487b197095894212, type: 3}
     volume: 0.7
     loop: 0
+    playOnAwake: 0
     source: {fileID: 0}
   musicMixerGroup: {fileID: 0}
   soundEffectsMixerGroup: {fileID: 0}

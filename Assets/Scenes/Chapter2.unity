@@ -14439,60 +14439,70 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 60ef3d273853c430b9a67eb31ce56d29, type: 3}
     volume: 0.6
     loop: 1
+    playOnAwake: 1
     source: {fileID: 0}
   - audioType: 1
     name: 'Judgement '
     clip: {fileID: 8300000, guid: 6c4ea8afc375f4684be98d271bc82e99, type: 3}
     volume: 0.7
     loop: 1
+    playOnAwake: 0
     source: {fileID: 0}
   - audioType: 1
     name: War
     clip: {fileID: 8300000, guid: d0eb42d5370fb4b4380505b8a77445f0, type: 3}
     volume: 0.7
     loop: 1
+    playOnAwake: 0
     source: {fileID: 0}
   - audioType: 1
     name: Funny Yudha
     clip: {fileID: 8300000, guid: b912606d35d504257b9ac056fe94332c, type: 3}
     volume: 0.7
     loop: 1
+    playOnAwake: 0
     source: {fileID: 0}
   - audioType: 0
     name: Sea
     clip: {fileID: 8300000, guid: 446e45ca37a694d588088b27a502c5e2, type: 3}
     volume: 0.7
     loop: 1
+    playOnAwake: 0
     source: {fileID: 0}
   - audioType: 0
     name: Cow
     clip: {fileID: 8300000, guid: 6ecf7b02fe72b4e468fac0ce436ca3b1, type: 3}
     volume: 0.7
     loop: 1
+    playOnAwake: 0
     source: {fileID: 0}
   - audioType: 0
     name: Footsteps
     clip: {fileID: 8300000, guid: 6e3702c3f03ea461c85782ed1d4618c7, type: 3}
     volume: 0.7
     loop: 0
+    playOnAwake: 0
     source: {fileID: 0}
   - audioType: 0
     name: Get
     clip: {fileID: 8300000, guid: 38f9c6e000b884c019b61221b3260108, type: 3}
     volume: 0.7
     loop: 0
+    playOnAwake: 0
     source: {fileID: 0}
   - audioType: 0
     name: Click
     clip: {fileID: 8300000, guid: 89ea8f1d1cffb4c349edd8884e46c741, type: 3}
     volume: 0.7
     loop: 0
+    playOnAwake: 0
     source: {fileID: 0}
   - audioType: 0
     name: Chicken
     clip: {fileID: 8300000, guid: e62585837e9b840879ebf23062592a92, type: 3}
     volume: 0.7
     loop: 0
+    playOnAwake: 0
     source: {fileID: 0}
   musicMixerGroup: {fileID: -1521480627536680622, guid: 9244909f2720842f49c3745662a7854b,
     type: 2}

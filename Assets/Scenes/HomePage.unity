@@ -2765,12 +2765,14 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: cfdeff005fb324511a488e585341f7de, type: 3}
     volume: 0.8
     loop: 1
+    playOnAwake: 1
     source: {fileID: 0}
   - audioType: 0
     name: Click
     clip: {fileID: 8300000, guid: cc5d87c659d774b258f76710bc7f2a07, type: 3}
     volume: 0.8
     loop: 0
+    playOnAwake: 0
     source: {fileID: 0}
   musicMixerGroup: {fileID: -1521480627536680622, guid: 9244909f2720842f49c3745662a7854b,
     type: 2}
