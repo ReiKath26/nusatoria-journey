@@ -19,12 +19,14 @@ public class PlayerMovement : MonoBehaviour
            
             transform.rotation = Quaternion.LookRotation(_rigidBody.velocity);
             playerAnimate.SetBool("isWalking", true);
+            AudioManager.instance.Play("Footsteps");
             
         }
 
         else
         {
             playerAnimate.SetBool("isWalking", false);
+            AudioManager.instance.Stop("Footsteps");
         }
     }
 }
