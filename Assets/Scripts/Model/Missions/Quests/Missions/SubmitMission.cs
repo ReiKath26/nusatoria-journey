@@ -6,16 +6,16 @@ public class SubmitMission : MonoBehaviour, Mission
 {
 
     //On interact, show giving item to NPC view and check if can give item to NPC
-[SerializeField] private int _missionNumber;
+    [SerializeField] private int _missionNumber;
     [SerializeField] private string _missionPrompt;
     [SerializeField] private int _objectiveCleared;
     [SerializeField] private int _requiredObjective;
 
     [SerializeField] private GameObject gameOverlay;
     [SerializeField] private GameObject storyOverlay;
+    [SerializeField] private GameObject giveItemOverlay;
     [SerializeField] private Lore [] attachedLore;
-
-    [SerializeField] private int [] keyConceptUnlock;
+    [SerializeField] private Item [] neededItem;
 
     private SaveSlots slot;
 
@@ -66,17 +66,10 @@ public class SubmitMission : MonoBehaviour, Mission
 
     public void OnTriggerMission()
     {
-        foreach(Lore lore in attachedLore)
-        {
-            if(lore.loreType == Lore.LoreType.trigger)
-            {
-                DialogueManager.instance.setDialogues(lore.loreDialog);
-                gameOverlay.SetActive(false);
-                storyOverlay.SetActive(true);
-                DialogueManager.instance.NextLine();
-            }
-        }
-       
+        gameOverlay.SetActive(true);
+        giveItemOverlay.SetActive(false);
+
+        //check if the player has item
     }
 
     public void OnFinishObjectives()
@@ -98,19 +91,6 @@ public class SubmitMission : MonoBehaviour, Mission
                 gameOverlay.SetActive(true);
                 storyOverlay.SetActive(false);
             }
-        }
-
-
-         if (keyConceptUnlock.Length != 0)
-        {
-            foreach(KeyConcepts concept in slot.player_glossary.conceptList)
-            {
-                if(concept.keyNumber == keyConceptUnlock[_objectiveCleared])
-                {
-                    concept.unlockConcept();
-                }
-            }
-    
         }
 
         _objectiveCleared++;
