@@ -4,11 +4,20 @@ using UnityEngine;
 
 public interface Mission
 {
-    public int missionNumber {get; }
-    public string missionPrompt {get; }
-    public int requiredNumber {get; }
+    public int getMissionNumber();
 
-    public bool OnTriggerQuestCheckFinished();
+    public int objectiveCleared();
 
+    public int requiredObjective();
+
+    public string getMissionPrompt();
+
+    public Lore[] getLore();
+
+    public void OnTriggerMission();
+
+    public void OnFinishObjectives();
+
+    public bool OnCheckQuestFinished();
 
 }

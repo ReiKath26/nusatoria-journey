@@ -15,6 +15,18 @@ public class DialogueManager : MonoBehaviour
    //note to cath: input autoplay logic 
     public event EventHandler OnTriggerAutoPlay;
 
+    public static DialogueManager instance;
+
+    void Awake()
+    {
+        instance = this;
+    }
+
+    public void setDialogues(Dialog [] dialogue)
+    {
+        dialogues = dialogue;
+    }
+
     public class OnTriggerNextLineEventArgs: EventArgs
     {
         public Dialog nextDialog;
@@ -22,6 +34,11 @@ public class DialogueManager : MonoBehaviour
     }
 
     private int lineCount = 0;
+
+    public void restartTheCounter()
+    {
+        lineCount = 0;
+    }
 
     public void NextLine()
     {

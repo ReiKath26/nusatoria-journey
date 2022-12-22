@@ -7,4 +7,9 @@ public class InventorySlots
     public int slotNumber;
     public Item itemSaved;
 
+    public void setItem(Item item)
+    {
+        itemSaved = item;
+    }
+
 }

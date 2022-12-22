@@ -4,8 +4,6 @@ using UnityEngine;
 
 public interface interactables
 {
-    public bool useProximity {get;}
-
     public void interact(Transform interactor);
 
     public string GetInteractText();

@@ -5,9 +5,6 @@ using UnityEngine;
 public class NPCInteractable : MonoBehaviour, interactables
 {
    [SerializeField] private string interactText;
-   [SerializeField] private bool _useProximity;
-
-   public  bool useProximity => _useProximity;
 
    private int currentMissionNumber = 0;
 

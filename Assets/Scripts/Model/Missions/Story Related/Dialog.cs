@@ -11,7 +11,7 @@ public class Dialog
 
    public DialogTypes dialogType;
 
-   public enum Speaker {mainCharacter, yudhaUnknown, yudha, sultanAgung, tumenggungBaurekhsa, 
+   public enum Speaker {mainCharacter, yudhaUnknown, yudha, unknown, sultanAgung, tumenggungBaurekhsa, 
    pedagang, kepalaPedagang, wargaMataram, wargaKaumAdat, wargaKaumPadri, james, tuankuLintau, 
    pasukanTuankuLintau, pasukanBelanda, tuankuImamBonjol, putri, pamanPutri, francis, other}
 
@@ -30,8 +30,6 @@ public class Dialog
    public string[] highLightedPhrases;
 
    public ModelToBeMoved [] modelsToBeMoved;
-
-   public string playSound;
 
    //======================================
 

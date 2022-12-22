@@ -49,7 +49,19 @@ public class OnboardingEvent : MonoBehaviour
           activeSlots[number].name.text = slot.playerName;
           activeSlots[number].time.text = "" + slot.time;
 
-          //reveal last chapter
+          switch(slot.chapterNumber)
+          {
+               case 0:
+               activeSlots[number].chapter.text = "Prologue: Permulaan dari Semuanya";
+               break;
+               case 1:
+               activeSlots[number].chapter.text = "Chapter 1: Terjebak di Dalam Kegelapan";
+               break;
+               case 2:
+                activeSlots[number].chapter.text = "Chapter 2: Pencarian Kebebasan Tanpa Henti";
+                break;
+               default: break;
+          }
 
        }
 

@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LoreMission : MonoBehaviour, Mission
+public class JudgementMission : MonoBehaviour, Mission
 {
-    //On interact, show full blown story
+    //On interact, trigger judgement test
 
     [SerializeField] private int _missionNumber;
     [SerializeField] private string _missionPrompt;
@@ -146,6 +146,4 @@ public class LoreMission : MonoBehaviour, Mission
             return false;
         }
     }
-    
-  
 }
