@@ -34,11 +34,6 @@ public class LoreMission : MonoBehaviour, Mission
         return _missionNumber;
     }
 
-     public bool isUsingProximity()
-    {
-        return useProximity;
-    }
-
     public int objectiveCleared()
     {
         return _objectiveCleared;

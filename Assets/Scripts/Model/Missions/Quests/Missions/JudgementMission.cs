@@ -13,7 +13,6 @@ public class JudgementMission : MonoBehaviour, Mission
     [SerializeField] private string _missionPrompt;
     [SerializeField] private int _objectiveCleared;
     [SerializeField] private int _requiredObjective;
-    [SerializeField] private bool useProximity;
 
     [SerializeField] private GameObject gameOverlay;
     [SerializeField] private GameObject storyOverlay;
@@ -41,11 +40,6 @@ public class JudgementMission : MonoBehaviour, Mission
     public int objectiveCleared()
     {
         return _objectiveCleared;
-    }
-
-    public bool isUsingProximity()
-    {
-        return useProximity;
     }
 
     public int requiredObjective()

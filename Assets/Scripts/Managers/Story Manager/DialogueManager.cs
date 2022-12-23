@@ -8,6 +8,8 @@ public class DialogueManager : MonoBehaviour
 
     //note to cath: input autoplay logic 
     [SerializeField] private Dialog [] dialogues;
+
+    public Dialog[] _dialogues;
     private bool AutoPlay;
 
     public event EventHandler<OnTriggerNextLineEventArgs> OnTriggerNextLine;
@@ -20,11 +22,12 @@ public class DialogueManager : MonoBehaviour
     void Awake()
     {
         instance = this;
+        _dialogues = dialogues;
     }
 
     public void setDialogues(Dialog [] dialogue)
     {
-        dialogues = dialogue;
+        _dialogues = dialogue;
     }
 
     public class OnTriggerNextLineEventArgs: EventArgs
@@ -42,7 +45,7 @@ public class DialogueManager : MonoBehaviour
 
     public void NextLine()
     {
-        OnTriggerNextLine?.Invoke(this, new OnTriggerNextLineEventArgs {nextDialog = dialogues[lineCount], count = dialogues.Length});
+        OnTriggerNextLine?.Invoke(this, new OnTriggerNextLineEventArgs {nextDialog = _dialogues[lineCount], count = dialogues.Length});
         Debug.Log(dialogues.Length);
         lineCount++;
     }

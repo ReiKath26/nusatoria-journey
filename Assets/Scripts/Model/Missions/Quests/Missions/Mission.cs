@@ -14,8 +14,6 @@ public interface Mission
 
     public Lore[] getLore();
 
-    public bool isUsingProximity();
-
     public void OnTriggerMission();
 
     public void OnFinishObjectives();

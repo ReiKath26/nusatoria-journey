@@ -413,7 +413,11 @@ public class StoryUIManager : MonoBehaviour
 
         else
         {
-            
+            background.SetActive(false);
+            nameBox.SetActive(false);
+            dialogueBox.SetActive(false);
+            lightFrame.SetActive(false);
+            glitchFrame.SetActive(false);
         }
     }
 

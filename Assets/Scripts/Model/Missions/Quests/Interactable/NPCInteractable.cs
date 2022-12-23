@@ -5,10 +5,11 @@ using TMPro;
 
 public class NPCInteractable : MonoBehaviour, interactables
 {
-   [SerializeField] private string interactText;
    [SerializeField] private TextMeshPro npcNameText;
    [SerializeField] private string npcName;
    [SerializeField] private Lore noQuestInteraction;
+
+   [SerializeField] private Rigidbody _rigidBody;
 
    [SerializeField] private GameObject gameOverlay;
    [SerializeField] private GameObject storyOverlay;
@@ -17,7 +18,7 @@ public class NPCInteractable : MonoBehaviour, interactables
 
    void Awake()
    {
-        npcNameText.text = interactText;
+        npcNameText.text = npcName;
    }
    
 
@@ -29,7 +30,9 @@ public class NPCInteractable : MonoBehaviour, interactables
 
    public void interact(Transform interactor)
    {
+      _rigidBody.velocity = new Vector3(0, 0, 0);
        Mission mission = getMission();
+
 
        if(mission != null)
        {
@@ -61,7 +64,7 @@ public class NPCInteractable : MonoBehaviour, interactables
 
    public string GetInteractText()
    {
-        return interactText;
+        return npcName;
    }
 
    public Transform GetTransform()

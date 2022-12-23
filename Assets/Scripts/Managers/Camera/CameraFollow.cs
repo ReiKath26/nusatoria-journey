@@ -7,6 +7,7 @@ public class CameraFollow : MonoBehaviour
 
     private SaveSlots slot;
 
+    [SerializeField] private Rigidbody _rigidBody;
 
     public Transform target_0;
     public Transform target_1;

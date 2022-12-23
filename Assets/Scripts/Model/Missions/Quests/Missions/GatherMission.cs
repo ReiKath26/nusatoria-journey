@@ -15,7 +15,6 @@ public class GatherMission : MonoBehaviour, Mission
     [SerializeField] private int _objectiveCleared;
     [SerializeField] private int _requiredObjective;
     [SerializeField] private Lore [] attachedLore;
-    [SerializeField] private bool useProximity;
 
     [SerializeField] private GameObject gameOverlay;
     [SerializeField] private GameObject storyOverlay;
@@ -33,11 +32,6 @@ public class GatherMission : MonoBehaviour, Mission
     public int getMissionNumber()
     {
         return _missionNumber;
-    }
-
-    public bool isUsingProximity()
-    {
-        return useProximity;
     }
 
     public int objectiveCleared()

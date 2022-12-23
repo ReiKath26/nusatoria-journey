@@ -43,11 +43,6 @@ public class ReviewMission : MonoBehaviour, Mission
         return _objectiveCleared;
     }
 
-    public bool isUsingProximity()
-    {
-        return useProximity;
-    }
-
     public int requiredObjective()
     {
         return _requiredObjective;
