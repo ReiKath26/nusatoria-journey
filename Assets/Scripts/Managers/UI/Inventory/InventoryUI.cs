@@ -6,41 +6,25 @@ using TMPro;
 public class InventoryUI : MonoBehaviour
 {
 
-    [SerializeField] private GameObject InventoryPlaceHolder;
-    [SerializeField] private GameObject SelectedInventoryPlaceHolder;
-    [SerializeField] private GameObject item;
+    [SerializeField] private GameObject [] InventoryPlaceHolder;
+    [SerializeField] private GameObject [] SelectedInventoryPlaceHolder;
+    [SerializeField] private GameObject [] item;
+    [SerializeField] private TextMeshProUGUI [] itemCountText;
 
     [SerializeField] private TextMeshProUGUI itemTitle;
     [SerializeField] private TextMeshProUGUI itemDesc;
-    
-    public int thisNumber;
-
-    public bool selected;
 
     private SaveSlots slot;
 
     private void Update()
     {
         slot = SaveHandler.instance.loadSlot(PlayerPrefs.GetInt("choosenSlot"));
-        foreach(InventorySlots slot in slot.player_inventory.slotList)
+        foreach(InventorySlots slots in slot.player_inventory.slotList)
         {
-            if(slot.slotNumber == thisNumber)
+            if(slots.itemSaved != null)
             {
-                if(slot.itemSaved != null)
-                {
-                    setItems(slot);
-                    if(selected == true)
-                    {
-                        InventoryPlaceHolder.SetActive(false);
-                        SelectedInventoryPlaceHolder.SetActive(true);
-                    }
-                }
-
-                else
-                {
-                    InventoryPlaceHolder.SetActive(true);
-                    SelectedInventoryPlaceHolder.SetActive(false);
-                }
+                setItems(slots, slots.slotNumber);
+            
       
             }
         }
@@ -48,31 +32,46 @@ public class InventoryUI : MonoBehaviour
        
     }
 
-    public bool setItems(InventorySlots slot)
+    public void setItems(InventorySlots slot, int number)
     {
-        if(slot.itemSaved == null)
+        if(slot.itemSaved.itemName == "")
         {
-            return false;
+            item[number].SetActive(false);
+            itemCountText[number].text = "";
         }
 
         else
         {
-            item.GetComponent<LoadSpriteManage>().loadNewSprite(slot.itemSaved.itemSprite);
-            return true;
+            item[number].SetActive(true);
+             itemCountText[number].text = "x" + slot.itemSaved.itemCount;
+            item[number].GetComponent<LoadSpriteManage>().loadNewSprite(slot.itemSaved.itemSprite);
         }
     }
 
-    public void selectItems()
+    public void selectItems(int number)
     {
-        foreach(InventorySlots slot in slot.player_inventory.slotList)
+        for(int i = 0; i < InventoryPlaceHolder.Length; i++)
         {
-            if(slot.slotNumber == thisNumber)
+            if(i == number)
             {
-                if(slot.itemSaved != null)
+                InventoryPlaceHolder[i].SetActive(false);
+                SelectedInventoryPlaceHolder[i].SetActive(true);
+            }
+
+            else
+            {
+                InventoryPlaceHolder[i].SetActive(true);
+                SelectedInventoryPlaceHolder[i].SetActive(false);
+            }
+        }
+        foreach(InventorySlots slots in slot.player_inventory.slotList)
+        {
+            if(slots.slotNumber == number)
+            {
+                if(slots.itemSaved != null)
                 {
-                    itemTitle.text = slot.itemSaved.itemName;
-                    itemDesc.text = slot.itemSaved.itemDesc;
-                    SelectedInventoryManager.instance.triggerSelectItem(thisNumber);
+                    itemTitle.text = slots.itemSaved.itemName;
+                    itemDesc.text = slots.itemSaved.itemDesc;
                  }
 
                  else
