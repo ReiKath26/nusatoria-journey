@@ -23,6 +23,7 @@ public class MissionUI : MonoBehaviour
                 if (number == slot.missionNumber)
                 {
                     triggerOnNewQuest(mission.getMissionPrompt());
+                    mission.OnTriggerMission();
                 }
             }
         }

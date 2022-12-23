@@ -8,12 +8,24 @@ public class ItemInteractable : MonoBehaviour, interactables
 
    private int currentMissionNumber = 0;
 
-   public void interact(Transform interactor)
+   public void Update()
    {
         SaveSlots slot = SaveHandler.instance.loadSlot(PlayerPrefs.GetInt("choosenSlot"));
         currentMissionNumber = slot.missionNumber;
+   }
 
-        Debug.Log("Interact with" + interactText);
+  public void interact(Transform interactor)
+   {
+       Mission mission = getMission();
+
+      if(mission != null)
+       {
+          int missionNumber = mission.getMissionNumber();
+          if(currentMissionNumber == missionNumber)
+          {
+               mission.OnFinishObjectives();
+          }
+       }
    }
 
    public string GetInteractText()
@@ -24,5 +36,18 @@ public class ItemInteractable : MonoBehaviour, interactables
     public Transform GetTransform()
    {
         return transform;
+   }
+
+   public Mission getMission()
+   {
+     if(gameObject.TryGetComponent(out Mission mission))
+     {
+          return mission;
+     }
+
+     else
+     {
+          return null;
+     }
    }
 }

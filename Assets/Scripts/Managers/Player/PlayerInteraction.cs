@@ -5,6 +5,23 @@ using UnityEngine;
 public class PlayerInteraction : MonoBehaviour
 {
 
+    private void Update()
+    {
+        interactables i = GetInteractableObject();
+
+        if (i != null)
+        {
+            Mission mission = i.getMission();
+            
+            bool useProxim = mission.isUsingProximity();
+
+            if(useProxim == true)
+            {
+                i.interact(transform);
+            }
+        }
+    }
+
     public void tryInteracting()
     {
         interactables i = GetInteractableObject();

@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class LoreMission : MonoBehaviour, Mission
 {
-    //On interact, show full blown story
+    //On trigger: show trigger story if any
+    //On finish one of objectives: add objective +1
+    //On finish quest: Move to next quest after story if there's any
+    //Lore mission MAY or MAY NOT use proximity
 
     [SerializeField] private int _missionNumber;
     [SerializeField] private string _missionPrompt;
     [SerializeField] private int _objectiveCleared;
     [SerializeField] private int _requiredObjective;
+    [SerializeField] private bool useProximity;
 
     [SerializeField] private GameObject gameOverlay;
     [SerializeField] private GameObject storyOverlay;
@@ -23,15 +27,16 @@ public class LoreMission : MonoBehaviour, Mission
     {
         slot = SaveHandler.instance.loadSlot(PlayerPrefs.GetInt("choosenSlot"));
 
-        if(_missionNumber == slot.missionNumber)
-        {
-            //set mission UI
-        }
     }
 
     public int getMissionNumber()
     {
         return _missionNumber;
+    }
+
+     public bool isUsingProximity()
+    {
+        return useProximity;
     }
 
     public int objectiveCleared()
@@ -70,6 +75,7 @@ public class LoreMission : MonoBehaviour, Mission
         {
             if(lore.loreType == Lore.LoreType.trigger)
             {
+                DialogueManager.instance.restartTheCounter();
                 DialogueManager.instance.setDialogues(lore.loreDialog);
                 gameOverlay.SetActive(false);
                 storyOverlay.SetActive(true);
@@ -87,21 +93,13 @@ public class LoreMission : MonoBehaviour, Mission
             {
                 DialogueManager.instance.restartTheCounter();
                 DialogueManager.instance.setDialogues(lore.loreDialog);
-                DialogueManager.instance.NextLine();
                 gameOverlay.SetActive(false);
                 storyOverlay.SetActive(true);
-                break;
-            }
-
-            else
-            {
-                gameOverlay.SetActive(true);
-                storyOverlay.SetActive(false);
+                DialogueManager.instance.NextLine();
             }
         }
 
-
-         if (keyConceptUnlock.Length != 0)
+        if (keyConceptUnlock.Length != 0)
         {
             foreach(KeyConcepts concept in slot.player_glossary.conceptList)
             {
@@ -122,11 +120,6 @@ public class LoreMission : MonoBehaviour, Mission
             SaveHandler.instance.saveSlot(slot, slot.slot);
             gameOverlay.SetActive(true);
             storyOverlay.SetActive(false);
-        }
-
-        else
-        {
-            //set mission UI
         }
     }
 

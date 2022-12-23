@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class WarMission : MonoBehaviour, Mission
 {
-   //On interact, trigger war simulation
+   //On trigger: arrange environment to war simulation environment and display war simulation UI
+    //On finish one of objectives: Show story if any, objective +1
+    //On finish quest: Move to next quest after story if there's any
+    //War mission DON'T use proximity
 
     [SerializeField] private int _missionNumber;
     [SerializeField] private string _missionPrompt;
     [SerializeField] private int _objectiveCleared;
     [SerializeField] private int _requiredObjective;
+    [SerializeField] private bool useProximity;
 
     [SerializeField] private GameObject gameOverlay;
     [SerializeField] private GameObject storyOverlay;
@@ -37,6 +41,11 @@ public class WarMission : MonoBehaviour, Mission
     public int objectiveCleared()
     {
         return _objectiveCleared;
+    }
+
+    public bool isUsingProximity()
+    {
+        return useProximity;
     }
 
     public int requiredObjective()

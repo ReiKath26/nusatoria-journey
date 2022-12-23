@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class ReviewMission : MonoBehaviour, Mission
 {
-    //On interact, trigger review based on judgement
+    //On trigger: triggered by judgement mission, display story and review choices
+    //On finish one of objectives: trigger additional judgement mission
+    //On finish quest: Move to next quest after story if there's any
+    //Review mission DON'T use proximity
 
     [SerializeField] private int _missionNumber;
     [SerializeField] private string _missionPrompt;
     [SerializeField] private int _objectiveCleared;
     [SerializeField] private int _requiredObjective;
+    [SerializeField] private bool useProximity;
 
     [SerializeField] private GameObject gameOverlay;
     [SerializeField] private GameObject storyOverlay;
@@ -37,6 +41,11 @@ public class ReviewMission : MonoBehaviour, Mission
     public int objectiveCleared()
     {
         return _objectiveCleared;
+    }
+
+    public bool isUsingProximity()
+    {
+        return useProximity;
     }
 
     public int requiredObjective()

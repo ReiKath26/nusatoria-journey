@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class Lore
 {
-    public enum LoreType {opening, trigger, finish, interaction}
+    public enum LoreType {trigger, finish, casualInteraction}
 
     public LoreType loreType;
     public Dialog[] loreDialog;

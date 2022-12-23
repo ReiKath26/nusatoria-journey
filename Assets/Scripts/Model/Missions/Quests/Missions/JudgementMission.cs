@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class JudgementMission : MonoBehaviour, Mission
 {
-    //On interact, trigger judgement test
+    //On trigger: display judgement UI and start judgement
+    //On finish one of objectives: if success then finish quest, if not trigger additional quest based on result
+    //On finish quest: Move to next quest after story if there's any
+    //Judgement mission DON'T use proximity
 
     [SerializeField] private int _missionNumber;
     [SerializeField] private string _missionPrompt;
     [SerializeField] private int _objectiveCleared;
     [SerializeField] private int _requiredObjective;
+    [SerializeField] private bool useProximity;
 
     [SerializeField] private GameObject gameOverlay;
     [SerializeField] private GameObject storyOverlay;
@@ -37,6 +41,11 @@ public class JudgementMission : MonoBehaviour, Mission
     public int objectiveCleared()
     {
         return _objectiveCleared;
+    }
+
+    public bool isUsingProximity()
+    {
+        return useProximity;
     }
 
     public int requiredObjective()
