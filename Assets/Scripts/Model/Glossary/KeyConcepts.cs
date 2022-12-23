@@ -7,7 +7,7 @@ public class KeyConcepts
    public int keyNumber;
    public string keyName;
    public string keyDesc;
-   public bool unlocked = false;
+   public bool unlocked;
 
    public void unlockConcept()
    {

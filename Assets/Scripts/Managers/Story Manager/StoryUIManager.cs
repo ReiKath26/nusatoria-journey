@@ -25,8 +25,6 @@ public class StoryUIManager : MonoBehaviour
 
     private SaveSlots slot;
 
-    private Sprite nextLineSprite;
-
     void Awake()
     {
         slot = SaveHandler.instance.loadSlot(PlayerPrefs.GetInt("choosenSlot"));
