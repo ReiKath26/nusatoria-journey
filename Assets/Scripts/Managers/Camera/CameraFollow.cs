@@ -7,35 +7,52 @@ public class CameraFollow : MonoBehaviour
 
     private SaveSlots slot;
 
-    [SerializeField] private Rigidbody _rigidBody;
+    public GameObject target_0;
+    public GameObject target_1;
+    public FixedTouchField touchField;
 
-    public Transform target_0;
-    public Transform target_1;
+    protected float CameraAngle;
+    protected float CameraAngleSpeed = 2f;
 
-    private float smoothen = 0.125f;
-    public Vector3 offset;
+    void Awake()
+    {
+        slot = SaveHandler.instance.loadSlot(PlayerPrefs.GetInt("choosenSlot"));
 
-    // void Awake()
-    // {
-    //     slot = SaveHandler.instance.loadSlot(PlayerPrefs.GetInt("choosenSlot"));
+        if (slot.playerGender == 0)
+        {
+            target_0.SetActive(true);
+            target_1.SetActive(false);
+        }
 
-    // }
+        else
+        {
+            target_0.SetActive(false);
+            target_1.SetActive(true);
+        }
+
+    }
 
     void FixedUpdate()
     {
-        // if (slot.playerGender == 0)
-        // {
-            Vector3 cam_pos = target_0.position + offset;
-            Vector3 smooth_cam_pos = Vector3.Lerp(transform.position,cam_pos, smoothen);
-            transform.position = smooth_cam_pos;
-        // }
+        if (slot.playerGender == 0)
+        {
 
-        // else
-        // {
-        //     Vector3 cam_pos = target_1.position + offset;
-        //     Vector3 smooth_cam_pos = Vector3.Lerp(transform.position,cam_pos, smoothen);
-        //     transform.position = smooth_cam_pos;
-        // }
+              CameraAngle += touchField.TouchDist.x * CameraAngleSpeed;
+
+        transform.position = target_0.transform.position + Quaternion.AngleAxis(CameraAngle, Vector3.up) * new Vector3(-3.546f, 54f, -66.5f);
+        transform.rotation = Quaternion.LookRotation(target_0.transform.position + Vector3.up * 2f - transform.position, Vector3.up);
+        }
+
+        else
+        {
+
+            CameraAngle += touchField.TouchDist.x * CameraAngleSpeed;
+
+        transform.position = target_1.transform.position + Quaternion.AngleAxis(CameraAngle, Vector3.up) * new Vector3(-3.546f, 54f, -66.5f);
+        transform.rotation = Quaternion.LookRotation(target_1.transform.position + Vector3.up * 2f - transform.position, Vector3.up);
+        }
+
+      
       
     }
 }

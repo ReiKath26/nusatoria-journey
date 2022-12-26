@@ -224,15 +224,6 @@ public class PrologueManager : MonoBehaviour
                 break;
               }
 
-              case Dialog.DialogTypes.lightTransition:
-              {
-                background.SetActive(false);
-                characterSprite.SetActive(false);
-                nameBox.SetActive(false);
-                dialogueBox.SetActive(false);
-                lightFrame.SetActive(true);
-                break;
-              }
 
               default: break;
            }

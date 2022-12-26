@@ -9,5 +9,5 @@ public interface interactables
     public string GetInteractText();
     public Transform GetTransform();
 
-    public Mission getMission();
+    // public Mission getMission();
 }

@@ -13,20 +13,20 @@ public class MissionUI : MonoBehaviour
 
    private void Update()
    {
-        slot = SaveHandler.instance.loadSlot(PlayerPrefs.GetInt("choosenSlot"));
+        // slot = SaveHandler.instance.loadSlot(PlayerPrefs.GetInt("choosenSlot"));
 
-        foreach (GameObject o in missionTriggerObjects)
-        {
-            if(o.TryGetComponent(out Mission mission))
-            {
-                int number = mission.getMissionNumber();
-                if (number == slot.missionNumber)
-                {
-                    triggerOnNewQuest(mission.getMissionPrompt());
-                    mission.OnTriggerMission();
-                }
-            }
-        }
+        // foreach (GameObject o in missionTriggerObjects)
+        // {
+        //     if(o.TryGetComponent(out Mission mission))
+        //     {
+        //         int number = mission.getMissionNumber();
+        //         if (number == slot.missionNumber)
+        //         {
+        //             triggerOnNewQuest(mission.getMissionPrompt());
+        //             mission.OnTriggerMission();
+        //         }
+        //     }
+        // }
    }
 
    public void triggerOnNewQuest(string missionPrompt)

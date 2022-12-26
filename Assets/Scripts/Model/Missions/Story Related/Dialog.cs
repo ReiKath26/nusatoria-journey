@@ -7,7 +7,7 @@ using UnityEngine;
 public class Dialog
 {
 
-   public enum DialogTypes {prologueDialogue, questDialogue, cutsceneDialogue, lightTransition, glitchTransition}
+   public enum DialogTypes {prologueDialogue, questDialogue, cutsceneDialogue}
 
    public DialogTypes dialogType;
 
@@ -28,8 +28,6 @@ public class Dialog
    public bool changeScenery;
 
    public string[] highLightedPhrases;
-
-   public ModelToBeMoved [] modelsToBeMoved;
 
    //======================================
 

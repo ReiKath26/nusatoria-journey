@@ -7,9 +7,6 @@ public class NPCInteractable : MonoBehaviour, interactables
 {
    [SerializeField] private TextMeshPro npcNameText;
    [SerializeField] private string npcName;
-   [SerializeField] private Lore noQuestInteraction;
-
-   [SerializeField] private Rigidbody _rigidBody;
 
    [SerializeField] private GameObject gameOverlay;
    [SerializeField] private GameObject storyOverlay;
@@ -30,36 +27,35 @@ public class NPCInteractable : MonoBehaviour, interactables
 
    public void interact(Transform interactor)
    {
-      _rigidBody.velocity = new Vector3(0, 0, 0);
-       Mission mission = getMission();
+     //   Mission mission = getMission();
 
 
-       if(mission != null)
-       {
-          int missionNumber = mission.getMissionNumber();
-          if(currentMissionNumber == missionNumber)
-          {
-               mission.OnFinishObjectives();
-          }
+     //   if(mission != null)
+     //   {
+     //      int missionNumber = mission.getMissionNumber();
+     //      if(currentMissionNumber == missionNumber)
+     //      {
+     //           mission.OnFinishObjectives();
+     //      }
 
-          else
-          {
-               DialogueManager.instance.restartTheCounter();
-               DialogueManager.instance.setDialogues(noQuestInteraction.loreDialog);
-               gameOverlay.SetActive(false);
-               storyOverlay.SetActive(true);
-               DialogueManager.instance.NextLine();
-          }
-       }
+     //      else
+     //      {
+     //           DialogueManager.instance.restartTheCounter();
+     //           DialogueManager.instance.setDialogues(noQuestInteraction.loreDialog);
+     //           gameOverlay.SetActive(false);
+     //           storyOverlay.SetActive(true);
+     //           DialogueManager.instance.NextLine();
+     //      }
+     //   }
 
-       else
-       {
-          DialogueManager.instance.restartTheCounter();
-          DialogueManager.instance.setDialogues(noQuestInteraction.loreDialog);
-          gameOverlay.SetActive(false);
-          storyOverlay.SetActive(true);
-          DialogueManager.instance.NextLine();
-       }
+     //   else
+     //   {
+     //      DialogueManager.instance.restartTheCounter();
+     //      DialogueManager.instance.setDialogues(noQuestInteraction.loreDialog);
+     //      gameOverlay.SetActive(false);
+     //      storyOverlay.SetActive(true);
+     //      DialogueManager.instance.NextLine();
+     //   }
    }
 
    public string GetInteractText()
@@ -73,16 +69,16 @@ public class NPCInteractable : MonoBehaviour, interactables
    }
 
 
-   public Mission getMission()
-   {
-     if(gameObject.TryGetComponent(out Mission mission))
-     {
-          return mission;
-     }
+//    public Mission getMission()
+//    {
+//      if(gameObject.TryGetComponent(out Mission mission))
+//      {
+//           return mission;
+//      }
 
-     else
-     {
-          return null;
-     }
-   }
+//      else
+//      {
+//           return null;
+//      }
+//    }
 }

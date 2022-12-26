@@ -38,6 +38,7 @@ public class StoryUIManager : MonoBehaviour
 
     private void DialogueManager_OnTriggerNextLine(object sender, DialogueManager.OnTriggerNextLineEventArgs e)
     {
+        Debug.Log(e.count);
         if (lineCount < e.count)
         {
            switch(e.nextDialog.dialogType)
@@ -378,28 +379,6 @@ public class StoryUIManager : MonoBehaviour
                 }
 
                 typeNextCoroutine = StartCoroutine(TypeLine(e.nextDialog.dialog));
-                break;
-              }
-
-              case Dialog.DialogTypes.lightTransition:
-              {
-                background.SetActive(false);
-                characterSprite.SetActive(false);
-                nameBox.SetActive(false);
-                dialogueBox.SetActive(false);
-                lightFrame.SetActive(true);
-                glitchFrame.SetActive(false);
-                break;
-              }
-
-              case Dialog.DialogTypes.glitchTransition:
-              {
-                background.SetActive(false);
-                characterSprite.SetActive(false);
-                nameBox.SetActive(false);
-                dialogueBox.SetActive(false);
-                lightFrame.SetActive(false);
-                glitchFrame.SetActive(true);
                 break;
               }
 

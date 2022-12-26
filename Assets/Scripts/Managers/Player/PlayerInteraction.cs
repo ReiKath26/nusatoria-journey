@@ -18,7 +18,6 @@ public class PlayerInteraction : MonoBehaviour
 
     public interactables GetInteractableObject()
     {
-        Debug.Log("Searching...");
         List<interactables> interactableList = new List<interactables>();
         float range = 20;
 

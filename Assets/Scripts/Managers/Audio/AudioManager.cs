@@ -11,25 +11,25 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioMixerGroup musicMixerGroup;
     [SerializeField] private AudioMixerGroup soundEffectsMixerGroup;
 
-
     public static AudioManager instance;
+
+    public int priority;
 
    void Awake()
    {
-        if (instance == null)
+
+        if(instance != null  && instance.priority > this.priority)
         {
-            instance = this;
+            Destroy(this.gameObject);
+            return;
         }
 
         else
         {
-            Destroy(gameObject);
-            return;
+            instance = this;
         }
-
-        // DontDestroyOnLoad(gameObject);
-
-
+        
+        DontDestroyOnLoad(this.gameObject);
 
         foreach (Sound s in sounds)
         {

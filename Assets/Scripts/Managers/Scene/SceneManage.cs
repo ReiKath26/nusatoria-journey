@@ -18,16 +18,19 @@ public class SceneManage : MonoBehaviour
     
     public void LoadScene(int sceneindex)
     {
+        AudioManager.instance.Play("Click");
         StartCoroutine(LoadAsynchronously(sceneindex));
     }
 
     public void loadPopUp(GameObject popUp)
     {
+        AudioManager.instance.Play("Click");
         popUp.SetActive(true);
     }
 
     public void closePopUp(GameObject popUp)
     {
+        AudioManager.instance.Play("Click");
         popUp.SetActive(false);
     }
 

@@ -16,16 +16,16 @@ public class ItemInteractable : MonoBehaviour, interactables
 
   public void interact(Transform interactor)
    {
-       Mission mission = getMission();
+     //   Mission mission = getMission();
 
-      if(mission != null)
-       {
-          int missionNumber = mission.getMissionNumber();
-          if(currentMissionNumber == missionNumber)
-          {
-               mission.OnFinishObjectives();
-          }
-       }
+     //  if(mission != null)
+     //   {
+     //      int missionNumber = mission.getMissionNumber();
+     //      if(currentMissionNumber == missionNumber)
+     //      {
+     //           mission.OnFinishObjectives();
+     //      }
+     //   }
    }
 
    public string GetInteractText()
@@ -38,16 +38,16 @@ public class ItemInteractable : MonoBehaviour, interactables
         return transform;
    }
 
-   public Mission getMission()
-   {
-     if(gameObject.TryGetComponent(out Mission mission))
-     {
-          return mission;
-     }
+//    public Mission getMission()
+//    {
+//      if(gameObject.TryGetComponent(out Mission mission))
+//      {
+//           return mission;
+//      }
 
-     else
-     {
-          return null;
-     }
-   }
+//      else
+//      {
+//           return null;
+//      }
+//    }
 }

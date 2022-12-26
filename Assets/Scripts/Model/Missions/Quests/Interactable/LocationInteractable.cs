@@ -5,7 +5,6 @@ using UnityEngine;
 public class LocationInteractable : MonoBehaviour, interactables
 {
    [SerializeField] private string interactText;
-   [SerializeField] private Lore noQuestInteraction;
    [SerializeField] private GameObject gameOverlay;
    [SerializeField] private GameObject storyOverlay;
 
@@ -20,34 +19,34 @@ public class LocationInteractable : MonoBehaviour, interactables
 
      public void interact(Transform interactor)
    {
-       Mission mission = getMission();
+      //  Mission mission = getMission();
 
-       if(mission != null)
-       {
-          int missionNumber = mission.getMissionNumber();
-          if(currentMissionNumber == missionNumber)
-          {
-               mission.OnFinishObjectives();
-          }
+      //  if(mission != null)
+      //  {
+      //     int missionNumber = mission.getMissionNumber();
+      //     if(currentMissionNumber == missionNumber)
+      //     {
+      //          mission.OnFinishObjectives();
+      //     }
 
-          else
-          {
-               DialogueManager.instance.restartTheCounter();
-               DialogueManager.instance.setDialogues(noQuestInteraction.loreDialog);
-               gameOverlay.SetActive(false);
-               storyOverlay.SetActive(true);
-               DialogueManager.instance.NextLine();
-          }
-       }
+      //     else
+      //     {
+      //          DialogueManager.instance.restartTheCounter();
+      //          DialogueManager.instance.setDialogues(noQuestInteraction.loreDialog);
+      //          gameOverlay.SetActive(false);
+      //          storyOverlay.SetActive(true);
+      //          DialogueManager.instance.NextLine();
+      //     }
+      //  }
 
-       else
-       {
-          DialogueManager.instance.restartTheCounter();
-          DialogueManager.instance.setDialogues(noQuestInteraction.loreDialog);
-          gameOverlay.SetActive(false);
-          storyOverlay.SetActive(true);
-          DialogueManager.instance.NextLine();
-       }
+      //  else
+      //  {
+      //     DialogueManager.instance.restartTheCounter();
+      //     DialogueManager.instance.setDialogues(noQuestInteraction.loreDialog);
+      //     gameOverlay.SetActive(false);
+      //     storyOverlay.SetActive(true);
+      //     DialogueManager.instance.NextLine();
+      //  }
    }
 
      public string GetInteractText()
@@ -60,15 +59,15 @@ public class LocationInteractable : MonoBehaviour, interactables
         return transform;
      }
 
-    public Mission getMission()
-     {
-      if(gameObject.TryGetComponent(out Mission mission))
-      {
-          return mission;
-      }
-      else
-      {
-          return null;
-      }
-      }
+   //  public Mission getMission()
+   //   {
+   //    if(gameObject.TryGetComponent(out Mission mission))
+   //    {
+   //        return mission;
+   //    }
+   //    else
+   //    {
+   //        return null;
+   //    }
+   //    }
 }
