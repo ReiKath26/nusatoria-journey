@@ -74,6 +74,14 @@ public class SaveHandler : MonoBehaviour
         saveSlot(slot, slotNumber);
     }
 
+    public string loadName(int slotNumber)
+    {
+        SaveSlots slot = loadSlot(slotNumber);
+        string name = slot.playerName;
+
+        return name;
+    }
+
     public Vector3 loadPosition(int slotNumber)
     {
         SaveSlots slot = loadSlot(slotNumber);
@@ -96,32 +104,51 @@ public class SaveHandler : MonoBehaviour
         }
     }
 
-    public bool submitItem(string itemToSubmit, int slotNumber)
+    public bool submitItem(Item[] items, int slotNumber)
     {
+        int count = 0;
          SaveSlots slot = loadSlot(slotNumber);
          foreach(InventorySlots sloted in slot.player_inventory.slotList)
         {
-            if(sloted.itemSaved != null)
+            foreach(Item item in items)
             {
-                if(sloted.itemSaved.itemName == itemToSubmit)
+                 if(sloted.itemSaved != null)
                 {
-                    if(sloted.itemSaved.itemCount > 1)
+                    if(sloted.itemSaved.itemName == item.itemName)
                     {
-                        sloted.itemSaved.itemCount -= 1;
-                    }
+                         if(sloted.itemSaved.itemCount >= item.itemCount)
+                        {
+                            sloted.itemSaved.itemCount -= item.itemCount;
 
-                    else
-                    {
-                        sloted.itemSaved = null;
-                    }
+                            if(sloted.itemSaved.itemCount == 0)
+                            {
+                                sloted.itemSaved = null;
+                            }
 
-                    saveSlot(slot, slotNumber);
-                    return true;
+                            count+= 1;
+                        }
+
+                        else
+                        {
+                            return false;
+                        }
+                    
+                    }
                 }
             }
+           
         }
 
-        return false;
+        if(count == items.Length)
+        {
+            return true;
+        }
+
+        else
+        {
+            return false;
+        }
+
 
     }
 
