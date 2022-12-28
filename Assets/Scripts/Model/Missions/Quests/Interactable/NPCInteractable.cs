@@ -5,18 +5,12 @@ using TMPro;
 
 public class NPCInteractable : MonoBehaviour, interactables
 {
-   [SerializeField] private TextMeshPro npcNameText;
    [SerializeField] private string npcName;
 
    [SerializeField] private GameObject gameOverlay;
    [SerializeField] private GameObject storyOverlay;
 
    private int currentMissionNumber = 0;
-
-   void Awake()
-   {
-        npcNameText.text = npcName;
-   }
    
 
    public void Update()

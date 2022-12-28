@@ -7,34 +7,30 @@ public enum characterExpression
     happy, sad, angry, shook, hurt, neutral, think
 }
 
-public class MainCharacterDialog : Story.Dialogs
+public class MainCharacterDialog : Dialogs
 {
-    [SerializeField] private characterExpression expression;
-    [SerializeField] private string dialog;
-    [SerializeField] private bool isProtagonist;
+    private characterExpression expression {get; set;}
+    private bool isProtagonist {get; set;}
 
-    public override string getName()
+
+    public void initialize(bool isProtag, characterExpression expressions, string dialog, string [] highlightTexts)
     {
-        if(isProtagonist == true)
+        this.isProtagonist = isProtag;
+        this.expression = expressions;
+        string name;
+
+        if(this.isProtagonist == true)
         {
-            return SaveHandler.instance.loadName(PlayerPrefs.GetInt("choosenSlot"));
+            name = SaveHandler.instance.loadName(PlayerPrefs.GetInt("choosenSlot"));
         }
 
         else
         {
-            return "Yudha";
+            name = "Yudha";
         }
-    }
 
-    public override string getDialog()
-    {
-        string changedDialog = dialog.Replace("Player", SaveHandler.instance.loadName(PlayerPrefs.GetInt("choosenSlot")));
-        return changedDialog;
-    }
-
-    public override void initialize()
-    {
-        base.initialize();
+        base.initialize(name, dialog, highlightTexts);
+       
     }
 
     public string getSpriteToBeShown()
@@ -49,47 +45,52 @@ public class MainCharacterDialog : Story.Dialogs
 
         else
         {
-            add_string = "_yudha"
+            add_string = "_yudha";
         }
 
         switch(expression)
         {
-            case happy:
+            case characterExpression.happy:
+            {
+                return "happy" + add_string;
+            }
 
-            return "happy" + add_string;
-            break;
+            case characterExpression.sad:
+            {
+                return "sad" + add_string;
+            }
 
-            case sad:
+            case characterExpression.angry:
+            {
+                return "angry" + add_string;
+            }
 
-            return "sad" + add_string;
-            break;
 
-            case angry:
+            case characterExpression.shook:
+            {
+                return "shook" + add_string;
+            }
 
-            return "angry" + add_string;
-            break;
+            case characterExpression.hurt:
+            {
+                return "hurt" + add_string;
+            }
 
-            case shook:
+            case characterExpression.neutral:
+            {
+                return "neutral" + add_string;
+            }
 
-            return "shook" + add_string;
-            break;
+            case characterExpression.think:
+            {
+                return "think" + add_string;
+            }
 
-            case hurt:
+            default: 
+            {
+               return null;
+            }
 
-            return "hurt" + add_string;
-            break;
-
-            case neutral:
-
-            return "neutral" + add_string;
-            break;
-
-            case think:
-
-            return "think" + add_string;
-            break;
-
-            default: break;
         }
     }
 

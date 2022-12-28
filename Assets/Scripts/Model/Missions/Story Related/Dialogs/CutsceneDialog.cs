@@ -2,25 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CutsceneDialog : Story.Dialogs
+public class CutsceneDialog : Dialogs
 {
-    [SerializeField] private string cutSceneSprite;
-    [SerializeField] private string dialog;
+    private string cutSceneSprite {get; set;}
 
-    public override string getName()
+    public override void initialize(string sprite, string dialog, string [] highlightTexts)
     {
-        return null;
-    }
+        this.cutSceneSprite = sprite;
 
-     public override string getDialog()
-    {
-        string changedDialog = dialog.Replace("Player", SaveHandler.instance.loadName(PlayerPrefs.GetInt("choosenSlot")));
-        return changedDialog;
-    }
-
-    public override void initialize()
-    {
-        base.initialize();
+        base.initialize(null, dialog, highlightTexts);
     }
 
     public string getSprites()

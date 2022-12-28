@@ -6,59 +6,30 @@ using UnityEngine.UI;
 public class JudgementGoal : Goal
 {
     private float score;
+    private Question[] questions;
+    private GameObject recipient;
+    private string recipientName {get; set;}
 
-    [SerializeField] private AnimationCurve good;
-    [SerializeField] private AnimationCurve decent;
-    [SerializeField] private AnimationCurve poor;
-
-    private float goodValue = 0f;
-    private float decentValue = 0f;
-    private float poorValue = 0f;
-
-    private int questionAnswered = 0;
-    [SerializeField] private int requiredQuestion;
-
-    public override void initialize()
+    public void initialize(string desc, int current, int required, string rec)
     {
-        base.initialize();
+        this.recipientName = rec;
+        base.initialize(desc, current, required, null);
+            
+        recipient = GameObject.Find(this.recipientName);
         score = 0f;
- 
     }
 
-    public void OnAnswerQuestion(float gotScore)
+    public void OnAnswerQuestion(int choice, int number)
     {
-        score += gotScore;
-        questionAnswered++;
-
-        if(questionAnswered == requiredQuestion)
-        {
-            evaluateResult();
-        }
+       finishObjective();
+       float addToScore = questions[number].answerQuestion(choice, questions.Length);
+       score+= addToScore;
+       evaluate();
     }
 
-    private int evaluateResult()
+    public float getFinalScore()
     {
-        goodValue = good.Evaluate(score);
-        decentValue = decent.Evaluate(score);
-        poorValue = poor.Evaluate(score);
-
-        SaveSlots slot = SaveHandler.instance.loadSlot(PlayerPrefs.GetInt("choosenSlot"));
-
-        if(goodValue > decentValue && goodValue > poorValue)
-        {
-            slot.understandingLevel = 3;
-        }
-
-        else if(decentValue >= goodValue && decentValue > poorValue )
-        {
-            slot.understandingLevel = 2;
-        }
-
-        else if(poorValue >= decentValue)
-        {
-            slot.understandingLevel = 1;
-        }
-
-        return understandingLevel;
+        return score;
     }
+
 }

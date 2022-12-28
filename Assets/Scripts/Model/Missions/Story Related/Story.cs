@@ -5,52 +5,26 @@ using System.Linq;
 
 public class Story 
 {
-
-    public int storyNumber;
-    public string titleTimeFrame;
-    protected bool onAutoPlay;
+    private int storyNumber {get; set;}
+    private string titleTimeFrame {get; set;}
+    private bool onAutoPlay {get; set;}
    
-    public List<Dialogs> dialogs;
+    public List<Dialogs> dialogs {get; set;}
 
-    public bool completed {get; protected set; }
+    private bool completed {get; set;}
 
-    public class Dialogs
+    public void initialize(int storyNum, string title, List<Dialogs> dialog)
     {
-        protected string nameText;
-        protected string dialogText;
-        public bool shown {get; protected set;}
-
-        public virtual string getName()
-        {
-            return nameText;
-        }
-
-        public virtual string getDialog()
-        {
-            return dialogText;
-        }
-
-        public virtual void initialize()
-        {
-            shown = false;
-        }
-
-        public void showLine()
-        {
-            shown = true;
-        }
-
-    }
-
-    public void initialize()
-    {
+        this.storyNumber = storyNum;
+        this.titleTimeFrame = title;
+        this.dialogs = dialog;
         completed = false;
         onAutoPlay = false;
+    }
 
-        foreach(var dialog in dialogs)
-        {
-            dialog.initialize();
-        }
+    public string getTitle()
+    {
+        return titleTimeFrame;
     }
 
     public bool switchAutoPlay()
@@ -68,10 +42,13 @@ public class Story
         return onAutoPlay;
     }
 
-    public bool checkDialogs()
+    public void checkDialogs()
     {
         completed = dialogs.All(d => d.shown);
+    }
 
+    public bool getCompleted()
+    {
         return completed;
     }
 }

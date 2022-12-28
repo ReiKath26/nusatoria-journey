@@ -4,64 +4,32 @@ using UnityEngine;
 
 public class SubmitGoal : Goal
 {
-    [SerializeField] private string goalDesc;
-    [SerializeField] private Item[] neededItem;
-    [SerializeField] private GameObject recipient;
-
-    [SerializeField] private GameObject giveOverlay;
-    [SerializeField] private GameObject[] itemHolder;
-    [SerializeField] private GameObject submitButton;
+   private Item[] neededItem {get; set;}
+    private GameObject recipient;
+    private string recipientName {get; set;}
 
 
-    public override void initialize()
+    public void initialize(string desc, int current, int required, string rec, Story[] storyType, Item[] items)
     {
-        base.initialize();
- 
-    }
+        this.recipientName = rec;
+        base.initialize(desc, current, required, storyType);
+            
+        recipient = GameObject.Find(this.recipientName);
+        neededItem = items;
 
-    public void OnInteractWithRecipient(GameObject interactorName)
-    {
-        if(xinteractorName == recipient)
-        {
-            giveOverlay.SetActive(true);
-
-            for(int i=0; i<itemHolder.Length;i++)
-            {
-                if(i > neededItem.Length - 1)
-                {
-                    itemHolder[i].SetActive(false);
-                }
-
-                else
-                {
-                    itemHolder[i].SetActive(true);
-                    //set item
-                }
-            }
-
-            bool canSubmit = SaveHandler.instance.submitItem(neededItem, PlayerPrefs.GetInt("choosenSlot"));
-
-            if(canSubmit == true)
-            {
-                submitButton.SetActive(true);
-            }
-
-            else
-            {
-                submitButton.SetActive(false);
-            }
-        }
     }
  
-
-    public void OnSubmit(SubmitItemEvent eventInfo)
+    public void OnSubmit(int number)
     {
-        bool isSubmitted = eventInfo.canSubmit;
+        bool canSubmit = SaveHandler.instance.submitItem(neededItem, PlayerPrefs.GetInt("choosenSlot"));
 
-        if(isSubmitted == true)
+        if(canSubmit == true)
         {
-            currentAmount++;
+            finishObjective();
             evaluate();
+            StoryManager.instance.assignStory(loadStoryOnFinish(number));
         }
     }
 }
+
+ 

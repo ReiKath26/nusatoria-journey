@@ -5,19 +5,33 @@ using System.Linq;
 
 public class Mission
 {
-    [SerializeField] private string missionName;
-    [SerializeField] private List <Goal> goals;
-    private bool completed;
+    private Story onTriggerStory;
+    public List <Goal> goals {get; set;}
+    public bool completed {get; set;}
 
-    public void initialize()
+    public void initialize(List<Goal> goal, Story storyType )
     {
+        this.onTriggerStory = storyType;
+        this.goals = goal;
         completed = false;
     }
 
-    public bool evaluate()
+    public Story loadTriggerStory()
     {
-        completed = goals.All(g => g.completed);
+        if(onTriggerStory != null)
+        {
+            return onTriggerStory;
+        }
 
-        return completed;
+        else
+        {
+            return null;
+        }
+    }
+
+
+    public void evaluate()
+    {
+        completed = goals.All(g => g.getCompletion());
     }
 }

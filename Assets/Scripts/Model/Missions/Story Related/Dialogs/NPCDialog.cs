@@ -2,24 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPCDialog : Story.Dialogs
+public class NPCDialog : Dialogs
 {
-    [SerializeField] private string npcName;
-    [SerializeField] private string dialog;
+    private string npcObject {get; set;}
 
-    public override string getName()
+    public void initialize(string  npcobject, string npcName, string dialog, string[] highlightTexts)
     {
-        return npcName;
+        this.npcObject = npcobject;
+        base.initialize(npcName, dialog, highlightTexts);
     }
 
-     public override string getDialog()
+    public void lookAtPlayer(Transform playerTarget)
     {
-        string changedDialog = dialog.Replace("Player", SaveHandler.instance.loadName(PlayerPrefs.GetInt("choosenSlot")));
-        return changedDialog;
-    }
+        GameObject npc = GameObject.Find(npcObject);
 
-    public override void initialize()
-    {
-        base.initialize();
+        if(npc != null)
+        {
+            npc.transform.LookAt(playerTarget);
+        }
     }
 }

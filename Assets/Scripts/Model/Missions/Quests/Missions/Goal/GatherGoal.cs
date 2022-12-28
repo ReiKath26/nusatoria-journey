@@ -4,35 +4,38 @@ using UnityEngine;
 
 public class GatherGoal : Goal
 {
-  
-   [SerializeField] private GameObject[] interactionInstance;
+   private GameObject[] interactionInstance;
+   private string[] interactionInstanceNames {get; set;}
 
 
-    public override void initialize()
+    public void initialize(string desc, int current, int required, string[] strings, Story[] storyType)
     {
-        base.initialize();
+        this.interactionInstanceNames = strings;
+        base.initialize(desc, current, required, storyType);
+        int count = 0;
 
+        interactionInstance = new GameObject[interactionInstanceNames.Length];
+        foreach(string instanceName in interactionInstanceNames)
+        {
+            GameObject obj = GameObject.Find(instanceName);
+            interactionInstance[count] = obj;
+            count++;
+        }
     }
 
-    public void OnGather(GameObject itemObject)
+    public GameObject[] getInstances()
     {
-        foreach(GameObject instance in interactionInstance)
-        {
-            if (itemObject == instance)
-            {
-                currentAmount++;
+        return interactionInstance;
+    }
 
-                 if(eventInfo.itemObject.TryGetComponent(out Item item))
-                 {
-                    SaveHandler.instance.saveItem(item, PlayerPrefs.GetInt("choosenSlot"));
-                }
+    public void OnGather(int number)
+    {
 
-                evaluate();
-                return;
-            
-            }
-        }
-        
+        finishObjective();
+
+        StoryManager.instance.assignStory(loadStoryOnFinish(number));
+
+        evaluate();    
     }
 
     
