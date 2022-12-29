@@ -75,4 +75,9 @@ public class Goal
      completed = true;
    }
 
+   public void retractComplete()
+   {
+     completed = false;
+   }
+
 }

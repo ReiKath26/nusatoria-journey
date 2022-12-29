@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SubmitGoal : Goal
 {
-   private Item[] neededItem {get; set;}
+    private Item[] neededItem {get; set;}
     private GameObject recipient;
     private string recipientName {get; set;}
 
@@ -16,7 +16,16 @@ public class SubmitGoal : Goal
             
         recipient = GameObject.Find(this.recipientName);
         neededItem = items;
+    }
 
+    public GameObject getRecipient()
+    {
+        return recipient;
+    }
+
+    public Item[] getItemNeeded()
+    {
+        return neededItem;
     }
  
     public void OnSubmit(int number)

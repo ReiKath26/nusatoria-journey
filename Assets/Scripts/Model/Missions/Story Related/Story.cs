@@ -5,19 +5,19 @@ using System.Linq;
 
 public class Story 
 {
-    private int storyNumber {get; set;}
     private string titleTimeFrame {get; set;}
     private bool onAutoPlay {get; set;}
+    private bool isEnding {get; set;}
    
     public List<Dialogs> dialogs {get; set;}
 
     private bool completed {get; set;}
 
-    public void initialize(int storyNum, string title, List<Dialogs> dialog)
+    public void initialize(string title, List<Dialogs> dialog, bool isEnd)
     {
-        this.storyNumber = storyNum;
         this.titleTimeFrame = title;
         this.dialogs = dialog;
+        this.isEnding = isEnd;
         completed = false;
         onAutoPlay = false;
     }
@@ -45,11 +45,17 @@ public class Story
     public void checkDialogs()
     {
         completed = dialogs.All(d => d.shown);
+        Debug.Log(completed);
     }
 
     public bool getCompleted()
     {
         return completed;
+    }
+
+    public bool getIsEnding()
+    {
+        return isEnding;
     }
 }
 

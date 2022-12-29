@@ -1055,7 +1055,7 @@ MonoBehaviour:
   m_text: ISI NAMA ANDA DISINI
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 85ff66b687b76473ba1d7888bcc0f661, type: 2}
-  m_sharedMaterial: {fileID: 1798162485979622539, guid: 85ff66b687b76473ba1d7888bcc0f661,
+  m_sharedMaterial: {fileID: 7605216175381971571, guid: 85ff66b687b76473ba1d7888bcc0f661,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1289,7 +1289,7 @@ MonoBehaviour:
   m_text: Masukkan nama
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 85ff66b687b76473ba1d7888bcc0f661, type: 2}
-  m_sharedMaterial: {fileID: 1798162485979622539, guid: 85ff66b687b76473ba1d7888bcc0f661,
+  m_sharedMaterial: {fileID: 7605216175381971571, guid: 85ff66b687b76473ba1d7888bcc0f661,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1997,7 +1997,7 @@ MonoBehaviour:
   m_text: Ambil Pas Foto Anda
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 85ff66b687b76473ba1d7888bcc0f661, type: 2}
-  m_sharedMaterial: {fileID: 1798162485979622539, guid: 85ff66b687b76473ba1d7888bcc0f661,
+  m_sharedMaterial: {fileID: 7605216175381971571, guid: 85ff66b687b76473ba1d7888bcc0f661,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2416,7 +2416,7 @@ MonoBehaviour:
   m_text: "\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 85ff66b687b76473ba1d7888bcc0f661, type: 2}
-  m_sharedMaterial: {fileID: 1798162485979622539, guid: 85ff66b687b76473ba1d7888bcc0f661,
+  m_sharedMaterial: {fileID: 7605216175381971571, guid: 85ff66b687b76473ba1d7888bcc0f661,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}

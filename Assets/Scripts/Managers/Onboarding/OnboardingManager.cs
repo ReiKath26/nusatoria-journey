@@ -98,17 +98,17 @@ public class OnboardingManager : MonoBehaviour
         keyDesc = "Sultan Agung tidak menyerah dan terus melancarkan serangan, tetapi tidak ada yang berhasil. Sepeninggal Sultan Agung di tahun 1645, Kerajaan Mataram semakin lemah sehingga akhirnya dapat dikuasai VOC.",
         unlocked = false});
 
-         glossary.conceptList.Add(new KeyConcepts() {keyNumber = 5, keyName = "Latar belakang Perang Padri", 
+        glossary.conceptList.Add(new KeyConcepts() {keyNumber = 5, keyName = "Akhir Serangan Sultan Agung", 
+        keyDesc = "Sultan Agung tidak menyerah dan terus melancarkan serangan, tetapi tidak ada yang berhasil. Sepeninggal Sultan Agung di tahun 1645, Kerajaan Mataram semakin lemah sehingga akhirnya dapat dikuasai VOC.",
+        unlocked = false});
+         glossary.conceptList.Add(new KeyConcepts() {keyNumber = 6, keyName = "Latar belakang Perang Padri", 
         keyDesc = "Bermula dari adanya pertentangan antara kaum Padri dengan kaum Adat dalam masalah praktik keagamaan sehingga terjadi bentrokan antar keduanya.",
         unlocked = false});
-         glossary.conceptList.Add(new KeyConcepts() {keyNumber = 6, keyName = "Kaum Padri", 
+         glossary.conceptList.Add(new KeyConcepts() {keyNumber = 7, keyName = "Kaum Padri", 
         keyDesc = "Mereka melakukan pembaruan atau pemurnian ajaran Islam di Minangkabau. Mereka menentang adat dan kebiasaan kaum Adat yang tidak sesuai dengan ajaran Islam.",
         unlocked = false});
-         glossary.conceptList.Add(new KeyConcepts() {keyNumber = 7, keyName = "Kaum Adat", 
+         glossary.conceptList.Add(new KeyConcepts() {keyNumber = 8, keyName = "Kaum Adat", 
         keyDesc = "Mereka melakukan hal-hal yang dilarang ajaran Islam seperti berjudi, sabung ayam, dan minum-minuman keras. Akibatnya, kaum Padri menentang perbuatan tersebut. Sehingga, kaum Adat yang mendapat dukungan dari beberapa pejabat penting kerajaan menolak gerakan kaum Padri.",
-        unlocked = false});
-         glossary.conceptList.Add(new KeyConcepts() {keyNumber = 8, keyName = "Jan Pieterzoon Coen", 
-        keyDesc = "J.P. Coen adalah Gubernur Jenderal yang berkuasa dari tahun 1619-1623 dan 1627-1629. Dalam masa kekuasaannya, ia mengeksploitasi hasil bumi setelah memperoleh kontrol penuh atas kota Batavia pada tahun 1619. Hal ini menyebabkan para penguasa di pulau Jawa tidak suka dengan keberadaannya dan VOC secara keseluruhan.",
         unlocked = false});
          glossary.conceptList.Add(new KeyConcepts() {keyNumber = 9, keyName = "Jan Pieterzoon Coen", 
         keyDesc = "J.P. Coen adalah Gubernur Jenderal yang berkuasa dari tahun 1619-1623 dan 1627-1629. Dalam masa kekuasaannya, ia mengeksploitasi hasil bumi setelah memperoleh kontrol penuh atas kota Batavia pada tahun 1619. Hal ini menyebabkan para penguasa di pulau Jawa tidak suka dengan keberadaannya dan VOC secara keseluruhan.",
@@ -149,10 +149,13 @@ public class OnboardingManager : MonoBehaviour
         inventory.slotList.Add(new InventorySlots() {slotNumber = 2, itemSaved = null});
         inventory.slotList.Add(new InventorySlots() {slotNumber = 3, itemSaved = null});
         inventory.slotList.Add(new InventorySlots() {slotNumber = 4, itemSaved = null});
+        inventory.slotList.Add(new InventorySlots() {slotNumber = 5, itemSaved = null});
+        inventory.slotList.Add(new InventorySlots() {slotNumber = 6, itemSaved = null});
+        inventory.slotList.Add(new InventorySlots() {slotNumber = 7, itemSaved = null});
 
         PlayerPosition initialPosition = new PlayerPosition() {x_pos = 0, y_pos = 0, z_pos = 0};
         SaveSlots slot = new SaveSlots() {slot = slotNumber, playerName = chooseName, playerGender = genderChoose,
-        time = 0, chapterNumber = 0, lastPosition = initialPosition, understandingLevel = 0, missionNumber = 0, dialogNumber = 0, 
+        time = 0, chapterNumber = 0, lastPosition = initialPosition, understandingLevel = 0, missionNumber = 0, goalNumber = 0, 
         player_glossary = glossary, player_inventory = inventory};
         SaveHandler.instance.saveSlot(slot, slotNumber);
         SceneManage.instance.LoadScene(4);

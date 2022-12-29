@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
-
-
     public void tryInteracting()
     {
-        interactables i = GetInteractableObject();
+        Interactable i = GetInteractableObject();
 
         if (i != null)
         {
@@ -16,24 +14,24 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
-    public interactables GetInteractableObject()
+    public Interactable GetInteractableObject()
     {
-        List<interactables> interactableList = new List<interactables>();
+        List<Interactable> interactableList = new List<Interactable>();
         float range = 20;
 
         Collider[] colliderArray = Physics.OverlapSphere(transform.position, range);
 
         foreach(Collider collider in colliderArray)
         {
-            if (collider.TryGetComponent(out interactables interactable))
+            if (collider.TryGetComponent(out Interactable interactable))
             {
                 interactableList.Add(interactable);
             }
         }
 
 
-        interactables closestInteractable = null;
-        foreach(interactables interactable in interactableList)
+        Interactable closestInteractable = null;
+        foreach(Interactable interactable in interactableList)
         {
             if (closestInteractable == null)
             {

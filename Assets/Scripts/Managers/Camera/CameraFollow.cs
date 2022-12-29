@@ -20,12 +20,14 @@ public class CameraFollow : MonoBehaviour
 
         if (slot.playerGender == 0)
         {
+            target_0.transform.position = new Vector3(slot.lastPosition.x_pos, slot.lastPosition.y_pos, slot.lastPosition.z_pos);
             target_0.SetActive(true);
             target_1.SetActive(false);
         }
 
         else
         {
+            target_1.transform.position = new Vector3(slot.lastPosition.x_pos, slot.lastPosition.y_pos, slot.lastPosition.z_pos);
             target_0.SetActive(false);
             target_1.SetActive(true);
         }

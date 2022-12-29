@@ -8,7 +8,7 @@ public class GatherGoal : Goal
    private string[] interactionInstanceNames {get; set;}
 
 
-    public void initialize(string desc, int current, int required, string[] strings, Story[] storyType)
+    public GatherGoal(string desc, int current, int required, string[] strings, Story[] storyType)
     {
         this.interactionInstanceNames = strings;
         base.initialize(desc, current, required, storyType);

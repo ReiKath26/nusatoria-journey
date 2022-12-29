@@ -13,7 +13,7 @@ public class MainCharacterDialog : Dialogs
     private bool isProtagonist {get; set;}
 
 
-    public void initialize(bool isProtag, characterExpression expressions, string dialog, string [] highlightTexts)
+    public MainCharacterDialog(bool isProtag, characterExpression expressions, string dialog, string[] objects)
     {
         this.isProtagonist = isProtag;
         this.expression = expressions;
@@ -29,7 +29,7 @@ public class MainCharacterDialog : Dialogs
             name = "Yudha";
         }
 
-        base.initialize(name, dialog, highlightTexts);
+        base.initialize(name, dialog, objects);
        
     }
 

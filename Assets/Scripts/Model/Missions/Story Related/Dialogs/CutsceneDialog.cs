@@ -6,11 +6,11 @@ public class CutsceneDialog : Dialogs
 {
     private string cutSceneSprite {get; set;}
 
-    public override void initialize(string sprite, string dialog, string [] highlightTexts)
+    public CutsceneDialog(string sprite, string dialog, string[] objects)
     {
         this.cutSceneSprite = sprite;
 
-        base.initialize(null, dialog, highlightTexts);
+        base.initialize(null, dialog, objects);
     }
 
     public string getSprites()

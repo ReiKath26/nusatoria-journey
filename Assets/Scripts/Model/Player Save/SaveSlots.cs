@@ -14,7 +14,7 @@ public class SaveSlots
    public PlayerPosition lastPosition;
    public int understandingLevel;
    public int missionNumber;
-   public int dialogNumber;
+   public int goalNumber;
 
    public Glossary player_glossary;
    public Inventory player_inventory;

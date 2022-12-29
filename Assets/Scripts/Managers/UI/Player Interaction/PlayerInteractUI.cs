@@ -23,7 +23,7 @@ public class PlayerInteractUI : MonoBehaviour
         }
     }
 
-    public void Show(interactables interactable)
+    public void Show(Interactable interactable)
     {
         Debug.Log("Show" );
         interactionGameObject.SetActive(true);

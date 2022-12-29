@@ -7,8 +7,8 @@ public class Dialogs
 
     private string nameText {get; set;}
     private string dialogText {get; set;}
-    private string[] highlightedText {get; set;}
     public bool shown {get; protected set;}
+    public string[] objectChange;
 
     public string getName()
     {
@@ -20,16 +20,11 @@ public class Dialogs
         return dialogText;
     }
 
-    public string[] getHighlighted()
-    {
-        return highlightedText;
-    }
-
-    public virtual void initialize(string name, string dialog, string[] highlightTexts)
+    public virtual void initialize(string name, string dialog, string[] objects)
     {
         this.nameText = name;
         this.dialogText = dialog.Replace("Player", SaveHandler.instance.loadName(PlayerPrefs.GetInt("choosenSlot")));
-        this.highlightedText = highlightTexts;
+        this.objectChange = objects;
         shown = false;
     }
 

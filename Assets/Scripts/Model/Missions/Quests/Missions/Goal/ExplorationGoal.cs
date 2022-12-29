@@ -8,7 +8,7 @@ public class ExplorationGoal : Goal
     private int[] unlockKeyConcept {get; set;}
     private string[] interactionInstanceNames {get; set;}
 
-    public void initialize(string desc, int current, int required, string[] strings, int[] key, Story[] storyType)
+    public ExplorationGoal(string desc, int current, int required, string[] strings, int[] key, Story[] storyType)
     {
         this.interactionInstanceNames = strings;
         this.unlockKeyConcept = key;
@@ -28,6 +28,11 @@ public class ExplorationGoal : Goal
     public GameObject[] getInstances()
     {
         return interactionInstance;
+    }
+
+    public int[] getListOfKeyConcept()
+    {
+        return unlockKeyConcept;
     }
 
     public void OnInteract(int number)

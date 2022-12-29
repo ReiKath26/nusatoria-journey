@@ -6,10 +6,10 @@ public class NPCDialog : Dialogs
 {
     private string npcObject {get; set;}
 
-    public void initialize(string  npcobject, string npcName, string dialog, string[] highlightTexts)
+    public NPCDialog(string  npcobject, string npcName, string dialog, string[] objects)
     {
         this.npcObject = npcobject;
-        base.initialize(npcName, dialog, highlightTexts);
+        base.initialize(npcName, dialog, objects);
     }
 
     public void lookAtPlayer(Transform playerTarget)

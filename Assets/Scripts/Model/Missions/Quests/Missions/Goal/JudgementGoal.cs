@@ -6,11 +6,10 @@ using UnityEngine.UI;
 public class JudgementGoal : Goal
 {
     private float score;
-    private Question[] questions;
     private GameObject recipient;
     private string recipientName {get; set;}
 
-    public void initialize(string desc, int current, int required, string rec)
+    public JudgementGoal(string desc, int current, int required, string rec)
     {
         this.recipientName = rec;
         base.initialize(desc, current, required, null);
@@ -19,10 +18,15 @@ public class JudgementGoal : Goal
         score = 0f;
     }
 
-    public void OnAnswerQuestion(int choice, int number)
+    public GameObject getRecipient()
+    {
+        return recipient;
+    }
+
+    public void OnAnswerQuestion(Question question, int choice, int number)
     {
        finishObjective();
-       float addToScore = questions[number].answerQuestion(choice, questions.Length);
+       float addToScore = question.answerQuestion(choice, number);
        score+= addToScore;
        evaluate();
     }
