@@ -8,10 +8,10 @@ public class GatherGoal : Goal
    private string[] interactionInstanceNames {get; set;}
 
 
-    public GatherGoal(string desc, int current, int required, string[] strings, Story[] storyType)
+    public GatherGoal(string desc, int required, string[] strings, Story[] storyType)
     {
         this.interactionInstanceNames = strings;
-        base.initialize(desc, current, required, storyType);
+        base.initialize(desc, required, storyType);
         int count = 0;
 
         interactionInstance = new GameObject[interactionInstanceNames.Length];

@@ -59,18 +59,20 @@ public class MissionManager : MonoBehaviour
     [SerializeField] private GameObject[] reviewChoice;
     [SerializeField] private TextMeshProUGUI[] reviewTexts;
 
+    [SerializeField] private GameObject reviewStoryOverlay;
     [SerializeField] private TextMeshProUGUI reviewText;
 
     private Review[] toBeReviewed;
     private int reviewCount = 4;
-    
+    private int reviewLineCount = 0;
+    private int choosenReview = 0;
 
    private SaveSlots slot;
 
    public static MissionManager instance;
 
    void Awake()
-   {
+   {      
        slot = SaveHandler.instance.loadSlot(PlayerPrefs.GetInt("choosenSlot"));
        instance = this;
        MissionProvider.instance.getChapterMissions(slot.chapterNumber);
@@ -80,9 +82,10 @@ public class MissionManager : MonoBehaviour
 
    private void assignMission()
    {
-       if(slot.missionNumber < MissionProvider.instance.allMissions.Count)
+       if(slot.missionNumber < MissionProvider.instance.getChapterMissions(slot.chapterNumber).Count)
        {
-          currentMission = MissionProvider.instance.allMissions[slot.missionNumber];
+          List<Mission> allMissions = MissionProvider.instance.getChapterMissions(slot.chapterNumber);
+          currentMission = allMissions[slot.missionNumber];
           slot.goalNumber = 0;
 
           if(currentMission.loadTriggerStory() != null)
@@ -133,19 +136,21 @@ public class MissionManager : MonoBehaviour
                float finalScore = jdg_goal.getFinalScore();
                int currentUnderstanding = evaluateResult(finalScore);
 
-               if(currentUnderstanding == 1)
+               if(jdg_goal.getMain() == true)
                {
-                   if(slot.chapterNumber == 1)
-                   {
-                         slot.missionNumber = 23;
-                         needReviewType = new questionType[]{questionType.latarBelakang_sa, questionType.seranganSatu_sa, questionType.seranganDua_sa, questionType.akhir_sa};
-                   }
+                    if(currentUnderstanding == 1)
+                    {
+                          if(slot.chapterNumber == 1)
+                         {
+                            slot.missionNumber = 23;
+                            needReviewType = new questionType[]{questionType.latarBelakang_sa, questionType.seranganSatu_sa, questionType.seranganDua_sa, questionType.akhir_sa};
+                         }
 
                    else
                    {
 
                    }
-               }
+                    }
 
                else if(currentUnderstanding == 2)
                {
@@ -161,7 +166,7 @@ public class MissionManager : MonoBehaviour
                }
 
                else 
-               {
+                    {
 
                    if(slot.chapterNumber == 1)
                    {
@@ -175,32 +180,30 @@ public class MissionManager : MonoBehaviour
                     slot.goalNumber++;
                     assignGoal();
                     displayGoal();
+                    }
                }
-          }
 
-          else if(currentGoal is AdditionalJudgementGoal add_goal)
-          {
-               float finalScore = add_goal.getFinalScore();
-               int currentUnderstanding = evaluateResult(finalScore);
-
-                if(currentUnderstanding < 2)
-                {
-                    add_goal.retractComplete();
-                    displayGoal();
-                }
+               else
+               {
+                    if(currentUnderstanding < 2)
+                    {
+                         jdg_goal.retractComplete();
+                         displayGoal();
+                    }
                 
-                else
-                {
-                    if(slot.chapterNumber == 1)
-                   {
-                       slot.missionNumber = 25;
-                   }
+                    else
+                    {
+                         if(slot.chapterNumber == 1)
+                         {
+                              slot.missionNumber = 25;
+                         }
 
-                   else
-                   {
+                         else
+                         {
                     
-                   }
-                }
+                         }
+                    }
+               }     
           }
 
           else
@@ -449,19 +452,14 @@ public class MissionManager : MonoBehaviour
           }
      }
 
-     else if(currentGoal is AdditionalJudgementGoal add_goal)
-     {
-          if(interactor == add_goal.getRecipient())
-          {
-               startJudgement();
-          }
-     }
-
      else if(currentGoal is ReviewGoal rev_goal)
      {
-
+          if(interactor == rev_goal.getRecipient())
+          {
+               assignReview();
+          }
+         
      }
-
 
    }
 
@@ -477,23 +475,27 @@ public class MissionManager : MonoBehaviour
    {
       if(currentGoal is JudgementGoal jd_goal )
       {
-          Choice[] choices = questionDataList[jd_goal.getCurrentAmount()].getChoices();
-
-          if(!choices[number].correct)
+          if(jd_goal.getMain() == true)
           {
-               if(!needReviewType.Contains(questionDataList[jd_goal.getCurrentAmount()].getQuestionType()))
-               {
-                    needReviewType[needReviewType.Length] = questionDataList[jd_goal.getCurrentAmount()].getQuestionType();
-               }
-          }
-          jd_goal.OnAnswerQuestion(questionDataList[jd_goal.getCurrentAmount()], number, questionDataList.Count);
-          nextQuestion();
-      }
+               Choice[] choices = questionDataList[jd_goal.getCurrentAmount()].getChoices();
 
-      else if(currentGoal is AdditionalJudgementGoal add_goal)
-      {
-           add_goal.OnAnswerQuestion(questionDataList[add_goal.getCurrentAmount()], number, questionDataList.Count);
-           nextQuestion();
+               if(!choices[number].correct)
+               {
+                    if(!needReviewType.Contains(questionDataList[jd_goal.getCurrentAmount()].getQuestionType()))
+                    {
+                         needReviewType[needReviewType.Length] = questionDataList[jd_goal.getCurrentAmount()].getQuestionType();
+                    }
+               }
+               jd_goal.OnAnswerQuestion(questionDataList[jd_goal.getCurrentAmount()], number, questionDataList.Count);
+               nextQuestion();
+          }
+
+          else
+          {
+               jd_goal.OnAnswerQuestion(questionDataList[jd_goal.getCurrentAmount()], number, questionDataList.Count);
+               nextQuestion();
+          }
+         
       }
    }
 
@@ -614,7 +616,6 @@ public class MissionManager : MonoBehaviour
                }, level.easy, questionType.akhir_sa),
 
           };
-
 
           mediumQuestion = new List<Question>
           {
@@ -787,8 +788,10 @@ public class MissionManager : MonoBehaviour
 
       if(currentGoal is JudgementGoal jd_goal)
       {
-          switch(slot.understandingLevel)
+          if(jd_goal.getMain() == true)
           {
+               switch(slot.understandingLevel)
+                {
                case 0:
                {
                     randomQuestion(5, easyQuestion);
@@ -821,14 +824,14 @@ public class MissionManager : MonoBehaviour
                     break;
                }
                default: break;
+               }
           }
-      }
 
-      else if(currentGoal is AdditionalJudgementGoal add_goal)
-      {
-          switch(slot.understandingLevel)
+          else
           {
-               case 1:
+               switch(slot.understandingLevel)
+               {
+                case 1:
                randomQuestion(3, easyQuestion);
                randomQuestion(2, mediumQuestion);
                break;
@@ -838,8 +841,9 @@ public class MissionManager : MonoBehaviour
                randomQuestion(1, hardQuestion);
                break;
                default: break;
+               }
           }
-               
+          
       }
 
    }
@@ -893,16 +897,39 @@ public class MissionManager : MonoBehaviour
     {
         List<Review> reviews = new List<Review>
         {
-          new Review(),
-          new Review(),
-          new Review(),
-          new Review(),
-          new Review(),
-          new Review(),
-          new Review(),
-          new Review(),
-          new Review(),
-          new Review(),
+           new Review(new Story("Latar Belakang Serangan Sultan Agung", new List<Dialogs>
+               {
+                    new NPCDialog("Review", "Pada awalnya hubungan Mataram dan Belanda cukup baik", null),
+                    new NPCDialog("Review", "Sampai pada tanggal 18 November 1618, jendral VOC saat itu, Jan Pieterszoon Coen", null),
+                    new NPCDialog("Review", "Meminta Van den Marct untuk menyerang Jepara, menyebabkan kerugian yang besar bagi Mataram", null),
+                    new NPCDialog("Review", "Sejak saat itu hubungan Belanda dan Mataram memburuk", null),
+                    new NPCDialog("Review", "Hal ini juga dikarenakan keberadaan Belanda di tanah jawa menghalangi cita-cita dari Sultan Agung", null),
+                    new NPCDialog("Review", "Ia bercita-cita untuk menyatukan tanah jawa dan mengusir kekuasaan bangsa asing dari tanah jawa", null)
+               }, false), questionType.latarBelakang_sa),
+          new Review(new Story("Latar Belakang Serangan Sultan Agung", new List<Dialogs>
+               {
+                    new NPCDialog("Review", "Dan akhirnya pada Agustus 1628, Mataram melancarkan serangan ke Batavia", null),
+                    new NPCDialog("Review", "Pasukan Tumenggung Baureksa sampai ke Batavia terlebih dahulu dan mulai melakukan serangan", null),
+                    new NPCDialog("Review", "Selanjutnya pada Oktober 1628, menyusul pasukan dari Tumenggung Sura Agul-Agul, Kiai Dipati Mandurojo dan Upa Santa", null),
+                    new NPCDialog("Review", "Setelah perang yang cukup lama, Mataram mengalami kekalahan karena kekurangan perbekalan", null),
+                    new NPCDialog("Review", "Juga karena persenjataan Belanda lebih modern", null),
+                    new NPCDialog("Review", "Sehingga pada 6 Desember 1628, pasukan Mataram mundur", null)
+               }, false), questionType.seranganSatu_sa),
+          new Review(new Story("Latar Belakang Serangan Sultan Agung", new List<Dialogs>
+               {
+                    new NPCDialog("Review", "Setelah kekalahan di serangan pertama, Mataram mulai mempersiapkan lebih matang untuk serangan kedua", null),
+                    new NPCDialog("Review", "Sebelum penyerangan untuk menyebabkan perbekalan lebih, mereka membangun lumbung di Karawang dan Cirebon", null),
+                    new NPCDialog("Review", "Pada 1629, mereka pun melancarkan serangan lagi ke Batavia", null),
+                    new NPCDialog("Review", "Akan tetapi karena adanya wabah kolera dan malaria", null),
+                    new NPCDialog("Review", "Juga karena Belanda menghancurkan lumbung yang mereka bangun", null),
+                    new NPCDialog("Review", "Akhirnya serangan ini juga mengalami kegagalan", null)
+               }, false), questionType.seranganDua_sa),
+          new Review(new Story("Latar Belakang Serangan Sultan Agung", new List<Dialogs>
+               {
+                    new NPCDialog("Review", "Namun setelah 2 kegagalan pun Sultan Agung tidak menyerah untuk menyerang Batavia dan mengusir VOC", null),
+                    new NPCDialog("Review", "Sayangnya sepeninggal Sultan Agung di tahun 1945, Mataram mengalami kemunduran", null),
+                    new NPCDialog("Review", "Dan ini membuka peluang untuk Belanda menguasai Mataram", null)
+               }, false), questionType.akhir_sa)
         };
 
         foreach(questionType type in needReviewType)
@@ -921,20 +948,27 @@ public class MissionManager : MonoBehaviour
 
 
         reviewOverlay.SetActive(true);
+        reviewStoryOverlay.SetActive(true);
+        reviewText.text = "Jadi yang mana yang ingin kamu pelajari terlebih dahulu?";
+        reviewCount = toBeReviewed.Length;
 
         for(int i=0; i<reviewChoice.Length;i++)
         {
           if(i >= toBeReviewed.Length)
           {
                reviewChoice[i].SetActive(false);
-          }
+          } 
         }
 
     }
 
     public void OnChooseReview(int number)
     {
-        
+        reviewOverlay.SetActive(false);
+        reviewChoice[number].SetActive(false);
+        reviewCount -= 1;
+        reviewText.text = toBeReviewed[number].getReviewContent().getTitle();
+        choosenReview = number;
     }
 
     public void checkReview()
@@ -942,9 +976,41 @@ public class MissionManager : MonoBehaviour
         if(reviewCount == 0)
         {
             ReviewGoal goal = currentGoal as ReviewGoal;
-
             goal.OnAllReviewDone();
         }
+    }
+
+    public void nextReview()
+    {
+        
+        Story rev = toBeReviewed[choosenReview].getReviewContent();
+        StartCoroutine(TypeLine(rev.dialogs[reviewLineCount].getDialog()));
+        reviewLineCount++;
+        rev.checkDialogs();
+        OnCheckReview(rev);
+
+    }
+
+    public void OnCheckReview(Story story)
+    {
+          if(story.getCompleted())
+          {
+               reviewLineCount = 0;
+               reviewOverlay.SetActive(true);
+               reviewText.text = "Jadi yang mana yang ingin kamu pelajari terlebih dahulu?";
+          }
+    }
+
+
+    IEnumerator TypeLine(string line)
+    {
+        AudioManager.instance.Play("Typewritter");
+        foreach( char c in line.ToCharArray())
+        {
+            reviewText.text += c;
+            yield return new WaitForSeconds(0.01f);
+        }
+        AudioManager.instance.Stop("Typewritter");
     }
 
 

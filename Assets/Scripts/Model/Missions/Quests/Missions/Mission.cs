@@ -9,7 +9,7 @@ public class Mission
     public List <Goal> goals {get; set;}
     public bool completed {get; set;}
 
-    public void initialize(List<Goal> goal, Story storyType )
+    public Mission(List<Goal> goal, Story storyType )
     {
         this.onTriggerStory = storyType;
         this.goals = goal;

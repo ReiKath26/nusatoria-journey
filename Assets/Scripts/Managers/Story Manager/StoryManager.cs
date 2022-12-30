@@ -20,7 +20,7 @@ public class StoryManager : MonoBehaviour
     private Coroutine autoPlayCoroutine;
 
     private int dialogCount = 0;
-    private bool isShowingStory = false;
+
 
     public static StoryManager instance;
 
@@ -71,20 +71,19 @@ public class StoryManager : MonoBehaviour
                         new MainCharacterDialog(false, characterExpression.shook, "Ah..anak kecil, jangan mendekat, nanti kamu ikut terba-", null),
                         new MainCharacterDialog(true, characterExpression.shook, "AHHHHHH", null),
                         new CutsceneDialog("rumah_kosong", "Semua bermula dari kedatangan yang tidak diantisipasi oleh Nusantara", null),
-                        new CutsceneDialog("rumah_kosong", "Jatuhnya <color=#ffa500ff> Konstantinopel</color> mendorong bangsa Eropa untuk melakukan perburuan <color=#ffa500ff>mutiara dari timur</color>", null),
-                        new CutsceneDialog("rumah_kosong", "Mereka mengusung misi <color=#ffa500ff> Gold, Glory, dan Gospel.</color> Yang berarti <color=#ffa500ff>mencari kekayaan, kejayaan, dan penyebaran agama</color>", null),
-                        new CutsceneDialog("rumah_kosong", "Pada tahun <color=#ffa500ff>1596, Cornelis de Houtman</color> mendarat di <color=#ffa500ff>Banten</color> melalui <color=#ffa500ff>Selat Sunda</color>", null),
-                        new CutsceneDialog("rumah_kosong", "Pelayaran ini membuka <color=#ffa500ff>perdagangan antara Belanda dan Nusantara</color>", null),
+                        new CutsceneDialog("rumah_kosong", "Jatuhnya  Konstantinopel mendorong bangsa Eropa untuk melakukan perburuan mutiara dari timur", null),
+                        new CutsceneDialog("rumah_kosong", "Mereka mengusung misi Gold, Glory, dan Gospel. Yang berarti mencari kekayaan, kejayaan, dan penyebaran agama", null),
+                        new CutsceneDialog("rumah_kosong", "Pada tahun 1596, Cornelis de Houtman mendarat di Banten melalui Selat Sunda", null),
+                        new CutsceneDialog("rumah_kosong", "Pelayaran ini membuka perdagangan antara Belanda dan Nusantara", null),
                         new CutsceneDialog("rumah_kosong", "Dan dimulailah masa penjajahan Belanda", null),
-                        new CutsceneDialog("rumah_kosong", "Di mulai dengan kemunculan kongsi dagang milik mereka, <color=#ffa500ff>Vereenigde Oostindische Compagnie</color>, atau <color=#ffa500ff>VOC</color>", null),
-                        new CutsceneDialog("rumah_kosong", "Dibuat dengan tujuan <color=#ffa500ff>menghindari persaingan tidak sehat antara pedagang Belanda dan pedagang Eropa lainnya</color>", null),
+                        new CutsceneDialog("rumah_kosong", "Di mulai dengan kemunculan kongsi dagang milik mereka, Vereenigde Oostindische Compagnie, atau VOC", null),
+                        new CutsceneDialog("rumah_kosong", "Dibuat dengan tujuan menghindari persaingan tidak sehat antara pedagang Belanda dan pedagang Eropa lainnya", null),
                         new CutsceneDialog("rumah_kosong", "Tapi dalam praktiknya, kongsi dagang ini membawa penderitaan bagi rakyat Indonesia", null),
-                        new CutsceneDialog("rumah_kosong", "Mereka terus memecah belah dengan politik <color=#ffa500ff>devide et impera</color> mereka, untuk menguasai seluruh penjuru Indonesia", null),
-                        new CutsceneDialog("rumah_kosong", "Dan itu mendorong segala macam usaha, bagi rakyat Nusantara, untuk <color=#ffa500ff>memperjuangkan kemerdekaan mereka</color>", null)
+                        new CutsceneDialog("rumah_kosong", "Mereka terus memecah belah dengan politik devide et impera mereka, untuk menguasai seluruh penjuru Indonesia", null),
+                        new CutsceneDialog("rumah_kosong", "Dan itu mendorong segala macam usaha, bagi rakyat Nusantara, untuk memperjuangkan kemerdekaan mereka", null)
 
                     };
-                    Story thisStory = new Story();
-                    thisStory.initialize("14 November 2195, 11:00 - Jalanan Kota Jakarta", dialouge, true);
+                    Story thisStory = new Story("14 November 2195, 11:00 - Jalanan Kota Jakarta", dialouge, true);
                     return thisStory;
                }
               
@@ -98,8 +97,7 @@ public class StoryManager : MonoBehaviour
                         new MainCharacterDialog(true, characterExpression.neutral, "(Sebaiknya aku mencari informasi dan mencatat petunjuk yang aku dapat untuk mencari tau tempat apa ini...)", null),
                         new MainCharacterDialog(true, characterExpression.neutral, "(Dan kalau aku sudah tau, baru aku dapat memikirkan cara keluar dari sini...)", null)
                     };
-                    Story thisStory = new Story();
-                    thisStory.initialize("?? ?? ??, ?? - ???", dialouge, false);
+                    Story thisStory = new Story("?? ?? ??, ?? - ???", dialouge, false);
                     return thisStory;
                }
                
@@ -126,8 +124,7 @@ public class StoryManager : MonoBehaviour
                         new MainCharacterDialog(false, characterExpression.angry, "Hmph!", new string[]{"Yudha Model"})
 
                     };
-                    Story thisStory = new Story();
-                    thisStory.initialize("?? ?? ??, ?? - Pelabuhan Minang", dialouge, false);
+                    Story thisStory = new Story("?? ?? ??, ?? - Pelabuhan Minang", dialouge, false);
                     return thisStory;
                }
               
@@ -144,7 +141,6 @@ public class StoryManager : MonoBehaviour
         dialogTextHolder.text = story.getTitle();
         storyOverlay.SetActive(true);
         gameOverlay.SetActive(false);
-        isShowingStory = true;
     }
 
     public void nextLine(Dialogs dialog)
@@ -201,16 +197,13 @@ public class StoryManager : MonoBehaviour
 
     public void onButtonClick()
     {
-        if(isShowingStory == true)
+        if(autoPlayCoroutine == null && story != null && dialogCount < story.dialogs.Count)
         {
-            if(autoPlayCoroutine == null && story != null && dialogCount < story.dialogs.Count)
-            {
-                nextLine(story.dialogs[dialogCount]);
-                story.dialogs[dialogCount].showLine();
-                dialogCount++;
-                story.checkDialogs();
-                checkStory();
-            }
+            nextLine(story.dialogs[dialogCount]);
+            story.dialogs[dialogCount].showLine();
+            dialogCount++;
+            story.checkDialogs();
+            checkStory();
         }
     }
 
@@ -221,12 +214,10 @@ public class StoryManager : MonoBehaviour
             storyOverlay.SetActive(false);
             gameOverlay.SetActive(true);
             dialogCount = 0;
-            isShowingStory = false;
         }
 
         else if (story.getCompleted() == true && story.getIsEnding() == true)
         {
-            isShowingStory = false;
             SaveSlots slot = SaveHandler.instance.loadSlot(PlayerPrefs.GetInt("choosenSlot"));
 
 
@@ -276,7 +267,7 @@ public class StoryManager : MonoBehaviour
             StopCoroutine(autoPlayCoroutine);
         }
 
-        if(toggle == true && isShowingStory == true)
+        if(toggle == true)
         {
             autoPlayCoroutine = StartCoroutine(AutoLine());
         }
@@ -288,7 +279,7 @@ public class StoryManager : MonoBehaviour
         foreach( char c in line.ToCharArray())
         {
             dialogTextHolder.text += c;
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.01f);
         }
         AudioManager.instance.Stop("Typewritter");
     }

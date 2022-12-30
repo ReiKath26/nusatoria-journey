@@ -9,10 +9,10 @@ public class SubmitGoal : Goal
     private string recipientName {get; set;}
 
 
-    public void initialize(string desc, int current, int required, string rec, Story[] storyType, Item[] items)
+    public SubmitGoal(string desc, int required, string rec, Story[] storyType, Item[] items)
     {
         this.recipientName = rec;
-        base.initialize(desc, current, required, storyType);
+        base.initialize(desc, required, storyType);
             
         recipient = GameObject.Find(this.recipientName);
         neededItem = items;

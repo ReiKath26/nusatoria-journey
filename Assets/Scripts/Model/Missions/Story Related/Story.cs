@@ -13,7 +13,7 @@ public class Story
 
     private bool completed {get; set;}
 
-    public void initialize(string title, List<Dialogs> dialog, bool isEnd)
+    public Story(string title, List<Dialogs> dialog, bool isEnd)
     {
         this.titleTimeFrame = title;
         this.dialogs = dialog;

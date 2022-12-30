@@ -9,13 +9,18 @@ public class ReviewGoal : Goal
    private GameObject recipient;
    private string recipientName {get; set;}
 
-   public ReviewGoal(string desc, int current, int required, string rec, Story[] storyType)
+   public ReviewGoal(string desc, int required, string rec, Story[] storyType)
    {
         this.recipientName = rec;
-        base.initialize(desc, current, required, storyType);
+        base.initialize(desc, required, storyType);
             
         recipient = GameObject.Find(this.recipientName);
    }
+
+    public GameObject getRecipient()
+    {
+        return recipient;
+    }
 
    public void setReview(Review[] review) 
    {

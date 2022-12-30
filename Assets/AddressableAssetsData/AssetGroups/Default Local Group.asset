@@ -38,7 +38,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: b85caff235ce04994b460839ad04b594
-    m_Address: Police badge
+    m_Address: police_badge
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 38dd858ff9b62433183039f7dae76056

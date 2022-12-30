@@ -11,11 +11,11 @@ public class Goal
    private int requiredAmount {get; set;}
    private Story[] onFinishStory {get; set;}
 
-   public virtual void initialize(string desc, int current, int required, Story[] storyType)
+   public virtual void initialize(string desc, int required, Story[] storyType)
    {
         this.onFinishStory = storyType;
         this.description = desc;
-        this.currentAmount = current;
+        this.currentAmount = 0;
         this.requiredAmount = required;
         this.completed = false;
    }
@@ -78,6 +78,7 @@ public class Goal
    public void retractComplete()
    {
      completed = false;
+     currentAmount = 0;
    }
 
 }

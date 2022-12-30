@@ -5,7 +5,7 @@ using TMPro;
 
 public class Interactable : MonoBehaviour
 {
-   [SerializeField] private string npcName;
+   [SerializeField] private string interactName;
    public void interact(Transform interactor)
    {
           MissionManager.instance.triggerInteraction(gameObject);
@@ -13,7 +13,7 @@ public class Interactable : MonoBehaviour
 
    public string GetInteractText()
    {
-        return npcName;
+        return interactName;
    }
 
    public Transform GetTransform()

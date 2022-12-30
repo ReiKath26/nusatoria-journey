@@ -8,11 +8,13 @@ public class JudgementGoal : Goal
     private float score;
     private GameObject recipient;
     private string recipientName {get; set;}
+    private bool isMain;
 
-    public JudgementGoal(string desc, int current, int required, string rec)
+    public JudgementGoal(string desc, int required, string rec, bool main)
     {
         this.recipientName = rec;
-        base.initialize(desc, current, required, null);
+        base.initialize(desc, required, null);
+        this.isMain = main;
             
         recipient = GameObject.Find(this.recipientName);
         score = 0f;
@@ -29,6 +31,11 @@ public class JudgementGoal : Goal
        float addToScore = question.answerQuestion(choice, number);
        score+= addToScore;
        evaluate();
+    }
+
+    public bool getMain()
+    {
+        return isMain;
     }
 
     public float getFinalScore()
