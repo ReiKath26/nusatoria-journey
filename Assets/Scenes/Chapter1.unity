@@ -616,7 +616,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 861d3810767a646878138047650ff81c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 861d3810767a646878138047650ff81c,
         type: 3}
@@ -676,7 +676,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 861d3810767a646878138047650ff81c,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 861d3810767a646878138047650ff81c, type: 3}
@@ -695,8 +695,8 @@ Rigidbody:
   m_GameObject: {fileID: 12133353}
   serializedVersion: 2
   m_Mass: 10
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 5
+  m_AngularDrag: 5
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -717,7 +717,7 @@ MonoBehaviour:
   _rigidBody: {fileID: 12133355}
   joystick: {fileID: 763335058}
   playerAnimate: {fileID: 12133357}
-  _movementSpeed: 20
+  _movementSpeed: 30
 --- !u!95 &12133357
 Animator:
   serializedVersion: 4
@@ -1370,22 +1370,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 15, y: 7, z: 11}
   m_Center: {x: -3, y: 3, z: 0}
---- !u!114 &33916508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 33916505}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b047bcd97a474e079a0a6954e9b35f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemSprite: Karung_beras
-  itemName: Karung Beras
-  itemDesc: Karung berisi beras yang merupakan makanan pokok rakyat Nusantara
-  itemCount: 1
 --- !u!114 &33916509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1400,6 +1384,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactName: Karung Beras
   isNpc: 0
+  item:
+    itemSprite: Karung_beras
+    itemName: Karung Beras
+    itemDesc: Karung berisi beras yang merupakan makanan pokok rakyat Nusantara
+    itemCount: 1
 --- !u!1 &40908458
 GameObject:
   m_ObjectHideFlags: 0
@@ -1958,6 +1947,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactName: Periksa
   isNpc: 0
+  item:
+    itemSprite: 
+    itemName: 
+    itemDesc: 
+    itemCount: 0
 --- !u!1001 &60145518
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2023,7 +2017,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d798719ad13284af0861f09b83fdfd5f,
         type: 3}
       propertyPath: m_Name
-      value: Fort tower (3)
+      value: Fort Tower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d798719ad13284af0861f09b83fdfd5f, type: 3}
@@ -2230,22 +2224,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 15, y: 7, z: 11}
   m_Center: {x: -3, y: 3, z: 0}
---- !u!114 &63980121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 63980118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b047bcd97a474e079a0a6954e9b35f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemSprite: Karung_beras
-  itemName: Karung Beras
-  itemDesc: Karung berisi beras yang merupakan makanan pokok rakyat Nusantara
-  itemCount: 1
 --- !u!114 &63980122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2260,6 +2238,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactName: Karung Beras
   isNpc: 0
+  item:
+    itemSprite: Karung_beras
+    itemName: Karung Beras
+    itemDesc: Karung berisi beras yang merupakan makanan pokok rakyat Nusantara
+    itemCount: 1
 --- !u!1001 &64710200
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2420,6 +2403,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactName: Kotak Hasil Bumi
   isNpc: 0
+  item:
+    itemSprite: 
+    itemName: 
+    itemDesc: 
+    itemCount: 0
 --- !u!1001 &67502918
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3246,7 +3234,7 @@ MonoBehaviour:
   m_text: Kamu membuka kata kunci baru
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 85ff66b687b76473ba1d7888bcc0f661, type: 2}
-  m_sharedMaterial: {fileID: 1798162485979622539, guid: 85ff66b687b76473ba1d7888bcc0f661,
+  m_sharedMaterial: {fileID: 7605216175381971571, guid: 85ff66b687b76473ba1d7888bcc0f661,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4345,8 +4333,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4552,58 +4540,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: 9, z: 0}
---- !u!114 &118367644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 118367642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16217653ceb0b4adb83d71649264e1b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactText: Padi
-  currentMissionNumber: 0
---- !u!114 &118367645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 118367642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ec0c52f8bdb9435183cc408122dd2fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _missionNumber: 2
-  _missionPrompt: Mengambil padi
-  _objectiveCleared: 0
-  _requiredObjective: 3
-  attachedLore: []
-  gameOverlay: {fileID: 591133792}
-  storyOverlay: {fileID: 383930461}
-  getItem:
-  - itemSprite: karung_beras
-    itemName: Karung Beras
-    itemDesc: Karung Beras
-    itemCount: 1
-  keyConceptUnlock: 
---- !u!114 &118367646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 118367642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae4efb0c02e2349b98a7dfb12a69cb53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  marker: {fileID: 0}
 --- !u!1001 &122810075
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4961,7 +4897,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 337636358}
         m_TargetAssemblyTypeName: SceneManage, Assembly-CSharp
-        m_MethodName: loadPopUp
+        m_MethodName: togglePopUp
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 333135318}
@@ -5423,7 +5359,7 @@ RectTransform:
   - {fileID: 93279027}
   - {fileID: 728519426}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5646,22 +5582,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 15, y: 7, z: 11}
   m_Center: {x: -3, y: 3, z: 0}
---- !u!114 &161832267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 161832264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b047bcd97a474e079a0a6954e9b35f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemSprite: Karung_beras
-  itemName: Karung Beras
-  itemDesc: Karung berisi beras yang merupakan makanan pokok rakyat Nusantara
-  itemCount: 1
 --- !u!114 &161832268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5676,6 +5596,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactName: Karung Beras
   isNpc: 0
+  item:
+    itemSprite: Karung_beras
+    itemName: Karung Beras
+    itemDesc: Karung berisi beras yang merupakan makanan pokok rakyat Nusantara
+    itemCount: 1
 --- !u!1001 &165314690
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5975,6 +5900,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactName: 
   isNpc: 0
+  item:
+    itemSprite: 
+    itemName: 
+    itemDesc: 
+    itemCount: 0
 --- !u!65 &171700256
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7237,7 +7167,7 @@ SpriteRenderer:
   m_Size: {x: 3.98, y: 3.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &214895228
@@ -8175,7 +8105,7 @@ SpriteRenderer:
   m_Size: {x: 3.98, y: 3.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &239288365
@@ -8394,7 +8324,7 @@ SpriteRenderer:
   m_Size: {x: 3.98, y: 3.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &243546115
@@ -9425,23 +9355,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5, y: 6, z: 10}
   m_Center: {x: 0, y: 0, z: 2}
---- !u!114 &278973995
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 278973993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b047bcd97a474e079a0a6954e9b35f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemSprite: Coconut
-  itemName: Kelapa
-  itemDesc: Kelapa yang tentunya tidak jatuh dari pohon dimana tidak ada pohon kelapa
-    di sekitarnya...
-  itemCount: 1
 --- !u!114 &278973996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9456,6 +9369,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactName: Kelapa
   isNpc: 0
+  item:
+    itemSprite: Coconut
+    itemName: Kelapa
+    itemDesc: Kelapa yang tentunya tidak jatuh dari pohon dimana tidak ada pohon
+      kelapa di sekitarnya...
+    itemCount: 1
 --- !u!1 &282175341
 GameObject:
   m_ObjectHideFlags: 0
@@ -10156,23 +10075,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5, y: 6, z: 10}
   m_Center: {x: 0, y: 0, z: 2}
---- !u!114 &308867804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 308867802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b047bcd97a474e079a0a6954e9b35f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemSprite: Coconut
-  itemName: Kelapa
-  itemDesc: Kelapa yang tentunya tidak jatuh dari pohon dimana tidak ada pohon kelapa
-    di sekitarnya...
-  itemCount: 1
 --- !u!114 &308867805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10187,6 +10089,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactName: Kelapa
   isNpc: 0
+  item:
+    itemSprite: Coconut
+    itemName: Kelapa
+    itemDesc: Kelapa yang tentunya tidak jatuh dari pohon dimana tidak ada pohon
+      kelapa di sekitarnya...
+    itemCount: 1
 --- !u!1001 &314704194
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11074,7 +10982,6 @@ GameObject:
   m_Component:
   - component: {fileID: 337636357}
   - component: {fileID: 337636358}
-  - component: {fileID: 337636359}
   m_Layer: 0
   m_Name: DIVIDER
   m_TagString: Untagged
@@ -11111,46 +11018,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingScreen: {fileID: 0}
   slider: {fileID: 0}
---- !u!114 &337636359
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 337636356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4d6e2cc82ac94d0fbc1cf1eb88ac078, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogues:
-  - dialogType: 1
-    speaker: 0
-    expression: 0
-    changeScenery: 0
-    highLightedPhrases: []
-    dialog: Test
-  - dialogType: 1
-    speaker: 0
-    expression: 0
-    changeScenery: 0
-    highLightedPhrases: []
-    dialog: Apakah ini bisa...
-  _dialogues:
-  - dialogType: 1
-    speaker: 0
-    expression: 0
-    changeScenery: 0
-    highLightedPhrases: []
-    dialog: Test
-  - dialogType: 1
-    speaker: 0
-    expression: 0
-    changeScenery: 0
-    highLightedPhrases: []
-    dialog: Apakah ini bisa...
-  AutoPlay: 0
-  lineCount: 0
 --- !u!1001 &339020110
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11304,7 +11171,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1440f7a76d0634621968f04f869201c7,
         type: 3}
       propertyPath: m_Name
-      value: Fort wall (32)
+      value: Fort Gate Gate
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1440f7a76d0634621968f04f869201c7, type: 3}
@@ -11325,8 +11192,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 210, y: 70, z: 25}
-  m_Center: {x: 0, y: 0, z: 30}
+  m_Size: {x: 100, y: 70, z: 25}
+  m_Center: {x: -50, y: 0, z: 18}
 --- !u!1 &340070263
 GameObject:
   m_ObjectHideFlags: 0
@@ -15391,7 +15258,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a6a418a5dbeea4e58be26785d5147fb1,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a6a418a5dbeea4e58be26785d5147fb1,
         type: 3}
@@ -16102,23 +15969,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5, y: 6, z: 10}
   m_Center: {x: 0, y: 0, z: 2}
---- !u!114 &480632751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 480632749}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b047bcd97a474e079a0a6954e9b35f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemSprite: Coconut
-  itemName: Kelapa
-  itemDesc: Kelapa yang tentunya tidak jatuh dari pohon dimana tidak ada pohon kelapa
-    di sekitarnya...
-  itemCount: 1
 --- !u!114 &480632752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16133,6 +15983,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactName: Kelapa
   isNpc: 0
+  item:
+    itemSprite: Coconut
+    itemName: Kelapa
+    itemDesc: Kelapa yang tentunya tidak jatuh dari pohon dimana tidak ada pohon
+      kelapa di sekitarnya...
+    itemCount: 1
 --- !u!1 &483444597
 GameObject:
   m_ObjectHideFlags: 0
@@ -16206,9 +16062,7 @@ LineRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Positions:
-  - {x: 1125.646, y: 201.7, z: 796.8095}
-  - {x: 9, y: 200, z: 795}
+  m_Positions: []
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -16808,22 +16662,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 15, y: 7, z: 11}
   m_Center: {x: -3, y: 3, z: 0}
---- !u!114 &491803691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 491803689}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b047bcd97a474e079a0a6954e9b35f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemSprite: Karung_gula
-  itemName: Karung Gula
-  itemDesc: Karung berisi gula dari perkebunan bambu Mataram
-  itemCount: 1
 --- !u!114 &491803692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16838,6 +16676,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactName: Karung Gula
   isNpc: 0
+  item:
+    itemSprite: Karung_gula
+    itemName: Karung Gula
+    itemDesc: Karung berisi gula dari perkebunan bambu Mataram
+    itemCount: 1
 --- !u!1001 &491921297
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17095,7 +16938,7 @@ SpriteRenderer:
   m_Size: {x: 3.98, y: 3.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &498921346
@@ -17630,22 +17473,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 15, y: 7, z: 11}
   m_Center: {x: -3, y: 3, z: 0}
---- !u!114 &512530711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 512530709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b047bcd97a474e079a0a6954e9b35f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemSprite: Karung_gula
-  itemName: Karung Gula
-  itemDesc: Karung berisi gula dari perkebunan bambu Mataram
-  itemCount: 1
 --- !u!114 &512530712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17660,6 +17487,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactName: Karung Gula
   isNpc: 0
+  item:
+    itemSprite: Karung_gula
+    itemName: Karung Gula
+    itemDesc: Karung berisi gula dari perkebunan bambu Mataram
+    itemCount: 1
 --- !u!1 &513322295
 GameObject:
   m_ObjectHideFlags: 0
@@ -17971,58 +17803,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: 9, z: 0}
---- !u!114 &516218396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 516218394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16217653ceb0b4adb83d71649264e1b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactText: Padi
-  currentMissionNumber: 0
---- !u!114 &516218397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 516218394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ec0c52f8bdb9435183cc408122dd2fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _missionNumber: 2
-  _missionPrompt: Mengambil padi
-  _objectiveCleared: 0
-  _requiredObjective: 3
-  attachedLore: []
-  gameOverlay: {fileID: 591133792}
-  storyOverlay: {fileID: 383930461}
-  getItem:
-  - itemSprite: karung_beras
-    itemName: Karung Beras
-    itemDesc: Karung Beras
-    itemCount: 1
-  keyConceptUnlock: 
---- !u!114 &516218398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 516218394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae4efb0c02e2349b98a7dfb12a69cb53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  marker: {fileID: 0}
 --- !u!1001 &518504772
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18275,7 +18055,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 544244386}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 7.2}
   m_LocalScale: {x: 0.79672, y: 0.79672, z: 0.79672}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18284,7 +18064,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 10}
+  m_AnchoredPosition: {x: 1, y: -2.2999992}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &544244388
@@ -18307,20 +18087,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Bicara pada
-
-    Nama NPC'
+  m_text: Interaksi
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 85ff66b687b76473ba1d7888bcc0f661, type: 2}
-  m_sharedMaterial: {fileID: 1798162485979622539, guid: 85ff66b687b76473ba1d7888bcc0f661,
+  m_sharedMaterial: {fileID: 7605216175381971571, guid: 85ff66b687b76473ba1d7888bcc0f661,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278255873
-  m_fontColor: {r: 0.003921569, g: 0.003921569, b: 0.003921569, a: 1}
+    rgba: 4281117433
+  m_fontColor: {r: 0.9764706, g: 0.6666667, b: 0.17254902, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -18337,8 +18115,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -18657,7 +18435,7 @@ SpriteRenderer:
   m_Size: {x: 3.98, y: 3.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &547819057
@@ -18968,7 +18746,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 567709422}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 149}
+  m_LocalPosition: {x: 0, y: 0, z: 59}
   m_LocalScale: {x: 5.512694, y: 5.512694, z: 5.512694}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18978,7 +18756,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -409}
+  m_AnchoredPosition: {x: -12, y: -256}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &567709424
@@ -19057,7 +18835,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f02d3ad4bdc084687b96d20a1732f371, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8cd8679bb582f4a64b78eeec0ad5e96a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -19306,6 +19084,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactName: Periksa
   isNpc: 0
+  item:
+    itemSprite: 
+    itemName: 
+    itemDesc: 
+    itemCount: 0
 --- !u!1001 &585141360
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21720,7 +21503,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 4a43136673b55b843985ab41c75e43f3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4a43136673b55b843985ab41c75e43f3,
         type: 3}
@@ -23556,7 +23339,7 @@ Camera:
     height: 1
   near clip plane: 50
   far clip plane: 500
-  field of view: 50
+  field of view: 23
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -23581,14 +23364,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 759742546}
-  m_LocalRotation: {x: -0.26218477, y: 0.032960776, z: 0.026428433, w: -0.9640925}
-  m_LocalPosition: {x: 1124.7523, y: 259.6, z: 735.1}
+  m_LocalRotation: {x: 0.48094994, y: -0.00256447, z: 0.004674818, w: 0.8767319}
+  m_LocalPosition: {x: 1124.7523, y: 351, z: 709.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 30.252, y: -5.142, z: -4.531}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 57.496, y: 0, z: 0.611}
 --- !u!114 &759742550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24711,7 +24494,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 806625165}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 337636358}
+        m_TargetAssemblyTypeName: SceneManage, Assembly-CSharp
+        m_MethodName: closePopUp
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1108935019}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &806625165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25869,22 +25664,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 15, y: 7, z: 11}
   m_Center: {x: -3, y: 3, z: 0}
---- !u!114 &849988642
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 849988640}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b047bcd97a474e079a0a6954e9b35f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemSprite: Karung_gula
-  itemName: Karung Gula
-  itemDesc: Karung berisi gula dari perkebunan bambu Mataram
-  itemCount: 1
 --- !u!114 &849988643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25899,6 +25678,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactName: Karung Gula
   isNpc: 0
+  item:
+    itemSprite: Karung_gula
+    itemName: Karung Gula
+    itemDesc: Karung berisi gula dari perkebunan bambu Mataram
+    itemCount: 1
 --- !u!1 &851996793
 GameObject:
   m_ObjectHideFlags: 0
@@ -25916,7 +25700,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &851996794
 RectTransform:
   m_ObjectHideFlags: 0
@@ -27406,22 +27190,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 15, y: 7, z: 11}
   m_Center: {x: -3, y: 3, z: 0}
---- !u!114 &883594616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 883594614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b047bcd97a474e079a0a6954e9b35f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemSprite: Karung_gula
-  itemName: Karung Gula
-  itemDesc: Karung berisi gula dari perkebunan bambu Mataram
-  itemCount: 1
 --- !u!114 &883594617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27436,6 +27204,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactName: Karung Gula
   isNpc: 0
+  item:
+    itemSprite: Karung_gula
+    itemName: Karung Gula
+    itemDesc: Karung berisi gula dari perkebunan bambu Mataram
+    itemCount: 1
 --- !u!1 &891572943
 GameObject:
   m_ObjectHideFlags: 0
@@ -27780,13 +27553,13 @@ MonoBehaviour:
     tutorialText: 'Interaksi: Klik tombol yang muncul untuk berinteraksi dengan warga
       sekitar maupun barang-barang yang ada'
   - tutorialImage: langit_mendung
-    tutorialText: 'Misi: Klik panel misi yang muncul diatas layar untuk mengarahkan
-      ke tempat tujuan misi'
+    tutorialText: 'Misi: Misi akan muncul di panel diatas layar, ikuti penanda yang
+      muncul untuk menuju ke lokasi misi'
   - tutorialImage: langit_mendung
     tutorialText: 'Konsep Kunci: Anda akan membuka konsep kunci setelah menyelesaikan
       misi tertentu dan dapat membukanya di smartphone'
   - tutorialImage: langit_mendung
-    tutorialText: 'nventaris: Barang tersimpan di menu inventaris di Smartphone,
+    tutorialText: 'Inventaris: Barang tersimpan di menu inventaris di Smartphone,
       klik barang untuk melihat nama dan penjelasan dari barang, beberapa misi akan
       juga memerlukan barang tersebut untuk menyelesaikannya'
   - tutorialImage: langit_mendung
@@ -27805,7 +27578,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 924847571}
-  - component: {fileID: 924847570}
   m_Layer: 0
   m_Name: TerrainGroup_0
   m_TagString: Untagged
@@ -27813,19 +27585,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &924847570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 924847569}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ca34a6148db2d54493f84f379293f33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GroupID: 0
 --- !u!4 &924847571
 Transform:
   m_ObjectHideFlags: 0
@@ -27959,22 +27718,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 15, y: 7, z: 11}
   m_Center: {x: -3, y: 3, z: 0}
---- !u!114 &925465032
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 925465029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b047bcd97a474e079a0a6954e9b35f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemSprite: Karung_beras
-  itemName: Karung Beras
-  itemDesc: Karung berisi beras yang merupakan makanan pokok rakyat Nusantara
-  itemCount: 1
 --- !u!114 &925465033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27989,6 +27732,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactName: Karung Beras
   isNpc: 0
+  item:
+    itemSprite: Karung_beras
+    itemName: Karung Beras
+    itemDesc: Karung berisi beras yang merupakan makanan pokok rakyat Nusantara
+    itemCount: 1
 --- !u!1 &931652186
 GameObject:
   m_ObjectHideFlags: 0
@@ -28428,6 +28176,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactName: 
   isNpc: 0
+  item:
+    itemSprite: 
+    itemName: 
+    itemDesc: 
+    itemCount: 0
 --- !u!65 &953338565
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28700,7 +28453,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 337636359}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
         m_MethodName: NextLine
         m_Mode: 1
@@ -29949,6 +29702,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactName: T. Baurekhsa
   isNpc: 0
+  item:
+    itemSprite: 
+    itemName: 
+    itemDesc: 
+    itemCount: 0
 --- !u!65 &1010894130
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31331,7 +31089,7 @@ SpriteRenderer:
   m_Size: {x: 3.98, y: 3.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &1037422269
@@ -36000,7 +35758,7 @@ Transform:
   - {fileID: 381168000}
   - {fileID: 95725936}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1214889678
 BoxCollider:
@@ -36029,6 +35787,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactName: Buku Merah
   isNpc: 0
+  item:
+    itemSprite: 
+    itemName: 
+    itemDesc: 
+    itemCount: 0
 --- !u!1001 &1215600161
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38819,7 +38582,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1331880293}
   - component: {fileID: 1331880294}
-  - component: {fileID: 1331880295}
   m_Layer: 0
   m_Name: MissionManager
   m_TagString: Untagged
@@ -39044,18 +38806,6 @@ MonoBehaviour:
   - {fileID: 869673673}
   reviewStoryOverlay: {fileID: 93279026}
   reviewText: {fileID: 1220754979}
---- !u!114 &1331880295
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1331880292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d55f91931c4946e499092b8916206bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1335122340
 GameObject:
   m_ObjectHideFlags: 0
@@ -39540,22 +39290,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1342665873}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1342665875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1342665874}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b047bcd97a474e079a0a6954e9b35f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemSprite: police_badge
-  itemName: Lencana Polisi
-  itemDesc: Apa ada polisi di sekitar sini?
-  itemCount: 1
 --- !u!114 &1342665876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39570,6 +39304,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactName: Kepala Pedagang
   isNpc: 0
+  item:
+    itemSprite: police_badge
+    itemName: Lencana Polisi
+    itemDesc: Apa ada polisi di sekitar sini?
+    itemCount: 1
 --- !u!65 &1342665877
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40773,7 +40512,7 @@ RectTransform:
   m_GameObject: {fileID: 1368943215}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -48}
-  m_LocalScale: {x: 21.91541, y: 39.993664, z: 0.13674274}
+  m_LocalScale: {x: -0.16647822, y: -0.30380788, z: -0.0010387526}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 125386908}
@@ -40948,7 +40687,7 @@ MonoBehaviour:
   m_text: '[Nama Konsep Kunci]'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 85ff66b687b76473ba1d7888bcc0f661, type: 2}
-  m_sharedMaterial: {fileID: 1798162485979622539, guid: 85ff66b687b76473ba1d7888bcc0f661,
+  m_sharedMaterial: {fileID: 7605216175381971571, guid: 85ff66b687b76473ba1d7888bcc0f661,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -41299,7 +41038,7 @@ SpriteRenderer:
   m_Size: {x: 3.98, y: 3.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &1383933190
@@ -41695,7 +41434,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1405381307
 MonoBehaviour:
@@ -41777,7 +41516,6 @@ MonoBehaviour:
     type: 2}
   soundEffectsMixerGroup: {fileID: -3229381305930349522, guid: 9244909f2720842f49c3745662a7854b,
     type: 2}
-  priority: 2
 --- !u!114 &1405381308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43053,7 +42791,7 @@ SpriteRenderer:
   m_Size: {x: 3.98, y: 3.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &1459740110
@@ -43321,7 +43059,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: c47cfacf44df2448392e572e4445ea0b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c47cfacf44df2448392e572e4445ea0b,
         type: 3}
@@ -43487,58 +43225,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: 9, z: 0}
---- !u!114 &1494374766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1494374762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae4efb0c02e2349b98a7dfb12a69cb53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  marker: {fileID: 0}
---- !u!114 &1494374767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1494374762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ec0c52f8bdb9435183cc408122dd2fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _missionNumber: 2
-  _missionPrompt: Mengambil padi
-  _objectiveCleared: 0
-  _requiredObjective: 3
-  attachedLore: []
-  gameOverlay: {fileID: 591133792}
-  storyOverlay: {fileID: 383930461}
-  getItem:
-  - itemSprite: karung_beras
-    itemName: Karung Beras
-    itemDesc: Karung Beras
-    itemCount: 1
-  keyConceptUnlock: 
---- !u!114 &1494374768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1494374762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16217653ceb0b4adb83d71649264e1b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactText: Padi
-  currentMissionNumber: 0
 --- !u!1 &1494928115
 GameObject:
   m_ObjectHideFlags: 0
@@ -43641,7 +43327,7 @@ SpriteRenderer:
   m_Size: {x: 3.98, y: 3.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &1494928119
@@ -44476,6 +44162,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactName: Pedagang
   isNpc: 0
+  item:
+    itemSprite: 
+    itemName: 
+    itemDesc: 
+    itemCount: 0
 --- !u!65 &1531071220
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44667,7 +44358,7 @@ SpriteRenderer:
   m_Size: {x: 3.98, y: 3.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &1535498837
@@ -49932,6 +49623,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactName: Sultan Agung
   isNpc: 0
+  item:
+    itemSprite: 
+    itemName: 
+    itemDesc: 
+    itemCount: 0
 --- !u!65 &1730975301
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -50233,6 +49929,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactName: Periksa
   isNpc: 0
+  item:
+    itemSprite: 
+    itemName: 
+    itemDesc: 
+    itemCount: 0
 --- !u!1001 &1738908855
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56009,22 +55710,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1934714465}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1934714467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1934714466}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b047bcd97a474e079a0a6954e9b35f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemSprite: Map
-  itemName: Peta yang sudah ditandai
-  itemDesc: Peta yang sudah ditandai untuk kebutuhan khusus
-  itemCount: 1
 --- !u!114 &1934714468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56039,6 +55724,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactName: Pedagang
   isNpc: 0
+  item:
+    itemSprite: Map
+    itemName: Peta yang sudah ditandai
+    itemDesc: Peta yang sudah ditandai untuk kebutuhan khusus
+    itemCount: 1
 --- !u!65 &1934714469
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -56052,6 +55742,113 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 19, y: 30, z: 10}
   m_Center: {x: 0, y: 5, z: 0}
+--- !u!1001 &1937028561
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: a88932754e1a24d3bbb0a77017ac8919,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 362
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a88932754e1a24d3bbb0a77017ac8919,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -655
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a88932754e1a24d3bbb0a77017ac8919,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 200.11
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a88932754e1a24d3bbb0a77017ac8919,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1407
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a88932754e1a24d3bbb0a77017ac8919,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a88932754e1a24d3bbb0a77017ac8919,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a88932754e1a24d3bbb0a77017ac8919,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a88932754e1a24d3bbb0a77017ac8919,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a88932754e1a24d3bbb0a77017ac8919,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a88932754e1a24d3bbb0a77017ac8919,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a88932754e1a24d3bbb0a77017ac8919,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a88932754e1a24d3bbb0a77017ac8919,
+        type: 3}
+      propertyPath: m_Name
+      value: Batavia Fort Gate
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a88932754e1a24d3bbb0a77017ac8919, type: 3}
+--- !u!1 &1937028562 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a88932754e1a24d3bbb0a77017ac8919,
+    type: 3}
+  m_PrefabInstance: {fileID: 1937028561}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1937028563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937028562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab0d90a6267184b8bbcb4c4912e1b281, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactName: Batavia
+  isNpc: 0
+  item:
+    itemSprite: 
+    itemName: 
+    itemDesc: 
+    itemCount: 0
+--- !u!65 &1937028564
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937028562}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 15, y: 30, z: 15}
+  m_Center: {x: 30, y: 15, z: -81}
 --- !u!1 &1938720511
 GameObject:
   m_ObjectHideFlags: 0
@@ -56219,67 +56016,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06ed38187550b8145ba218b3ad6528cc, type: 3}
---- !u!114 &1939430514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 848299227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c7204c727746421c90a45534e9718b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _missionNumber: 1
-  _missionPrompt: Berbicara dengan Petani
-  _objectiveCleared: 0
-  _requiredObjective: 1
-  useProximity: 1
-  gameOverlay: {fileID: 591133792}
-  storyOverlay: {fileID: 383930461}
-  attachedLore:
-  - loreType: 1
-    loreDialog:
-    - dialogType: 1
-      speaker: 19
-      expression: 0
-      changeScenery: 0
-      highLightedPhrases: []
-      dialog: Hei nak, berhenti sebentar!
-    - dialogType: 1
-      speaker: 0
-      expression: 3
-      changeScenery: 0
-      highLightedPhrases: []
-      dialog: Ada apa, pak?
-    - dialogType: 1
-      speaker: 19
-      expression: 5
-      changeScenery: 0
-      highLightedPhrases: []
-      dialog: Boleh tolong bantu bapak memanen padi?
-    - dialogType: 1
-      speaker: 19
-      expression: 5
-      changeScenery: 0
-      highLightedPhrases: []
-      dialog: Nanti bisa tolong berikan pada kepala petani disana
-  keyConceptUnlock: 00000000
---- !u!114 &1939430515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 848299227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab0d90a6267184b8bbcb4c4912e1b281, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactName: 
-  isNpc: 0
 --- !u!1 &1940652576
 GameObject:
   m_ObjectHideFlags: 0
@@ -58321,6 +58057,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactName: Periksa
   isNpc: 0
+  item:
+    itemSprite: 
+    itemName: 
+    itemDesc: 
+    itemCount: 0
 --- !u!1 &2031085928
 GameObject:
   m_ObjectHideFlags: 0
@@ -58780,7 +58521,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: bcb1662f8d4cc448eb178e41e52a86e3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bcb1662f8d4cc448eb178e41e52a86e3,
         type: 3}
@@ -58872,6 +58613,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactName: Yudha
   isNpc: 0
+  item:
+    itemSprite: 
+    itemName: 
+    itemDesc: 
+    itemCount: 0
 --- !u!1001 &2050721669
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59201,7 +58947,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 337636359}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
         m_MethodName: NextLine
         m_Mode: 1
@@ -59894,7 +59640,7 @@ SpriteRenderer:
   m_Size: {x: 3.98, y: 3.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &2088835137
@@ -60049,6 +59795,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactName: Periksa
   isNpc: 0
+  item:
+    itemSprite: 
+    itemName: 
+    itemDesc: 
+    itemCount: 0
 --- !u!1 &2090121998
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,8 +10,4 @@ public class KeyConcepts
    public string keyDesc;
    public bool unlocked;
 
-   public void unlockConcept()
-   {
-        unlocked = true;
-   }
 }

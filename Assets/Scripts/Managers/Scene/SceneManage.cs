@@ -34,6 +34,21 @@ public class SceneManage : MonoBehaviour
         popUp.SetActive(false);
     }
 
+    public void togglePopUp(GameObject popUp)
+    {
+        AudioManager.instance.Play("Click");
+
+        if(popUp.activeSelf == true)
+        {
+            popUp.SetActive(false);
+        }
+
+        else
+        {
+            popUp.SetActive(true);
+        }
+    }
+
     IEnumerator LoadAsynchronously (int sceneindex)
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneindex);

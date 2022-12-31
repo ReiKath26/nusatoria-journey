@@ -41,7 +41,7 @@ public class CameraFollow : MonoBehaviour
 
               CameraAngle += touchField.TouchDist.x * CameraAngleSpeed;
 
-        transform.position = target_0.transform.position + Quaternion.AngleAxis(CameraAngle, Vector3.up) * new Vector3(-3.546f, 54f, -66.5f);
+        transform.position = target_0.transform.position + Quaternion.AngleAxis(CameraAngle, Vector3.up) * new Vector3(-0.894f, 149.3f, -87.6095f);
         transform.rotation = Quaternion.LookRotation(target_0.transform.position + Vector3.up * 2f - transform.position, Vector3.up);
         }
 
@@ -50,11 +50,9 @@ public class CameraFollow : MonoBehaviour
 
             CameraAngle += touchField.TouchDist.x * CameraAngleSpeed;
 
-        transform.position = target_1.transform.position + Quaternion.AngleAxis(CameraAngle, Vector3.up) * new Vector3(-3.546f, 54f, -66.5f);
+        transform.position = target_1.transform.position + Quaternion.AngleAxis(CameraAngle, Vector3.up) * new Vector3(-0.894f, 149.3f, -87.609f);
         transform.rotation = Quaternion.LookRotation(target_1.transform.position + Vector3.up * 2f - transform.position, Vector3.up);
         }
-
-      
       
     }
 }

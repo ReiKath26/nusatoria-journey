@@ -33,5 +33,6 @@ public class Mission
     public void evaluate()
     {
         completed = goals.All(g => g.getCompletion());
+        Debug.Log("Mission is completed: " + completed);
     }
 }

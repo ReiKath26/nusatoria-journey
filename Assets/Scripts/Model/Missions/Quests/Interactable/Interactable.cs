@@ -7,6 +7,7 @@ public class Interactable : MonoBehaviour
 {
    [SerializeField] private string interactName;
    [SerializeField] private bool isNpc;
+   [SerializeField] private Item item;
 
    public void interact(Transform interactor)
    {
@@ -16,6 +17,19 @@ public class Interactable : MonoBehaviour
                transform.rotation = Quaternion.LookRotation(rotation);
           }
           MissionManager.instance.triggerInteraction(gameObject);
+   }
+
+   public Item getPocketItem()
+   {
+      if(item.itemName != "")
+      {
+          return item;
+      }
+
+      else
+      {
+          return null;
+      }
    }
 
    public string GetInteractText()

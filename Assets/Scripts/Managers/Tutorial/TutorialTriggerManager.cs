@@ -26,6 +26,7 @@ public class TutorialTriggerManager : MonoBehaviour
             tutorialOverlay.SetActive(true);
             tutorialSprite.GetComponent<LoadSpriteManage>().loadNewSprite(tutorials[currentTutorial].tutorialImage);
             tutorialTexts.text = tutorials[currentTutorial].tutorialText;
+            currentTutorial++;
         }
 
         else

@@ -161,7 +161,7 @@ public class SaveHandler : MonoBehaviour
         {
             if(concept.keyNumber == number)
             {
-                concept.unlockConcept();
+                concept.unlocked = true;
                 saveSlot(slot, slotNumber);
                 return;
             }

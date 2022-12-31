@@ -13,14 +13,12 @@ public class AudioManager : MonoBehaviour
 
     public static AudioManager instance;
 
-    public int priority;
-
    void Awake()
    {
 
-        if(instance != null  && instance.priority > this.priority)
+        if(instance != null && instance != this)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
             return;
         }
 
@@ -29,7 +27,7 @@ public class AudioManager : MonoBehaviour
             instance = this;
         }
         
-        DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(gameObject);
 
         foreach (Sound s in sounds)
         {

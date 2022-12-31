@@ -85,11 +85,11 @@ public class OnboardingManager : MonoBehaviour
         glossary.conceptList.Add(new KeyConcepts() {keyNumber = 0, keyName = "Sultan Agung", 
         keyDesc = "Sultan Agung adalah raja dari Kerajaan Mataram. Pada masanya, Kerajaan Mataram mencapai masa kejayaan. Ia memiliki cita-cita untuk menyatukan seluruh tanah jawa dan menyingkirkan kekuasaan asing dari bumi Nusantara.",
         unlocked = false});
-        glossary.conceptList.Add(new KeyConcepts() {keyNumber = 1, keyName = "Jan Pieterzoon Coen", 
-        keyDesc = "J.P. Coen adalah Gubernur Jenderal yang berkuasa dari tahun 1619-1623 dan 1627-1629. Dalam masa kekuasaannya, ia mengeksploitasi hasil bumi setelah memperoleh kontrol penuh atas kota Batavia pada tahun 1619. Hal ini menyebabkan para penguasa di pulau Jawa tidak suka dengan keberadaannya dan VOC secara keseluruhan.",
-        unlocked = false});
-        glossary.conceptList.Add(new KeyConcepts() {keyNumber = 2, keyName = "Latar Belakang Serangan Sultan Agung", 
+         glossary.conceptList.Add(new KeyConcepts() {keyNumber = 1, keyName = "Latar Belakang Serangan Sultan Agung", 
         keyDesc = "Awalnya Belanda dan Mataram memiliki hubungan yang baik. Hal ini berubah karena keserakahan dari Belanda. J.P. Coen yang saat itu telah diangkat menjadi Gubernur Jendral meskipun belum secara resmi, pada tanggal 18 November 1618 memerintahkan Van der Marct menyerang Jepara dan menyebabkan kerugian yang besar bagi Mataram. Hal ini menyebabkan hubungan Belanda dan Mataram jadi buruk.",
+        unlocked = false});
+        glossary.conceptList.Add(new KeyConcepts() {keyNumber = 2, keyName = "Jan Pieterzoon Coen", 
+        keyDesc = "J.P. Coen adalah Gubernur Jenderal yang berkuasa dari tahun 1619-1623 dan 1627-1629. Dalam masa kekuasaannya, ia mengeksploitasi hasil bumi setelah memperoleh kontrol penuh atas kota Batavia pada tahun 1619. Hal ini menyebabkan para penguasa di pulau Jawa tidak suka dengan keberadaannya dan VOC secara keseluruhan.",
         unlocked = false});
         glossary.conceptList.Add(new KeyConcepts() {keyNumber = 3, keyName = "Serangan Pertama Sultan Agung", 
         keyDesc = "Pada Agustus 1628, pasukan Mataram dibawah pimpinan Tumenggung Baureksa menyerang Batavia. Selanjutnya, menyusul pasukan Tumenggung Sura Agul-Agul, dan kedua bersaudara yaitu Kiai Dipati Mandurojo dan Upa Santa pada Oktober 1628. Terjadi peperangan sengit antara pasukan Mataram dan VOC. Namun serangan ini gagal karena kurangnya perbekalan serta persenjataan VOC yang lebih modern. Akhirnya, Mataram terpaksa mundur terlebih dahulu pada 6 Desember 1628.",
@@ -153,11 +153,24 @@ public class OnboardingManager : MonoBehaviour
         inventory.slotList.Add(new InventorySlots() {slotNumber = 6, itemSaved = null});
         inventory.slotList.Add(new InventorySlots() {slotNumber = 7, itemSaved = null});
 
-        PlayerPosition initialPosition = new PlayerPosition() {x_pos = 1125.646f, y_pos = 201.7f, z_pos = 796.8095f};
-        SaveSlots slot = new SaveSlots() {slot = slotNumber, playerName = chooseName, playerGender = genderChoose,
-        time = 0, chapterNumber = 0, lastPosition = initialPosition, understandingLevel = 0, missionNumber = 0, goalNumber = 0, 
-        player_glossary = glossary, player_inventory = inventory};
-        SaveHandler.instance.saveSlot(slot, slotNumber);
+        if(genderChoose == 0)
+        {
+            PlayerPosition initialPosition = new PlayerPosition() {x_pos = 1125.646f, y_pos = 201.7f, z_pos = 796.8095f};
+            SaveSlots slot = new SaveSlots() {slot = slotNumber, playerName = chooseName, playerGender = genderChoose,
+            time = 0, chapterNumber = 0, lastPosition = initialPosition, understandingLevel = 0, missionNumber = 0, goalNumber = 0, 
+            player_glossary = glossary, player_inventory = inventory};
+            SaveHandler.instance.saveSlot(slot, slotNumber);
+        }
+
+        else
+        {
+            PlayerPosition initialPosition = new PlayerPosition() {x_pos = 1130.106f, y_pos = 206.8f, z_pos = 804.8292f};
+            SaveSlots slot = new SaveSlots() {slot = slotNumber, playerName = chooseName, playerGender = genderChoose,
+            time = 0, chapterNumber = 0, lastPosition = initialPosition, understandingLevel = 0, missionNumber = 0, goalNumber = 0, 
+            player_glossary = glossary, player_inventory = inventory};
+            SaveHandler.instance.saveSlot(slot, slotNumber);
+        }
+        
         SceneManage.instance.LoadScene(4);
     }
 

@@ -68,6 +68,7 @@ public class Goal
         {
           complete();
         }
+      Debug.Log("I'm evaluating!" + completed);
    }
 
    public void complete()

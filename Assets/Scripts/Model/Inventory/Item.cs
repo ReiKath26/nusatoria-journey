@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using UnityEngine;
 
 [System.Serializable]
-public class Item: MonoBehaviour
+public class Item
 {
     public string itemSprite;
     public string itemName;
