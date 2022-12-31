@@ -25,6 +25,11 @@ public class PlayerMovement : MonoBehaviour
 
         else
         {
+            SaveSlots slot = SaveHandler.instance.loadSlot(PlayerPrefs.GetInt("choosenSlot"));
+            slot.lastPosition.x_pos = transform.position.x;
+            slot.lastPosition.y_pos = transform.position.y;
+            slot.lastPosition.z_pos = transform.position.z;
+            SaveHandler.instance.saveSlot(slot, slot.slot);
             playerAnimate.SetBool("isWalking", false);
             AudioManager.instance.Stop("Footsteps");
         }

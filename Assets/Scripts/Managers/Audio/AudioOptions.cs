@@ -49,9 +49,6 @@ public class AudioOptions: MonoBehaviour
         SaveHandler.instance.playerSettings.sfx_vol = soundEffectsVolume;
         SaveHandler.instance.saveSettings();
 
-        Debug.Log(SaveHandler.instance.playerSettings.music_vol);
-        Debug.Log(SaveHandler.instance.playerSettings.sfx_vol);
-
         AudioManager.instance.UpdateMixerVolume();
     }
 }

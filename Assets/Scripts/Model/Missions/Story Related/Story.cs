@@ -50,6 +50,7 @@ public class Story
 
     public bool getCompleted()
     {
+        Debug.Log(completed);
         return completed;
     }
 

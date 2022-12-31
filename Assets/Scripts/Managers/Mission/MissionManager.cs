@@ -75,8 +75,6 @@ public class MissionManager : MonoBehaviour
    {      
        slot = SaveHandler.instance.loadSlot(PlayerPrefs.GetInt("choosenSlot"));
        instance = this;
-       MissionProvider.instance.getChapterMissions(slot.chapterNumber);
-
        assignMission();
    }
 
@@ -204,6 +202,39 @@ public class MissionManager : MonoBehaviour
                          }
                     }
                }     
+          }
+
+          else if(currentGoal is ExplorationGoal ex_goal)
+          {
+               for(int i = 0; i < ex_goal.getInstances().Length; i++)
+          {
+               int[] listOfConcepts = ex_goal.getListOfKeyConcept();
+               if (listOfConcepts[i] != -1)
+               {
+                    string getKey = "";
+
+                    int count = listOfConcepts[i];
+                    for(int j=0; j < slot.player_glossary.conceptList.Count; j++)
+                    {
+                         while(count > 0)
+                         {
+                              if(slot.player_glossary.conceptList[j].unlocked != true)
+                              {
+                                   SaveHandler.instance.unlockKeyConcept(j, PlayerPrefs.GetInt("choosenSlot"));
+                                   getKey += " " + slot.player_glossary.conceptList[j].keyName;
+                                   count -= 1;
+                              }
+                         }
+                    }
+
+                    keyConceptText.text = getKey;
+                    getKeyconceptNotification.SetActive(true);
+                        
+               }
+          }
+               slot.goalNumber++;
+               assignGoal();
+               displayGoal();
           }
 
           else
@@ -359,32 +390,7 @@ public class MissionManager : MonoBehaviour
                if(interactor == inst[i])
                {
                     exp_goal.OnInteract(i);
-
-                    int[] listOfConcepts = exp_goal.getListOfKeyConcept();
-                    if (listOfConcepts[i] != -1)
-                    {
-                         string getKey = "";
-
-                         int count = listOfConcepts[i];
-                         for(int j=0; j < slot.player_glossary.conceptList.Count; j++)
-                         {
-                              while(count > 0)
-                              {
-                                   if(slot.player_glossary.conceptList[j].unlocked != true)
-                                   {
-                                        SaveHandler.instance.unlockKeyConcept(j, PlayerPrefs.GetInt("choosenSlot"));
-                                        getKey += " " + slot.player_glossary.conceptList[j].keyName;
-                                        count -= 1;
-                                   }
-                              }
-                         }
-
-                         keyConceptText.text = getKey;
-                         getKeyconceptNotification.SetActive(true);
-                        
-    
                     return;
-                    }
                }
           }
      }

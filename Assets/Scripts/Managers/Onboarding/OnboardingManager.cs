@@ -153,7 +153,7 @@ public class OnboardingManager : MonoBehaviour
         inventory.slotList.Add(new InventorySlots() {slotNumber = 6, itemSaved = null});
         inventory.slotList.Add(new InventorySlots() {slotNumber = 7, itemSaved = null});
 
-        PlayerPosition initialPosition = new PlayerPosition() {x_pos = 0, y_pos = 0, z_pos = 0};
+        PlayerPosition initialPosition = new PlayerPosition() {x_pos = 1125.646f, y_pos = 201.7f, z_pos = 796.8095f};
         SaveSlots slot = new SaveSlots() {slot = slotNumber, playerName = chooseName, playerGender = genderChoose,
         time = 0, chapterNumber = 0, lastPosition = initialPosition, understandingLevel = 0, missionNumber = 0, goalNumber = 0, 
         player_glossary = glossary, player_inventory = inventory};
@@ -164,7 +164,6 @@ public class OnboardingManager : MonoBehaviour
     public void resetData()
     {
         genderChoose = 0;
-        chooseName = "";
         SceneManage.instance.loadPopUp(onboardPanelOne);
         SceneManage.instance.closePopUp(onboardPanelThree);
     }

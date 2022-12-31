@@ -21,7 +21,6 @@ public class StoryManager : MonoBehaviour
 
     private int dialogCount = 0;
 
-
     public static StoryManager instance;
 
     void Awake()
@@ -197,20 +196,34 @@ public class StoryManager : MonoBehaviour
 
     public void onButtonClick()
     {
+        Debug.Log(dialogCount);
+        Debug.Log(story.dialogs.Count);
         if(autoPlayCoroutine == null && story != null && dialogCount < story.dialogs.Count)
         {
             nextLine(story.dialogs[dialogCount]);
             story.dialogs[dialogCount].showLine();
             dialogCount++;
+        }
+
+        else
+        {
+
             story.checkDialogs();
             checkStory();
         }
+
     }
 
     private void checkStory()
     {
         if(story.getCompleted() == true && story.getIsEnding() == false)
         {
+            SaveSlots slot = SaveHandler.instance.loadSlot(PlayerPrefs.GetInt("choosenSlot"));
+
+            if(slot.chapterNumber == 1 && slot.missionNumber == 0)
+            {
+                TutorialTriggerManager.instance.setTutorial();
+            }
             storyOverlay.SetActive(false);
             gameOverlay.SetActive(true);
             dialogCount = 0;

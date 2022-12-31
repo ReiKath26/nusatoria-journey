@@ -10,9 +10,14 @@ public class TutorialTriggerManager : MonoBehaviour
    [SerializeField] private GameObject tutorialSprite;
    [SerializeField] private TextMeshProUGUI tutorialTexts;
 
-   public int currentTutorial;
+   private int currentTutorial = 0;
 
    public static TutorialTriggerManager instance;
+
+   void Awake()
+   {
+        instance = this;
+   }
 
    public void setTutorial()
    {
@@ -21,6 +26,12 @@ public class TutorialTriggerManager : MonoBehaviour
             tutorialOverlay.SetActive(true);
             tutorialSprite.GetComponent<LoadSpriteManage>().loadNewSprite(tutorials[currentTutorial].tutorialImage);
             tutorialTexts.text = tutorials[currentTutorial].tutorialText;
+        }
+
+        else
+        {
+            tutorialOverlay.SetActive(false);
+            currentTutorial = 0;
         }
        
    }
