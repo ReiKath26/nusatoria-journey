@@ -155,18 +155,23 @@ public class SaveHandler : MonoBehaviour
 
     public void unlockKeyConcept(int number, int slotNumber)
     {
+        Debug.Log("Enter" + number);
         SaveSlots slot = loadSlot(slotNumber);
+        slot.player_glossary.conceptList[number].unlocked = true;
+        saveSlot(slot, slotNumber);
 
-        foreach(KeyConcepts concept in slot.player_glossary.conceptList)
-        {
-            if(concept.keyNumber == number)
-            {
-                concept.unlocked = true;
-                saveSlot(slot, slotNumber);
-                return;
-            }
-        }
 
-       
+        // foreach(KeyConcepts concept in slot.player_glossary.conceptList)
+        // {
+        //     Debug.Log("KeyNumber:" + concept.keyNumber);
+        //     if(concept.keyNumber == number)
+        //     {
+        //         Debug.Log("Approved?");
+        //         concept.unlocked = true;
+        //         Debug.Log("Concept status:" + concept.unlocked);
+        //         saveSlot(slot, slotNumber);
+        //     }
+        // }
+ 
     }
 }

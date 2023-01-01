@@ -47,7 +47,6 @@ public class OnboardingEvent : MonoBehaviour
           }
           
           activeSlots[number].name.text = slot.playerName;
-          activeSlots[number].time.text = "" + slot.time;
 
           switch(slot.chapterNumber)
           {

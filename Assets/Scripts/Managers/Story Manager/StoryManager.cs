@@ -167,23 +167,23 @@ public class StoryManager : MonoBehaviour
 
         nameTextHolder.text = dialog.getName();
 
-        // if(dialog.objectChange != null)
-        // {
-        //     foreach(string objName in dialog.objectChange)
-        //     {
-        //         GameObject obj = FindInActiveObject.instance.find(objName);
+        if(dialog.objectChange != null)
+        {
+            foreach(string objName in dialog.objectChange)
+            {
+                GameObject obj = FindInactiveObject.instance.find(objName);
 
-        //         if(obj.activeSelf == true)
-        //         {
-        //             obj.SetActive(false);
-        //         }
+                if(obj.activeSelf == true)
+                {
+                    obj.SetActive(false);
+                }
 
-        //         else
-        //         {
-        //             obj.SetActive(true);
-        //         }
-        //     }
-        // }
+                else
+                {
+                    obj.SetActive(true);
+                }
+            }
+        }
 
          if (typeNextCoroutine != null)
          {

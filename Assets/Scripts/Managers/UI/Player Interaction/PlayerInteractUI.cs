@@ -13,7 +13,14 @@ public class PlayerInteractUI : MonoBehaviour
     {
         if(playerInteraction.GetInteractableObject() != null)
         {
-            Show(playerInteraction.GetInteractableObject());
+            Interactable interactbale = playerInteraction.GetInteractableObject();
+            SaveSlots slot = SaveHandler.instance.loadSlot(PlayerPrefs.GetInt("choosenSlot"));
+
+            if(interactbale.getMissionNumber() == slot.missionNumber || interactbale.getTitle() != "")
+            {
+                Show(playerInteraction.GetInteractableObject());
+            }
+ 
         }
 
         else

@@ -37,8 +37,8 @@ public class KeyconceptsUI : MonoBehaviour
     {
         if(keyconcept.unlocked == true)
         {
-            keyconceptText[number].text = keyconcept.keyName;
-            selectedText[number].text = keyconcept.keyName;
+            keyconceptText[number].text = keyconcept.keyName.Split(' ')[0] + " " + keyconcept.keyName.Split(' ')[1];
+            selectedText[number].text = keyconcept.keyName.Split(' ')[0] + " " + keyconcept.keyName.Split(' ')[1];
         }
 
         else

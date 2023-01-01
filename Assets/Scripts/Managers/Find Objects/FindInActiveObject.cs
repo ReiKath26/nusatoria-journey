@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FindInActiveObject : MonoBehaviour
+public class FindInactiveObject : MonoBehaviour
 {
-    public static FindInActiveObject instance;
+    public static FindInactiveObject instance;
 
     void Awake()
     {

@@ -39,7 +39,12 @@ public class ReviewGoal : Goal
         if(allDone == true)
         {
             finishObjective();
-              StoryManager.instance.assignStory(loadStoryOnFinish(0));
+              Story onFinishStory = loadStoryOnFinish(0);
+
+              if(onFinishStory != null)
+               {
+                     StoryManager.instance.assignStory(onFinishStory);
+               }
             evaluate();
         }
    }

@@ -38,8 +38,18 @@ public class CameraFollow : MonoBehaviour
     {
         if (slot.playerGender == 0)
         {
-
+              
               CameraAngle += touchField.TouchDist.x * CameraAngleSpeed;
+
+              if(CameraAngle > 360)
+              {
+                CameraAngle -= 360;
+              }
+
+              else if(CameraAngle < 0)
+              {
+                CameraAngle += 360;
+              }
 
         transform.position = target_0.transform.position + Quaternion.AngleAxis(CameraAngle, Vector3.up) * new Vector3(-0.894f, 149.3f, -87.6095f);
         transform.rotation = Quaternion.LookRotation(target_0.transform.position + Vector3.up * 2f - transform.position, Vector3.up);
@@ -50,9 +60,24 @@ public class CameraFollow : MonoBehaviour
 
             CameraAngle += touchField.TouchDist.x * CameraAngleSpeed;
 
+             if(CameraAngle > 360)
+              {
+                CameraAngle -= 360;
+              }
+
+              else if(CameraAngle < 0)
+              {
+                CameraAngle += 360;
+              }
+
         transform.position = target_1.transform.position + Quaternion.AngleAxis(CameraAngle, Vector3.up) * new Vector3(-0.894f, 149.3f, -87.609f);
         transform.rotation = Quaternion.LookRotation(target_1.transform.position + Vector3.up * 2f - transform.position, Vector3.up);
         }
       
+    }
+
+    public float getAngle()
+    {
+        return CameraAngle;
     }
 }

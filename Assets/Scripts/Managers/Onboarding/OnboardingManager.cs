@@ -156,8 +156,7 @@ public class OnboardingManager : MonoBehaviour
         if(genderChoose == 0)
         {
             PlayerPosition initialPosition = new PlayerPosition() {x_pos = 1125.646f, y_pos = 201.7f, z_pos = 796.8095f};
-            SaveSlots slot = new SaveSlots() {slot = slotNumber, playerName = chooseName, playerGender = genderChoose,
-            time = 0, chapterNumber = 0, lastPosition = initialPosition, understandingLevel = 0, missionNumber = 0, goalNumber = 0, 
+            SaveSlots slot = new SaveSlots() {slot = slotNumber, playerName = chooseName, playerGender = genderChoose, chapterNumber = 0, lastPosition = initialPosition, understandingLevel = 0, missionNumber = 0, goalNumber = 0, 
             player_glossary = glossary, player_inventory = inventory};
             SaveHandler.instance.saveSlot(slot, slotNumber);
         }
@@ -165,8 +164,7 @@ public class OnboardingManager : MonoBehaviour
         else
         {
             PlayerPosition initialPosition = new PlayerPosition() {x_pos = 1130.106f, y_pos = 206.8f, z_pos = 804.8292f};
-            SaveSlots slot = new SaveSlots() {slot = slotNumber, playerName = chooseName, playerGender = genderChoose,
-            time = 0, chapterNumber = 0, lastPosition = initialPosition, understandingLevel = 0, missionNumber = 0, goalNumber = 0, 
+            SaveSlots slot = new SaveSlots() {slot = slotNumber, playerName = chooseName, playerGender = genderChoose, chapterNumber = 0, lastPosition = initialPosition, understandingLevel = 0, missionNumber = 0, goalNumber = 0, 
             player_glossary = glossary, player_inventory = inventory};
             SaveHandler.instance.saveSlot(slot, slotNumber);
         }

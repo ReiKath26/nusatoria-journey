@@ -36,7 +36,12 @@ public class SubmitGoal : Goal
         {
             finishObjective();
             evaluate();
-            StoryManager.instance.assignStory(loadStoryOnFinish(number));
+            Story onFinishStory = loadStoryOnFinish(number);
+
+            if(onFinishStory != null)
+            {
+                StoryManager.instance.assignStory(onFinishStory);
+            }
         }
     }
 }

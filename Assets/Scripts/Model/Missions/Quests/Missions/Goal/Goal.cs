@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 [System.Serializable]
 public class Goal
@@ -64,11 +65,11 @@ public class Goal
 
    public void evaluate()
    {
+      Debug.Log("Goal Complete?" + completed);
         if(currentAmount >= requiredAmount)
         {
           complete();
         }
-      Debug.Log("I'm evaluating!" + completed);
    }
 
    public void complete()

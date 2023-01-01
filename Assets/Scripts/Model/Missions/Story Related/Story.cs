@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
+[System.Serializable]
 public class Story 
 {
     private string titleTimeFrame {get; set;}
@@ -45,12 +46,10 @@ public class Story
     public void checkDialogs()
     {
         completed = dialogs.All(d => d.shown);
-        Debug.Log(completed);
     }
 
     public bool getCompleted()
     {
-        Debug.Log(completed);
         return completed;
     }
 

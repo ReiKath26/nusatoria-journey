@@ -8,7 +8,6 @@ public class SaveSlots
    public int slot;
    public string playerName;
    public int playerGender;
-   public float time;
    public int chapterNumber;
 
    public PlayerPosition lastPosition;
