@@ -12,17 +12,22 @@ public class AudioOptions: MonoBehaviour
 
     public static float musicVolume { get; private set; }
     public static float soundEffectsVolume { get; private set; }
+    private AudioSettings setting;
 
     void Start()
     {
-        SaveHandler.instance.loadSettings();
+        setting = SaveHandler.instance.loadSettings();
 
-        if (SaveHandler.instance.playerSettings != null)
+        if (setting!= null)
         {
-            musicSlider.value = SaveHandler.instance.playerSettings.music_vol;
-            sfxSlider.value = SaveHandler.instance.playerSettings.sfx_vol;
-            musicVolume = SaveHandler.instance.playerSettings.music_vol;
-            soundEffectsVolume = SaveHandler.instance.playerSettings.sfx_vol;
+            if(musicSlider != null && sfxSlider != null)
+            {
+                musicSlider.value = setting.music_vol;
+                sfxSlider.value = setting.sfx_vol;
+            }
+          
+            musicVolume = setting.music_vol;
+            soundEffectsVolume = setting.sfx_vol;
 
             AudioManager.instance.UpdateMixerVolume();
         }
@@ -33,11 +38,11 @@ public class AudioOptions: MonoBehaviour
     {
         musicVolume = value;
 
-        SaveHandler.instance.playerSettings.music_vol = musicVolume;
-        SaveHandler.instance.saveSettings();
+        setting.music_vol = musicVolume;
+        SaveHandler.instance.saveSettings(setting);
 
-        Debug.Log(SaveHandler.instance.playerSettings.music_vol);
-        Debug.Log(SaveHandler.instance.playerSettings.sfx_vol);
+        Debug.Log(setting.music_vol);
+        Debug.Log(setting.sfx_vol);
         
         AudioManager.instance.UpdateMixerVolume();
     }
@@ -46,8 +51,8 @@ public class AudioOptions: MonoBehaviour
     {
         soundEffectsVolume = value;
         
-        SaveHandler.instance.playerSettings.sfx_vol = soundEffectsVolume;
-        SaveHandler.instance.saveSettings();
+        setting.sfx_vol = soundEffectsVolume;
+        SaveHandler.instance.saveSettings(setting);
 
         AudioManager.instance.UpdateMixerVolume();
     }

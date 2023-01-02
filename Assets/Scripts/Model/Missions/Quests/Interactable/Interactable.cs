@@ -49,6 +49,7 @@ public class Interactable : MonoBehaviour
                     }
 
                     Story story = new Story(interactionTitle, dialog,false);
+                    StoryManager.instance.assignStory(story);
                }
           }
           
@@ -62,7 +63,16 @@ public class Interactable : MonoBehaviour
 
    public int getMissionNumber()
    {
-       return missionNumber[count];
+       if(count < missionNumber.Length)
+       {
+          return missionNumber[count];
+       }
+
+       else
+       {
+          return -1;
+       }
+       
    }
 
    public Item getPocketItem()

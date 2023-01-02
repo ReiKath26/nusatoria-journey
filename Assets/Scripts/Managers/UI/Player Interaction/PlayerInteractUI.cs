@@ -32,7 +32,6 @@ public class PlayerInteractUI : MonoBehaviour
 
     public void Show(Interactable interactable)
     {
-        Debug.Log("Show" );
         interactionGameObject.SetActive(true);
         interactionText.text = interactable.GetInteractText();
     }

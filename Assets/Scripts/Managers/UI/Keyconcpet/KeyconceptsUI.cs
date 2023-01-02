@@ -17,19 +17,12 @@ public class KeyconceptsUI : MonoBehaviour
     [SerializeField] private int maxIndexNum;
 
 
-    private SaveSlots slot;
-
     private void Update()
     {
-        slot = SaveHandler.instance.loadSlot(PlayerPrefs.GetInt("choosenSlot"));
-        foreach(KeyConcepts concept in slot.player_glossary.conceptList)
+        for(int i=minIndexNum;i<=maxIndexNum;i++)
         {
-            if(concept.keyNumber >= minIndexNum && concept.keyNumber <= maxIndexNum)
-            {
-                setKeyConcept(concept, concept.keyNumber);
-            }
-   
-            
+            KeyConcepts concept = SaveHandler.instance.loadKeyconcepts(PlayerPrefs.GetInt("choosenSlot"), i);
+            setKeyConcept(concept, concept.keyNumber);
         }
     }
 
@@ -65,25 +58,23 @@ public class KeyconceptsUI : MonoBehaviour
             }
         }
 
-        foreach(KeyConcepts concept in slot.player_glossary.conceptList)
+    
+        KeyConcepts concept = SaveHandler.instance.loadKeyconcepts(PlayerPrefs.GetInt("choosenSlot"), number);
+
+        if(concept.keyNumber == number)
         {
-            if(concept.keyNumber == number)
+            if(concept.unlocked == true)
             {
-                if(concept.unlocked == true)
-                {
-                    keyconceptTitle.text = concept.keyName;
-                    keyconceptDesc.text = concept.keyDesc;
-                }
+                keyconceptTitle.text = concept.keyName;
+                keyconceptDesc.text = concept.keyDesc;
+            }
                 
-                else
-                {
-                    keyconceptTitle.text = "???";
-                    keyconceptDesc.text = "Selesaikan lebih banyak misi untuk membuka konsep ini";
-                }
+            else
+            {
+                keyconceptTitle.text = "???";
+                keyconceptDesc.text = "Selesaikan lebih banyak misi untuk membuka konsep ini";
             }
         }
-
-        
         
     }
 }

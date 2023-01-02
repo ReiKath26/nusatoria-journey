@@ -10,33 +10,34 @@ public class SaveHandler : MonoBehaviour
 
     public static SaveHandler instance;
 
-    public AudioSettings playerSettings;
-
     void Awake()
     {
         instance = this;
         SaveManager.Init();
+        AudioSettings setting = new AudioSettings() {music_vol = 0.8f, sfx_vol = 0.8f};
+        saveSettings(setting);
     }
 
-    public void loadSettings()
+    public AudioSettings loadSettings()
     {
         string contents = SaveManager.LoadSettings();
 
         if (contents != null)
         {
-             playerSettings = JsonUtility.FromJson<AudioSettings>(contents);
+             AudioSettings playerSettings = JsonUtility.FromJson<AudioSettings>(contents);
+             return playerSettings;
         }
 
         else
         {
-            return;
+            return null;
         }
        
     }
 
-    public void saveSettings()
+    public void saveSettings(AudioSettings setting)
     {
-        string jsonString = JsonUtility.ToJson(playerSettings);
+        string jsonString = JsonUtility.ToJson(setting);
         SaveManager.SaveSettings(jsonString);
         
     }
@@ -56,6 +57,51 @@ public class SaveHandler : MonoBehaviour
         {
             SaveSlots slot = JsonUtility.FromJson<SaveSlots>(contents);
             return slot;
+        }
+
+        else
+        {
+            return null;
+        }
+    }
+
+    public void saveKeyconcepts(KeyConcepts concepts, int slotNumber, int keyNumber)
+    {
+        string jsonString = JsonUtility.ToJson(concepts);
+        SaveManager.saveGlossary(jsonString, slotNumber, keyNumber);
+    }
+
+    public KeyConcepts loadKeyconcepts(int slotNumber, int keyNumber)
+    {
+        string contents = SaveManager.loadGlossary(slotNumber, keyNumber);
+
+        if(contents != null)
+        {
+            KeyConcepts concept = JsonUtility.FromJson<KeyConcepts>(contents);
+            return concept;
+        }
+
+        else
+        {
+            return null;
+        }
+     
+    }
+
+    public void saveInventory(InventorySlots invent, int slotNumber, int keyNumber)
+    {
+        string jsonString = JsonUtility.ToJson(invent);
+        SaveManager.saveInventory(jsonString, slotNumber, keyNumber);
+    }
+
+    public InventorySlots loadInventory(int slotNumber, int keyNumber)
+    {
+        string contents = SaveManager.loadInventory(slotNumber, keyNumber);
+
+          if(contents != null)
+        {
+            InventorySlots slotList = JsonUtility.FromJson<InventorySlots>(contents);
+            return slotList;
         }
 
         else
@@ -91,40 +137,46 @@ public class SaveHandler : MonoBehaviour
 
     public void saveItem(Item item, int slotNumber)
     {
-        SaveSlots slot = loadSlot(slotNumber);
-        
-        foreach(InventorySlots sloted in slot.player_inventory.slotList)
+        for(int i=0; i<8; i++)
         {
-            if(sloted.itemSaved == null)
+            InventorySlots slotDummy = loadInventory(slotNumber, i);
+            if(slotDummy.itemSaved.itemName == "")
             {
-                sloted.setItem(item);
-                saveSlot(slot, slotNumber);
-                return;
+                slotDummy.setItem(item);
+                saveInventory(slotDummy, slotNumber, i);
+                break;
+            }
+
+            else
+            {
+                if(slotDummy.itemSaved.itemName == item.itemName)
+                {
+                    slotDummy.itemSaved.itemCount += item.itemCount;
+                    saveInventory(slotDummy, slotNumber, i);
+                    break;
+                }
             }
         }
+        
     }
 
-    public bool submitItem(Item[] items, int slotNumber)
+    public bool checkSubmitItem(Item[] items, int slotNumber)
     {
         int count = 0;
-         SaveSlots slot = loadSlot(slotNumber);
-         foreach(InventorySlots sloted in slot.player_inventory.slotList)
+
+        InventorySlots slot;
+
+        for(int i=0; i<8;i++)
         {
+            slot =  loadInventory(slotNumber, i);
             foreach(Item item in items)
             {
-                 if(sloted.itemSaved != null)
+                 if(slot.itemSaved.itemName != "")
                 {
-                    if(sloted.itemSaved.itemName == item.itemName)
+                    if(slot.itemSaved.itemName == item.itemName)
                     {
-                         if(sloted.itemSaved.itemCount >= item.itemCount)
+                         if(slot.itemSaved.itemCount >= item.itemCount)
                         {
-                            sloted.itemSaved.itemCount -= item.itemCount;
-
-                            if(sloted.itemSaved.itemCount == 0)
-                            {
-                                sloted.itemSaved = null;
-                            }
-
                             count+= 1;
                         }
 
@@ -152,15 +204,47 @@ public class SaveHandler : MonoBehaviour
 
     }
 
+    public void submitItem(Item[] items, int slotNumber)
+    {
+        InventorySlots slot;
+         for(int j=0;j<8;j++)
+        {
+            foreach(Item item in items)
+            {
+                slot =  loadInventory(slotNumber, j);
+                if(slot.itemSaved.itemName == item.itemName)
+                {
+                    slot.itemSaved.itemCount -= item.itemCount;
+
+                    if(slot.itemSaved.itemCount == 0)
+                    {
+                        slot.itemSaved = null;
+                    }
+
+                    saveInventory(slot, slotNumber, j);
+                }
+            }
+                
+                
+        }
+    }
+
 
     public void unlockKeyConcept(int number, int slotNumber)
     {
-        Debug.Log("Enter" + number);
-        SaveSlots slot = loadSlot(slotNumber);
-        slot.player_glossary.conceptList[number].unlocked = true;
-        saveSlot(slot, slotNumber);
 
+        for(int i=0; i<18; i++)
+        {
+             KeyConcepts key =  loadKeyconcepts(slotNumber, i);
+            if(key.keyNumber == number)
+            {
+                key.unlocked = true;
+                saveKeyconcepts(key, slotNumber, i);
+                return;
+            }
+        }
 
+      
         // foreach(KeyConcepts concept in slot.player_glossary.conceptList)
         // {
         //     Debug.Log("KeyNumber:" + concept.keyNumber);
