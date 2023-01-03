@@ -14,7 +14,4 @@ public class SaveSlots
    public int understandingLevel;
    public int missionNumber;
    public int goalNumber;
-
-   public Glossary player_glossary;
-   public Inventory player_inventory;
 }

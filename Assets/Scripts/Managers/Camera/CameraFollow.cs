@@ -38,7 +38,6 @@ public class CameraFollow : MonoBehaviour
     {
         if (slot.playerGender == 0)
         {
-              
               CameraAngle += touchField.TouchDist.x * CameraAngleSpeed;
 
               if(CameraAngle > 360)

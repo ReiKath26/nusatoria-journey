@@ -69,17 +69,15 @@ public class StoryManager : MonoBehaviour
                         new MainCharacterDialog(true, characterExpression.angry, "Hei, apa yang anda lakukan?!", null),
                         new MainCharacterDialog(false, characterExpression.shook, "Ah..anak kecil, jangan mendekat, nanti kamu ikut terba-", null),
                         new MainCharacterDialog(true, characterExpression.shook, "AHHHHHH", null),
-                        new CutsceneDialog("rumah_kosong", "Semua bermula dari kedatangan yang tidak diantisipasi oleh Nusantara", null),
-                        new CutsceneDialog("rumah_kosong", "Jatuhnya  Konstantinopel mendorong bangsa Eropa untuk melakukan perburuan mutiara dari timur", null),
-                        new CutsceneDialog("rumah_kosong", "Mereka mengusung misi Gold, Glory, dan Gospel. Yang berarti mencari kekayaan, kejayaan, dan penyebaran agama", null),
-                        new CutsceneDialog("rumah_kosong", "Pada tahun 1596, Cornelis de Houtman mendarat di Banten melalui Selat Sunda", null),
-                        new CutsceneDialog("rumah_kosong", "Pelayaran ini membuka perdagangan antara Belanda dan Nusantara", null),
-                        new CutsceneDialog("rumah_kosong", "Dan dimulailah masa penjajahan Belanda", null),
-                        new CutsceneDialog("rumah_kosong", "Di mulai dengan kemunculan kongsi dagang milik mereka, Vereenigde Oostindische Compagnie, atau VOC", null),
-                        new CutsceneDialog("rumah_kosong", "Dibuat dengan tujuan menghindari persaingan tidak sehat antara pedagang Belanda dan pedagang Eropa lainnya", null),
-                        new CutsceneDialog("rumah_kosong", "Tapi dalam praktiknya, kongsi dagang ini membawa penderitaan bagi rakyat Indonesia", null),
-                        new CutsceneDialog("rumah_kosong", "Mereka terus memecah belah dengan politik devide et impera mereka, untuk menguasai seluruh penjuru Indonesia", null),
-                        new CutsceneDialog("rumah_kosong", "Dan itu mendorong segala macam usaha, bagi rakyat Nusantara, untuk memperjuangkan kemerdekaan mereka", null)
+                        new CutsceneDialog("cutscene_ship", "Semua bermula dari kedatangan yang tidak diantisipasi oleh Nusantara", null),
+                        new CutsceneDialog("cutscene_ship", "Pada tahun 1596, Cornelis de Houtman mendarat di Banten melalui Selat Sunda", null),
+                        new CutsceneDialog("cutscene_ship", "Pelayaran ini membuka perdagangan antara Belanda dan Nusantara", null),
+                        new CutsceneDialog("cutscene_ship", "Dan dimulailah masa penjajahan Belanda", null),
+                        new CutsceneDialog("cutscene_voc", "Di mulai dengan kemunculan kongsi dagang milik mereka, Vereenigde Oostindische Compagnie, atau VOC", null),
+                        new CutsceneDialog("cutscene_voc", "Dibuat dengan tujuan menghindari persaingan tidak sehat antara pedagang Belanda dan pedagang Eropa lainnya", null),
+                        new CutsceneDialog("cutscene_voc", "Tapi dalam praktiknya, kongsi dagang ini membawa penderitaan bagi rakyat Indonesia", null),
+                        new CutsceneDialog("cutscene_voc", "Mereka terus memecah belah dengan politik devide et impera mereka, untuk menguasai seluruh penjuru Indonesia", null),
+                        new CutsceneDialog("cutscene_voc", "Dan itu mendorong segala macam usaha, bagi rakyat Nusantara, untuk memperjuangkan kemerdekaan mereka", null)
 
                     };
                     Story thisStory = new Story("14 November 2195, 11:00 - Jalanan Kota Jakarta", dialouge, true);
@@ -108,7 +106,7 @@ public class StoryManager : MonoBehaviour
                         new MainCharacterDialog(true, characterExpression.hurt, "(Sebenarnya tempat apa ini...", null),
                         new MainCharacterDialog(true, characterExpression.neutral, "(Oh iya, jurnal yang aku temukan tadi sebaiknya aku...)", null),
                         new MainCharacterDialog(true, characterExpression.neutral, "(Ah...dimana aku menaruhnya?)", null),
-                        new MainCharacterDialog(false, characterExpression.think, "Hmmm...menarik...", new string[]{"Yudha Model"}),
+                        new MainCharacterDialog(false, characterExpression.think, "Hmmm...menarik...", new string[]{"Yudha_Pier"}),
                         new MainCharacterDialog(true, characterExpression.angry, "Hei, jangan mengambil barang orang seenak jidat!", null),
                         new MainCharacterDialog(false, characterExpression.hurt, "Apa? Kamu menemukan petunjuk maka seharusnya kamu memberikannya pada polisi terpercaya", null),
                         new MainCharacterDialog(true, characterExpression.angry, "Polisi terpercaya tidak akan meninggalkan warga tidak bersalah...", null),
@@ -120,7 +118,7 @@ public class StoryManager : MonoBehaviour
                         new MainCharacterDialog(false, characterExpression.neutral, "Sisanya tidak penting...", null),
                         new MainCharacterDialog(false, characterExpression.neutral, "Sekarang kamu mau mulai bergerak dan ikut denganku, atau mau tinggal disini?", null),
                         new MainCharacterDialog(true, characterExpression.angry, "Tentu aku akan bergerak dari sini, tidak perlu anda mengingatkanku", null),
-                        new MainCharacterDialog(false, characterExpression.angry, "Hmph!", new string[]{"Yudha Model"})
+                        new MainCharacterDialog(false, characterExpression.angry, "Hmph!", new string[]{"Yudha_Pier"})
 
                     };
                     Story thisStory = new Story("?? ?? ??, ?? - Pelabuhan Minang", dialouge, false);
@@ -137,7 +135,9 @@ public class StoryManager : MonoBehaviour
     public void assignStory(Story storytale)
     {
         story = storytale;
+        spriteObject.SetActive(false);
         dialogTextHolder.text = story.getTitle();
+        nameTextHolder.text = "";
         storyOverlay.SetActive(true);
         gameOverlay.SetActive(false);
     }

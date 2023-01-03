@@ -72,6 +72,20 @@ public class Goal
         }
    }
 
+   public bool checkAllStory()
+   {
+      if(onFinishStory != null)
+      {
+        bool completed = onFinishStory.All(s=>s.getCompleted());
+        return completed;
+      }
+
+      else
+      {
+          return true;
+      }
+   }
+
    public void complete()
    {
      completed = true;

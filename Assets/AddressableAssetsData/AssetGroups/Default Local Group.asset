@@ -149,6 +149,14 @@ MonoBehaviour:
     m_Address: rumah_kosong
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 2df39e1c665ed4d98a75f6e69eb7152c
+    m_Address: cutscene_ship
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b526aac22cdde44c284fb4e113190886
+    m_Address: cutscene_voc
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: c262d5abd0c88492d970a9fff3c5e10a, type: 2}
   m_SchemaSet:

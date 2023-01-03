@@ -30,18 +30,15 @@ public class SubmitGoal : Goal
  
     public void OnSubmit(int number)
     {
-        bool canSubmit = SaveHandler.instance.submitItem(neededItem, PlayerPrefs.GetInt("choosenSlot"));
+        SaveHandler.instance.submitItem(neededItem, PlayerPrefs.GetInt("choosenSlot"));
+        finishObjective();
+        evaluate();
+        
+        Story onFinishStory = loadStoryOnFinish(number);
 
-        if(canSubmit == true)
+        if(onFinishStory != null)
         {
-            finishObjective();
-            evaluate();
-            Story onFinishStory = loadStoryOnFinish(number);
-
-            if(onFinishStory != null)
-            {
-                StoryManager.instance.assignStory(onFinishStory);
-            }
+            StoryManager.instance.assignStory(onFinishStory);
         }
     }
 }

@@ -80,23 +80,24 @@ public class MissionManager : MonoBehaviour
 
    private void assignMission()
    {
-       List<Mission> allMissions = getChapterMissions(slot.chapterNumber);
-       if(slot.missionNumber < allMissions.Count)
-       {
-          currentMission = allMissions[slot.missionNumber];
-          slot.goalNumber = 0;
+          List<Mission> allMissions = getChapterMissions(slot.chapterNumber);
+          if(slot.missionNumber < allMissions.Count)
+          {
+               currentMission = allMissions[slot.missionNumber];
+               slot.goalNumber = 0;
 
-          assignGoal();
-          displayGoal();
-          setCurrGoal();
-       }
+               assignGoal();
+               displayGoal();
+               setCurrGoal();
+          }
 
-       else
-       {
-          StoryManager.instance.assignStory(getEndChapterStory(slot.chapterNumber));
-       }
+          else
+          {
+               StoryManager.instance.assignStory(getEndChapterStory(slot.chapterNumber));
+          }
 
-       SaveHandler.instance.saveSlot(slot, slot.slot);
+         SaveHandler.instance.saveSlot(slot, slot.slot);
+     
 
    }
 
@@ -126,6 +127,8 @@ public class MissionManager : MonoBehaviour
    private void checkGoal()
    {
      if(currentGoal.getCompletion() == true)
+     {
+     if(currentGoal.checkAllStory() == true)
      {
           if(currentGoal is JudgementGoal jdg_goal)
           {
@@ -212,30 +215,34 @@ public class MissionManager : MonoBehaviour
 
           else if(currentGoal is ExplorationGoal ex_goal)
           {
-               Debug.Log("Goal is explore");
+               
                for(int i = 0; i < ex_goal.getInstances().Length; i++)
-          {
+               {
                int[] listOfConcepts = ex_goal.getListOfKeyConcept();
                if (listOfConcepts[i] != -1)
                {
-                    Debug.Log("Goal has concept");
                     string getKey = "";
 
                     int count = listOfConcepts[i];
-                    for(int j=0; j < slot.player_glossary.conceptList.Count; j++)
+                    int lastLocked = 0;
+                    for(int j=0; j<18; j++)
                     {
-                         Debug.Log("Enter loop");
-                         if(count > 0)
+                         KeyConcepts concept = SaveHandler.instance.loadKeyconcepts(PlayerPrefs.GetInt("choosenSlot"), j);
+                         if(concept.unlocked != true)
                          {
-                              Debug.Log("Count is more than one");
-                              if(slot.player_glossary.conceptList[j].unlocked != true)
-                              {
-                                   Debug.Log("Saved" + j);
-                                   SaveHandler.instance.unlockKeyConcept(j, PlayerPrefs.GetInt("choosenSlot"));
-                                   Debug.Log("Is it saved?");
-                                   getKey += "[" + slot.player_glossary.conceptList[j].keyName + "]";
-                                   count -= 1;
-                              }
+                              lastLocked = j;
+                              break;
+                         }
+                        
+                    }
+
+                    for(int k=lastLocked; k<count + lastLocked;k++)
+                    {
+                         KeyConcepts concept = SaveHandler.instance.loadKeyconcepts(PlayerPrefs.GetInt("choosenSlot"), k);
+                          if(concept.unlocked != true)
+                         {
+                              SaveHandler.instance.unlockKeyConcept(k, PlayerPrefs.GetInt("choosenSlot"));
+                              getKey += "[" + concept.keyName + "]";
                          }
                     }
 
@@ -256,6 +263,7 @@ public class MissionManager : MonoBehaviour
                assignGoal();
                displayGoal();
           }
+     }
         
      }
    }
@@ -447,7 +455,7 @@ public class MissionManager : MonoBehaviour
                     }
                }
 
-            bool canSubmit = SaveHandler.instance.submitItem(listOfItem, PlayerPrefs.GetInt("choosenSlot"));
+            bool canSubmit = SaveHandler.instance.checkSubmitItem(listOfItem, PlayerPrefs.GetInt("choosenSlot"));
 
             if(canSubmit == true)
             {
@@ -485,6 +493,7 @@ public class MissionManager : MonoBehaviour
       if(currentGoal is SubmitGoal sbm_goal)
       {
           sbm_goal.OnSubmit(0);
+          giveOverlay.SetActive(false);
       }
    }
 

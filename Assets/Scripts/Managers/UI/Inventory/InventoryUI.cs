@@ -18,17 +18,11 @@ public class InventoryUI : MonoBehaviour
 
     private void Update()
     {
-        slot = SaveHandler.instance.loadSlot(PlayerPrefs.GetInt("choosenSlot"));
-        foreach(InventorySlots slots in slot.player_inventory.slotList)
+        for(int i=0;i<8;i++)
         {
-            if(slots.itemSaved != null)
-            {
-                setItems(slots, slots.slotNumber);
-            
-      
-            }
+            InventorySlots slots = SaveHandler.instance.loadInventory(PlayerPrefs.GetInt("choosenSlot"), i);
+            setItems(slots, i);
         }
-
        
     }
 
@@ -56,18 +50,9 @@ public class InventoryUI : MonoBehaviour
             {
                 InventoryPlaceHolder[i].SetActive(false);
                 SelectedInventoryPlaceHolder[i].SetActive(true);
-            }
 
-            else
-            {
-                InventoryPlaceHolder[i].SetActive(true);
-                SelectedInventoryPlaceHolder[i].SetActive(false);
-            }
-        }
-        foreach(InventorySlots slots in slot.player_inventory.slotList)
-        {
-            if(slots.slotNumber == number)
-            {
+                InventorySlots slots = SaveHandler.instance.loadInventory(PlayerPrefs.GetInt("choosenSlot"), i);
+
                 if(slots.itemSaved != null)
                 {
                     itemTitle.text = slots.itemSaved.itemName;
@@ -81,11 +66,15 @@ public class InventoryUI : MonoBehaviour
                     itemDesc.text = "";
                  }
             }
-          
+
+            else
+            {
+                InventoryPlaceHolder[i].SetActive(true);
+                SelectedInventoryPlaceHolder[i].SetActive(false);
+            }
+
+            
+
         }
     }
-
-
-
-
 }
