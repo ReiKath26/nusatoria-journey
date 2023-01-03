@@ -16,6 +16,16 @@ public class KeyconceptsUI : MonoBehaviour
     [SerializeField] private int minIndexNum;
     [SerializeField] private int maxIndexNum;
 
+    [SerializeField] private GameObject upButton;
+    [SerializeField] private GameObject downButton;
+
+    private int defaultMinIndex;
+
+    void Awake()
+    {
+        defaultMinIndex = minIndexNum;
+    }
+
 
     private void Update()
     {
@@ -23,6 +33,41 @@ public class KeyconceptsUI : MonoBehaviour
         {
             KeyConcepts concept = SaveHandler.instance.loadKeyconcepts(PlayerPrefs.GetInt("choosenSlot"), i);
             setKeyConcept(concept, concept.keyNumber);
+        }
+    }
+
+    public void goDown()
+    {
+        if(minIndexNum + 6 < 18)
+        {
+            minIndexNum = minIndexNum + 6;
+            if(maxIndexNum + 6 < 18)
+            {
+                maxIndexNum = maxIndexNum + 6;
+            }
+
+            else
+            {
+                maxIndexNum = maxIndexNum + (18- minIndexNum);
+            }
+        }
+      
+    }
+
+    public void goUp()
+    {
+        if(maxIndexNum - 6 > defaultMinIndex)
+        {
+            maxIndexNum = maxIndexNum - 6;
+            if(minIndexNum - 6 > defaultMinIndex)
+            {
+                minIndexNum = minIndexNum - 6;
+            }
+
+            else
+            {
+                minIndexNum = defaultMinIndex;
+            }
         }
     }
 

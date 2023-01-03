@@ -50,8 +50,18 @@ public class CameraFollow : MonoBehaviour
                 CameraAngle += 360;
               }
 
-        transform.position = target_0.transform.position + Quaternion.AngleAxis(CameraAngle, Vector3.up) * new Vector3(-0.894f, 149.3f, -87.6095f);
-        transform.rotation = Quaternion.LookRotation(target_0.transform.position + Vector3.up * 2f - transform.position, Vector3.up);
+        if(slot.chapterNumber == 1)
+        {
+              transform.position = target_0.transform.position + Quaternion.AngleAxis(CameraAngle, Vector3.up) * new Vector3(-0.894f, 149.3f, -87.6095f);
+              transform.rotation = Quaternion.LookRotation(target_0.transform.position + Vector3.up * 2f - transform.position, Vector3.up);
+        }
+
+        else
+        {
+            transform.position = target_0.transform.position + Quaternion.AngleAxis(CameraAngle, Vector3.up) * new Vector3(9.3f, 145.7f, -83.723f);
+            transform.rotation = Quaternion.LookRotation(target_0.transform.position + Vector3.up * 2f - transform.position, Vector3.up);
+        }
+   
         }
 
         else
@@ -69,8 +79,18 @@ public class CameraFollow : MonoBehaviour
                 CameraAngle += 360;
               }
 
-        transform.position = target_1.transform.position + Quaternion.AngleAxis(CameraAngle, Vector3.up) * new Vector3(-0.894f, 149.3f, -87.609f);
-        transform.rotation = Quaternion.LookRotation(target_1.transform.position + Vector3.up * 2f - transform.position, Vector3.up);
+              if(slot.chapterNumber == 1)
+              {
+                  transform.position = target_1.transform.position + Quaternion.AngleAxis(CameraAngle, Vector3.up) * new Vector3(-0.894f, 149.3f, -87.609f);
+                  transform.rotation = Quaternion.LookRotation(target_1.transform.position + Vector3.up * 2f - transform.position, Vector3.up);
+              }
+
+              else
+              {
+
+              }
+
+       
         }
       
     }

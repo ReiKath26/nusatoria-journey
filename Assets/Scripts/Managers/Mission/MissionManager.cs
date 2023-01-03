@@ -932,7 +932,7 @@ public class MissionManager : MonoBehaviour
                     new NPCDialog("Review", "Hal ini juga dikarenakan keberadaan Belanda di tanah jawa menghalangi cita-cita dari Sultan Agung", null),
                     new NPCDialog("Review", "Ia bercita-cita untuk menyatukan tanah jawa dan mengusir kekuasaan bangsa asing dari tanah jawa", null)
                }, false), questionType.latarBelakang_sa),
-          new Review(new Story("Latar Belakang Serangan Sultan Agung", new List<Dialogs>
+          new Review(new Story("Serangan Pertama Sultan Agung", new List<Dialogs>
                {
                     new NPCDialog("Review", "Dan akhirnya pada Agustus 1628, Mataram melancarkan serangan ke Batavia", null),
                     new NPCDialog("Review", "Pasukan Tumenggung Baureksa sampai ke Batavia terlebih dahulu dan mulai melakukan serangan", null),
@@ -941,7 +941,7 @@ public class MissionManager : MonoBehaviour
                     new NPCDialog("Review", "Juga karena persenjataan Belanda lebih modern", null),
                     new NPCDialog("Review", "Sehingga pada 6 Desember 1628, pasukan Mataram mundur", null)
                }, false), questionType.seranganSatu_sa),
-          new Review(new Story("Latar Belakang Serangan Sultan Agung", new List<Dialogs>
+          new Review(new Story("Serangan Kedua Sultan Agung", new List<Dialogs>
                {
                     new NPCDialog("Review", "Setelah kekalahan di serangan pertama, Mataram mulai mempersiapkan lebih matang untuk serangan kedua", null),
                     new NPCDialog("Review", "Sebelum penyerangan untuk menyebabkan perbekalan lebih, mereka membangun lumbung di Karawang dan Cirebon", null),
@@ -950,12 +950,13 @@ public class MissionManager : MonoBehaviour
                     new NPCDialog("Review", "Juga karena Belanda menghancurkan lumbung yang mereka bangun", null),
                     new NPCDialog("Review", "Akhirnya serangan ini juga mengalami kegagalan", null)
                }, false), questionType.seranganDua_sa),
-          new Review(new Story("Latar Belakang Serangan Sultan Agung", new List<Dialogs>
+          new Review(new Story("Akhir Serangan Sultan Agung", new List<Dialogs>
                {
                     new NPCDialog("Review", "Namun setelah 2 kegagalan pun Sultan Agung tidak menyerah untuk menyerang Batavia dan mengusir VOC", null),
                     new NPCDialog("Review", "Sayangnya sepeninggal Sultan Agung di tahun 1945, Mataram mengalami kemunduran", null),
                     new NPCDialog("Review", "Dan ini membuka peluang untuk Belanda menguasai Mataram", null)
                }, false), questionType.akhir_sa)
+          //tambahin yg chapter 2 punya
         };
 
         foreach(questionType type in needReviewType)
@@ -1550,7 +1551,7 @@ public class MissionManager : MonoBehaviour
         new MainCharacterDialog(true, characterExpression.neutral, " Bapak pedagang yang waktu itu kan?", null),
         new NPCDialog("Pedagang", "Ah bukan, saya anaknya. Tapi bapak saya pernah cerita tentang kamu, nak", null),
         new NPCDialog("Pedagang", "Tadi saya melihat apa yang terjadi disana, saya bisa membantu kamu agar kepala pedagang itu membiarkan kamu masuk", null),
-        new NPCDialog("Pedagang", "Nanti akan saya bantu negosiasikan, tapi sebaiknya kamu dengar dulu…", null),
+        new NPCDialog("Pedagang", "Nanti akan saya bantu negosiasikan, tapi sebaiknya kamu dengar dulu...", null),
         new NPCDialog("Pedagang", "Sedikit rekap dari kisah serangan Sultan Agung", null),
         
         }, false)
@@ -1654,7 +1655,7 @@ public class MissionManager : MonoBehaviour
         {
             mission = new List<Mission>
             {
-
+               //input here
             };
         }
 

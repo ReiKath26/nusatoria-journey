@@ -442,8 +442,8 @@ GameObject:
   - component: {fileID: 136237650}
   - component: {fileID: 136237653}
   - component: {fileID: 136237654}
-  - component: {fileID: 136237655}
   - component: {fileID: 136237656}
+  - component: {fileID: 136237657}
   m_Layer: 0
   m_Name: PrologueManager
   m_TagString: Untagged
@@ -498,18 +498,6 @@ MonoBehaviour:
   dialogTextHolder: {fileID: 447053223}
   spriteObject: {fileID: 905364214}
   backgroundObject: {fileID: 387264477}
---- !u!114 &136237655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 136237649}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6af3fa3f714244356b23dbfe96d60fc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &136237656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -520,6 +508,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad975cb6973564bbf93288fe35d1c695, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &136237657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136237649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6af3fa3f714244356b23dbfe96d60fc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &362406757
