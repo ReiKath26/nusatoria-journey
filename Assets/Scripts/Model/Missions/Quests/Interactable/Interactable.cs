@@ -12,11 +12,9 @@ public class Interactable : MonoBehaviour
    [SerializeField] private string interactionTitle;
    [SerializeField] private string[] interactionDialog;
 
-   private int count = 0;
-
    public void interact(Transform interactor)
    {
-          Debug.Log("Click");
+          bool interactionTriggered = false;
           if(isNpc == true)
           {
                Vector3 rotation = new Vector3(interactor.position.x - transform.position.x, 0.0f, interactor.position.z - transform.position.z);
@@ -24,26 +22,34 @@ public class Interactable : MonoBehaviour
           }
 
           SaveSlots slot = SaveHandler.instance.loadSlot(PlayerPrefs.GetInt("choosenSlot"));
-          
-          if(slot.missionNumber == missionNumber[count])
-          {
-               MissionManager.instance.triggerInteraction(gameObject);
 
-               if(count < missionNumber.Length)
+          foreach(int min_number in missionNumber)
+          {
+               if(slot.missionNumber == min_number)
                {
-                    count++;
+                    MissionManager.instance.triggerInteraction(gameObject);
+                    interactionTriggered = true;
+                    break;
                }
+          } 
+
+          if(interactionTriggered == false)
+          {
+               showInteraction();
           }
 
-          else
-          {
-               if(interactionTitle != "" && interactionDialog.Length != 0)
+
+   }
+
+   public void showInteraction()
+   {
+           if(interactionTitle != "" && interactionDialog.Length != 0)
                {
                     List<Dialogs> dialog = new List<Dialogs>();
                     
                     foreach(string str in interactionDialog)
                     {
-                         Dialogs dialogue = new MainCharacterDialog(true, characterExpression.neutral, str, null);
+                         Dialogs dialogue = new NPCDialog("", str, null);
 
                          dialog.Add(dialogue);
                     }
@@ -51,9 +57,6 @@ public class Interactable : MonoBehaviour
                     Story story = new Story(interactionTitle, dialog,false);
                     StoryManager.instance.assignStory(story);
                }
-          }
-          
-          
    }
 
    public string getTitle()
@@ -61,17 +64,10 @@ public class Interactable : MonoBehaviour
           return interactionTitle;
    }
 
-   public int getMissionNumber()
+   public int[] getMissionNumber()
    {
-       if(count < missionNumber.Length)
-       {
-          return missionNumber[count];
-       }
-
-       else
-       {
-          return -1;
-       }
+       
+     return missionNumber;
        
    }
 

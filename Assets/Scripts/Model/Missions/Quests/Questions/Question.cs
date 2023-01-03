@@ -9,7 +9,7 @@ public enum level
 
 public enum questionType
 {
-    latarBelakang_sa, seranganSatu_sa, seranganDua_sa, akhir_sa, latarBelakang_padri, perjuangan_tl, perjuangan_kp, faseKedua_padri, faseKetiga_padri, akhirPerang_padri
+    latarBelakang_sa, seranganSatu_sa, seranganDua_sa, akhir_sa, latarBelakang_padri, perjuangan_tl, perjuangan_kp, faseKedua_padri, faseKetiga_padri, akhirPerang_padri, not_set
 }
 
 public class Question

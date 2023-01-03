@@ -17,11 +17,12 @@ public class StoryManager : MonoBehaviour
     private Story story {get; set;}
 
     private Coroutine typeNextCoroutine;
-    private Coroutine autoPlayCoroutine;
 
     private int dialogCount = 0;
 
     public static StoryManager instance;
+
+    private bool beginningTutorial = true;
 
     void Awake()
     {
@@ -198,7 +199,7 @@ public class StoryManager : MonoBehaviour
     {
         Debug.Log(dialogCount);
         Debug.Log(story.dialogs.Count);
-        if(autoPlayCoroutine == null && story != null && dialogCount < story.dialogs.Count)
+        if( story != null && dialogCount < story.dialogs.Count)
         {
             nextLine(story.dialogs[dialogCount]);
             story.dialogs[dialogCount].showLine();
@@ -220,10 +221,12 @@ public class StoryManager : MonoBehaviour
         {
             SaveSlots slot = SaveHandler.instance.loadSlot(PlayerPrefs.GetInt("choosenSlot"));
 
-            if(slot.chapterNumber == 1 && slot.missionNumber == 0)
+            if(slot.chapterNumber == 1 && slot.missionNumber == 0 && beginningTutorial == true)
             {
                 TutorialTriggerManager.instance.setTutorial();
             }
+
+            beginningTutorial = false;
             storyOverlay.SetActive(false);
             gameOverlay.SetActive(true);
             dialogCount = 0;
@@ -233,6 +236,12 @@ public class StoryManager : MonoBehaviour
         {
             SaveSlots slot = SaveHandler.instance.loadSlot(PlayerPrefs.GetInt("choosenSlot"));
 
+            Item[] clues = new Item[]
+            {
+                new Item("wanted_poster", "Poster Dicari", "Poster ini mencari penjelajah waktu ilegal, tapi karena poster ini aku jadi menjelajah waktu?", 1),
+                new Item("Journal", "Jurnal #1", "Jurnal ini ditinggalkan oleh seseorang, berisi terkait projek yang ia kerjakan setelah menjelajah ke waktu sejarah di masa perjuangan Sultan Agung", 1),
+                new Item("Journal", "Jurnal #2", "Jurnal ini ditinggalkan oleh seseorang, membahas lebih lanjut terkait projek yang ia kerjakan dan keinginannya untuk membuat ending yang bahagia, membuat kami menduga kami berada di sebuah dunia simulasi kejadian sejarah", 1)
+            };
 
              switch(slot.chapterNumber)
             {
@@ -241,6 +250,7 @@ public class StoryManager : MonoBehaviour
                     slot.chapterNumber = 1;
                     slot.missionNumber = 0;
                     slot.goalNumber = 0;
+                    SaveHandler.instance.saveItem(clues[0], PlayerPrefs.GetInt("choosenSlot"));
                     SaveHandler.instance.saveSlot(slot, slot.slot);
                     SceneManage.instance.LoadScene(5);
                     break;
@@ -251,6 +261,7 @@ public class StoryManager : MonoBehaviour
                     slot.chapterNumber = 2;
                     slot.missionNumber = 0;
                     slot.goalNumber = 0;
+                    SaveHandler.instance.saveItem(clues[1], PlayerPrefs.GetInt("choosenSlot"));
                     SaveHandler.instance.saveSlot(slot, slot.slot);
                     SceneManage.instance.LoadScene(6);
                     break;
@@ -261,6 +272,7 @@ public class StoryManager : MonoBehaviour
                     slot.chapterNumber = 3;
                     slot.missionNumber = 0;
                     slot.goalNumber = 0;
+                    SaveHandler.instance.saveItem(clues[2], PlayerPrefs.GetInt("choosenSlot"));
                     SaveHandler.instance.saveSlot(slot, slot.slot);
                     SceneManage.instance.LoadScene(0);
                 break;
@@ -271,20 +283,6 @@ public class StoryManager : MonoBehaviour
         }
     }
 
-    public void OnToggleAutoPlay()
-    {
-        bool toggle = story.switchAutoPlay();
-
-        if(autoPlayCoroutine != null)
-        {
-            StopCoroutine(autoPlayCoroutine);
-        }
-
-        if(toggle == true)
-        {
-            autoPlayCoroutine = StartCoroutine(AutoLine());
-        }
-    }
 
     IEnumerator TypeLine(string line)
     {
@@ -297,13 +295,4 @@ public class StoryManager : MonoBehaviour
         AudioManager.instance.Stop("Typewritter");
     }
 
-    IEnumerator AutoLine()
-    {
-        nextLine(story.dialogs[dialogCount]);
-        story.dialogs[dialogCount].showLine();
-        story.checkDialogs();
-        checkStory();
-        yield return new WaitForSeconds(5f);
-       
-    }
 }

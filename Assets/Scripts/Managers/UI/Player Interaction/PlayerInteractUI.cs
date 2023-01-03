@@ -13,10 +13,24 @@ public class PlayerInteractUI : MonoBehaviour
     {
         if(playerInteraction.GetInteractableObject() != null)
         {
+            bool interactionValid = true;
             Interactable interactbale = playerInteraction.GetInteractableObject();
             SaveSlots slot = SaveHandler.instance.loadSlot(PlayerPrefs.GetInt("choosenSlot"));
 
-            if(interactbale.getMissionNumber() == slot.missionNumber || interactbale.getTitle() != "")
+            int[] missionNumbers = interactbale.getMissionNumber();
+
+            foreach(int mis in missionNumbers)
+            {
+                if(mis == slot.missionNumber)
+                {
+                    interactionValid = true;
+                    break;
+                }
+
+                interactionValid = false;
+            }
+
+            if(interactionValid == true || interactbale.getTitle() != "")
             {
                 Show(playerInteraction.GetInteractableObject());
             }
@@ -24,8 +38,8 @@ public class PlayerInteractUI : MonoBehaviour
         }
 
         else
-
         {
+
             SceneManage.instance.closePopUp(interactionGameObject);
         }
     }

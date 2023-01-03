@@ -157,6 +157,10 @@ MonoBehaviour:
     m_Address: cutscene_voc
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 24c13dad906e24874aa37241cf1a3b4b
+    m_Address: wanted_poster
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: c262d5abd0c88492d970a9fff3c5e10a, type: 2}
   m_SchemaSet:
