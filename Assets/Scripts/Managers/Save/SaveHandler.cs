@@ -21,7 +21,6 @@ public class SaveHandler : MonoBehaviour
     public void loadSettings()
     {
         string contents = SaveManager.LoadSettings();
-        Debug.Log("Loaded: " + contents);
 
         if (contents != null)
         {
@@ -38,7 +37,6 @@ public class SaveHandler : MonoBehaviour
     public void saveSettings()
     {
         string jsonString = JsonUtility.ToJson(playerSettings);
-        Debug.Log("Saved" + jsonString);
         SaveManager.SaveSettings(jsonString);
         
     }
@@ -64,5 +62,116 @@ public class SaveHandler : MonoBehaviour
         {
             return null;
         }
+    }
+
+    public void updatePosition(Vector3 position, int slotNumber)
+    {
+        SaveSlots slot = loadSlot(slotNumber);
+        slot.lastPosition.x_pos = position.x;
+        slot.lastPosition.y_pos = position.y;
+        slot.lastPosition.z_pos = position.z;
+
+        saveSlot(slot, slotNumber);
+    }
+
+    public string loadName(int slotNumber)
+    {
+        SaveSlots slot = loadSlot(slotNumber);
+        string name = slot.playerName;
+
+        return name;
+    }
+
+    public Vector3 loadPosition(int slotNumber)
+    {
+        SaveSlots slot = loadSlot(slotNumber);
+        Vector3 loadedPosition = new Vector3(slot.lastPosition.x_pos, slot.lastPosition.y_pos, slot.lastPosition.z_pos);
+        return loadedPosition;
+    }
+
+    public void saveItem(Item item, int slotNumber)
+    {
+        SaveSlots slot = loadSlot(slotNumber);
+        
+        foreach(InventorySlots sloted in slot.player_inventory.slotList)
+        {
+            if(sloted.itemSaved == null)
+            {
+                sloted.setItem(item);
+                saveSlot(slot, slotNumber);
+                return;
+            }
+        }
+    }
+
+    public bool submitItem(Item[] items, int slotNumber)
+    {
+        int count = 0;
+         SaveSlots slot = loadSlot(slotNumber);
+         foreach(InventorySlots sloted in slot.player_inventory.slotList)
+        {
+            foreach(Item item in items)
+            {
+                 if(sloted.itemSaved != null)
+                {
+                    if(sloted.itemSaved.itemName == item.itemName)
+                    {
+                         if(sloted.itemSaved.itemCount >= item.itemCount)
+                        {
+                            sloted.itemSaved.itemCount -= item.itemCount;
+
+                            if(sloted.itemSaved.itemCount == 0)
+                            {
+                                sloted.itemSaved = null;
+                            }
+
+                            count+= 1;
+                        }
+
+                        else
+                        {
+                            return false;
+                        }
+                    
+                    }
+                }
+            }
+           
+        }
+
+        if(count == items.Length)
+        {
+            return true;
+        }
+
+        else
+        {
+            return false;
+        }
+
+
+    }
+
+
+    public void unlockKeyConcept(int number, int slotNumber)
+    {
+        Debug.Log("Enter" + number);
+        SaveSlots slot = loadSlot(slotNumber);
+        slot.player_glossary.conceptList[number].unlocked = true;
+        saveSlot(slot, slotNumber);
+
+
+        // foreach(KeyConcepts concept in slot.player_glossary.conceptList)
+        // {
+        //     Debug.Log("KeyNumber:" + concept.keyNumber);
+        //     if(concept.keyNumber == number)
+        //     {
+        //         Debug.Log("Approved?");
+        //         concept.unlocked = true;
+        //         Debug.Log("Concept status:" + concept.unlocked);
+        //         saveSlot(slot, slotNumber);
+        //     }
+        // }
+ 
     }
 }

@@ -17,14 +17,6 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 8616409228a814aa9aa8e473bf3a58c6
   m_SerializeEntries:
-  - m_GUID: 4e80f0aac945348b5ad325332b14e6e1
-    m_Address: Wanted_Poster
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 06f11f0f8a79949aea13f7fe8fc458f7
-    m_Address: Hint_coin
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 924e7c3c386b64914b0b77fed747f66b
     m_Address: Assets/Items/S1_1tem_TornP1cture_1con-01.png
     m_ReadOnly: 0
@@ -38,7 +30,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: b85caff235ce04994b460839ad04b594
-    m_Address: Police badge
+    m_Address: police_badge
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 38dd858ff9b62433183039f7dae76056
@@ -78,7 +70,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 892722cba7e80ec43a62ba0f1813642b
-    m_Address: normal_mc_1
+    m_Address: neutral_mc_1
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 6a3355340eef8e1478256e8e84313ff4
