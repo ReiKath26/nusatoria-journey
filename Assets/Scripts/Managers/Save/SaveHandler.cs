@@ -14,8 +14,14 @@ public class SaveHandler : MonoBehaviour
     {
         instance = this;
         SaveManager.Init();
-        AudioSettings setting = new AudioSettings() {music_vol = 0.8f, sfx_vol = 0.8f};
-        saveSettings(setting);
+        AudioSettings setting = loadSettings();
+
+        if(setting == null)
+        {
+            setting = new AudioSettings(){music_vol = 0.8f, sfx_vol = 0.8f};
+            saveSettings(setting);
+        }
+      
     }
 
     public AudioSettings loadSettings()

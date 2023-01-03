@@ -40,9 +40,6 @@ public class AudioOptions: MonoBehaviour
 
         setting.music_vol = musicVolume;
         SaveHandler.instance.saveSettings(setting);
-
-        Debug.Log(setting.music_vol);
-        Debug.Log(setting.sfx_vol);
         
         AudioManager.instance.UpdateMixerVolume();
     }

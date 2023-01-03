@@ -6,11 +6,13 @@ public class GatherGoal : Goal
 {
    private GameObject[] interactionInstance;
    private string[] interactionInstanceNames {get; set;}
+   private bool usePath;
 
 
-    public GatherGoal(string desc, int required, string[] strings, Story[] storyType)
+    public GatherGoal(string desc, int required, string[] strings, Story[] storyType, bool path)
     {
         this.interactionInstanceNames = strings;
+        this.usePath = path;
         base.initialize(desc, required, storyType);
         int count = 0;
 
@@ -26,6 +28,11 @@ public class GatherGoal : Goal
     public GameObject[] getInstances()
     {
         return interactionInstance;
+    }
+
+    public bool usingPath()
+    {
+        return usePath;
     }
 
     public void OnGather(int number)

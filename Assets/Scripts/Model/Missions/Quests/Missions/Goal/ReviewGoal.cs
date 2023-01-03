@@ -5,7 +5,6 @@ using System.Linq;
 
 public class ReviewGoal : Goal
 {
-   private Review[] reviews;
    private GameObject recipient;
    private string recipientName {get; set;}
 
@@ -22,31 +21,18 @@ public class ReviewGoal : Goal
         return recipient;
     }
 
-   public void setReview(Review[] review) 
-   {
-        this.reviews = review;
-   }
-
-   public Review[] getReview()
-   {
-        return reviews;
-   }
-
    public void OnAllReviewDone()
    {
-        bool allDone = reviews.All(r => r.getDone());
 
-        if(allDone == true)
-        {
-            finishObjective();
-              Story onFinishStory = loadStoryOnFinish(0);
+          finishObjective();
+          Story onFinishStory = loadStoryOnFinish(0);
 
-              if(onFinishStory != null)
-               {
-                     StoryManager.instance.assignStory(onFinishStory);
-               }
-            evaluate();
-        }
+          if(onFinishStory != null)
+          {
+               StoryManager.instance.assignStory(onFinishStory);
+          }
+          evaluate();
+        
    }
 
 }
