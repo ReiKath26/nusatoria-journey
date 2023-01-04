@@ -575,7 +575,7 @@ RectTransform:
   - {fileID: 1551513433}
   - {fileID: 1323784856}
   m_Father: {fileID: 0}
-  m_RootOrder: 429
+  m_RootOrder: 430
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6779,6 +6779,47 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc36b37a684d1224292c6a9ce4db3044, type: 3}
+--- !u!1 &277448488 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: bc36b37a684d1224292c6a9ce4db3044,
+    type: 3}
+  m_PrefabInstance: {fileID: 277448487}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &277448489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277448488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab0d90a6267184b8bbcb4c4912e1b281, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactName: James Du Puy
+  item:
+    itemSprite: 
+    itemName: 
+    itemDesc: 
+    itemCount: 0
+  missionNumber: 03000000
+  interactionTitle: 
+  interactionDialog: []
+  isNpc: 1
+--- !u!65 &277448490
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277448488}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 13.001722, y: 28.483551, z: 9.558594}
+  m_Center: {x: 21.34603, y: 13.7417755, z: -1.5453132}
 --- !u!1001 &281751400
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13568,6 +13609,103 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b58c2a8ec8c384d76ae123ea244a05db, type: 3}
+--- !u!1001 &535447037
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: bcb1662f8d4cc448eb178e41e52a86e3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bcb1662f8d4cc448eb178e41e52a86e3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 983.1873
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bcb1662f8d4cc448eb178e41e52a86e3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 194.13025
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bcb1662f8d4cc448eb178e41e52a86e3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1492.1466
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bcb1662f8d4cc448eb178e41e52a86e3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7896753
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bcb1662f8d4cc448eb178e41e52a86e3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bcb1662f8d4cc448eb178e41e52a86e3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.613525
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bcb1662f8d4cc448eb178e41e52a86e3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bcb1662f8d4cc448eb178e41e52a86e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bcb1662f8d4cc448eb178e41e52a86e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 75.69
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bcb1662f8d4cc448eb178e41e52a86e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bcb1662f8d4cc448eb178e41e52a86e3,
+        type: 3}
+      propertyPath: m_Name
+      value: Yudha (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bcb1662f8d4cc448eb178e41e52a86e3, type: 3}
+--- !u!1 &535447038 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: bcb1662f8d4cc448eb178e41e52a86e3,
+    type: 3}
+  m_PrefabInstance: {fileID: 535447037}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &535447039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535447038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab0d90a6267184b8bbcb4c4912e1b281, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactName: 
+  item:
+    itemSprite: 
+    itemName: 
+    itemDesc: 
+    itemCount: 0
+  missionNumber: 02000000
+  interactionTitle: 
+  interactionDialog: []
+  isNpc: 1
 --- !u!1001 &539493012
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16755,7 +16893,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 428
+  m_RootOrder: 429
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &688784086
 PrefabInstance:
@@ -21601,7 +21739,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 423
+  m_RootOrder: 424
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -36804,7 +36942,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 61
+  m_RootOrder: 62
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &1583896475
 PrefabInstance:
@@ -42907,7 +43045,7 @@ MonoBehaviour:
     itemName: 
     itemDesc: 
     itemCount: 0
-  missionNumber: 00000000
+  missionNumber: 0000000002000000
   interactionTitle: Jadi orang ini seorang detektif kepolisian bernama kak Yudha...
   interactionDialog:
   - Aku tidak tau dia sedang menyelidiki kasus apa tapi sepertinya ada kaitannya
@@ -47128,7 +47266,7 @@ Transform:
   m_Children:
   - {fileID: 1868417140}
   m_Father: {fileID: 0}
-  m_RootOrder: 63
+  m_RootOrder: 64
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1972760195
 PrefabInstance:

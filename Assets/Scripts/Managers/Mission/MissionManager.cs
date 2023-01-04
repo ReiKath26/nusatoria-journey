@@ -1806,7 +1806,6 @@ public class MissionManager : MonoBehaviour
         {
             mission = new List<Mission>
             {
-               //input here
                new Mission(new List<Goal>
                 {
 
@@ -1821,7 +1820,7 @@ public class MissionManager : MonoBehaviour
                             new MainCharacterDialog(true, characterExpression.shook, "Hei, tunggu dulu!", null),
                             new MainCharacterDialog(true, characterExpression.hurt, "Astaga..dia keburu pergi…", null),
                             new MainCharacterDialog(true, characterExpression.think, " (Ya sudahlah aku akan mencarinya lagi saja setelah aku mencari tau apa yang terjadi disana…)", null),
-                        }, false)}, true),}),
+                        }, false)}, true)}), 
 
                new Mission(new List<Goal>
                 {
@@ -1858,7 +1857,109 @@ public class MissionManager : MonoBehaviour
         }, false),
                      }, false)
                 }),
-            };
+
+               new Mission(new List<Goal>
+                {
+
+                        new ExplorationGoal("Kembali ke Yudha di Pagaruyung", 1, new string[] {"Yudha (1)"}, new int[] {1}, new Story[] {
+                        new Story("Kamu pun kembali ke detektif itu untuk memberitahukan informasi padanya...", new List<Dialogs>
+                        {
+                            new MainCharacterDialog(true, characterExpression.neutral, "Wahai polisi terpercaya, aku sudah mendapatkan informasi.", null),
+                            new MainCharacterDialog(false, characterExpression.happy, "Kerja bagus, anak kecil!", null),
+                            new MainCharacterDialog(true, characterExpression.hurt, "Kenapa polisi yang terhormat ini terus menyuruh-nyuruh anak sepertiku untuk mencari informasi?", null),
+                            new MainCharacterDialog(true, characterExpression.think, "Anda pasti lebih dipercaya daripada seorang anak kecil.", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Sudah kubilang kan, aku itu ada pekerjaanku sendiri", null),
+                            new MainCharacterDialog(true, characterExpression.angry, "(Bilangnya sih begitu tapi sebenarnya dia hanya malas saja kan..)", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, " Ya sudah, aku langsung ke intinya saja.", null),
+                            new MainCharacterDialog(true, characterExpression.think, "Sepertinya ada perselisihan antara kaum Adat dan kaum Padri", null),
+                            new MainCharacterDialog(true, characterExpression.think, "Karena kaum Adat tidak menuruti ajaran Islam", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Sejarahnya masih sama seperti yang sudah terjadi.", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Sebagai detektif yang berurusan dengan penjelajahan waktu…", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Aku diajarkan untuk mengetahui seluk beluk sejarah…", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Seandainya orang-orang itu memutuskan untuk seenaknya mengubah sejarah…", null),
+                            new MainCharacterDialog(true, characterExpression.shook, "Orang itu? Maksudnya penjelajah waktu?", null),
+                            new MainCharacterDialog(false, characterExpression.angry, "Kamu masih kecil, kamu tidak tau apapun tentang para penjelajah waktu itu…", null),
+                            new MainCharacterDialog(false, characterExpression.angry, "Dan apa yang mereka bisa lakukan….", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "Baiklah, setidaknya bisakah anda menjelaskan apa yang terjadi disini?", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Sesuai dengan nama kaum Padri, perang yang akan terjadi adalah Perang Padri.", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, " Informasi yang kamu barusan dapat adalah latar belakang perang itu.", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Sebentar lagi akan terjadi bentrokan antara kaum Padri dan Adat.", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Sebaiknya kita pergi dari sini, lagipula sudah tidak ada yang menarik dari tempat ini…", null),
+                            new MainCharacterDialog(false, characterExpression.happy, "Aku duluan ya.. Byee..", null),
+                            new MainCharacterDialog(true, characterExpression.shook, "Hei, tunggu dulu..", null),
+                            new MainCharacterDialog(true, characterExpression.hurt, "(Ah, dia pergi lagi.. Aku sudah cukup lelah dengan kelakuannya itu tapi ya sudahlah…)", null),
+                            new MainCharacterDialog(true, characterExpression.think, "(Sebaiknya aku mencatat di jurnal saja dulu..)", null),
+                            new MainCharacterDialog(true, characterExpression.think, "(Polisi itu ada dimana ya?)", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "(Aku harus mencarinya…)", null),
+                        }, false)
+                    }, true)
+                }),
+
+               new Mission(new List<Goal>
+                {
+
+                        new ExplorationGoal("Mengikuti Yudha di Pagaruyung", 1, new string[] {"Yudha (3)"}, new int[] {-1}, new Story[] {
+                        new Story("Kamu pun menemukan Yudha di dekat sebuah rumah...", new List<Dialogs>
+                        {
+                            new MainCharacterDialog(false, characterExpression.neutral, "Kamu lama sekali sih…", null),
+                            new MainCharacterDialog(true, characterExpression.hurt, "Kan aku harus mencatat informasi yang aku dapatkan dulu", null),
+                            new MainCharacterDialog(true, characterExpression.sad, "Pak Polisi yang main tinggal saja, kok jadi aku yang salah…", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "Yah, itu sih kamu saja yang lelet", null),
+                            new MainCharacterDialog(true, characterExpression.hurt, "(Ujung-ujungnya aku lagi yang salah.. Polisi macam apa ini sebenarnya!?)", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "(Ah sudahlah, lebih baik bersama dia daripada sendirian sih.)", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Selama aku menunggumu yang lelet, aku berusaha mengumpulkan informasi.", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Sekarang, sudah terjadi bentrokan yang aku sebutkan itu.", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Jadi, tugas kita sekarang adalah untuk mengikuti jalannya perang ini.", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Seharusnya sebentar lagi sesuatu akan terjadi.", null),
+                            new MainCharacterDialog(false, characterExpression.happy, "Pas sekali, aku ada pekerjaan untukmu.", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Ikutilah orang Belanda itu.", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Aku akan mengawasimu.", null),
+                            new MainCharacterDialog(true, characterExpression.hurt, "Seharusnya anda saja yang melakukan hal berbahaya seperti ini…", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Apa tadi kamu bilang?", null),
+                            new MainCharacterDialog(true, characterExpression.happy, "Tidak ada.. ", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "(Ayo kita lakukan ini lagi…)", null),
+                        }, false)
+                    }, true)
+                }),
+
+                new Mission(new List<Goal>
+                {
+
+                        new ExplorationGoal("Menghampiri Orang Belanda", 1, new string[] {"Pejabat Belanda (1)"}, new int[] {1}, new Story[] {
+                        new Story("Kamu pun menghampiri orang Belanda itu...", new List<Dialogs>
+                        {
+                            new MainCharacterDialog(true, characterExpression.think, "(Hmmmm… Orang Belanda itu sedang bergumam sendiri di depan sebuah bangunan)", null),
+                            new NPCDialog("???", "Hahahaa… Those fools accepted the agreement (Hahahaa… orang-orang bodoh itu menerima perjanjiannya).", null),
+                            new NPCDialog("???", "Their desire to make the Padri lose is very exploitable (Keinginan mereka untuk membuat Padri kalah sangatlah mudah dieksploitasi).", null),
+                            new NPCDialog("???", "We will join forces with the Adat to fight the Padri and conquer some areas in the meantime (Kita akan bergabung dengan kaum Adat dan menguasai beberapa area untuk sekarang).", null),
+                            new NPCDialog("???", "Imagining it already makes me satisfied.. Hahaha… (Membayangkannya saja sudah membuatku puas… Hahaha…).", null),
+                            new MainCharacterDialog(true, characterExpression.think, "(Coba saja kita bisa menghentikannya..)", null),
+                            new MainCharacterDialog(true, characterExpression.shook, "(Eh? Dia tiba-tiba berhenti berjalan dan menatapku..)", null),
+                            new NPCDialog("???", "What are you doing staring at me like that? (Ngapain kamu lihat-lihat aku seperti itu?).", null),
+                            new MainCharacterDialog(true, characterExpression.sad, "Nothing, sir.. (Tidak ada..)", null),
+                            new MainCharacterDialog(true, characterExpression.happy, "(Untung saja dia tidak curiga...)", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "Pak Polisi, apa yang orang itu sedang rencanakan?", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Ia adalah James Du Puy.", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Ia baru saja mengadakan perjanjian persahabatan dengan tokoh Adat. yaitu Tuanku Suruaso dan 14 Penghulu Minangkabau.", null),
+                            new MainCharacterDialog(true, characterExpression.think, "Untuk apa?", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Yah. singkatnya kaum Adat ingin bantuan Belanda untuk mengalahkan kaum Padri.", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Belanda memanfaatkan perjanjian tersebut untuk menguasai beberapa wilayah di Minangkabau.", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Sebentar lagi mereka akan menguasai Simawang dan perang tidak akan terhindarkan pada tahun 1821 karena kaum Padri akan menentang pendudukan wilayah tersebut..", null),
+                            new MainCharacterDialog(true, characterExpression.sad, "Kalau saja kita bisa menghentikan perang…", null),
+                            new MainCharacterDialog(false, characterExpression.angry, "Kalau begitu kamu akan menjadi sama seperti penjelajah waktu ilegal itu.", null),
+                            new MainCharacterDialog(true, characterExpression.hurt, "Tapi kan..", null),
+                            new MainCharacterDialog(false, characterExpression.angry, "Jangan lanjutkan pembicaraan ini!", null),
+                            new MainCharacterDialog(true, characterExpression.hurt, "(Dia… kelihatan marah)", null),
+                            new MainCharacterDialog(true, characterExpression.hurt, "(Sebaiknya, aku diam saja)", null),
+                            new MainCharacterDialog(true, characterExpression.sad, "...", null),
+                            new MainCharacterDialog(false, characterExpression.sad, "Haah, intinya kamu fokus saja", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Tidak perlu berpikir aneh-aneh", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Disini sudah tidak ada apa-apa lagi, ayo kita coba pergi ke Lintau", null),
+                        }, false)
+                    }, true)
+                }),
+
+        };
         
         }
 
