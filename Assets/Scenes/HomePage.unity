@@ -2774,7 +2774,7 @@ MonoBehaviour:
   sounds:
   - audioType: 1
     name: Main Menu Track
-    clip: {fileID: 8300000, guid: 533c6b8ffac3f4379b7a19444081ca80, type: 3}
+    clip: {fileID: 8300000, guid: cfdeff005fb324511a488e585341f7de, type: 3}
     volume: 0.8
     loop: 1
     playOnAwake: 1
@@ -2790,6 +2790,7 @@ MonoBehaviour:
     type: 2}
   soundEffectsMixerGroup: {fileID: -3229381305930349522, guid: 9244909f2720842f49c3745662a7854b,
     type: 2}
+  sceneNumber: 3
 --- !u!114 &1883857569
 MonoBehaviour:
   m_ObjectHideFlags: 0

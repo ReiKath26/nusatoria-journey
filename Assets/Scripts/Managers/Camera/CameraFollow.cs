@@ -87,7 +87,8 @@ public class CameraFollow : MonoBehaviour
 
               else
               {
-
+                  transform.position = target_0.transform.position + Quaternion.AngleAxis(CameraAngle, Vector3.up) * new Vector3(9.3f, 145.7f, -83.723f);
+                  transform.rotation = Quaternion.LookRotation(target_0.transform.position + Vector3.up * 2f - transform.position, Vector3.up);
               }
 
        

@@ -7398,7 +7398,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a6a418a5dbeea4e58be26785d5147fb1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 207.3
+      value: 199.54
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a6a418a5dbeea4e58be26785d5147fb1,
         type: 3}
@@ -13745,6 +13745,7 @@ MonoBehaviour:
   missionToggle: {fileID: 2030684825}
   missionText: {fileID: 921649981}
   lineRenderer: {fileID: 0}
+  gameOverlay: {fileID: 0}
   getKeyconceptNotification: {fileID: 220184270}
   keyConceptText: {fileID: 89776760}
   getItemNotification: {fileID: 824166094}
@@ -16630,6 +16631,7 @@ MonoBehaviour:
     type: 2}
   soundEffectsMixerGroup: {fileID: -3229381305930349522, guid: 9244909f2720842f49c3745662a7854b,
     type: 2}
+  sceneNumber: 6
 --- !u!4 &688444888
 Transform:
   m_ObjectHideFlags: 0
@@ -19246,7 +19248,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 861d3810767a646878138047650ff81c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 201.7
+      value: 193.93999
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 861d3810767a646878138047650ff81c,
         type: 3}
@@ -46474,7 +46476,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ca34a6148db2d54493f84f379293f33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GroupID: 0
 --- !u!4 &1965657078
 Transform:
   m_ObjectHideFlags: 0

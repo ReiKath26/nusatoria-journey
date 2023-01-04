@@ -261,6 +261,7 @@ public class StoryManager : MonoBehaviour
                     slot.chapterNumber = 2;
                     slot.missionNumber = 0;
                     slot.goalNumber = 0;
+                    slot.lastPosition = new PlayerPosition() {x_pos = 555.7f, y_pos = 193.94f, z_pos = 2891.723f};
                     SaveHandler.instance.saveItem(clues[1], PlayerPrefs.GetInt("choosenSlot"));
                     SaveHandler.instance.saveSlot(slot, slot.slot);
                     SceneManage.instance.LoadScene(6);

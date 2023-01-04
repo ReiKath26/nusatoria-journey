@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -10,13 +11,16 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] private AudioMixerGroup musicMixerGroup;
     [SerializeField] private AudioMixerGroup soundEffectsMixerGroup;
+    [SerializeField] private int sceneNumber;
 
     public static AudioManager instance;
 
    void Awake()
    {
+        int thisScene = SceneManager.GetActiveScene().buildIndex;
 
-        if(instance != null && instance != this)
+
+        if(thisScene > sceneNumber)
         {
             Destroy(gameObject);
             return;
@@ -55,6 +59,23 @@ public class AudioManager : MonoBehaviour
         }
    }
 
+   void Update()
+   {
+     int thisScene = SceneManager.GetActiveScene().buildIndex;
+
+
+        if(thisScene > sceneNumber)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        else
+        {
+            instance = this;
+        }
+   }
+
     //kalau mau mainin suara find AudioManager di scene terus pake fungsi ini
    public void Play (string name)
    {
@@ -74,6 +95,12 @@ public class AudioManager : MonoBehaviour
             return;
        }
        s.source.Stop();
+   }
+
+   public void BGMTransition(string before, string after)
+   {
+        Stop(before);
+        Play(after);
    }
 
     public void UpdateMixerVolume()

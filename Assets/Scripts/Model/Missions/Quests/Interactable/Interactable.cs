@@ -6,20 +6,15 @@ using TMPro;
 public class Interactable : MonoBehaviour
 {
    [SerializeField] private string interactName;
-   [SerializeField] private bool isNpc;
    [SerializeField] private Item item;
    [SerializeField] private int[] missionNumber;
    [SerializeField] private string interactionTitle;
    [SerializeField] private string[] interactionDialog;
+   [SerializeField] private bool isNpc;
 
    public void interact(Transform interactor)
    {
           bool interactionTriggered = false;
-          if(isNpc == true)
-          {
-               Vector3 rotation = new Vector3(interactor.position.x - transform.position.x, 0.0f, interactor.position.z - transform.position.z);
-               transform.rotation = Quaternion.LookRotation(rotation);
-          }
 
           SaveSlots slot = SaveHandler.instance.loadSlot(PlayerPrefs.GetInt("choosenSlot"));
 
@@ -33,7 +28,7 @@ public class Interactable : MonoBehaviour
                }
           } 
 
-          if(interactionTriggered == false)
+          if(interactionTriggered == false && isNpc == true)
           {
                showInteraction();
           }
@@ -69,6 +64,11 @@ public class Interactable : MonoBehaviour
        
      return missionNumber;
        
+   }
+
+   public bool isThisNPC()
+   {
+     return isNpc;
    }
 
    public Item getPocketItem()
