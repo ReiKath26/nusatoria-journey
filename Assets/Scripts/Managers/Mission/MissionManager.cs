@@ -1807,7 +1807,59 @@ public class MissionManager : MonoBehaviour
             mission = new List<Mission>
             {
                //input here
+               new Mission(new List<Goal>
+                {
+
+                        new ExplorationGoal("Pergi mengikuti Yudha ke Pagaruyung", 1, new string[] {"Yudha (1)"}, new int[] {2}, new Story[] {
+                        new Story("Kamu pun mengikuti detektif itu ke Pagaruyung...", new List<Dialogs>
+                        {
+                            new MainCharacterDialog(false, characterExpression.happy, "Hei, kamu ini pandai mencari informasi kan?", null),
+                            new MainCharacterDialog(true, characterExpression.hurt, "Apa yang anda mau sekarang?", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Tidak aku hanya melihat sebuah keributan yang akan terjadi", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Dan aku punya pekerjaan lebih penting dari menghadapi keributan itu", null),
+                            new MainCharacterDialog(false, characterExpression.happy, "Jadi ya…aku serahkan itu padamu anak kecil", null),
+                            new MainCharacterDialog(true, characterExpression.shook, "Hei, tunggu dulu!", null),
+                            new MainCharacterDialog(true, characterExpression.hurt, "Astaga..dia keburu pergi…", null),
+                            new MainCharacterDialog(true, characterExpression.think, " (Ya sudahlah aku akan mencarinya lagi saja setelah aku mencari tau apa yang terjadi disana…)", null),
+                        }, false)}, true),}),
+
+               new Mission(new List<Goal>
+                {
+                    new ExplorationGoal("Pergi ke sekitar Pagaruyung untuk mencari informasi", 2, new string[] { "Warga 1", "Warga 3"}, new int[] {-1, 2}, new Story[] {
+                        new Story("Kamu melihat dua orang berpakaian hitam yang sedang melihat 2 ekor ayam yang diadu...", new List<Dialogs>
+        {
+          new NPCDialog("Warga 1", "Ho, kamu tertarik menonton sabung ayam, anak kecil?", null),
+          new MainCharacterDialog(true, characterExpression.hurt, "(Kasihan ayam-ayam itu, tapi sepertinya ini memang adat mereka..)", null),
+          new NPCDialog("Warga 2", "Ayammu sepertinya sudah kewalahan tuh.. Aku yang akan menang.. Hahaha!", null),
+          new NPCDialog("Warga 1", "Tidaaak! Ayamku!!", null),
+          new NPCDialog("Warga 2", "Ayo, berikan duitnya sesuai adat kita sebagai sesama Kaum Adat.", null),
+          new MainCharacterDialog(true, characterExpression.sad, "(Sebaiknya aku pergi dari sini...)", null),
+          new MainCharacterDialog(true, characterExpression.sad, "(Aku tidak tega melihat ayam diadu sampai terluka seperti itu...)", null),
+
+        }, false),
+                        new Story("Kamu melihat orang berpakaian putih yang sedang menggeleng-gelengkan kepala...", new List<Dialogs>
+        {
+          new NPCDialog("Warga 3", "Dasar kaum Adat itu!", null),
+          new MainCharacterDialog(true, characterExpression.think, "Kaum Adat?", null),
+          new NPCDialog("Warga 3", "Ya, mereka yang berjudi dengan sabung ayam itu.", null),
+          new MainCharacterDialog(true, characterExpression.hurt, "Oh, yang barusan kulihat itu.", null),
+          new NPCDialog("Warga 3", "Padahal hal tersebut dilarang dalam ajaran Islam.", null),
+          new NPCDialog("Warga 3", "Aku kaum Padri, bersumpah tidak akan melakukan hal-hal seperti yang mereka lakukan!", null),
+          new MainCharacterDialog(true, characterExpression.think, "Memangnya mereka melakukan apa saja?", null),
+          new NPCDialog("Warga 3", "Judi, sabung ayam, dan minum-minuman keras...", null),
+          new NPCDialog("Warga 3", "Intinya, jangan dekat-dekat dengan mereka.", null),
+          new NPCDialog("Warga 3", "Mereka hanya akan membawa pengaruh buruk.", null),
+          new NPCDialog("Warga 3", "Jangan tumbuh menjadi orang seperti mereka, mengerti?", null),
+          new MainCharacterDialog(true, characterExpression.shook, "I-iya pak, terima kasih atas peringatannya..", null),
+          new MainCharacterDialog(true, characterExpression.think, "(Kelihatannya warga ini sangat menentang apa yang kaum Adat lakukan)", null),
+          new MainCharacterDialog(true, characterExpression.neutral, "(Aku sudah mendapatkan banyak informasi dari para warga sekitar)", null),
+          new MainCharacterDialog(true, characterExpression.neutral, "(Saatnya kembali ke detektif itu... )", null),
+
+        }, false),
+                     }, false)
+                }),
             };
+        
         }
 
         return mission;
