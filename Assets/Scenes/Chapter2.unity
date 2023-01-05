@@ -575,7 +575,7 @@ RectTransform:
   - {fileID: 1551513433}
   - {fileID: 1323784856}
   m_Father: {fileID: 0}
-  m_RootOrder: 430
+  m_RootOrder: 431
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6076,7 +6076,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7e1daeffbdaff2d46970818542f54453,
         type: 3}
       propertyPath: m_Name
-      value: Kaum Padri NPC (13)
+      value: Pasukan 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e1daeffbdaff2d46970818542f54453, type: 3}
@@ -6803,7 +6803,7 @@ MonoBehaviour:
     itemName: 
     itemDesc: 
     itemCount: 0
-  missionNumber: 03000000
+  missionNumber: 04000000
   interactionTitle: 
   interactionDialog: []
   isNpc: 1
@@ -13702,7 +13702,7 @@ MonoBehaviour:
     itemName: 
     itemDesc: 
     itemCount: 0
-  missionNumber: 02000000
+  missionNumber: 03000000
   interactionTitle: 
   interactionDialog: []
   isNpc: 1
@@ -15030,6 +15030,47 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 617f0d4e332f4544283a56ccf0166299, type: 3}
+--- !u!1 &582337131 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 617f0d4e332f4544283a56ccf0166299,
+    type: 3}
+  m_PrefabInstance: {fileID: 582337130}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &582337132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582337131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab0d90a6267184b8bbcb4c4912e1b281, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactName: Tuanku Lintau dan Pasukannya
+  item:
+    itemSprite: 
+    itemName: 
+    itemDesc: 
+    itemCount: 0
+  missionNumber: 0500000008000000
+  interactionTitle: 
+  interactionDialog: []
+  isNpc: 1
+--- !u!65 &582337133
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582337131}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 19.51942, y: 26.617615, z: 16.69806}
+  m_Center: {x: -20.876102, y: 12.808731, z: 2.1276}
 --- !u!1001 &582453302
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32804,10 +32845,38 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: be94616a5aa814be784c74d720263d4e,
         type: 3}
       propertyPath: m_Name
-      value: Fort gate (2)
+      value: Simawang Fort Gate
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be94616a5aa814be784c74d720263d4e, type: 3}
+--- !u!1 &1335039017 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: be94616a5aa814be784c74d720263d4e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1335039016}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1335039018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1335039017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab0d90a6267184b8bbcb4c4912e1b281, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactName: 
+  item:
+    itemSprite: 
+    itemName: 
+    itemDesc: 
+    itemCount: 0
+  missionNumber: 06000000
+  interactionTitle: Gerbang Pos Pertahanan Simawang
+  interactionDialog: []
+  isNpc: 0
 --- !u!1001 &1347235555
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36182,7 +36251,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7e1daeffbdaff2d46970818542f54453,
         type: 3}
       propertyPath: m_Name
-      value: Kaum Padri NPC (14)
+      value: Pasukan 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e1daeffbdaff2d46970818542f54453, type: 3}
@@ -39957,7 +40026,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 952e052843d31ad47bf5ba77e2697b21,
         type: 3}
       propertyPath: m_Name
-      value: Belanda Soldier (7)
+      value: Pasukan Belanda 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 952e052843d31ad47bf5ba77e2697b21, type: 3}
@@ -45480,10 +45549,51 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 952e052843d31ad47bf5ba77e2697b21,
         type: 3}
       propertyPath: m_Name
-      value: Belanda Soldier (6)
+      value: Pasukan Belanda 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 952e052843d31ad47bf5ba77e2697b21, type: 3}
+--- !u!1 &1906304642 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 952e052843d31ad47bf5ba77e2697b21,
+    type: 3}
+  m_PrefabInstance: {fileID: 1906304641}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1906304643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906304642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab0d90a6267184b8bbcb4c4912e1b281, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactName: 
+  item:
+    itemSprite: 
+    itemName: 
+    itemDesc: 
+    itemCount: 0
+  missionNumber: 07000000
+  interactionTitle: '2 Orang Pasukan Belanda '
+  interactionDialog: []
+  isNpc: 1
+--- !u!65 &1906304644
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906304642}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 18.784441, y: 29.835327, z: 11.565245}
+  m_Center: {x: -0.5000696, y: 9.371479, z: 4.1238146}
 --- !u!1001 &1907537717
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47266,7 +47376,7 @@ Transform:
   m_Children:
   - {fileID: 1868417140}
   m_Father: {fileID: 0}
-  m_RootOrder: 64
+  m_RootOrder: 65
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1972760195
 PrefabInstance:

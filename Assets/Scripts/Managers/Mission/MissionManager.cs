@@ -1805,7 +1805,7 @@ public class MissionManager : MonoBehaviour
         else
         {
             mission = new List<Mission>
-            {
+            {// chapter 2 missions
                new Mission(new List<Goal>
                 {
 
@@ -1955,6 +1955,135 @@ public class MissionManager : MonoBehaviour
                             new MainCharacterDialog(false, characterExpression.sad, "Haah, intinya kamu fokus saja", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Tidak perlu berpikir aneh-aneh", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Disini sudah tidak ada apa-apa lagi, ayo kita coba pergi ke Lintau", null),
+                        }, false)
+                    }, true)
+                }),
+
+                new Mission(new List<Goal>
+                {
+
+                        new ExplorationGoal("Pergi ke Lintau untuk Mencari Informasi", 1, new string[] {"Tuanku Lintau"}, new int[] {-1}, new Story[] {
+                        new Story("Kamu dan Kak Yudha telah sampai di Lintau...", new List<Dialogs>
+                        {
+                            new MainCharacterDialog(false, characterExpression.neutral, "Seharusnya kita sudah sampai di Lintau.", null),
+                            new NPCDialog("???", "Tuan, ada dua orang yang tiba-tiba muncul di pertahanan kita..", null),
+                            new NPCDialog("???", "Apakah kalian mata-mata dari Belanda?", null),
+                            new NPCDialog("???", "Pasukan, tangkap mereka!", null),
+                            new MainCharacterDialog(true, characterExpression.hurt, "(Ouch.. Baru juga sampai sudah ditangkap…)", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Sebelum kalian langsung menangkap tanpa bukti, lebih baik memeriksa kami dulu.", null),
+                            new NPCDialog("???", "Pasukan, geledah barang-barang mereka.", null),
+                            new NPCDialog("Pasukan 1", "Hanya ada semacam dokumen di kantong anak kecil ini.", null),
+                            new NPCDialog("Pasukan 2", "Tidak ada hal yang berhubungan dengan Belanda.", null),
+                            new NPCDialog("???", "Maaf telah mencurigai kalian karena kami sedang mempersiapkan perang.", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "Maaf kalau saya lancang, bolehkah saya tau nama anda?", null),
+                            new NPCDialog("???", "Oh iya, sudah tidak sopan langsung menangkap, saya malah lupa memperkenalkan diri.", null),
+                            new NPCDialog("Tuanku Lintau", "Namaku Tuanku Lintau.", null),
+                            new NPCDialog("Tuanku Lintau", "Siapa namamu dan tuan yang disana?", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "Namaku Player", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Yudha", null),
+                            new NPCDialog("Tuanku Lintau", "Saya meminta maaf atas kelancangan saya tadi.", null),
+                            new MainCharacterDialog(true, characterExpression.happy, "Tidak usah sungkan begitu, Belanda memang banyak melakukan hal yang licik", null),
+                            new NPCDialog("Tuanku Lintau", "Belanda juga mengganggu kalian ya?", null),
+                            new MainCharacterDialog(true, characterExpression.hurt, "Kurang lebih begitu.", null),
+                            new NPCDialog("Tuanku Lintau", "Kalau begitu, apa saya boleh minta bantuan pada kalian?", null),
+                            new NPCDialog("Tuanku Lintau", "Sepertinya kalian tidak akan dicurgai karena kalian bukan orang sini.", null),
+                            new NPCDialog("Tuanku Lintau", "Kami sedang mempersiapkan pasukan untuk mengadakan serangan ke pos-pos di Simawang", null),
+                            new MainCharacterDialog(true, characterExpression.think, "Lalu, apa yang harus kita lakukan?", null),
+                            new NPCDialog("Tuanku Lintau", "Kamu bisa pergi kesana dan melihat-lihat keadaan.", null),
+                            new NPCDialog("Tuanku Lintau", "Saya sedang bersiap-siap dan memperkirakan seberapa banyak pasukan yang dibutuhkan.", null),
+                            new NPCDialog("Tuanku Lintau", "Kita ada sekitar 20.000 sampai 25.000 pasukan untuk sekarang.", null),
+                            new NPCDialog("Tuanku Lintau", "Tapi, kami juga mau melihat seberapa pasukan yang mereka siapkan agar kita bisa mengantisipasinya", null),
+                            new NPCDialog("Tuanku Lintau", "Seharusnya dengan pasukan dan senjata yang ada sudah cukup untuk menyerang mereka sih.", null),
+                            new MainCharacterDialog(true, characterExpression.think, "(Aku tidak yakin dengan pernyataan itu…)", null),
+                            new MainCharacterDialog(true, characterExpression.think, "(Aku akan mempertimbangkannya setelah investigasi nanti..)", null),
+                            new MainCharacterDialog(true, characterExpression.happy, "Serahkan saja pada kami", null),
+                            new NPCDialog("Tuanku Lintau", "Terimakasih banyak karena mau membantu, nak Player dan Yudha.", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Dari sini ke Simawang harusnya tidak jauh karena lorong waktu", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Kamu hanya tinggal mengikutiku", null),
+                        }, false)
+                    }, true)
+                }),
+
+                new Mission(new List<Goal>
+                {
+
+                        new ExplorationGoal("Pergi ke Simawang untuk mengintai pos pertahanan di Simawang", 1, new string[] {"Simawang Fort Gate"}, new int[] {-1}, new Story[] {
+                        new Story("Kamu dan Kak Yudha telah sampai di pos pertahanan Belanda di Simawang...", new List<Dialogs>
+                        {
+                            new MainCharacterDialog(false, characterExpression.neutral, "Sana, saatnya kamu menjalankan tugasmu.", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Aku akan melakukan hal lain di sekitar sini.", null),
+                            new MainCharacterDialog(true, characterExpression.angry, "(Sabar Player, sabar…)", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "(Aku memang hanya bisa mengandalkan diriku sendiri)", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "(Saatnya aku mengintai tempat ini…)", null),
+                        }, false)
+                    }, true)
+                }),
+
+                new Mission(new List<Goal>
+                {
+                    new ExplorationGoal("Mengintai pos pertahanan di Simawang", 1, new string[] { "Pasukan Belanda 1"}, new int[] {-1}, new Story[] {
+                        new Story("Kamu melihat dua orang tentara Belanda yang sedang berbincang...", new List<Dialogs>
+       {
+                            new NPCDialog("Pasukan Belanda 1", "Untuk sekarang belum ada tanda-tanda perlawanan dari Padri.", null),
+                            new NPCDialog("Pasukan Belanda 2", "Yang penting kita sudah menyiapkan pasukan untuk berjaga-jaga kan?", null),
+                            new NPCDialog("Pasukan Belanda 2", "Sudah kok, kita menyiapkan 200 serdadu.", null),
+                            new NPCDialog("Pasukan Belanda 2", "Kamu yakin segitu cukup untuk mengalahkan mereka?", null),
+                            new NPCDialog("Pasukan Belanda 2", "Pasukan Padri itu jumlahnya tidak sedikit.", null),
+                            new NPCDialog("Pasukan Belanda 2", "Kamu lupa kita bersatu dengan Kaum Adat ya?", null),
+                            new NPCDialog("Pasukan Belanda 2", "Baiklah.. Ayo lanjutkan patrolinya..", null),
+                            new MainCharacterDialog(true, characterExpression.think, "(Sebaiknya aku mencatat informasi-informasi yang kudengar itu.)", null),
+                            new MainCharacterDialog(true, characterExpression.shook, "Loh mana Pak Polisi itu?", null),
+                            new MainCharacterDialog(false, characterExpression.happy, "Hei, Player!", null),
+                            new MainCharacterDialog(true, characterExpression.shook, "Waaahh! Jangan menakutiku dengan tiba-tiba muncul seperti itu dong!", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Saat kamu sibuk memperhatikan mereka, aku pergi ke gudang persenjataan.", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Aku melihat banyak meriam dan senjata api di dalamnya.", null),
+                            new MainCharacterDialog(true, characterExpression.shook, "Kita harus memperingatkan Tuanku Lintau mengenai hal ini", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Ayo kita bergegas kembali ke Tuanku Lintau.", null),
+                        }, false)
+                    }, true)
+                }),
+
+                new Mission(new List<Goal>
+                {
+
+                        new ExplorationGoal("Pergi ke Lintau untuk Mencari Informasi", 1, new string[] {"Tuanku Lintau"}, new int[] {-1}, new Story[] {
+                        new Story("Kamu dan Kak Yudha telah sampai di Lintau...", new List<Dialogs>
+                        {
+                            new MainCharacterDialog(false, characterExpression.neutral, "Seharusnya kita sudah sampai di Lintau.", null),
+                            new NPCDialog("???", "Tuan, ada dua orang yang tiba-tiba muncul di pertahanan kita..", null),
+                            new NPCDialog("???", "Apakah kalian mata-mata dari Belanda?", null),
+                            new NPCDialog("???", "Pasukan, tangkap mereka!", null),
+                            new MainCharacterDialog(true, characterExpression.hurt, "(Ouch.. Baru juga sampai sudah ditangkap…)", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Sebelum kalian langsung menangkap tanpa bukti, lebih baik memeriksa kami dulu.", null),
+                            new NPCDialog("???", "Pasukan, geledah barang-barang mereka.", null),
+                            new NPCDialog("Pasukan 1", "Hanya ada semacam dokumen di kantong anak kecil ini.", null),
+                            new NPCDialog("Pasukan 2", "Tidak ada hal yang berhubungan dengan Belanda.", null),
+                            new NPCDialog("???", "Maaf telah mencurigai kalian karena kami sedang mempersiapkan perang.", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "Maaf kalau saya lancang, bolehkah saya tau nama anda?", null),
+                            new NPCDialog("???", "Oh iya, sudah tidak sopan langsung menangkap, saya malah lupa memperkenalkan diri.", null),
+                            new NPCDialog("Tuanku Lintau", "Namaku Tuanku Lintau.", null),
+                            new NPCDialog("Tuanku Lintau", "Siapa namamu dan tuan yang disana?", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "Namaku Player", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Yudha", null),
+                            new NPCDialog("Tuanku Lintau", "Saya meminta maaf atas kelancangan saya tadi.", null),
+                            new MainCharacterDialog(true, characterExpression.happy, "Tidak usah sungkan begitu, Belanda memang banyak melakukan hal yang licik", null),
+                            new NPCDialog("Tuanku Lintau", "Belanda juga mengganggu kalian ya?", null),
+                            new MainCharacterDialog(true, characterExpression.hurt, "Kurang lebih begitu.", null),
+                            new NPCDialog("Tuanku Lintau", "Kalau begitu, apa saya boleh minta bantuan pada kalian?", null),
+                            new NPCDialog("Tuanku Lintau", "Sepertinya kalian tidak akan dicurgai karena kalian bukan orang sini.", null),
+                            new NPCDialog("Tuanku Lintau", "Kami sedang mempersiapkan pasukan untuk mengadakan serangan ke pos-pos di Simawang", null),
+                            new MainCharacterDialog(true, characterExpression.think, "Lalu, apa yang harus kita lakukan?", null),
+                            new NPCDialog("Tuanku Lintau", "Kamu bisa pergi kesana dan melihat-lihat keadaan.", null),
+                            new NPCDialog("Tuanku Lintau", "Saya sedang bersiap-siap dan memperkirakan seberapa banyak pasukan yang dibutuhkan.", null),
+                            new NPCDialog("Tuanku Lintau", "Kita ada sekitar 20.000 sampai 25.000 pasukan untuk sekarang.", null),
+                            new NPCDialog("Tuanku Lintau", "Tapi, kami juga mau melihat seberapa pasukan yang mereka siapkan agar kita bisa mengantisipasinya", null),
+                            new NPCDialog("Tuanku Lintau", "Seharusnya dengan pasukan dan senjata yang ada sudah cukup untuk menyerang mereka sih.", null),
+                            new MainCharacterDialog(true, characterExpression.think, "(Aku tidak yakin dengan pernyataan itu…)", null),
+                            new MainCharacterDialog(true, characterExpression.think, "(Aku akan mempertimbangkannya setelah investigasi nanti..)", null),
+                            new MainCharacterDialog(true, characterExpression.happy, "Serahkan saja pada kami", null),
+                            new NPCDialog("Tuanku Lintau", "Terimakasih banyak karena mau membantu, nak Player dan Yudha.", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Dari sini ke Simawang harusnya tidak jauh karena lorong waktu", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Kamu hanya tinggal mengikutiku", null),
                         }, false)
                     }, true)
                 }),

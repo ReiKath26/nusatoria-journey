@@ -101,6 +101,7 @@ public class OnboardingManager : MonoBehaviour
         keyDesc = "Sultan Agung tidak menyerah dan terus melancarkan serangan, tetapi tidak ada yang berhasil. Sepeninggal Sultan Agung di tahun 1645, Kerajaan Mataram semakin lemah sehingga akhirnya dapat dikuasai VOC.",
         unlocked = false},
 
+        //keyconcept chapter 2
         new KeyConcepts() {keyNumber = 6, keyName = "Latar belakang Perang Padri",
         keyDesc = "Bermula dari adanya pertentangan antara kaum Padri dengan kaum Adat dalam masalah praktik keagamaan sehingga terjadi bentrokan antar keduanya.",
         unlocked = false},
