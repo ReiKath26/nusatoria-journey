@@ -97,12 +97,6 @@ public class AudioManager : MonoBehaviour
        s.source.Stop();
    }
 
-   public void BGMTransition(string before, string after)
-   {
-        Stop(before);
-        Play(after);
-   }
-
     public void UpdateMixerVolume()
     {
         musicMixerGroup.audioMixer.SetFloat("Music Volume", Mathf.Log10(AudioOptions.musicVolume) * 20);

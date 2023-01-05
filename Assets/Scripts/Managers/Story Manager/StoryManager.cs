@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.EventSystems;
+using UnityEngine.Audio;
 
 public class StoryManager : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class StoryManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI dialogTextHolder;
     [SerializeField] private GameObject spriteObject;
     [SerializeField] private GameObject backgroundObject;
+    [SerializeField] private GameObject nextButton;
 
     private Story story {get; set;}
 
@@ -62,7 +64,7 @@ public class StoryManager : MonoBehaviour
                         new MainCharacterDialog(true, characterExpression.neutral, "Aku sebaiknya mengikutinya untuk memastikan", null),
                         new CutsceneDialog("rumah_kosong", "14 November 2195, 11.20, Rumah Terpencil", new string[] {"Rumah Kosong Background"}),
                         new MainCharacterDialog(true, characterExpression.think, "Apa yang orang itu lakukan disini...", null),
-                        new CutsceneDialog("rumah_kosong", "!!!", null),
+                        new CutsceneDialog("cutscene_tm", "!!!", null),
                         new MainCharacterDialog(false, characterExpression.neutral, "Hmmm...", null),
                         new MainCharacterDialog(true, characterExpression.shook, "(Apa itu...tidak mungkin...mesin waktu?!)", null),
                         new MainCharacterDialog(false, characterExpression.neutral, "Baiklah...sekarang melakukannya seperti biasa...", null),
@@ -81,7 +83,7 @@ public class StoryManager : MonoBehaviour
                         new CutsceneDialog("cutscene_voc", "Dan itu mendorong segala macam usaha, bagi rakyat Nusantara, untuk memperjuangkan kemerdekaan mereka", null)
 
                     };
-                    Story thisStory = new Story("14 November 2195, 11:00 - Jalanan Kota Jakarta", dialouge, true);
+                    Story thisStory = new Story("14 November 2195, 11:00 - Jalanan Kota Jakarta", dialouge, true, null);
                     return thisStory;
                }
               
@@ -95,7 +97,7 @@ public class StoryManager : MonoBehaviour
                         new MainCharacterDialog(true, characterExpression.neutral, "(Sebaiknya aku mencari informasi dan mencatat petunjuk yang aku dapat untuk mencari tau tempat apa ini...)", null),
                         new MainCharacterDialog(true, characterExpression.neutral, "(Dan kalau aku sudah tau, baru aku dapat memikirkan cara keluar dari sini...)", null)
                     };
-                    Story thisStory = new Story("?? ?? ??, ?? - ???", dialouge, false);
+                    Story thisStory = new Story("?? ?? ??, ?? - ???", dialouge, false, null);
                     return thisStory;
                }
                
@@ -122,7 +124,7 @@ public class StoryManager : MonoBehaviour
                         new MainCharacterDialog(false, characterExpression.angry, "Hmph!", new string[]{"Yudha_Pier"})
 
                     };
-                    Story thisStory = new Story("?? ?? ??, ?? - Pelabuhan Minang", dialouge, false);
+                    Story thisStory = new Story("?? ?? ??, ?? - Pelabuhan Minang", dialouge, false, null);
                     return thisStory;
                }
               
@@ -141,6 +143,19 @@ public class StoryManager : MonoBehaviour
         nameTextHolder.text = "";
         storyOverlay.SetActive(true);
         gameOverlay.SetActive(false);
+
+        if(story.getMusic() != null)
+        {
+            foreach(Sound s in AudioManager.instance.sounds)
+            {
+                if(s.source.isPlaying)
+                {
+                    s.source.Stop();
+                }
+            }
+
+            AudioManager.instance.Play(story.getMusic());
+        }
     }
 
     public void nextLine(Dialogs dialog)
@@ -220,6 +235,7 @@ public class StoryManager : MonoBehaviour
         if(story.getCompleted() == true && story.getIsEnding() == false)
         {
             SaveSlots slot = SaveHandler.instance.loadSlot(PlayerPrefs.GetInt("choosenSlot"));
+            AudioManager.instance.Stop("Typewritter");
 
             if(slot.chapterNumber == 1 && slot.missionNumber == 0 && beginningTutorial == true)
             {
@@ -235,6 +251,7 @@ public class StoryManager : MonoBehaviour
         else if (story.getCompleted() == true && story.getIsEnding() == true)
         {
             SaveSlots slot = SaveHandler.instance.loadSlot(PlayerPrefs.GetInt("choosenSlot"));
+            AudioManager.instance.Stop("Typewritter");
 
             Item[] clues = new Item[]
             {
@@ -275,7 +292,7 @@ public class StoryManager : MonoBehaviour
                     slot.goalNumber = 0;
                     SaveHandler.instance.saveItem(clues[2], PlayerPrefs.GetInt("choosenSlot"));
                     SaveHandler.instance.saveSlot(slot, slot.slot);
-                    SceneManage.instance.LoadScene(0);
+                    SceneManage.instance.LoadScene(3);
                 break;
                }
               
@@ -287,12 +304,14 @@ public class StoryManager : MonoBehaviour
 
     IEnumerator TypeLine(string line)
     {
+        nextButton.SetActive(false);
         AudioManager.instance.Play("Typewritter");
         foreach( char c in line.ToCharArray())
         {
             dialogTextHolder.text += c;
             yield return new WaitForSeconds(0.01f);
         }
+         nextButton.SetActive(true);
         AudioManager.instance.Stop("Typewritter");
     }
 
