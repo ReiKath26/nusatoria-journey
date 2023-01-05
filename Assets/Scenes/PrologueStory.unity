@@ -496,6 +496,7 @@ MonoBehaviour:
   dialogTextHolder: {fileID: 447053223}
   spriteObject: {fileID: 905364214}
   backgroundObject: {fileID: 387264477}
+  nextButton: {fileID: 21688149}
 --- !u!114 &136237656
 MonoBehaviour:
   m_ObjectHideFlags: 0

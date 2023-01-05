@@ -49,7 +49,7 @@ public class Interactable : MonoBehaviour
                          dialog.Add(dialogue);
                     }
 
-                    Story story = new Story(interactionTitle, dialog,false);
+                    Story story = new Story(interactionTitle, dialog,false, null);
                     StoryManager.instance.assignStory(story);
                }
    }
@@ -93,12 +93,5 @@ public class Interactable : MonoBehaviour
    {
         return transform;
    }
-
-   private void onDrawGizmos()
-    {
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position, 40);
-    }
-
 
 }

@@ -13,17 +13,25 @@ public class Story
 
     private bool completed {get; set;}
 
-    public Story(string title, List<Dialogs> dialog, bool isEnd)
+    private string music_on_scene;
+
+    public Story(string title, List<Dialogs> dialog, bool isEnd, string muse)
     {
         this.titleTimeFrame = title;
         this.dialogs = dialog;
         this.isEnding = isEnd;
+        this.music_on_scene = muse;
         completed = false;
     }
 
     public string getTitle()
     {
         return titleTimeFrame;
+    }
+
+    public string getMusic()
+    {
+        return music_on_scene;
     }
 
     public void checkDialogs()
