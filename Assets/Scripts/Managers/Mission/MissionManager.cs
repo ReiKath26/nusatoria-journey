@@ -1017,7 +1017,9 @@ public class MissionManager : MonoBehaviour
                     new Choice("1821 - 1826", false)
                 }, level.medium, questionType.perjuangan_kp),
           };
-                hardQuestion = new List<Question>{
+
+                hardQuestion = new List<Question>
+                {
                new Question("Pasukan", "Apa nama wilayah yang berhasil diduduki oleh Belanda karena bantuan kaum Adat?",
                 new Choice[]
                {
@@ -1086,11 +1088,210 @@ public class MissionManager : MonoBehaviour
 
           else
           {
-               easyQuestion = new List<Question>();
-               mediumQuestion = new List<Question>();
-               hardQuestion = new List<Question>();
-               //edit later
-          }    
+               easyQuestion = new List<Question>
+               {
+               new Question("Player", "Imam Bonjol dibawa ke Batavia dan akhirnya dibuang ke…",
+               new Choice[]
+               {
+                    new Choice("Cirebon", false),
+                    new Choice("Cimahi", false),
+                    new Choice("Cianjur", true)
+               }, level.easy, questionType.akhirPerang_padri),
+
+               new Question("Player", "Setelah bersatu, akhirnya kaum Adat dan Kaum Padri memutuskan untuk…",
+               new Choice[]
+               {
+                    new Choice("Bergerak dan menyerang pos-pos tentara Belanda", true),
+                    new Choice("Menyerang pasukan Belanda yang datang ke tempat mereka", false),
+                    new Choice("Melakukan perang gerilya", false)
+               }, level.easy, questionType.faseKetiga_padri),
+
+               new Question("Player", "Belanda pada fase ketiga, ingin menguasai suatu benteng yang ada di Lintau yang bernama…",
+               new Choice[]
+               {
+                    new Choice("Benteng Mataram", false),
+                    new Choice("Benteng Marapalam", true),
+                    new Choice("Benteng Malapalam", false)
+               }, level.easy, questionType.faseKetiga_padri),
+
+               new Question("Player", "Pelajaran apa yang bisa dipetik dari peristiwa ini adalah…",
+               new Choice[]
+               {
+                    new Choice("Pantang menyerah meski terpojok", true),
+                    new Choice("Merencanakan sesuatu dengan lebih matang", true),
+                    new Choice("Belajar dari masa lalu dan tidak mengulangi kesalahan yang sama", true)
+               }, level.easy, questionType.akhirPerang_padri),
+
+               new Question("Player", "Belanda membuat seseorang membujuk para pemuka kaum Padri untuk berdamai, yaitu...",
+               new Choice[]
+               {
+                    new Choice("Rafaiman Ajufri", false),
+                    new Choice("Alaiman Ajufri", false),
+                    new Choice("Sulaiman Aljufri", true)
+               }, level.easy, questionType.faseKedua_padri),
+
+               new Question("Player", "Pada tahun 1831, Gillavary digantikan oleh seseorang yang bernama…",
+               new Choice[]
+               {
+                    new Choice("Jacob Elout", true),
+                    new Choice("Jacky Elout", false),
+                    new Choice("James Elout", false)
+               }, level.easy, questionType.faseKetiga_padri),
+
+               new Question("Player", "Pada tahun 1832 Belanda semakin ofensif pada kaum Padri karena…",
+               new Choice[]
+               {
+                    new Choice("Datangnya bantuan dari Belanda", false),
+                    new Choice("Datangnya bantuan pasukan dari Jawa", true),
+                    new Choice("Datangnya bantuan dari Inggris", false)
+               }, level.easy, questionType.faseKetiga_padri),
+
+               new Question("Player", "Sebelum diasingkan, Imam Bonjol sempat dibawa ke tempat kekuasaan Belanda di...",
+               new Choice[]
+               {
+                    new Choice("Batavia", true),
+                    new Choice("Bandung", false),
+                    new Choice("Jepara", false)
+               }, level.easy, questionType.akhirPerang_padri),
+
+               new Question("Player", "Benteng pertahanan terakhir Kaum Padri bernama...",
+               new Choice[]
+               {
+                    new Choice("Benteng Lintau", false),
+                    new Choice("Benteng Ellout", false),
+                    new Choice("Benteng Bonjol", true)
+               }, level.easy, questionType.faseKetiga_padri),
+
+               new Question("Player", "Nama pengganti dari Jacob Elout yang menyerang pos-pos pertahanan Padri adalah",
+               new Choice[]
+               {
+                    new Choice("Frank", false),
+                    new Choice("Francis", true),
+                    new Choice("Franco", false)
+               }, level.easy, questionType.faseKetiga_padri),
+
+          };
+
+               mediumQuestion = new List<Question>
+               {
+               new Question("Player", "Belanda akhirnya merasa tersudut dengan kaum Adat dan Padri yang bersatu sehingga mereka membuat janji damai dalam bentuk...",
+               new Choice[]
+               {
+                    new Choice("Plakat Padang", false),
+                    new Choice("Plakat Padri", false),
+                    new Choice("Plakat Panjang", true)
+                }, level.medium, questionType.faseKetiga_padri),
+
+               new Question("Player", "Pada fase ketiga perang padri, pertahanan terakhir kaum Padri berada di tangan…",
+               new Choice[]
+               {
+                    new Choice("Tuanku Nan Renceh", false),
+                    new Choice("Tuanku Pasaman", false),
+                    new Choice("Tuanku Imam Bonjol", true)
+                }, level.medium, questionType.faseKetiga_padri),
+
+               new Question("Player", "Perjanjian Padang terjadi pada…",
+               new Choice[]
+               {
+                    new Choice("15 Oktober 1825", false),
+                    new Choice("15 Desember 1825", false),
+                    new Choice("15 November 1825", true)
+                }, level.medium, questionType.faseKedua_padri),
+
+               new Question("Player", "Apa yang Belanda lakukan di fase kedua perang Padri?",
+               new Choice[]
+               {
+                    new Choice("Belanda ingin berperang melawan kaum Padri", false),
+                    new Choice("Belanda ingin mengadakan perjanjian damai dengan kaum Padri", true),
+                    new Choice("Belanda ingin memutus kerjasamanya dengan kaum Adat", false)
+                }, level.medium, questionType.faseKedua_padri),
+
+               new Question("Player", "Pemimpin pasukan Belanda yang menyerang nagari di Ampek Angkek adalah…",
+               new Choice[]
+               {
+                    new Choice("Gillavary", false),
+                    new Choice("Elout", false),
+                    new Choice("Francis", true)
+                }, level.medium, questionType.faseKetiga_padri),
+
+               new Question("Player", "Apa syarat yang diajukan Imam Bonjol ketika Belanda mengajukan perjanjian damai dengannya?",
+               new Choice[]
+               {
+                    new Choice("Agar Belanda pergi dari Nusantara", false),
+                    new Choice("Agar rakyatnya dibebaskan", true),
+                    new Choice("Agar Belanda tidak mendukung kaum Adat", false)
+                }, level.medium, questionType.faseKedua_padri),
+          
+               new Question("Player", "Pemimpin pasukan Belanda yang menyerang nagari di Ampek Angkek adalah…",
+               new Choice[]
+               {
+                    new Choice("Ampu Angkuk", false),
+                    new Choice("Nagaria", false),
+                    new Choice("Ampek Angkek", true)
+                }, level.medium, questionType.faseKetiga_padri),
+
+               new Question("Player", "Siasat apa yang dipakai Francis untuk menangkap Imam Bonjol yang lolos dari pengepungan?",
+               new Choice[]
+               {
+                    new Choice("Tipu muslihat menawarkan perjanjian damai", true),
+                    new Choice("Menyerang Benteng Bonjol", false),
+                    new Choice("Mengancam keselamatan warganya", false)
+                }, level.medium, questionType.akhirPerang_padri),
+
+          };
+
+                hardQuestion = new List<Question>
+                {
+               new Question("Player", "Benteng di perbukitan dekat Bonjol jatuh ke tangan Belanda pada bulan…",
+               new Choice[]
+               {
+                    new Choice("Juni 1836", false),
+                    new Choice("Juli 1837", false),
+                    new Choice("Agustus 1835", true)
+               }, level.hard, questionType.faseKetiga_padri),
+
+               new Question("Player", "Kota tempat Belanda menyerang Kaum Padri bernama...",
+               new Choice[]
+               {
+                    new Choice("Koto Tuo", true),
+                    new Choice("Kota Tua", false),
+                    new Choice("Minangkabau", false)
+               }, level.hard, questionType.faseKetiga_padri),
+
+               new Question("Player", "Akhirnya pada tanggal 16 Agustus 1837, Benteng Bonjol..",
+               new Choice[]
+               {
+                    new Choice("Berhasil dipertahanakan dari ancaman Belanda", false),
+                    new Choice("Dikepung dari empat penjuru dan dilumpuhkan", true),
+                    new Choice("Ditinggalkan oleh Belanda", false)
+               }, level.hard, questionType.faseKetiga_padri),
+
+               new Question("Player", "Yang mana yang bukan isi dari Perjanjian Padang? ",
+               new Choice[]
+               {
+                    new Choice("Praktik adu ayam akan terus dilanjutkan", true),
+                    new Choice("Belanda mengakui kekuasaan pemimpin Padri", false),
+                    new Choice("Belanda dan Kaum Padri akan melindungi para pedagang dan orang-orang dalam perjalanan", false)
+               }, level.hard, questionType.faseKedua_padri),
+
+               new Question("Player", "Berikut ini merupakan tempat yang diakui sebagai kekuasaan pemimpin padri dalam perjanjian padang adalah...",
+               new Choice[]
+               {
+                    new Choice("Sigandang", true),
+                    new Choice("Sigidung", false),
+                    new Choice("Ciremai", false)
+               }, level.hard, questionType.faseKedua_padri),
+
+               new Question("Player", "Plakat Panjang adalah",
+               new Choice[]
+               {
+                    new Choice("Janji khidmat simbol tidak akan ada lagi perang antara Belanda dan Kaum Padri", true),
+                    new Choice("Janji khidmat simbol tidak akan ada lagi perang antara Kaum Adat dan Padri", false),
+                    new Choice("Janji khidmat simbol tidak akan ada lagi sambung ayam", false)
+               }, level.hard, questionType.faseKetiga_padri),
+          };
+
+            }    
       }
 
       if(currentGoal is JudgementGoal jd_goal)
@@ -2408,7 +2609,7 @@ public class MissionManager : MonoBehaviour
                     }, true)
                 }),
 
-                // edit later judgement
+ 
                 new Mission(new List<Goal>
                 {
                     new JudgementGoal("Menyelesaikan tantangan Judgement dari Pasukan Kaum Padri", 15, "Pasukan Kaum Padri", true)
@@ -2418,10 +2619,10 @@ public class MissionManager : MonoBehaviour
                 {
                     new ReviewGoal("Mereview kembali beberapa kejadian bersama Pasukan Kaum Padri", 1, "Pasukan Kaum Padri", new Story[]{
                         new Story("Pasukan Kaum Padri selesai memberikan review singkat...", new List<Dialogs>
-                        {//edit nanti ya sayang
-                               new NPCDialog("Pasukan Kaum Padri", "Sekarang kamu seharusnya sudah lebih paham...", null),
-                               new NPCDialog("Pasukan Kaum Padri", "Coba aku tes kembali pemahamanmu itu ya, dan kita tidak akan berhenti sampai kamu mengerti betul", null),
-                              new MainCharacterDialog(true, characterExpression.hurt, "Ya Tuhan....", null)
+                        {
+                               new NPCDialog("Pasukan Kaum Padri", "Aku sudah coba jelaskan secara singkat...", null),
+                               new NPCDialog("Pasukan Kaum Padri", "Seharusnya sekarang kamu bisa menjawab sedikit pertanyaan dariku", null),
+                              new MainCharacterDialog(true, characterExpression.hurt, "Astaga...", null)
                         }, false)
                     }),
                     new JudgementGoal("Menyelesaikan tantangan Judgement dari Pasukan Kaum Padri", 5, "Pasukan Kaum Padri", false)
@@ -2851,7 +3052,88 @@ public class MissionManager : MonoBehaviour
                         }, false)
                     }, true)
                 }),
+        //edit later
+                new Mission(new List<Goal>
+                {
+                    new JudgementGoal("Menyelesaikan tantangan Judgement dari Pasukan Kaum Padri", 15, "Pasukan Kaum Padri", true)
+                }),
 
+                  new Mission(new List<Goal>
+                {
+                    new ReviewGoal("Mereview kembali beberapa kejadian bersama Pasukan Kaum Padri", 1, "Pasukan Kaum Padri", new Story[]{
+                        new Story("Pasukan Kaum Padri selesai memberikan review singkat...", new List<Dialogs>
+                        {
+                               new NPCDialog("Pasukan Kaum Padri", "Aku sudah coba jelaskan secara singkat...", null),
+                               new NPCDialog("Pasukan Kaum Padri", "Seharusnya sekarang kamu bisa menjawab sedikit pertanyaan dariku", null),
+                              new MainCharacterDialog(true, characterExpression.hurt, "Astaga...", null)
+                        }, false)
+                    }),
+                    new JudgementGoal("Menyelesaikan tantangan Judgement dari Pasukan Kaum Padri", 5, "Pasukan Kaum Padri", false)
+                }),
+
+                 new Mission(new List<Goal>
+                {
+                     new ExplorationGoal("Jalan ke Kepala Pasukan Padri", 1, new string[] {"Kepala Pasukan Padri"}, new int[] {-1}, new Story[]{
+                        new Story("Kamu melihat seseorang memanggilmu dari kejauhan...", new List<Dialogs>
+        {
+        new NPCDialog("Kepala Pasukan Padri", "Hei, nak! Disini!", null),
+        new MainCharacterDialog(true, characterExpression.shook, "(Aku tidak pernah melihatnya...)", null),
+        new MainCharacterDialog(true, characterExpression.neutral, "Bapak siapa ya?", null),
+        new NPCDialog("Kepala Pasukan Padri", "Oh, kamu belum pernah melihat saya ya? ", null),
+        new NPCDialog("Kepala Pasukan Padri", "Tuanku Lintau bercerita mengenaimu ke saya, katanya kamu membantunya.", null),
+        new MainCharacterDialog(true, characterExpression.neutral, "Bisakah bapak membantuku untuk meyakinkan bawahan Anda ini?", null),
+        new MainCharacterDialog(true, characterExpression.neutral, "Bawahan bapak mencurigaiku karena aku tidak bisa menjawab pertanyaan darinya.", null),
+        new NPCDialog("Kepala Pasukan Padri", "Saya akan membantu kamu meyakinkannya.", null),
+        new NPCDialog("Kepala Pasukan Padri", "Saya akan memberitahumu semua yang telah terjadi selama ini…", null),
+
+        }, false)
+                    }, true),
+                    new ReviewGoal("Mereview kembali beberapa kejadian bersama Kepala Pasukan Padri", 1, "Kepala Pasukan Padri", new Story[]{
+                        new Story("Kepala Pasukan Padri selesai memberikan review singkat...", new List<Dialogs>{
+                               new NPCDialog("Kepala Pasukan Padri", "Apa kamu sudah lebih paham?", null),
+                               new NPCDialog("Kepala Pasukan Padri", "Sekarang coba saya yakinkan bawahan saya", null),
+                               new NPCDialog("Kepala Pasukan Padri", "Kalau kamu sudah siap nantinya, temui saja dia kembali", null),
+                               new MainCharacterDialog(true, characterExpression.hurt, "Baiklah aku rasa kembali ke penghakiman", new string[]{"Kepala Pasukan Padri"}),
+                        }, false)
+                    })
+                }),
+
+                new Mission(new List<Goal>{
+                     new JudgementGoal("Menyelesaikan tantangan Judgement dari Pasukan Kaum Padri", 5, "Pasukan Kaum Padri", false)
+                }),
+                new Mission(new List<Goal>
+                {
+                    new GatherGoal("Berbicara dengan Pasukan Kaum Padri", 1, new string[] {"Pasukan Kaum Padri"}, new Story[]{
+                        new Story("Setelah perjuangan cukup panjang menjawab semua pertanyaan Pasukan Kaum Padri, sepertinya kamu sudah mulai mendapat kepercayaannya", new List<Dialogs>
+        {
+        new NPCDialog("Pasukan Kaum Padri", "Baiklah...aku rasa karena kamu sudah membuktikan dirimu dan paham betul situasi disini...", new string[]{"Yudha"}),
+        new NPCDialog("Pasukan Kaum Padri", "Aku akan membantu menjagamu dari bahaya perang", null),
+        new NPCDialog("Pasukan Kaum Padri", "Oh, aku mau memberikanmu sesuatu karena telah membantu tuan sebelumnya.", null),
+        new NPCDialog("Pasukan Kaum Padri", "Aku tidak punya seusuatu yang berharga sih tapi ambil ini saja..", null),
+        new MainCharacterDialog(true, characterExpression.shook, "Eh, sebuah pen?", null),
+        new MainCharacterDialog(true, characterExpression.shook, "(Kok bisa ada pen seperti ini di jaman ini?)", null),
+        new MainCharacterDialog(true, characterExpression.shook, "(Jangan-jangan!?)", null),
+        new NPCDialog("Pasukan Kaum Padri", "Baiklah, aku kembali ke tuan, hati-hati ya..", null),
+        new MainCharacterDialog(false, characterExpression.neutral, "Sini pennya!", null),
+        new MainCharacterDialog(true, characterExpression.angry, "Hei, minta baik-baik saja kenapa sih!?", null),
+        new MainCharacterDialog(false, characterExpression.neutral, "Hmmm.. Ini sih jelas-jelas dari masa depan", null),
+        new MainCharacterDialog(false, characterExpression.neutral, "Ini adalah pen yang dibuat di masa depan.", null),
+        new MainCharacterDialog(false, characterExpression.neutral, "Penjelajah waktu ilegal pernah kesini", null),
+        new MainCharacterDialog(true, characterExpression.think, "(Kira-kira untuk apa ya dia meninggalkan pen itu disini?)", null),
+        new MainCharacterDialog(true, characterExpression.neutral, "(Yah, kita tinggal lanjut perjalanan saja sih)", null),
+        new MainCharacterDialog(true, characterExpression.happy, "(Pelan-pelan juga kita akan mengetahui segalanya)", null),
+        new MainCharacterDialog(true, characterExpression.happy, "(Sekalian belajar sejarah)", null),
+        new MainCharacterDialog(true, characterExpression.happy, "(Sekali dayung, dua tiga pulau terlampaui)", null),
+        new MainCharacterDialog(false, characterExpression.neutral, "Apa yang kamu pikirkan?", null),
+        new MainCharacterDialog(false, characterExpression.neutral, "Ayo kita pergi ke tempat selanjutnya", null),
+        new MainCharacterDialog(true, characterExpression.hurt, "(Sabar sedikit, kenapa sih)", null),
+        new MainCharacterDialog(true, characterExpression.happy, "Baik, Pak Polisi tukang suruh-suruh", null),
+        new MainCharacterDialog(false, characterExpression.neutral, "Aku sudah berkali-kali membantumu, jadi jangan mengomel terus dan jalan saja.", null),
+         new MainCharacterDialog(true, characterExpression.hurt, "(Iya iya aja deh..)", null),
+
+        }, false)
+                    }, true)
+                }),
         };
         
         }
