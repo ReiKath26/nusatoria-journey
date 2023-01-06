@@ -5,6 +5,7 @@ using TMPro;
 
 public class Interactable : MonoBehaviour
 {
+     //why is this error again?
    [SerializeField] private string interactName;
    [SerializeField] private Item item;
    [SerializeField] private int[] missionNumber;
