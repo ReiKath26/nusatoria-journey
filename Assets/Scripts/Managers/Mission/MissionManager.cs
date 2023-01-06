@@ -2646,35 +2646,208 @@ public class MissionManager : MonoBehaviour
         new Mission(new List<Goal>
                 {
 
-                        new ExplorationGoal("Mencari informasi mengenai perang yang terjadi", 1, new string[] {"Warga 5"}, new int[] {-1}, new Story[] {
-                        new Story("Kamu melihat warga di sekitar Bukit Kamang...", new List<Dialogs>
+                        new ExplorationGoal("Berjalan di sekitar Benteng Bonjol", 1, new string[] {"Pejabat Belanda (2)"}, new int[] {1}, new Story[] {
+                        new Story("Kamu melihat ada pemerintah Belanda dan pasukannya...", new List<Dialogs>
                         {
-                            new MainCharacterDialog(true, characterExpression.hurt, "Pak, aku mau bertanya sesuatu.", null),
-                            new NPCDialog("Warga", "Ada apa nak? ", null),
-                            new NPCDialog("Warga", "Kamu kelihatan tergesa-gesa sekali", null),
-                            new MainCharacterDialog(true, characterExpression.neutral, "Sekarang sudah tahun berapa ya?", null),
-                            new NPCDialog("Warga", "Tahun 1833.", null),
-                            new NPCDialog("Warga", "Anak kecil sepertimu untuk apa disini?", null),
-                            new NPCDialog("Warga", "Di sini sedang terjadi perang, sebaiknya kamu menjauh dari sini.", null),
-                            new MainCharacterDialog(true, characterExpression.neutral, "Tapi, aku butuh penjelasan mengenai apa yang terjadi..", null),
-                            new NPCDialog("Warga", "Kamu penasaran ya nak?", null),
-                            new NPCDialog("Warga", "Aneh sekali anak kecil sepertimu tertarik akan hal-hal seperti ini tetapi aku ceritakan saja", null),
-                            new MainCharacterDialog(true, characterExpression.happy, "Baik, terima kasih banyak Pak.", null),
-                            new NPCDialog("Warga", "Jadi, pasukan kaum Padri bersatu dengan kaum Adat dan mulai bergerak ke pos-pos Belanda", null),
-                            new NPCDialog("Warga", "Tindakan ini dijadikan alasan Belanda untuk menyerang Koto Tuo di Ampek Angkek yang dipimpin Gillavary.", null),
-                            new MainCharacterDialog(true, characterExpression.angry, "(Belanda itu.. Padahal mereka yang mulai duluan…)", null),
-                            new NPCDialog("Warga", "Pada tahun 1831 Gillavary digantikan oleh Jacob Elout", null),
-                            new NPCDialog("Warga", "Elout mendapat pesan dari Gubernur Jenderal Van den Bosch agar melaksanakan serangan besar-besaran terhadap kaum Padri", null),
-                            new NPCDialog("Warga", "Dia segera mengerahkan pasukannya untuk menguasai Manggung, Naras, dan Batipuh.", null),
-                            new NPCDialog("Warga", "Setelah itu, mereka mau menguasai Benteng Marapalam yang ada di Lintau.", null),
-                            new NPCDialog("Warga", "Akibat dua orang kaum Padri yang berkhianat, maka pada Agustus 1831 Belanda dapat menguasai Benteng Marapalam", null),
-                            new MainCharacterDialog(true, characterExpression.happy, "(Astaga, dua orang tersebut kenapa mau saja diperalat Belanda..)", null),
-                            new NPCDialog("Warga", "Dengan datangnya bantuan pasukan dari Jawa pada tahun 1832 maka Belanda semakin ofensif pada kaum Padri di berbagai daerah.", null),
-                            new NPCDialog("Warga", "Tahun 1833 kekuatan Belanda sudah begitu besar sehingga mereka melakukan peyerangan terhadap pos-pos pertahanan kaum Padri di Banuhampu, Kamang, Guguk Sigandang, Tanjung Alam, Sungai Puar.", null),
-                            new NPCDialog("Warga", "Hanya informasi itu saja yang bisa aku berikan padamu.", null),
-                            new MainCharacterDialog(true, characterExpression.neutral, "Seperti itu saja sudah cukup, Pak.", null),
-                            new MainCharacterDialog(true, characterExpression.neutral, "Terimakasih banyak Pak.", null),
-                            new NPCDialog("Warga", "Sama-sama anak kecil yang misterius.", null),
+                            new MainCharacterDialog(true, characterExpression.shook, "(Eh, ada pemerintah Belanda dan pasukannya)", null),
+                            new MainCharacterDialog(true, characterExpression.shook, "(Aku harus bersembunyi)", null),
+                            new NPCDialog("???", "Tch, we need to make a promise of service, we can’t fight the Padri and Adat together like this (Ck, kita harus membuat sebuah janji khidmat, kita tidak bisa melawan kaum Padri dan Adat bersama-sama seperti ini)", null),
+                            new NPCDialog("???", "Guards, announce that no more war between us and them (Pasukan, umumkan kalau tidak ada lagi perang diantara kita).", null),
+                            new NPCDialog("???", "Name of the promise will be Plakat Panjang (Nama janji ini adalah Plakat Panjang).", null),
+                            new NPCDialog("Pasukan Belanda", "Okay, sir Francis (Baik, tuan Francis)..", null),
+                            new MainCharacterDialog(true, characterExpression.think, "(Sepertinya Elout sudah digantikan oleh Francis)", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "(Aku akan diam-diam mengikuti pasukan itu..)", null),
+                        }, false)
+                    }, true)
+                }),
+
+        new Mission(new List<Goal>
+                {
+
+                        new ExplorationGoal("Pergi mengikuti pasukan Belanda", 1, new string[] {"Belanda Soldier (7)"}, new int[] {-1}, new Story[] {
+                        new Story("Kamu mengikuti pasukan Belanda tersebut dan terlihat seorang Kaum Padri dengannya...", new List<Dialogs>
+                        {
+                            new NPCDialog("Pasukan Belanda", "Kami berjanji akan damai dengan kalian", null),
+                            new NPCDialog("Kaum Padri", "Baiklah aku terima janji damainya.", null),
+                            new MainCharacterDialog(true, characterExpression.shook, "(Astaga kenapa mereka menerimanya!?)", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Hei, anak kecil", null),
+                            new MainCharacterDialog(true, characterExpression.sad, "Pak Polisi..", null),
+                            new MainCharacterDialog(false, characterExpression.shook, "Abailkan saja mereka, lebih baik mencari petunjuk lainnya di Benteng Bonjol", null),
+                            new MainCharacterDialog(true, characterExpression.hurt, "(Apakah dia masih marah padaku?)", null),
+                            new MainCharacterDialog(true, characterExpression.hurt, "(Aku harap dia sudah tidak marah lagi)", null),
+                        }, false)
+                    }, true)
+                }),
+
+        new Mission(new List<Goal>
+                {
+
+                        new ExplorationGoal("Pergi ke Benteng Bonjol", 1, new string[] {"Bonjol Fort Gate"}, new int[] {1}, new Story[] {
+                        new Story("Kamu pergi bersama kak Yudha ke Benteng Bonjol...", new List<Dialogs>
+                        {
+                            new MainCharacterDialog(false, characterExpression.neutral, "Hei, anak kecil", null),
+                            new MainCharacterDialog(true, characterExpression.shook, " (Kenapa beberapa dari mereka mau-mau saja damai dengan Belanda?)", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Hei!", null),
+                            new MainCharacterDialog(true, characterExpression.shook, "(Padahal sudah dua kali dibohongi tapi masih ada yang percaya..)", null),
+                            new MainCharacterDialog(false, characterExpression.angry, "Hei!! Anak kecil, daritadi dipanggil tidak dengar ya?", null),
+                            new MainCharacterDialog(true, characterExpression.sad, "Maaf Kak Yudha…", null),
+                            new MainCharacterDialog(true, characterExpression.sad, "Apa Pak Yudha masih marah denganku?", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Itu tidak penting untuk dijawab, untuk sekarang kita fokus dulu ke misi kita", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Kamu bisa lihat pasukan Imam Bonjol yang sedang diserang oleh Belanda di Bonjol.", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Berarti sekarang sudah tahun 1834..", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "Tuanku Imam Bonjol masih berjuang ya demi kaum Padri.", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Yah, dia tidak berdamai dengan mereka.", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "Percuma berdamai kalau akan diserang juga.", null),
+                            new MainCharacterDialog(false, characterExpression.angry, "Lihat itu, Belanda mencoba berdamai lagi.", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "(Aku akan mencoba menghampiri mereka)", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "(Aku sudah sedikit terbiasa dengan perpindahan waktu ini…)", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "Saat ini kita di tahun berapa, Kak Yudha?", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Dilihat dari keadaan disini, sepertinya kita di tahun 1835..", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "Perdamaian itu tidak jadi ya?", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Belanda tidak menjawab syarat dari Tuanku Imam Bonjol untuk membebaskan rakyatnya dan nagari tidak diduduki Belanda dan malah semakin mengepung pertahanan mereka...", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Ia bekerja sama dengan pasukannya untuk mempertahankan benteng Bonjol.", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Meskipun satu per satu pemimpin Padri dapat ditangkap, ia tetap terus berjuang.", null),
+                            new MainCharacterDialog(true, characterExpression.think, "(Imam Bonjol pantang menyerah sekali.. Meskipun sudah terpojok, dia tetap berjuang untuk kaumnya..)", null),
+                            new MainCharacterDialog(true, characterExpression.think, "(Tidak mudah untuk pantang menyerah di situasi yang genting seperti itu…)", null),
+                            new MainCharacterDialog(false, characterExpression.hurt, "Bentengnya terkepung oleh Belanda dari empat penjuru yang berarti ini sudah tahun 1386", null),
+                            new MainCharacterDialog(true, characterExpression.sad, "Apakah kita tidak bisa berbuat sesuatu?", null),
+                            new MainCharacterDialog(false, characterExpression.sad, "Percayalah Player, aku juga ingin mereka menang tapi kita tak boleh mengubah masa lalu", null),
+                            new NPCDialog("Tuanku Imam Bonjol", "Semuanya lari!", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Tuan, ayo lari ke arah sini!", null),
+                            new NPCDialog("Tuanku Imam Bonjol", "Baik, terima kasih tuan...", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "Kok kak Yudha membantunya?", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Karena di sejarah mau aku bantu atau tidak dia juga akan bisa meloloskan diri kok..", null),
+                            new MainCharacterDialog(true, characterExpression.happy, "(Untung Imam Bonjol dan yang lainnya berhasil meloloskan diri)", null),
+                        }, false)
+                    }, true)
+                }),
+
+        new Mission(new List<Goal>
+                {
+
+                        new ExplorationGoal("Pergi ke sekitar Benteng Bonjol", 1, new string[] {"Tuanku Imam Bonjol (1)"}, new int[] {1}, new Story[] {
+                        new Story("Kamu pergi bersama kak Yudha ke sekitar Benteng Bonjol untuk mengecek keadaan...", new List<Dialogs>
+                        {
+                            new NPCDialog("Francis", "Bagaimana kalau kita berdamai saja?", null),
+                            new NPCDialog("Francis", "Toh benteng dekat perbukitan milikmu sudah jatuh ke tangan kami", null),
+                            new NPCDialog("Tuanku Imam Bonjol", "Sudah tidak ada pilihan lain lagi", null),
+                            new NPCDialog("Tuanku Imam Bonjol", "Aku akan terima perdamaiannya", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "(Yah, saat ini Tuanku Imam Bonjol tidak ada pilihan lain sih selain menerima perdamaian itu)", null),
+                            new MainCharacterDialog(true, characterExpression.shook, "(Kepalaku merasa pusing..)", null),
+                            new MainCharacterDialog(false, characterExpression.shook, "Player!", null),
+                            new MainCharacterDialog(true, characterExpression.hurt, "...", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Hei! Player!", null),
+                            new MainCharacterDialog(true, characterExpression.hurt, "…Ada apa, kak Yudha?", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Mukamu kelihatan pucat dan kamu kelihatan lelah", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Istirahat dulu sana", null),
+                            new MainCharacterDialog(true, characterExpression.hurt, "(Baik sekali tumben.. Ya sudah aku istirahat dulu saja..)", null),
+                            new MainCharacterDialog(true, characterExpression.happy, "(Entah kenapa, dia jadi lebih baik dari sebelumnya..)", null),
+                            new MainCharacterDialog(true, characterExpression.happy, "(Aku merasa sedikit senang..)", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Kalau sudah selesai istirahatnya, cari informasi bersamaku di dekat gerbang Minangkabau", null),
+                        }, false)
+                    }, true)
+                }),
+
+        new Mission(new List<Goal>
+                {
+
+                        new ExplorationGoal("Pergi ke Gerbang Minangkabau", 1, new string[] {"Warga 6"}, new int[] {1}, new Story[] {
+                        new Story("Kamu pergi bersama kak Yudha ke sekitar Benteng Bonjol untuk mengecek keadaan...", new List<Dialogs>
+                        {
+                            new MainCharacterDialog(true, characterExpression.neutral, "Banyak sekali perpindahan waktu yang kita alami..", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Yah dunia ini lumayan kacau jadi wajar kalau banyak hal yang tak terduga terjadi disini..", null),
+                            new MainCharacterDialog(true, characterExpression.think, "Iya sih, benar juga ya", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "(Daripada itu, aku ingin memastikan sesuatu..)", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "Permisi Pak, aku mau tanya", null),
+                            new NPCDialog("Warga", "Iya nak, ada apa?", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "Imam Bonjol ada dimana sekarang?", null),
+                            new NPCDialog("Warga", "...", null),
+                            new NPCDialog("Warga", "Dia ditangkap oleh Belanda di tempat perundingan damai pada 28 Oktober 1837.", null),
+                            new NPCDialog("Warga", "Kemudian, dia dibuang ke Cianjur, lalu dipindahkan ke Ambon, dan dipindahkan lagi ke Manado sampai ia meninggal pada November 1864.", null),
+                            new NPCDialog("Warga", "Pengikutnya sempat bergerilya di hutan-hutan Minangkabau tapi tidak membuahkan hasil", null),
+                            new NPCDialog("Warga", "Daerah ini sekarang sudah menjadi milik Belanda…", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "Pantas saja suasananya sudah berbeda", null),
+                            new MainCharacterDialog(true, characterExpression.hurt, "Aku tidak mau akhir yang seperti ini", null),
+                            new MainCharacterDialog(false, characterExpression.happy, "Tenang saja, kita akan merdeka jadi kamu tidak perlu mengkhawatirkan itu", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Memang ini yang seharusnya terjadi…", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "Kak Yudha berusaha menghiburku ya?", null),
+                            new MainCharacterDialog(false, characterExpression.shook, "Tidak kok, aku hanya menyatakan fakta saja", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Ngomong-ngomong, perang sudah berakhir, kita sebaiknya pergi dari sini…", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "(Bilang saja kalau khawatir padaku…)", null),
+                            new MainCharacterDialog(true, characterExpression.happy, "(Kurasa kak Yudha memang orang yang baik)", null),
+                            new MainCharacterDialog(true, characterExpression.happy, "(Meskipun dia selalu sinis sih, haha)", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Tugas kita sudah selesai disini karena perang sudah berakhir..", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Kita bisa ke pelabuhan", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Tapi, kamu boleh eksplor dulu sebelum kesana", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Kan banyak daerah tuh selain Minangkabau yang kamu belum eksplor", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "Baik kak..", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Tapi, kalau kau malas bisa langsung ke pelabuhan saja sih..", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Aku tunggu disini ya kalau kamu mau eksplor", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Tinggal datangi aku kalau sudah siap", null),
+                            new MainCharacterDialog(true, characterExpression.happy, "(Yah, lumayan lah bisa mengeksplor sendiri…)", null),
+                        }, false)
+                    }, true)
+                }),
+
+        new Mission(new List<Goal>
+                {
+
+                        new ExplorationGoal("Mengeksplor wilayah yang diinginkan dan kembali ke Yudha di dekat gerbang Minangkabau", 1, new string[] {"Yudha"}, new int[] {-1}, new Story[] {
+                        new Story("Kamu kembali pada Yudha yang berada di gerbang Minangkabau...", new List<Dialogs>
+                        {
+                            new MainCharacterDialog(false, characterExpression.neutral, "Oh, kau sudah kembali", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Pekerjaan kita sudah selesai disini…", null),
+                            new MainCharacterDialog(false, characterExpression.think, "Ayo ke pelabuhan bersama", null),
+                             }, false)
+                    }, true)
+                }),
+
+        new Mission(new List<Goal>
+                {
+
+                        new ExplorationGoal("Berbicara dengan perempuan cantik", 1, new string[] {"Putri"}, new int[] {-1}, new Story[] {
+                        new Story("Kamu melihat seorang wanita cantik yang memanggilku dan kak Yudha...", new List<Dialogs>
+                        {
+                            new NPCDialog("???", "Hei...", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "???", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Kau mendengar sesuatu?", null),
+                            new MainCharacterDialog(true, characterExpression.think, "Iya sih, benar juga ya", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "Aku disini...", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "Ah… seorang wanita", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "He-hei, namamu siapa?", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "(Kenapa Kak Yudha tiba-tiba malu-malu seperti itu?)", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "(Oh, aku baru sadar wanita ini cantik)", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "(Coba saja dia bisa menunjukkan ekspresi seperti itu lebih sering…)", null),
+                            new NPCDialog("Putri", "Aku Putri… orang tuaku mengungsikanku ke rumah pamanku ketika perang itu terjadi", null),
+                            new NPCDialog("Putri", "Tapi bisakah adik kecil dan kakak ganteng ini memberitahuku tentang apa yang terjadi?", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Kakak ganteng katanya..", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "(Ada yang kegeeran tuh..)", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "(Daripada itu…)", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "(Ya kali aku mau memberitahu hal seperti itu pada seorang warga biasa seperti dia…)", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "(Yang ada dia akan trauma…)", null),
+                            new NPCDialog("???", "Putri, disitu kamu rupanya…", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "…anda ini pamannya Putri?", null),
+                            new NPCDialog("Paman Putri", "Iya saya pamannya, maafkan permintaan keponakan saya ya, dia memang agak lugu.", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Tidak apa-apa kok, kan dia hanya bertanya, tidak usah minta maaf begitu.", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "(Sikapnya beda sekali ya karena dia pamannya wanita itu)", null),
+                            new NPCDialog("Paman Putri", "Tapi kami memang khawatir dengan keadaan keluarga kami sejak perang itu dimulai.", null),
+                            new NPCDialog("Paman Putri", "Putri, sana kembali ke rumah dulu.", null),
+                            new NPCDialog("Putri", "Tapi…", null),
+                            new NPCDialog("Paman Putri", "Nanti paman tanyakan tentang semuanya ke adik dan kakak ini lalu nanti paman cerita ke Putri…", null),
+                            new NPCDialog("Putri", "Janji ya?", null),
+                            new NPCDialog("Paman Putri", "Iya janji…", null),
+                            new NPCDialog("Putri", "Baiklah kalau begitu…", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Yah dia sudah pergi..", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "Apa anda mengatakan sesuatu?", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Tidak kok, ngomong-ngomong, bapak mau bertanya apa pada kami?", null),
+                            new NPCDialog("Paman Putri", "Jadi apakah kalian tidak keberatan kalau kita berbincang sebentar…", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Ya sebenarnya kami sedang sibuk sih…", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "Kak Yudha…", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Baiklah… aku rasa kami punya waktu sedikit", null),
+                            new NPCDialog("Paman Putri", "Terimakasih, aku tidak akan lama, aku hanya ingin tau tentang hal-hal yang terjadi di perang itu…", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Lakukan tugasmu seperti biasa sebisamu ya..", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "(Inginnya sih dibantu Pak Yudha..)", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "(Tapi, ya sudahlah.. Dia sudah lebih baik sekarang setidaknya..)", null),
                         }, false)
                     }, true)
                 }),
