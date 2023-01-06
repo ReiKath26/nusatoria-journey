@@ -124,13 +124,6 @@ public class MissionManager : MonoBehaviour
                displayGoal();
                setCurrGoal();
           }
-
-          else
-          {
-
-               StoryManager.instance.assignStory(getEndChapterStory(slot.chapterNumber));
-          }
-
          SaveHandler.instance.saveSlot(slot, slot.slot);
      
 
@@ -158,7 +151,7 @@ public class MissionManager : MonoBehaviour
         setCurrGoal();
         displayPathToGoal();
    }
-
+   
    private void checkGoal()
    {
      if(currentGoal.getCompletion() == true)
@@ -184,7 +177,7 @@ public class MissionManager : MonoBehaviour
                                    new NPCDialog("Kepala Pedagang", "Bah! Jelas kamu berbohong!", null),
                                    new NPCDialog("Kepala Pedagang", "Pergi dari sini dan jangan menunjukan wajahmu didepan saya lagi", null),
                                    new MainCharacterDialog(true, characterExpression.hurt, "Sudahlah tidak ada gunanya aku berdebat dengannya, sebaiknya aku mencari bantuan orang lain", null)
-                               }, false);
+                               }, false, null);
 
                                StoryManager.instance.assignStory(badStory);
 
@@ -210,7 +203,7 @@ public class MissionManager : MonoBehaviour
                                    new NPCDialog("Kepala Pedagang", "Lumayan sih...", null),
                                    new NPCDialog("Kepala Pedagang", "Tapi ada beberapa yang kamu salah mengerti, aku harus memperbaiki pemahamanmu tentang itu", null),
                                    new MainCharacterDialog(true, characterExpression.hurt, "Oh tidak...", null)
-                               }, false);
+                               }, false, null);
 
                                StoryManager.instance.assignStory(badStory);
                          assignMission();
@@ -232,6 +225,7 @@ public class MissionManager : MonoBehaviour
                          slot.missionNumber = 19;
                          assignMission();
                          displayGoal();
+                         gameOverlay.SetActive(true);
 
                    }
 
@@ -307,6 +301,7 @@ public class MissionManager : MonoBehaviour
 
                     keyConceptText.text = getKey;
                     getKeyconceptNotification.SetActive(true);
+                    AudioManager.instance.Play("Get");
                         
                }
           }
@@ -911,7 +906,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("20.000 sampai 25.000", true)
                }, level.easy, questionType.perjuangan_tl),
 
-               new Question("Pasukan", "James Du Puy mengadakan perjanjian persahabatan dengan tokoh Adat. yaitu…",
+               new Question("Pasukan", "James Du Puy mengadakan perjanjian persahabatan dengan tokoh Adat. yaituï¿½",
                new Choice[]
                {
                     new Choice("Tuanku Suruaso dan 12 Penghulu Minangkabau", false),
@@ -1001,7 +996,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("1823", false)
                 }, level.medium, questionType.latarBelakang_padri),
 
-                new Question("Pasukan", "Perjanjian Masang dibuat karena…",
+                new Question("Pasukan", "Perjanjian Masang dibuat karenaï¿½",
                 new Choice[]
                 {
                     new Choice("Belanda merasa terdesak dengan kaum Padri", true),
@@ -1013,7 +1008,7 @@ public class MissionManager : MonoBehaviour
                 new Choice[]
                 {
                     new Choice("1821 - 1824", false),
-                    new Choice("1821 – 1825", true),
+                    new Choice("1821 ï¿½ 1825", true),
                     new Choice("1821 - 1826", false)
                 }, level.medium, questionType.perjuangan_kp),
           };
@@ -1068,7 +1063,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Perjanjian damai antara Belanda dan Kaum Padri", false)
                }, level.hard, questionType.latarBelakang_padri),
 
-               new Question("Pasukan", "Pada September 1822 kaum Padri berhasil mengusir Belanda dari…",
+               new Question("Pasukan", "Pada September 1822 kaum Padri berhasil mengusir Belanda dariï¿½",
                 new Choice[]
                {
                     new Choice("Sungai Puar, Duduk Sigandang, dan Tajong Alam", false),
@@ -1090,7 +1085,7 @@ public class MissionManager : MonoBehaviour
           {
                easyQuestion = new List<Question>
                {
-               new Question("Player", "Imam Bonjol dibawa ke Batavia dan akhirnya dibuang ke…",
+               new Question("Player", "Imam Bonjol dibawa ke Batavia dan akhirnya dibuang keï¿½",
                new Choice[]
                {
                     new Choice("Cirebon", false),
@@ -1098,7 +1093,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Cianjur", true)
                }, level.easy, questionType.akhirPerang_padri),
 
-               new Question("Player", "Setelah bersatu, akhirnya kaum Adat dan Kaum Padri memutuskan untuk…",
+               new Question("Player", "Setelah bersatu, akhirnya kaum Adat dan Kaum Padri memutuskan untukï¿½",
                new Choice[]
                {
                     new Choice("Bergerak dan menyerang pos-pos tentara Belanda", true),
@@ -1106,7 +1101,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Melakukan perang gerilya", false)
                }, level.easy, questionType.faseKetiga_padri),
 
-               new Question("Player", "Belanda pada fase ketiga, ingin menguasai suatu benteng yang ada di Lintau yang bernama…",
+               new Question("Player", "Belanda pada fase ketiga, ingin menguasai suatu benteng yang ada di Lintau yang bernamaï¿½",
                new Choice[]
                {
                     new Choice("Benteng Mataram", false),
@@ -1114,7 +1109,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Benteng Malapalam", false)
                }, level.easy, questionType.faseKetiga_padri),
 
-               new Question("Player", "Pelajaran apa yang bisa dipetik dari peristiwa ini adalah…",
+               new Question("Player", "Pelajaran apa yang bisa dipetik dari peristiwa ini adalahï¿½",
                new Choice[]
                {
                     new Choice("Pantang menyerah meski terpojok", true),
@@ -1130,7 +1125,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Sulaiman Aljufri", true)
                }, level.easy, questionType.faseKedua_padri),
 
-               new Question("Player", "Pada tahun 1831, Gillavary digantikan oleh seseorang yang bernama…",
+               new Question("Player", "Pada tahun 1831, Gillavary digantikan oleh seseorang yang bernamaï¿½",
                new Choice[]
                {
                     new Choice("Jacob Elout", true),
@@ -1138,7 +1133,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("James Elout", false)
                }, level.easy, questionType.faseKetiga_padri),
 
-               new Question("Player", "Pada tahun 1832 Belanda semakin ofensif pada kaum Padri karena…",
+               new Question("Player", "Pada tahun 1832 Belanda semakin ofensif pada kaum Padri karenaï¿½",
                new Choice[]
                {
                     new Choice("Datangnya bantuan dari Belanda", false),
@@ -1182,7 +1177,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Plakat Panjang", true)
                 }, level.medium, questionType.faseKetiga_padri),
 
-               new Question("Player", "Pada fase ketiga perang padri, pertahanan terakhir kaum Padri berada di tangan…",
+               new Question("Player", "Pada fase ketiga perang padri, pertahanan terakhir kaum Padri berada di tanganï¿½",
                new Choice[]
                {
                     new Choice("Tuanku Nan Renceh", false),
@@ -1190,7 +1185,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Tuanku Imam Bonjol", true)
                 }, level.medium, questionType.faseKetiga_padri),
 
-               new Question("Player", "Perjanjian Padang terjadi pada…",
+               new Question("Player", "Perjanjian Padang terjadi padaï¿½",
                new Choice[]
                {
                     new Choice("15 Oktober 1825", false),
@@ -1206,7 +1201,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Belanda ingin memutus kerjasamanya dengan kaum Adat", false)
                 }, level.medium, questionType.faseKedua_padri),
 
-               new Question("Player", "Pemimpin pasukan Belanda yang menyerang nagari di Ampek Angkek adalah…",
+               new Question("Player", "Pemimpin pasukan Belanda yang menyerang nagari di Ampek Angkek adalahï¿½",
                new Choice[]
                {
                     new Choice("Gillavary", false),
@@ -1222,7 +1217,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Agar Belanda tidak mendukung kaum Adat", false)
                 }, level.medium, questionType.faseKedua_padri),
           
-               new Question("Player", "Pemimpin pasukan Belanda yang menyerang nagari di Ampek Angkek adalah…",
+               new Question("Player", "Pemimpin pasukan Belanda yang menyerang nagari di Ampek Angkek adalahï¿½",
                new Choice[]
                {
                     new Choice("Ampu Angkuk", false),
@@ -1242,7 +1237,7 @@ public class MissionManager : MonoBehaviour
 
                 hardQuestion = new List<Question>
                 {
-               new Question("Player", "Benteng di perbukitan dekat Bonjol jatuh ke tangan Belanda pada bulan…",
+               new Question("Player", "Benteng di perbukitan dekat Bonjol jatuh ke tangan Belanda pada bulanï¿½",
                new Choice[]
                {
                     new Choice("Juni 1836", false),
@@ -1358,19 +1353,13 @@ public class MissionManager : MonoBehaviour
 
    private void randomQuestion(int num, List<Question> question)
    {
+          List<Question> toBeRolled = new List<Question>(question);
           for(int i=0; i<num;i++)
           {
-               List<int> alreadyRolledNumber = new List<int>();
                int index = -1;
-                         
-
-               while(alreadyRolledNumber.Contains(index) || index == -1)
-               {
-                    index = Random.Range(0, question.Count);
-               }
-
-               alreadyRolledNumber.Add(index);
-               questionDataList.Add(question[index]);
+               index = Random.Range(0, toBeRolled.Count);
+               toBeRolled.RemoveAt(index);
+               questionDataList.Add(toBeRolled[index]);
           }
    }
 
@@ -1448,7 +1437,7 @@ public class MissionManager : MonoBehaviour
                     new NPCDialog("Review", "Hal ini juga dikarenakan keberadaan Belanda di tanah jawa menghalangi cita-cita dari Sultan Agung", null),
                     new NPCDialog("Review", "Ia bercita-cita untuk menyatukan tanah jawa dan mengusir kekuasaan bangsa asing dari tanah jawa", null),
                     new NPCDialog("Review", "Jadi apa yang mau kamu pelajari selanjutnya?", null)
-               }, false), questionType.latarBelakang_sa),
+               }, false, null), questionType.latarBelakang_sa),
           new Review(new Story("Serangan Pertama Sultan Agung", new List<Dialogs>
                {
                     new NPCDialog("Review", "Dan akhirnya pada Agustus 1628, Mataram melancarkan serangan ke Batavia", null),
@@ -1458,7 +1447,7 @@ public class MissionManager : MonoBehaviour
                     new NPCDialog("Review", "Juga karena persenjataan Belanda lebih modern", null),
                     new NPCDialog("Review", "Sehingga pada 6 Desember 1628, pasukan Mataram mundur", null),
                     new NPCDialog("Review", "Jadi apa yang mau kamu pelajari selanjutnya?", null)
-               }, false), questionType.seranganSatu_sa),
+               }, false, null), questionType.seranganSatu_sa),
           new Review(new Story("Serangan Kedua Sultan Agung", new List<Dialogs>
                {
                     new NPCDialog("Review", "Setelah kekalahan di serangan pertama, Mataram mulai mempersiapkan lebih matang untuk serangan kedua", null),
@@ -1468,7 +1457,7 @@ public class MissionManager : MonoBehaviour
                     new NPCDialog("Review", "Juga karena Belanda menghancurkan lumbung yang mereka bangun", null),
                     new NPCDialog("Review", "Akhirnya serangan ini juga mengalami kegagalan", null),
                     new NPCDialog("Review", "Jadi apa yang mau kamu pelajari selanjutnya?", null)
-               }, false), questionType.seranganDua_sa),
+               }, false, null), questionType.seranganDua_sa),
           new Review(new Story("Akhir Serangan Sultan Agung", new List<Dialogs>
                {
                     new NPCDialog("Review", "Namun setelah 2 kegagalan pun Sultan Agung tidak menyerah untuk menyerang Batavia dan mengusir VOC", null),
@@ -1688,7 +1677,7 @@ public class MissionManager : MonoBehaviour
                             new MainCharacterDialog(true, characterExpression.neutral, "(Dan karena serangan VOC ke Jepara tanggal 18 November 1618 lalu, ia jadi akan melakukan serangan pada VOC)", null),
                             new MainCharacterDialog(true, characterExpression.neutral, "(Sebaiknya aku mencatat info ini, siapa tau aku memerlukannya nanti)", null),
 
-                        }, false)}, true)}), 
+                        }, false, null)}, true)}), 
 
                 new Mission(new List<Goal>
                 {
@@ -1702,7 +1691,7 @@ public class MissionManager : MonoBehaviour
             new MainCharacterDialog(true, characterExpression.neutral, " (Sebaiknya aku mencari petunjuk didalam benteng kota ini untuk aku laporkan kepada Sultan Agung)", null),
             new MainCharacterDialog(true, characterExpression.neutral, "(Dan siapa tau juga aku bisa menemukan petunjuk tentang kemana mesin aneh tadi itu membawaku)", null),
 
-        }, false)
+        }, false, null)
                     }, true)
                 }), 
 
@@ -1727,7 +1716,7 @@ public class MissionManager : MonoBehaviour
           new MainCharacterDialog(true, characterExpression.neutral, "(Aku sebaiknya cepat menyelesaikan urusanku disini dan kembali ke Sultan Agung agar tidak dicurigai karena mengambil data ini)", new string[]{"Red Book"}),
     
 
-        }, false),
+        }, false, null),
                         new Story("Diujung kota terdapat banyak kotak-kotak barang yang tertata rapi...", new List<Dialogs>
         {
           new MainCharacterDialog(true, characterExpression.neutral, "(Kotak-kotak ini semua hasil bumi...)", null),
@@ -1737,7 +1726,7 @@ public class MissionManager : MonoBehaviour
           new MainCharacterDialog(true, characterExpression.neutral, "(Atau itu hasil dari monopoli mereka...)", null),
           new MainCharacterDialog(true, characterExpression.hurt, "(Hmmm...pandangan orang-orang di sini tidak enak sekali padaku, tapi apa hanya itu saja petunjuk yang bisa aku dapat?)", null),
 
-        }, false),
+        }, false, null),
                         new Story("Kamu memperhatikan penjaga yang berjaga di barak secara seksama...", new List<Dialogs>
         {
           new MainCharacterDialog(true, characterExpression.shook, "(Penjaga-penjaga itu...)", null),
@@ -1746,7 +1735,7 @@ public class MissionManager : MonoBehaviour
           new MainCharacterDialog(true, characterExpression.neutral, "(Ini bisa jadi berbahaya jika Sultan Agung tidak mempersiapkan senjata yang setara)", null),
           new MainCharacterDialog(true, characterExpression.neutral, "(Aku sebaiknya memberitahunya secepatnya)", null),
         }
-, false)
+, false, null)
                     }, false)
                 }), 
 
@@ -1776,7 +1765,7 @@ public class MissionManager : MonoBehaviour
          new NPCDialog("Sultan Agung", "Seharusnya dia sekarang ada di gudang perbekalan di dekat Pelabuhan Jepara", null),
          new NPCDialog("Sultan Agung", "Coba kamu kesana dan nanti ikuti saja instruksi darinya", null),
          new MainCharacterDialog(true, characterExpression.neutral, "Baik, Sultan!", null),
-        }, false)
+        }, false, null)
                     }, true)
                 }), 
 
@@ -1810,7 +1799,7 @@ public class MissionManager : MonoBehaviour
             new NPCDialog("T.Baurekhsa", "Aku tunggu disini saat kamu sudah mendapatkan semua barang itu", null),
             new MainCharacterDialog(true, characterExpression.neutral, "Baik, pak", null),
             new MainCharacterDialog(true, characterExpression.neutral, "Baiklah, saatnya bekerja..", null),
-        }, false)
+        }, false, null)
                     }, true)
                 }), 
 
@@ -1848,7 +1837,7 @@ public class MissionManager : MonoBehaviour
             new MainCharacterDialog(true, characterExpression.neutral, "......", null),
 
 
-        }, false)
+        }, false, null)
                     }, new Item[]{
                         new Item("Karung_beras", "Karung Beras", "Karung berisi beras yang merupakan makanan pokok rakyat Nusantara", 2),
                         new Item("Karung_gula", "Karung Gula", "Karung berisi gula dari perkebunan bambu Mataram", 3),
@@ -1883,7 +1872,7 @@ public class MissionManager : MonoBehaviour
             new MainCharacterDialog(true, characterExpression.neutral, "Lebih baik daripada saya berdiam disini tanpa melakukan apapun", null),
             new NPCDialog("Sultan Agung", "Baik kalau begitu, terimakasih dek Player, kembalilah kemari ketika kamu sudah mendapat info terkait perang yang terjadi", new string[]{"War Zone"}),
             
-        }, false)
+        }, false, null)
                     }, true)
                 }), 
 
@@ -1921,7 +1910,7 @@ public class MissionManager : MonoBehaviour
             new MainCharacterDialog(true, characterExpression.happy, "(Wow...warga ini filosofikal juga...)", null),
             new MainCharacterDialog(true, characterExpression.neutral, "(Sebaiknya aku mencatat semua informasi itu dan kembali ke Sultan Agung)", null),
 
-        }, false)
+        }, false, "War")
                     }, true)
                 }), 
                   new Mission(new List<Goal>
@@ -1962,7 +1951,7 @@ public class MissionManager : MonoBehaviour
             new NPCDialog("Sultan Agung", " Sini saya akan menandai sekitaran lokasinya dipetamu...dan sekarang kamu siap berangkat!", null),
             new NPCDialog("Sultan Agung", "Terimakasih Player, saya akan menunggu kabar baiknya", new string[]{"Spot Tree 1", "Spot Tree 2", "Spot Tree 3"}),
             
-        }, false)
+        }, false, "Mataram")
                     }, true)
                 }), 
 
@@ -1972,11 +1961,11 @@ public class MissionManager : MonoBehaviour
                         new Story("Kamu menemukan lokasi di dekat rumah-rumah warga", new List<Dialogs>
         {
             new MainCharacterDialog(true, characterExpression.neutral, "Hmmm...tempat ini tidak cukup untuk membangun lumbung perbekalan", new string[] {"Spot Tree 2"}),
-        }, false),
+        }, false, null),
                         new Story("Kamu menemukan lokasi di dekat pantai", new List<Dialogs>
         {
             new MainCharacterDialog(true, characterExpression.neutral, "Tempat ini sepertinya cocok, sebaiknya aku menandainya", new string[] {"Spot Tree 1"}),
-        }, false)
+        }, false, null)
                     }, true),
                     new ExplorationGoal("Membantu mencarikan lokasi lumbung di Cirebon", 1, new string[] {"Spot Tree 3"}, new int[] {-1}, new Story[]{
                         new Story("Kamu menemukan lokasi di balik kawasan rumah warga", new List<Dialogs>
@@ -1987,7 +1976,7 @@ public class MissionManager : MonoBehaviour
             new MainCharacterDialog(true, characterExpression.hurt, "(Kenapa aku merasa seperti ada yang mengikutiku?)", null),
             new MainCharacterDialog(true, characterExpression.hurt, "(Mungkin bukan ide yg baik untukku untuk pergi ke tempat Sultan Agung, aku sebaiknya mencari alternatif lain...)", null),
             new MainCharacterDialog(true, characterExpression.neutral, "(Mungkin dengan menitipkan peta ini ke seseorang)", new string[]{"Pedagang Stuff"}),
-        }, false)
+        }, false, null)
                     }, true)
                 }), 
 
@@ -2004,7 +1993,7 @@ public class MissionManager : MonoBehaviour
             new MainCharacterDialog(true, characterExpression.neutral, "Baiklah kalau begitu saya titipkan ini kepada bapak ya", null),
             new MainCharacterDialog(true, characterExpression.neutral, "(Sekarang aku rapikan dulu petaku, lalu setelah memberikannya pada bapak ini, sebaiknya aku pergi ke arah yang berlawananan agar tidak ada yang curiga..)", null)
             
-        }, false),
+        }, false, null),
                     }, false),
                      new SubmitGoal("Berikan peta yang sudah ditandai ke pedagang", 1, "Pedagang Mataram NPC", null, new Item[]{
                         new Item("Map", "Peta yang sudah ditandai", "Peta yang sudah ditandai untuk kebutuhan khusus", 1)
@@ -2036,7 +2025,7 @@ public class MissionManager : MonoBehaviour
             new MainCharacterDialog(true, characterExpression.neutral, " (Tapi jujur saja aku tidak perlu gosip warga seperti ini, anggaplah aku berbuat budi baik saja)", null),
             new MainCharacterDialog(true, characterExpression.neutral, "(Sebaiknya aku cepat kembali ke Sultan Agung saja sebelum warga ini mengoceh lagi...)", null)
 
-        }, false)
+        }, false, "War")
                     }, true)
                 }), 
 
@@ -2068,7 +2057,7 @@ public class MissionManager : MonoBehaviour
         new NPCDialog("Sultan Agung", "Ia mengenal saya, jadi bilang saja padanya kalau saya mengirim kamu untuk ikut bersama mereka", null),
         new MainCharacterDialog(true, characterExpression.sad, "Baiklah...terimakasih Sultan, saya pamit dulu", null),
         new NPCDialog("Sultan Agung", "Saya yang seharusnya berterimakasih, dek Player, selamat jalan!", null)
-        }, false)
+        }, false, "Judgement")
                     }, true)
                 }), 
                     new Mission(new List<Goal>
@@ -2094,7 +2083,7 @@ public class MissionManager : MonoBehaviour
         new MainCharacterDialog(true, characterExpression.hurt, "Oh tidak...kenapa jadi ada ujian begini...)", null),
         new MainCharacterDialog(true, characterExpression.hurt, "Aku merasa dihakimi deh sama kepala pedagang ini, tapi ya sudahlah...)", null),
         new MainCharacterDialog(true, characterExpression.neutral, "(Aku hadapi saja judgment ini", null)
-        }, false)
+        }, false, null)
                     }, true)
                 }), 
 
@@ -2111,7 +2100,7 @@ public class MissionManager : MonoBehaviour
                                new NPCDialog("Kepala Pedagang", "Sekarang kamu seharusnya sudah lebih paham...", null),
                                new NPCDialog("Kepala Pedagang", "Coba aku tes kembali pemahamanmu itu ya, dan kita tidak akan berhenti sampai kamu mengerti betul", null),
                               new MainCharacterDialog(true, characterExpression.hurt, "Ya Tuhan....", null)
-                        }, false)
+                        }, false, null)
                     }),
                     new JudgementGoal("Menyelesaikan tantangan Judgement dari Kepala Pedagang", 5, "Kepala Pedagang NPC", false)
                 }), 
@@ -2129,7 +2118,7 @@ public class MissionManager : MonoBehaviour
         new NPCDialog("Pedagang", "Nanti akan saya bantu negosiasikan, tapi sebaiknya kamu dengar dulu...", null),
         new NPCDialog("Pedagang", "Sedikit rekap dari kisah serangan Sultan Agung", null),
         
-        }, false)
+        }, false, null)
                     }, true),
                     new ReviewGoal("Mereview kembali beberapa kejadian bersama pedagang", 1, "Pedagang Anak NPC", new Story[]{
                         new Story("Pedagang selesai memberikan review singkat...", new List<Dialogs>{
@@ -2137,7 +2126,7 @@ public class MissionManager : MonoBehaviour
                                new NPCDialog("Pedagang", "Sekarang coba saya negosiasikan dengan kepala pedagang terkait ini", null),
                                new NPCDialog("Pedagang", "Kalau kamu sudah siap nantinya, temui saja dia kembali", null),
                                new MainCharacterDialog(true, characterExpression.hurt, "Baiklah aku rasa kembali ke penghakiman", new string[]{"Pedagang Anak NPC"}),
-                        }, false)
+                        }, false, null)
                     })
                 }), 
 
@@ -2163,7 +2152,7 @@ public class MissionManager : MonoBehaviour
         new MainCharacterDialog(true, characterExpression.neutral, " (Lagi pula bagaimana bisa ada lencana polisi di masa ini...)", null),
         new MainCharacterDialog(true, characterExpression.neutral, "(Hmmm..sebaiknya aku berkeliling saja mencari pemiliknya sambil menunggu..)", null),
 
-        }, false)
+        }, false, "Mataram")
                     }, true)
                 }), 
                 new Mission(new List<Goal>
@@ -2199,7 +2188,7 @@ public class MissionManager : MonoBehaviour
         new MainCharacterDialog(true, characterExpression.neutral, "(Mungkin kalau aku mengembalikan lencananya, dia akan mau membantuku keluar dari sini", null),
         new MainCharacterDialog(true, characterExpression.neutral, "(Setidaknya dengan adanya polisi aku akan jauh merasa lebih ama", null),
         
-        }, false)
+        }, false, "Funny Yudha")
                     }, true),
                      new SubmitGoal("Memberikan lencana kembali kepada Yudha", 1, "Yudha", new Story[]{
                         new Story("Yudha dengan cepat mengambil kembali lencananya darimu", new List<Dialogs>
@@ -2225,12 +2214,28 @@ public class MissionManager : MonoBehaviour
         new MainCharacterDialog(true, characterExpression.neutral, "Masih akan jauh sebelum aku bisa keluar dari tempat ini sepertinya...", null),
         new MainCharacterDialog(true, characterExpression.neutral, "Hmmm? Apa ini?", null),
         new MainCharacterDialog(true, characterExpression.neutral, "Seperti catatan jurnal...", null),
-        new MainCharacterDialog(true, characterExpression.neutral, "Aku sebaiknya menyimpannya dan membukanya nanti ", null),
-        }, false)
+        new MainCharacterDialog(true, characterExpression.neutral, "Aku sebaiknya menyimpannya dan membukanya nanti ", new string[]{"Next Chapter"}),
+        }, false, null)
                     }, new Item[]{
                         new Item("police_badge", "Lencana Polisi", "Apa ada polisi di sekitar sini?", 1)
                     })
-                })
+                }),
+
+               new Mission(new List<Goal>{
+                     new ExplorationGoal("Pergi ke lokasi selanjutnya dengan kapal", 1, new string[] {"Next Chapter"}, new int[] {-1}, new Story[]{
+                        new Story("Dan perjalananmu pun masih berlanjut..", new List<Dialogs>
+        {
+       
+            new CutsceneDialog("cutscene_indonesia", "Setelah perjuangan yang cukup panjang dari berbagai daerah lainnya, akhirnya kongsi dagang itu bubar pada tahun 31 Desember 1799", null),
+            new CutsceneDialog("cutscene_indonesia", "Tapi Nusantara belum lepas dari tangan Belanda", null),
+            new CutsceneDialog("cutscene_suffering", "Pemimpin-pemimpin dari Belanda, dan bahkan Inggris sempat membawa alur pemerintahan di Nusantara", null),
+            new CutsceneDialog("cutscene_suffering", "Tapi tidak ada dari mereka yang membawa kemakmuran kepada Nusantara, atau Bumiputera, atau Hindia Belanda pada masanya masing-masing", null),
+            new CutsceneDialog("cutscene_suffering", "Jalan Anyer-Panarukan hingga tanam paksa, semua hasil pengerjaan paksa dari sekian banyak rakyat pada masanya", null),
+            new CutsceneDialog("cutscene_perjuangan", "Bahkan penguasa pribumi yang penuh keserakahan justru menambah penderitaan dari rakyat biasa", null),
+            new CutsceneDialog("cutscene_perjuangan", "Dan perjuangan dari rakyat Hindia Belanda pun masih terus berlangsung, untuk mengusahakan kemerdekaan mereka...", null)
+        }, true, "Judgement")
+                    }, true)
+               })
             };
         }
 
@@ -2248,10 +2253,10 @@ public class MissionManager : MonoBehaviour
                             new MainCharacterDialog(true, characterExpression.hurt, "Apa yang anda mau sekarang?", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Tidak aku hanya melihat sebuah keributan yang akan terjadi", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Dan aku punya pekerjaan lebih penting dari menghadapi keributan itu", null),
-                            new MainCharacterDialog(false, characterExpression.happy, "Jadi ya…aku serahkan itu padamu anak kecil", null),
+                            new MainCharacterDialog(false, characterExpression.happy, "Jadi yaï¿½aku serahkan itu padamu anak kecil", null),
                             new MainCharacterDialog(true, characterExpression.shook, "Hei, tunggu dulu!", null),
-                            new MainCharacterDialog(true, characterExpression.hurt, "Astaga..dia keburu pergi…", null),
-                            new MainCharacterDialog(true, characterExpression.think, " (Ya sudahlah aku akan mencarinya lagi saja setelah aku mencari tau apa yang terjadi disana…)", null),
+                            new MainCharacterDialog(true, characterExpression.hurt, "Astaga..dia keburu pergiï¿½", null),
+                            new MainCharacterDialog(true, characterExpression.think, " (Ya sudahlah aku akan mencarinya lagi saja setelah aku mencari tau apa yang terjadi disanaï¿½)", null),
                         }, false)}, true)}), 
 
                new Mission(new List<Goal>
@@ -2306,23 +2311,23 @@ public class MissionManager : MonoBehaviour
                             new MainCharacterDialog(true, characterExpression.think, "Sepertinya ada perselisihan antara kaum Adat dan kaum Padri", null),
                             new MainCharacterDialog(true, characterExpression.think, "Karena kaum Adat tidak menuruti ajaran Islam", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Sejarahnya masih sama seperti yang sudah terjadi.", null),
-                            new MainCharacterDialog(false, characterExpression.neutral, "Sebagai detektif yang berurusan dengan penjelajahan waktu…", null),
-                            new MainCharacterDialog(false, characterExpression.neutral, "Aku diajarkan untuk mengetahui seluk beluk sejarah…", null),
-                            new MainCharacterDialog(false, characterExpression.neutral, "Seandainya orang-orang itu memutuskan untuk seenaknya mengubah sejarah…", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Sebagai detektif yang berurusan dengan penjelajahan waktuï¿½", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Aku diajarkan untuk mengetahui seluk beluk sejarahï¿½", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Seandainya orang-orang itu memutuskan untuk seenaknya mengubah sejarahï¿½", null),
                             new MainCharacterDialog(true, characterExpression.shook, "Orang itu? Maksudnya penjelajah waktu?", null),
-                            new MainCharacterDialog(false, characterExpression.angry, "Kamu masih kecil, kamu tidak tau apapun tentang para penjelajah waktu itu…", null),
-                            new MainCharacterDialog(false, characterExpression.angry, "Dan apa yang mereka bisa lakukan….", null),
+                            new MainCharacterDialog(false, characterExpression.angry, "Kamu masih kecil, kamu tidak tau apapun tentang para penjelajah waktu ituï¿½", null),
+                            new MainCharacterDialog(false, characterExpression.angry, "Dan apa yang mereka bisa lakukanï¿½.", null),
                             new MainCharacterDialog(true, characterExpression.neutral, "Baiklah, setidaknya bisakah anda menjelaskan apa yang terjadi disini?", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Sesuai dengan nama kaum Padri, perang yang akan terjadi adalah Perang Padri.", null),
                             new MainCharacterDialog(false, characterExpression.neutral, " Informasi yang kamu barusan dapat adalah latar belakang perang itu.", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Sebentar lagi akan terjadi bentrokan antara kaum Padri dan Adat.", null),
-                            new MainCharacterDialog(false, characterExpression.neutral, "Sebaiknya kita pergi dari sini, lagipula sudah tidak ada yang menarik dari tempat ini…", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Sebaiknya kita pergi dari sini, lagipula sudah tidak ada yang menarik dari tempat iniï¿½", null),
                             new MainCharacterDialog(false, characterExpression.happy, "Aku duluan ya.. Byee..", null),
                             new MainCharacterDialog(true, characterExpression.shook, "Hei, tunggu dulu..", null),
-                            new MainCharacterDialog(true, characterExpression.hurt, "(Ah, dia pergi lagi.. Aku sudah cukup lelah dengan kelakuannya itu tapi ya sudahlah…)", null),
+                            new MainCharacterDialog(true, characterExpression.hurt, "(Ah, dia pergi lagi.. Aku sudah cukup lelah dengan kelakuannya itu tapi ya sudahlahï¿½)", null),
                             new MainCharacterDialog(true, characterExpression.think, "(Sebaiknya aku mencatat di jurnal saja dulu..)", null),
                             new MainCharacterDialog(true, characterExpression.think, "(Polisi itu ada dimana ya?)", null),
-                            new MainCharacterDialog(true, characterExpression.neutral, "(Aku harus mencarinya…)", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "(Aku harus mencarinyaï¿½)", null),
                         }, false)
                     }, true)
                 }),
@@ -2333,9 +2338,9 @@ public class MissionManager : MonoBehaviour
                         new ExplorationGoal("Mengikuti Yudha di Pagaruyung", 1, new string[] {"Yudha (3)"}, new int[] {-1}, new Story[] {
                         new Story("Kamu pun menemukan Yudha di dekat sebuah rumah...", new List<Dialogs>
                         {
-                            new MainCharacterDialog(false, characterExpression.neutral, "Kamu lama sekali sih…", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Kamu lama sekali sihï¿½", null),
                             new MainCharacterDialog(true, characterExpression.hurt, "Kan aku harus mencatat informasi yang aku dapatkan dulu", null),
-                            new MainCharacterDialog(true, characterExpression.sad, "Pak Polisi yang main tinggal saja, kok jadi aku yang salah…", null),
+                            new MainCharacterDialog(true, characterExpression.sad, "Pak Polisi yang main tinggal saja, kok jadi aku yang salahï¿½", null),
                             new MainCharacterDialog(true, characterExpression.neutral, "Yah, itu sih kamu saja yang lelet", null),
                             new MainCharacterDialog(true, characterExpression.hurt, "(Ujung-ujungnya aku lagi yang salah.. Polisi macam apa ini sebenarnya!?)", null),
                             new MainCharacterDialog(true, characterExpression.neutral, "(Ah sudahlah, lebih baik bersama dia daripada sendirian sih.)", null),
@@ -2346,10 +2351,10 @@ public class MissionManager : MonoBehaviour
                             new MainCharacterDialog(false, characterExpression.happy, "Pas sekali, aku ada pekerjaan untukmu.", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Ikutilah orang Belanda itu.", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Aku akan mengawasimu.", null),
-                            new MainCharacterDialog(true, characterExpression.hurt, "Seharusnya anda saja yang melakukan hal berbahaya seperti ini…", null),
+                            new MainCharacterDialog(true, characterExpression.hurt, "Seharusnya anda saja yang melakukan hal berbahaya seperti iniï¿½", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Apa tadi kamu bilang?", null),
                             new MainCharacterDialog(true, characterExpression.happy, "Tidak ada.. ", null),
-                            new MainCharacterDialog(true, characterExpression.neutral, "(Ayo kita lakukan ini lagi…)", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "(Ayo kita lakukan ini lagiï¿½)", null),
                         }, false)
                     }, true)
                 }),
@@ -2360,11 +2365,11 @@ public class MissionManager : MonoBehaviour
                         new ExplorationGoal("Menghampiri Orang Belanda", 1, new string[] {"Pejabat Belanda (1)"}, new int[] {1}, new Story[] {
                         new Story("Kamu pun menghampiri orang Belanda itu...", new List<Dialogs>
                         {
-                            new MainCharacterDialog(true, characterExpression.think, "(Hmmmm… Orang Belanda itu sedang bergumam sendiri di depan sebuah bangunan)", null),
-                            new NPCDialog("???", "Hahahaa… Those fools accepted the agreement (Hahahaa… orang-orang bodoh itu menerima perjanjiannya).", null),
+                            new MainCharacterDialog(true, characterExpression.think, "(Hmmmmï¿½ Orang Belanda itu sedang bergumam sendiri di depan sebuah bangunan)", null),
+                            new NPCDialog("???", "Hahahaaï¿½ Those fools accepted the agreement (Hahahaaï¿½ orang-orang bodoh itu menerima perjanjiannya).", null),
                             new NPCDialog("???", "Their desire to make the Padri lose is very exploitable (Keinginan mereka untuk membuat Padri kalah sangatlah mudah dieksploitasi).", null),
                             new NPCDialog("???", "We will join forces with the Adat to fight the Padri and conquer some areas in the meantime (Kita akan bergabung dengan kaum Adat dan menguasai beberapa area untuk sekarang).", null),
-                            new NPCDialog("???", "Imagining it already makes me satisfied.. Hahaha… (Membayangkannya saja sudah membuatku puas… Hahaha…).", null),
+                            new NPCDialog("???", "Imagining it already makes me satisfied.. Hahahaï¿½ (Membayangkannya saja sudah membuatku puasï¿½ Hahahaï¿½).", null),
                             new MainCharacterDialog(true, characterExpression.think, "(Coba saja kita bisa menghentikannya..)", null),
                             new MainCharacterDialog(true, characterExpression.shook, "(Eh? Dia tiba-tiba berhenti berjalan dan menatapku..)", null),
                             new NPCDialog("???", "What are you doing staring at me like that? (Ngapain kamu lihat-lihat aku seperti itu?).", null),
@@ -2377,11 +2382,11 @@ public class MissionManager : MonoBehaviour
                             new MainCharacterDialog(false, characterExpression.neutral, "Yah. singkatnya kaum Adat ingin bantuan Belanda untuk mengalahkan kaum Padri.", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Belanda memanfaatkan perjanjian tersebut untuk menguasai beberapa wilayah di Minangkabau.", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Sebentar lagi mereka akan menguasai Simawang dan perang tidak akan terhindarkan pada tahun 1821 karena kaum Padri akan menentang pendudukan wilayah tersebut..", null),
-                            new MainCharacterDialog(true, characterExpression.sad, "Kalau saja kita bisa menghentikan perang…", null),
+                            new MainCharacterDialog(true, characterExpression.sad, "Kalau saja kita bisa menghentikan perangï¿½", null),
                             new MainCharacterDialog(false, characterExpression.angry, "Kalau begitu kamu akan menjadi sama seperti penjelajah waktu ilegal itu.", null),
                             new MainCharacterDialog(true, characterExpression.hurt, "Tapi kan..", null),
                             new MainCharacterDialog(false, characterExpression.angry, "Jangan lanjutkan pembicaraan ini!", null),
-                            new MainCharacterDialog(true, characterExpression.hurt, "(Dia… kelihatan marah)", null),
+                            new MainCharacterDialog(true, characterExpression.hurt, "(Diaï¿½ kelihatan marah)", null),
                             new MainCharacterDialog(true, characterExpression.hurt, "(Sebaiknya, aku diam saja)", null),
                             new MainCharacterDialog(true, characterExpression.sad, "...", null),
                             new MainCharacterDialog(false, characterExpression.sad, "Haah, intinya kamu fokus saja", null),
@@ -2401,7 +2406,7 @@ public class MissionManager : MonoBehaviour
                             new NPCDialog("???", "Tuan, ada dua orang yang tiba-tiba muncul di pertahanan kita..", null),
                             new NPCDialog("???", "Apakah kalian mata-mata dari Belanda?", null),
                             new NPCDialog("???", "Pasukan, tangkap mereka!", null),
-                            new MainCharacterDialog(true, characterExpression.hurt, "(Ouch.. Baru juga sampai sudah ditangkap…)", null),
+                            new MainCharacterDialog(true, characterExpression.hurt, "(Ouch.. Baru juga sampai sudah ditangkapï¿½)", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Sebelum kalian langsung menangkap tanpa bukti, lebih baik memeriksa kami dulu.", null),
                             new NPCDialog("???", "Pasukan, geledah barang-barang mereka.", null),
                             new NPCDialog("Pasukan 1", "Hanya ada semacam dokumen di kantong anak kecil ini.", null),
@@ -2426,7 +2431,7 @@ public class MissionManager : MonoBehaviour
                             new NPCDialog("Tuanku Lintau", "Kita ada sekitar 20.000 sampai 25.000 pasukan untuk sekarang.", null),
                             new NPCDialog("Tuanku Lintau", "Tapi, kami juga mau melihat seberapa pasukan yang mereka siapkan agar kita bisa mengantisipasinya", null),
                             new NPCDialog("Tuanku Lintau", "Seharusnya dengan pasukan dan senjata yang ada sudah cukup untuk menyerang mereka sih.", null),
-                            new MainCharacterDialog(true, characterExpression.think, "(Aku tidak yakin dengan pernyataan itu…)", null),
+                            new MainCharacterDialog(true, characterExpression.think, "(Aku tidak yakin dengan pernyataan ituï¿½)", null),
                             new MainCharacterDialog(true, characterExpression.think, "(Aku akan mempertimbangkannya setelah investigasi nanti..)", null),
                             new MainCharacterDialog(true, characterExpression.happy, "Serahkan saja pada kami", null),
                             new NPCDialog("Tuanku Lintau", "Terimakasih banyak karena mau membantu, nak Player dan Yudha.", null),
@@ -2444,9 +2449,9 @@ public class MissionManager : MonoBehaviour
                         {
                             new MainCharacterDialog(false, characterExpression.neutral, "Sana, saatnya kamu menjalankan tugasmu.", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Aku akan melakukan hal lain di sekitar sini.", null),
-                            new MainCharacterDialog(true, characterExpression.angry, "(Sabar Player, sabar…)", null),
+                            new MainCharacterDialog(true, characterExpression.angry, "(Sabar Player, sabarï¿½)", null),
                             new MainCharacterDialog(true, characterExpression.neutral, "(Aku memang hanya bisa mengandalkan diriku sendiri)", null),
-                            new MainCharacterDialog(true, characterExpression.neutral, "(Saatnya aku mengintai tempat ini…)", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "(Saatnya aku mengintai tempat iniï¿½)", null),
                         }, false)
                     }, true)
                 }),
@@ -2482,12 +2487,12 @@ public class MissionManager : MonoBehaviour
                         new Story("Kamu dan Kak Yudha telah sampai di Lintau...", new List<Dialogs>
                         {
                             new NPCDialog("Tuanku Lintau", "Nak Player dan Yudha, bagaimana kondisi disana?", null),
-                            new MainCharacterDialog(true, characterExpression.neutral, "Mereka menyiapkan 200 serdadu Eropa…", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "Mereka menyiapkan 200 serdadu Eropaï¿½", null),
                             new NPCDialog("Tuanku Lintau", "Sedikit sekali, apa kamu yakin?", null),
                             new MainCharacterDialog(true, characterExpression.neutral, "Mereka juga menyediakan 10.000 pasukan orang pribumi termasuk Kaum Adat.", null),
                             new MainCharacterDialog(true, characterExpression.think, "Menurutku, pasukannya sebaiknya diperbanyak.", null),
                             new NPCDialog("Tuanku Lintau", "Seharusnya pasukan kami sih sudah cukup untuk menyerang mereka, tidak perlu menambahnya lagi..", null),
-                            new MainCharacterDialog(true, characterExpression.hurt, "Tapi kan…", null),
+                            new MainCharacterDialog(true, characterExpression.hurt, "Tapi kanï¿½", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Kita pergi dari sini dulu ya tuan, ada urusan lain menanti kami.", null),
                             new NPCDialog("Tuanku Lintau", "Oh baiklah, terimakasih karena telah membantu kami dalam mengintai", null),
                             new NPCDialog("Tuanku Lintau", "Kalau perlu bantuan ke depannya, datang saja kesini.", null),
@@ -2518,7 +2523,7 @@ public class MissionManager : MonoBehaviour
                             new NPCDialog("Tuanku Lintau", "Kami mengundurkan diri ke sini, di Lintau.", null),
                             new NPCDialog("Tuanku Lintau", "Kami kehilangan 350 orang, termasuk putraku...", null),
                             new MainCharacterDialog(true, characterExpression.neutral, "Apakah tuan akan berperang lagi?", null),
-                            new NPCDialog("Tuanku Lintau", "Aku akan berperang lagi, untuk membalas dendam putraku juga…", null),
+                            new NPCDialog("Tuanku Lintau", "Aku akan berperang lagi, untuk membalas dendam putraku jugaï¿½", null),
                             new NPCDialog("Tuanku Lintau", "Saya akan memusatkan perjuangan dari sini", null),
                             new NPCDialog("Tuanku Lintau", "Temanku Tuanku Nan Renceh sedang memimpin pasukannya di sekitar Baso.", null),
                             new NPCDialog("Tuanku Lintau", "Sudah ya, Player, dan Yudha, saya akan bersiap untuk perang dengan para pasukan", null),
@@ -2549,7 +2554,7 @@ public class MissionManager : MonoBehaviour
                             new MainCharacterDialog(true, characterExpression.neutral, "Setelah itu apa yang terjadi?", null),
                             new NPCDialog("Warga 4", "Pada September 1822 kaum Padri berhasil mengusir Belanda dari Sungai Puar, Guguk Sigandang, dan Tajong Alam.", null),
                             new NPCDialog("Warga 4", "Lalu, pada tahun 1823 pasukan Padri berhasil mengalahkan tentara Belanda di Kapau.", null),
-                            new MainCharacterDialog(true, characterExpression.think, "(Hmmm… Aku sudah mengerti apa yang terjadi)", null),
+                            new MainCharacterDialog(true, characterExpression.think, "(Hmmmï¿½ Aku sudah mengerti apa yang terjadi)", null),
                             new MainCharacterDialog(true, characterExpression.neutral, "(Tapi, rasanya perang belum selesai begini saja)", null),
                             new MainCharacterDialog(true, characterExpression.neutral, "Sampai situ saja atau ada lagi?", null),
                             new NPCDialog("Warga 4", "Belum, Belanda hanya merasa terdesak sehingga mereka membuat suatu perjanjian pada tanggal 26 Februari 1824.", null),
@@ -2564,7 +2569,7 @@ public class MissionManager : MonoBehaviour
                             new MainCharacterDialog(false, characterExpression.neutral, "Aku mendeteksi adanya dokumen di Melayu.", null),
                             new MainCharacterDialog(true, characterExpression.neutral, "Eh, kenapa bisa sampai kesitu?", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Sudah jangan banyak tanya, ambil saja dokumen itu dan kembali kesini", null),
-                            new MainCharacterDialog(true, characterExpression.neutral, "(Mungkin ini ulah penjelajah waktu ilegal itu…)", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "(Mungkin ini ulah penjelajah waktu ilegal ituï¿½)", null),
                             new MainCharacterDialog(true, characterExpression.neutral, "(Baiklah, saatnya mencari perjanjian itu..)", null),
                         }, false)
                     }, true)
@@ -2577,12 +2582,12 @@ public class MissionManager : MonoBehaviour
                         new Story("Kamu mendapati sebuah dokumen yang tergeletak di tanah...", new List<Dialogs>
                         {
                             new MainCharacterDialog(true, characterExpression.think, "Apa ini?", null),
-                            new MainCharacterDialog(true, characterExpression.happy, "Mari kita lihat…", null),
+                            new MainCharacterDialog(true, characterExpression.happy, "Mari kita lihatï¿½", null),
                             new MainCharacterDialog(true, characterExpression.neutral, "(Perjanjian Masang.. Aku akan menyimpannya di jurnalku...)", null),
                             new MainCharacterDialog(true, characterExpression.neutral, "(Perjanjian ini terjadi pada tanggal 26 Januari 1824 di wilayah Alahan Panjang)", null),
                             new MainCharacterDialog(true, characterExpression.think, "(Sepertinya ini semacam perundingan damai antara Belanda dan kaum Padri)", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "(Aku tanya lebih lanjut ke dia saja deh..)", null),
-                            new MainCharacterDialog(false, characterExpression.neutral, "(Kan dia tahu segalanya…)", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "(Kan dia tahu segalanyaï¿½)", null),
                         }, false)
                     }, true)
                 }),
@@ -2605,10 +2610,10 @@ public class MissionManager : MonoBehaviour
                             new MainCharacterDialog(false, characterExpression.neutral, "Tentu saja, lalu Tuanku Imam Bonjol kembali melawan Belanda.", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Selanjutnya adalah fase kedua dari perang Padri.", null),
                             new MainCharacterDialog(true, characterExpression.happy, " (Aku semakin kesini rasanya semakin penasaran dengan yang terjadi..)", null),
-                            new MainCharacterDialog(true, characterExpression.neutral, "(Ternyata sejarah menarik juga…)", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "(Ternyata sejarah menarik jugaï¿½)", null),
                             new MainCharacterDialog(true, characterExpression.shook, "(Eh, ada pasukan yang menghalangi jalan kami..)", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Inilah momen dimana kamu bersinar...", null),
-                            new MainCharacterDialog(true, characterExpression.neutral, "(Maksudmu mempekerjakanku untuk menjawab pertanyaan… Hahaha…)", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "(Maksudmu mempekerjakanku untuk menjawab pertanyaanï¿½ Hahahaï¿½)", null),
                         }, false)
                     }, true)
                 }),
@@ -2630,7 +2635,7 @@ public class MissionManager : MonoBehaviour
                             new NPCDialog("Pasukan", "Oh ya, Yudha..", null),
                             new NPCDialog("Pasukan", "Aku masih tidak terlalu yakin dengan kalian", null),
                             new NPCDialog("Pasukan", "Jadi, aku akan menguji kalian dulu dengan pertanyaan-pertanyaan ini!", null),
-                            new MainCharacterDialog(true, characterExpression.hurt, "(Lagi-lagi seperti ini…)", null),
+                            new MainCharacterDialog(true, characterExpression.hurt, "(Lagi-lagi seperti iniï¿½)", null),
                             new MainCharacterDialog(true, characterExpression.neutral, "Baiklah, aku akan membuktikan bahwa aku ada di pihak kalian.", null),
                             new MainCharacterDialog(false, characterExpression.happy, "Mohon kerjasamanya lagi ya, Player", null),
                             new MainCharacterDialog(false, characterExpression.happy, "Tenang aku ada disini kok untuk membantumu", null),
@@ -2671,7 +2676,7 @@ public class MissionManager : MonoBehaviour
         new MainCharacterDialog(true, characterExpression.neutral, "Bisakah bapak membantuku untuk meyakinkan bawahan Anda ini?", null),
         new MainCharacterDialog(true, characterExpression.neutral, "Bawahan bapak mencurigaiku karena aku tidak bisa menjawab pertanyaan darinya.", null),
         new NPCDialog("Kepala Pasukan Padri", "Saya akan membantu kamu meyakinkannya.", null),
-        new NPCDialog("Kepala Pasukan Padri", "Saya akan memberitahumu semua yang telah terjadi selama ini…", null),
+        new NPCDialog("Kepala Pasukan Padri", "Saya akan memberitahumu semua yang telah terjadi selama iniï¿½", null),
 
         }, false)
                     }, true),
@@ -2740,17 +2745,17 @@ public class MissionManager : MonoBehaviour
                             new MainCharacterDialog(false, characterExpression.neutral, "Jadi, Belanda ingin mengadakan perjanjian damai lagi dengan kaum Padri.", null),
                             new MainCharacterDialog(true, characterExpression.happy, "Tapi kan sebelumnya mereka saja melanggar perjanjian mereka sendiri?", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Ya karena itu, tidak ada yang mau menanggapinya.", null),
-                            new MainCharacterDialog(true, characterExpression.happy, "Untunglah, mereka tidak jatuh lagi ke lubang yang sama…", null),
+                            new MainCharacterDialog(true, characterExpression.happy, "Untunglah, mereka tidak jatuh lagi ke lubang yang samaï¿½", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Tapi karena Belanda licik, mereka meminta bantuan Sulaiman Aljufri untuk membujuk para pemuka kaum Padri agar bersedia berdamai.", null),
                             new MainCharacterDialog(true, characterExpression.neutral, "Sulaiman Aljufri?", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Intinya, seorang saudagar keturunan Arab..", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Kembali ke topik, Tuanku Imam Bonjol menolaknya.", null),
-                            new MainCharacterDialog(true, characterExpression.happy, "(Untung saja…).", null),
+                            new MainCharacterDialog(true, characterExpression.happy, "(Untung sajaï¿½).", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Tetapi, Tuanku Lintau dan Tuanku Nan Renceh menerima tawaran itu.", null),
                             new MainCharacterDialog(true, characterExpression.shook, "Astaga, mereka jatuh ke lubang yang sama lagi...", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Jadi pada tanggal 15 November 1825 ditandatanganilah sebuah perjanjian..", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "yang kamu harus cari sendiri tentunya", null),
-                            new MainCharacterDialog(true, characterExpression.shook, "(Mulai lagi…)", null),
+                            new MainCharacterDialog(true, characterExpression.shook, "(Mulai lagiï¿½)", null),
                             new MainCharacterDialog(true, characterExpression.shook, "Siap, laksanakan Pak Polisi!", null),
                         }, false)
                     }, true)
@@ -2763,9 +2768,9 @@ public class MissionManager : MonoBehaviour
                         new Story("Kamu menemukan perjanjian yang dimaksud kak Yudha", new List<Dialogs>
                         {
                             new MainCharacterDialog(true, characterExpression.think, "(Hmm? Ada semacam dokumen disini)", null),
-                            new MainCharacterDialog(true, characterExpression.neutral, "(Perjanjian Padang…)", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "(Perjanjian Padangï¿½)", null),
                             new MainCharacterDialog(true, characterExpression.neutral, "(Akan aku simpan dulu dan diskusi dengan dia...)", null),
-                            new MainCharacterDialog(true, characterExpression.happy, "(Kak Yudha itu bisa diandalkan juga sih kalau dipikir-pikir…)", null),
+                            new MainCharacterDialog(true, characterExpression.happy, "(Kak Yudha itu bisa diandalkan juga sih kalau dipikir-pikirï¿½)", null),
                         }, false)
                     }, true)
                 }),
@@ -2776,9 +2781,9 @@ public class MissionManager : MonoBehaviour
                         new ExplorationGoal("Kembali ke Yudha di Padang setelah mendapatkan dokumen", 1, new string[] {"Yudha (2)"}, new int[] {1}, new Story[] {
                         new Story("Kamu kembali pada Yudha yang masih di sekitar Padang...", new List<Dialogs>
                         {
-                            new MainCharacterDialog(true, characterExpression.neutral, "Ini dokumennya…", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "Ini dokumennyaï¿½", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Untunglah kamu menemukan dokumen itu...", null),
-                            new MainCharacterDialog(false, characterExpression.neutral, "Hmmm…", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Hmmmï¿½", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Oke, isinya masih sama dengan yang di sejarah", null),
                             new MainCharacterDialog(true, characterExpression.neutral, "Apakah anda mau menjelaskan isi dokumen tersebut?", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Kok kamu jadi banyak tanya tiba-tiba?", null),
@@ -2787,16 +2792,16 @@ public class MissionManager : MonoBehaviour
                             new MainCharacterDialog(false, characterExpression.neutral, "Ya sudah langsung ke intinya saja tapi.", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Belanda mengakui kekuasaan pemimpin Padri dan menjamin pelaksanaan sistem agama di daerah mereka masing-masing.", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Mereka tidak akan saling menyerang.", null),
-                            new MainCharacterDialog(true, characterExpression.neutral, "(Aku tidak yakin ini akan ditepati…)", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "(Aku tidak yakin ini akan ditepatiï¿½)", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Mereka akan melindungi para pedagang dan orang-orang yang sedang melakukan perjalanan.", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Dan terakhir, praktik adu ayam akan dilarang secara bertahap.", null),
-                            new MainCharacterDialog(true, characterExpression.happy, "(Akhirnya ayam-ayam itu bisa bebas…)", null),
+                            new MainCharacterDialog(true, characterExpression.happy, "(Akhirnya ayam-ayam itu bisa bebasï¿½)", null),
                             new MainCharacterDialog(true, characterExpression.neutral, "(Oke akan kucatat informasi-informasi ini ke dalam jurnal)", null),
                             new MainCharacterDialog(true, characterExpression.think, "Perjanjian ini bohong seperti sebelumnya kan?", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Yah kamu akan tahu ketika ke tempat selanjutnya..", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Ayo, ikut aku", null),
                             new MainCharacterDialog(true, characterExpression.shook, "(Aku sudah tidak ditinggal lagi.. Tiba-tiba jadi begini...)", null),
-                            new MainCharacterDialog(false, characterExpression.happy, "(Rasanya aneh tapi tidak buruk juga…).", null),
+                            new MainCharacterDialog(false, characterExpression.happy, "(Rasanya aneh tapi tidak buruk jugaï¿½).", null),
                         }, false)
                     }, true)
                 }),
@@ -2857,7 +2862,7 @@ public class MissionManager : MonoBehaviour
                             new MainCharacterDialog(true, characterExpression.happy, "Baik, terima kasih banyak Pak.", null),
                             new NPCDialog("Warga", "Jadi, pasukan kaum Padri bersatu dengan kaum Adat dan mulai bergerak ke pos-pos Belanda", null),
                             new NPCDialog("Warga", "Tindakan ini dijadikan alasan Belanda untuk menyerang Koto Tuo di Ampek Angkek yang dipimpin Gillavary.", null),
-                            new MainCharacterDialog(true, characterExpression.angry, "(Belanda itu.. Padahal mereka yang mulai duluan…)", null),
+                            new MainCharacterDialog(true, characterExpression.angry, "(Belanda itu.. Padahal mereka yang mulai duluanï¿½)", null),
                             new NPCDialog("Warga", "Pada tahun 1831 Gillavary digantikan oleh Jacob Elout", null),
                             new NPCDialog("Warga", "Elout mendapat pesan dari Gubernur Jenderal Van den Bosch agar melaksanakan serangan besar-besaran terhadap kaum Padri", null),
                             new NPCDialog("Warga", "Dia segera mengerahkan pasukannya untuk menguasai Manggung, Naras, dan Batipuh.", null),
@@ -2882,7 +2887,7 @@ public class MissionManager : MonoBehaviour
                         {
                             new MainCharacterDialog(true, characterExpression.shook, "(Eh, ada pemerintah Belanda dan pasukannya)", null),
                             new MainCharacterDialog(true, characterExpression.shook, "(Aku harus bersembunyi)", null),
-                            new NPCDialog("???", "Tch, we need to make a promise of service, we can’t fight the Padri and Adat together like this (Ck, kita harus membuat sebuah janji khidmat, kita tidak bisa melawan kaum Padri dan Adat bersama-sama seperti ini)", null),
+                            new NPCDialog("???", "Tch, we need to make a promise of service, we canï¿½t fight the Padri and Adat together like this (Ck, kita harus membuat sebuah janji khidmat, kita tidak bisa melawan kaum Padri dan Adat bersama-sama seperti ini)", null),
                             new NPCDialog("???", "Guards, announce that no more war between us and them (Pasukan, umumkan kalau tidak ada lagi perang diantara kita).", null),
                             new NPCDialog("???", "Name of the promise will be Plakat Panjang (Nama janji ini adalah Plakat Panjang).", null),
                             new NPCDialog("Pasukan Belanda", "Okay, sir Francis (Baik, tuan Francis)..", null),
@@ -2921,7 +2926,7 @@ public class MissionManager : MonoBehaviour
                             new MainCharacterDialog(false, characterExpression.neutral, "Hei!", null),
                             new MainCharacterDialog(true, characterExpression.shook, "(Padahal sudah dua kali dibohongi tapi masih ada yang percaya..)", null),
                             new MainCharacterDialog(false, characterExpression.angry, "Hei!! Anak kecil, daritadi dipanggil tidak dengar ya?", null),
-                            new MainCharacterDialog(true, characterExpression.sad, "Maaf Kak Yudha…", null),
+                            new MainCharacterDialog(true, characterExpression.sad, "Maaf Kak Yudhaï¿½", null),
                             new MainCharacterDialog(true, characterExpression.sad, "Apa Pak Yudha masih marah denganku?", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Itu tidak penting untuk dijawab, untuk sekarang kita fokus dulu ke misi kita", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Kamu bisa lihat pasukan Imam Bonjol yang sedang diserang oleh Belanda di Bonjol.", null),
@@ -2931,7 +2936,7 @@ public class MissionManager : MonoBehaviour
                             new MainCharacterDialog(true, characterExpression.neutral, "Percuma berdamai kalau akan diserang juga.", null),
                             new MainCharacterDialog(false, characterExpression.angry, "Lihat itu, Belanda mencoba berdamai lagi.", null),
                             new MainCharacterDialog(true, characterExpression.neutral, "(Aku akan mencoba menghampiri mereka)", null),
-                            new MainCharacterDialog(true, characterExpression.neutral, "(Aku sudah sedikit terbiasa dengan perpindahan waktu ini…)", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "(Aku sudah sedikit terbiasa dengan perpindahan waktu iniï¿½)", null),
                             new MainCharacterDialog(true, characterExpression.neutral, "Saat ini kita di tahun berapa, Kak Yudha?", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Dilihat dari keadaan disini, sepertinya kita di tahun 1835..", null),
                             new MainCharacterDialog(true, characterExpression.neutral, "Perdamaian itu tidak jadi ya?", null),
@@ -2939,7 +2944,7 @@ public class MissionManager : MonoBehaviour
                             new MainCharacterDialog(false, characterExpression.neutral, "Ia bekerja sama dengan pasukannya untuk mempertahankan benteng Bonjol.", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Meskipun satu per satu pemimpin Padri dapat ditangkap, ia tetap terus berjuang.", null),
                             new MainCharacterDialog(true, characterExpression.think, "(Imam Bonjol pantang menyerah sekali.. Meskipun sudah terpojok, dia tetap berjuang untuk kaumnya..)", null),
-                            new MainCharacterDialog(true, characterExpression.think, "(Tidak mudah untuk pantang menyerah di situasi yang genting seperti itu…)", null),
+                            new MainCharacterDialog(true, characterExpression.think, "(Tidak mudah untuk pantang menyerah di situasi yang genting seperti ituï¿½)", null),
                             new MainCharacterDialog(false, characterExpression.hurt, "Bentengnya terkepung oleh Belanda dari empat penjuru yang berarti ini sudah tahun 1386", null),
                             new MainCharacterDialog(true, characterExpression.sad, "Apakah kita tidak bisa berbuat sesuatu?", null),
                             new MainCharacterDialog(false, characterExpression.sad, "Percayalah Player, aku juga ingin mereka menang tapi kita tak boleh mengubah masa lalu", null),
@@ -2968,7 +2973,7 @@ public class MissionManager : MonoBehaviour
                             new MainCharacterDialog(false, characterExpression.shook, "Player!", null),
                             new MainCharacterDialog(true, characterExpression.hurt, "...", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Hei! Player!", null),
-                            new MainCharacterDialog(true, characterExpression.hurt, "…Ada apa, kak Yudha?", null),
+                            new MainCharacterDialog(true, characterExpression.hurt, "ï¿½Ada apa, kak Yudha?", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Mukamu kelihatan pucat dan kamu kelihatan lelah", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Istirahat dulu sana", null),
                             new MainCharacterDialog(true, characterExpression.hurt, "(Baik sekali tumben.. Ya sudah aku istirahat dulu saja..)", null),
@@ -2996,15 +3001,15 @@ public class MissionManager : MonoBehaviour
                             new NPCDialog("Warga", "Dia ditangkap oleh Belanda di tempat perundingan damai pada 28 Oktober 1837.", null),
                             new NPCDialog("Warga", "Kemudian, dia dibuang ke Cianjur, lalu dipindahkan ke Ambon, dan dipindahkan lagi ke Manado sampai ia meninggal pada November 1864.", null),
                             new NPCDialog("Warga", "Pengikutnya sempat bergerilya di hutan-hutan Minangkabau tapi tidak membuahkan hasil", null),
-                            new NPCDialog("Warga", "Daerah ini sekarang sudah menjadi milik Belanda…", null),
+                            new NPCDialog("Warga", "Daerah ini sekarang sudah menjadi milik Belandaï¿½", null),
                             new MainCharacterDialog(true, characterExpression.neutral, "Pantas saja suasananya sudah berbeda", null),
                             new MainCharacterDialog(true, characterExpression.hurt, "Aku tidak mau akhir yang seperti ini", null),
                             new MainCharacterDialog(false, characterExpression.happy, "Tenang saja, kita akan merdeka jadi kamu tidak perlu mengkhawatirkan itu", null),
-                            new MainCharacterDialog(false, characterExpression.neutral, "Memang ini yang seharusnya terjadi…", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Memang ini yang seharusnya terjadiï¿½", null),
                             new MainCharacterDialog(true, characterExpression.neutral, "Kak Yudha berusaha menghiburku ya?", null),
                             new MainCharacterDialog(false, characterExpression.shook, "Tidak kok, aku hanya menyatakan fakta saja", null),
-                            new MainCharacterDialog(false, characterExpression.neutral, "Ngomong-ngomong, perang sudah berakhir, kita sebaiknya pergi dari sini…", null),
-                            new MainCharacterDialog(true, characterExpression.neutral, "(Bilang saja kalau khawatir padaku…)", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Ngomong-ngomong, perang sudah berakhir, kita sebaiknya pergi dari siniï¿½", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "(Bilang saja kalau khawatir padakuï¿½)", null),
                             new MainCharacterDialog(true, characterExpression.happy, "(Kurasa kak Yudha memang orang yang baik)", null),
                             new MainCharacterDialog(true, characterExpression.happy, "(Meskipun dia selalu sinis sih, haha)", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Tugas kita sudah selesai disini karena perang sudah berakhir..", null),
@@ -3015,7 +3020,7 @@ public class MissionManager : MonoBehaviour
                             new MainCharacterDialog(false, characterExpression.neutral, "Tapi, kalau kau malas bisa langsung ke pelabuhan saja sih..", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Aku tunggu disini ya kalau kamu mau eksplor", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Tinggal datangi aku kalau sudah siap", null),
-                            new MainCharacterDialog(true, characterExpression.happy, "(Yah, lumayan lah bisa mengeksplor sendiri…)", null),
+                            new MainCharacterDialog(true, characterExpression.happy, "(Yah, lumayan lah bisa mengeksplor sendiriï¿½)", null),
                         }, false)
                     }, true)
                 }),
@@ -3027,7 +3032,7 @@ public class MissionManager : MonoBehaviour
                         new Story("Kamu kembali pada Yudha yang berada di gerbang Minangkabau...", new List<Dialogs>
                         {
                             new MainCharacterDialog(false, characterExpression.neutral, "Oh, kau sudah kembali", null),
-                            new MainCharacterDialog(false, characterExpression.neutral, "Pekerjaan kita sudah selesai disini…", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Pekerjaan kita sudah selesai disiniï¿½", null),
                             new MainCharacterDialog(false, characterExpression.think, "Ayo ke pelabuhan bersama", null),
                              }, false)
                     }, true)
@@ -3044,38 +3049,38 @@ public class MissionManager : MonoBehaviour
                             new MainCharacterDialog(false, characterExpression.neutral, "Kau mendengar sesuatu?", null),
                             new MainCharacterDialog(true, characterExpression.think, "Iya sih, benar juga ya", null),
                             new MainCharacterDialog(true, characterExpression.neutral, "Aku disini...", null),
-                            new MainCharacterDialog(true, characterExpression.neutral, "Ah… seorang wanita", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "Ahï¿½ seorang wanita", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "He-hei, namamu siapa?", null),
                             new MainCharacterDialog(true, characterExpression.neutral, "(Kenapa Kak Yudha tiba-tiba malu-malu seperti itu?)", null),
                             new MainCharacterDialog(true, characterExpression.neutral, "(Oh, aku baru sadar wanita ini cantik)", null),
-                            new MainCharacterDialog(true, characterExpression.neutral, "(Coba saja dia bisa menunjukkan ekspresi seperti itu lebih sering…)", null),
-                            new NPCDialog("Putri", "Aku Putri… orang tuaku mengungsikanku ke rumah pamanku ketika perang itu terjadi", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "(Coba saja dia bisa menunjukkan ekspresi seperti itu lebih seringï¿½)", null),
+                            new NPCDialog("Putri", "Aku Putriï¿½ orang tuaku mengungsikanku ke rumah pamanku ketika perang itu terjadi", null),
                             new NPCDialog("Putri", "Tapi bisakah adik kecil dan kakak ganteng ini memberitahuku tentang apa yang terjadi?", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Kakak ganteng katanya..", null),
                             new MainCharacterDialog(true, characterExpression.neutral, "(Ada yang kegeeran tuh..)", null),
-                            new MainCharacterDialog(true, characterExpression.neutral, "(Daripada itu…)", null),
-                            new MainCharacterDialog(true, characterExpression.neutral, "(Ya kali aku mau memberitahu hal seperti itu pada seorang warga biasa seperti dia…)", null),
-                            new MainCharacterDialog(true, characterExpression.neutral, "(Yang ada dia akan trauma…)", null),
-                            new NPCDialog("???", "Putri, disitu kamu rupanya…", null),
-                            new MainCharacterDialog(false, characterExpression.neutral, "…anda ini pamannya Putri?", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "(Daripada ituï¿½)", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "(Ya kali aku mau memberitahu hal seperti itu pada seorang warga biasa seperti diaï¿½)", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "(Yang ada dia akan traumaï¿½)", null),
+                            new NPCDialog("???", "Putri, disitu kamu rupanyaï¿½", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "ï¿½anda ini pamannya Putri?", null),
                             new NPCDialog("Paman Putri", "Iya saya pamannya, maafkan permintaan keponakan saya ya, dia memang agak lugu.", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Tidak apa-apa kok, kan dia hanya bertanya, tidak usah minta maaf begitu.", null),
                             new MainCharacterDialog(true, characterExpression.neutral, "(Sikapnya beda sekali ya karena dia pamannya wanita itu)", null),
                             new NPCDialog("Paman Putri", "Tapi kami memang khawatir dengan keadaan keluarga kami sejak perang itu dimulai.", null),
                             new NPCDialog("Paman Putri", "Putri, sana kembali ke rumah dulu.", null),
-                            new NPCDialog("Putri", "Tapi…", null),
-                            new NPCDialog("Paman Putri", "Nanti paman tanyakan tentang semuanya ke adik dan kakak ini lalu nanti paman cerita ke Putri…", null),
+                            new NPCDialog("Putri", "Tapiï¿½", null),
+                            new NPCDialog("Paman Putri", "Nanti paman tanyakan tentang semuanya ke adik dan kakak ini lalu nanti paman cerita ke Putriï¿½", null),
                             new NPCDialog("Putri", "Janji ya?", null),
-                            new NPCDialog("Paman Putri", "Iya janji…", null),
-                            new NPCDialog("Putri", "Baiklah kalau begitu…", null),
+                            new NPCDialog("Paman Putri", "Iya janjiï¿½", null),
+                            new NPCDialog("Putri", "Baiklah kalau begituï¿½", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Yah dia sudah pergi..", null),
                             new MainCharacterDialog(true, characterExpression.neutral, "Apa anda mengatakan sesuatu?", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Tidak kok, ngomong-ngomong, bapak mau bertanya apa pada kami?", null),
-                            new NPCDialog("Paman Putri", "Jadi apakah kalian tidak keberatan kalau kita berbincang sebentar…", null),
-                            new MainCharacterDialog(false, characterExpression.neutral, "Ya sebenarnya kami sedang sibuk sih…", null),
-                            new MainCharacterDialog(true, characterExpression.neutral, "Kak Yudha…", null),
-                            new MainCharacterDialog(false, characterExpression.neutral, "Baiklah… aku rasa kami punya waktu sedikit", null),
-                            new NPCDialog("Paman Putri", "Terimakasih, aku tidak akan lama, aku hanya ingin tau tentang hal-hal yang terjadi di perang itu…", null),
+                            new NPCDialog("Paman Putri", "Jadi apakah kalian tidak keberatan kalau kita berbincang sebentarï¿½", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Ya sebenarnya kami sedang sibuk sihï¿½", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "Kak Yudhaï¿½", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Baiklahï¿½ aku rasa kami punya waktu sedikit", null),
+                            new NPCDialog("Paman Putri", "Terimakasih, aku tidak akan lama, aku hanya ingin tau tentang hal-hal yang terjadi di perang ituï¿½", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Lakukan tugasmu seperti biasa sebisamu ya..", null),
                             new MainCharacterDialog(true, characterExpression.neutral, "(Inginnya sih dibantu Pak Yudha..)", null),
                             new MainCharacterDialog(true, characterExpression.neutral, "(Tapi, ya sudahlah.. Dia sudah lebih baik sekarang setidaknya..)", null),
@@ -3114,7 +3119,7 @@ public class MissionManager : MonoBehaviour
         new MainCharacterDialog(true, characterExpression.neutral, "Bisakah bapak membantuku untuk meyakinkan bawahan Anda ini?", null),
         new MainCharacterDialog(true, characterExpression.neutral, "Bawahan bapak mencurigaiku karena aku tidak bisa menjawab pertanyaan darinya.", null),
         new NPCDialog("Kepala Pasukan Padri", "Saya akan membantu kamu meyakinkannya.", null),
-        new NPCDialog("Kepala Pasukan Padri", "Saya akan memberitahumu semua yang telah terjadi selama ini…", null),
+        new NPCDialog("Kepala Pasukan Padri", "Saya akan memberitahumu semua yang telah terjadi selama iniï¿½", null),
 
         }, false)
                     }, true),
@@ -3170,33 +3175,5 @@ public class MissionManager : MonoBehaviour
 
         return mission;
     }
-
-    public Story getEndChapterStory(int chapter)
-    {
-        Story story_end;
-
-        if(chapter == 1)
-        {
-             story_end = new Story("Dan perjalananmu pun masih berlanjut..", new List<Dialogs>
-        {
-            new CutsceneDialog("rumah_kosong", "Setelah perjuangan yang cukup panjang dari berbagai daerah lainnya, akhirnya kongsi dagang itu bubar pada tahun 31 Desember 1799", null),
-            new CutsceneDialog("rumah_kosong", "Tapi Nusantara belum lepas dari tangan Belanda", null),
-            new CutsceneDialog("rumah_kosong", "Pemimpin-pemimpin dari Belanda, dan bahkan Inggris sempat membawa alur pemerintahan di Nusantara", null),
-            new CutsceneDialog("rumah_kosong", "Tapi tidak ada dari mereka yang membawa kemakmuran kepada Nusantara, atau Bumiputera, atau Hindia Belanda pada masanya masing-masing", null),
-            new CutsceneDialog("rumah_kosong", "Jalan Anyer-Panarukan hingga tanam paksa, semua hasil pengerjaan paksa dari sekian banyak rakyat pada masanya", null),
-            new CutsceneDialog("rumah_kosong", "Bahkan penguasa pribumi yang penuh keserakahan justru menambah penderitaan dari rakyat biasa", null),
-            new CutsceneDialog("rumah_kosong", "Dan perjuangan dari rakyat Hindia Belanda pun masih terus berlangsung, untuk mengusahakan kemerdekaan mereka...", null)
-        }, true);
-
-        }
-
-        else
-        {
-            story_end = new Story("", null, true);
-        }
-
-        return story_end;
-    }
-
    
 }

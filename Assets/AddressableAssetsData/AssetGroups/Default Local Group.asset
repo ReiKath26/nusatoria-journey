@@ -161,6 +161,50 @@ MonoBehaviour:
     m_Address: wanted_poster
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 17c3f23692a004dbd9f882931d3cd946
+    m_Address: cutscene_tm
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7901ffbb6792042c686b798c1dd35956
+    m_Address: cutscene_indonesia
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8b3f597f1554f4ff4b023ca5e281f2d3
+    m_Address: cutscene_suffering
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e130397eefd5d4200b27cc1b9633cfdc
+    m_Address: cutscene_perjuangan
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 55223f72b3e1b4813911f9a913da47f5
+    m_Address: cutscene_ending
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3ad631e6c3db343fcaf40ff8433c8517
+    m_Address: tut_6
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7bb836fd0baff42f4bc35e74be0833a4
+    m_Address: tut_3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 59527f5d4e34047d3b63c29368f0ec73
+    m_Address: tut_2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 76975c289170b4ce9954c588721ee3f2
+    m_Address: tut_4
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 16563a148a7084d609ff78eddbbc1456
+    m_Address: tut_5
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9031dae8e1bc546dbb072d3402e2e4e5
+    m_Address: tut_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: c262d5abd0c88492d970a9fff3c5e10a, type: 2}
   m_SchemaSet:

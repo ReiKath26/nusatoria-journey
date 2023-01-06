@@ -22,19 +22,17 @@ public class PlayerMovement : MonoBehaviour
 
         SaveSlots slot = SaveHandler.instance.loadSlot(PlayerPrefs.GetInt("choosenSlot"));
 
-        if(slot.playerGender == 0)
-        {
-              if(follow.getAngle() > 0 && follow.getAngle() <= 90)
+              if(follow.getAngle() >= 90 && follow.getAngle() < 180)
             {
                 _rigidBody.velocity = new Vector3(joystick.Vertical * _movementSpeed, 0, -joystick.Horizontal * _movementSpeed);
             }
 
-             else if(follow.getAngle() > 90 && follow.getAngle() <= 180)
+             else if(follow.getAngle() >= 180 && follow.getAngle() < 270)
             {
                 _rigidBody.velocity = new Vector3(-joystick.Horizontal * _movementSpeed, 0, -joystick.Vertical * _movementSpeed);
             }
 
-            else if(follow.getAngle() > 180 && follow.getAngle() <= 270)
+            else if(follow.getAngle() >= 270 && follow.getAngle() < 360)
             {
                 _rigidBody.velocity = new Vector3(-joystick.Vertical * _movementSpeed, 0, joystick.Horizontal * _movementSpeed);
             }
@@ -43,30 +41,6 @@ public class PlayerMovement : MonoBehaviour
             {
                 _rigidBody.velocity = new Vector3(joystick.Horizontal * _movementSpeed, 0, joystick.Vertical * _movementSpeed);
             }
-        }
-
-        else
-        {
-              if(follow.getAngle() > 0 && follow.getAngle() <= 90)
-            {
-                _rigidBody.velocity = new Vector3(-joystick.Vertical * _movementSpeed, 0, joystick.Horizontal * _movementSpeed);
-            }
-
-             else if(follow.getAngle() > 90 && follow.getAngle() <= 180)
-            {
-                _rigidBody.velocity = new Vector3(-joystick.Horizontal * _movementSpeed, 0, -joystick.Vertical * _movementSpeed);
-            }
-
-            else if(follow.getAngle() > 180 && follow.getAngle() <= 270)
-            {
-                _rigidBody.velocity = new Vector3(joystick.Vertical * _movementSpeed, 0, -joystick.Horizontal * _movementSpeed);
-            }
-
-             else 
-            {
-                _rigidBody.velocity = new Vector3(joystick.Horizontal * _movementSpeed, 0, joystick.Vertical * _movementSpeed);
-            }
-        }
 
        
 
