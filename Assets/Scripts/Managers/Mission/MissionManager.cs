@@ -1475,8 +1475,38 @@ public class MissionManager : MonoBehaviour
                     new NPCDialog("Review", "Sayangnya sepeninggal Sultan Agung di tahun 1945, Mataram mengalami kemunduran", null),
                     new NPCDialog("Review", "Dan ini membuka peluang untuk Belanda menguasai Mataram", null),
                     new NPCDialog("Review", "Jadi apa yang mau kamu pelajari selanjutnya?", null)
-               }, false), questionType.akhir_sa)
-          //tambahin yg chapter 2 punya
+               }, false), questionType.akhir_sa),
+          new Review(new Story("Latar Belakang Perang Padri", new List<Dialogs>
+               {
+                    new NPCDialog("Pasukan", "Di dalam Minangkabau, terdapat dua kaum.", null),
+                    new NPCDialog("Pasukan", "Kaum Padri dan Kaum Adat", null),
+                    new NPCDialog("Pasukan", "Kaum Padri dan Adat saling bertentangan karena perbedaan praktik keagamaan sehingga munculah bentrokan.", null),
+                    new NPCDialog("Pasukan", "James Du Puy datang pada tahun 1821 dan membuat perjanjian persahabatan dengan kaum Adat.", null),
+                    new NPCDialog("Pasukan", "Perjanjian tersebut terjadi pada tanggal 10 Februari 1821.", null),
+                    new NPCDialog("Pasukan", "Setelah perjanjian tersebut, Belanda pun menduduki Simawang.", null),
+                    new NPCDialog("Pasukan", "Hal ini membuat kaum Padri marah sehingga kaum Padri menentang sikap tersebut dan perang pun dimulai pada tahun 1821 juga.", null),
+               }, false), questionType.latarBelakang_padri),
+          new Review(new Story("Perjuangan Tuanku Lintau", new List<Dialogs>
+               {
+                    new NPCDialog("Pasukan", "Pada September 1821, kaum Padri mulai menyerang pos-pos patroli Belanda di berbagai tempat.", null),
+                    new NPCDialog("Pasukan", "Tuanku Lintau menggerakan 20.000 sampai 25.000 pasukan untuk menyerang Belanda.", null),
+                    new NPCDialog("Pasukan", "Kaum Padri menggunakan senjata-senjata tradisional, seperti tombak dan parang.", null),
+                    new NPCDialog("Pasukan", "James Du Puy datang pada tahun 1821 dan membuat perjanjian persahabatan dengan kaum Adat.", null),
+                    new NPCDialog("Pasukan", "Sedangkan, Belanda menyiapkan 200 orang serdadu Eropa dan 10.000 pasukan pribumi termasuk kaum Adat.", null),
+                    new NPCDialog("Pasukan", "Akibat dari serangan tersebut, Tuanku Lintau mundur ke Lintau.", null),
+                    new NPCDialog("Pasukan", "Tuanku Lintau juga kehilangan 350 orang pasukan, termasuk putranya.", null),
+               }, false), questionType.perjuangan_tl),
+          new Review(new Story("LPerjuangan Kaum Padri dan Perjanjian Masang", new List<Dialogs>
+               {
+                    new NPCDialog("Pasukan", "Pada periode 1821-1825, serangan-serangan kaum Padri meluas di seluruh Minangkabau.", null),
+                    new NPCDialog("Pasukan", "Pada September 1822, kaum Padri berhasil mengusir Belanda dari Sungai Puar, Guguk Sigandang, dan Tajong Alam.", null),
+                    new NPCDialog("Pasukan", "Pada tahun 1823, pasukan Padri berhasil mengalahkan tentara Belanda di Kapau.", null),
+                    new NPCDialog("Pasukan", "Pada tahun 1824, Belanda merasa terdesak sehingga mereka membuat perjanjian damai yang bernama Perjanjian Masang.", null),
+                    new NPCDialog("Pasukan", "Sayangnya, Belanda memanfaatkan perjanjian tersebut untuk menduduki daerah-daerah lain.", null),
+                    new NPCDialog("Pasukan", "Tuanku Imam Bonjol pun setuju dengan perjanjian ini, namun Tuanku Mensiangan menolak dan melawan Belanda.", null),
+                    new NPCDialog("Pasukan", "Akhirnya pusat pertahanannya dibakar dan dia pun ditangkap.", null),
+                    new NPCDialog("Pasukan", "Hal ini membuat Kaum Padri menyatakan pembatalan kesepakatan dalam Perjanjian Masang dan kembali melawan Belanda.", null),
+               }, false), questionType.perjuangan_kp),
         };
 
           toBeReviewed = new List<Review>();
