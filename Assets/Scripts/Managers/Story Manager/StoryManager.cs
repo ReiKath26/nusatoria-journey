@@ -15,6 +15,9 @@ public class StoryManager : MonoBehaviour
     [SerializeField] private GameObject spriteObject;
     [SerializeField] private GameObject backgroundObject;
     [SerializeField] private GameObject nextButton;
+    [SerializeField] private GameObject missionManager;
+    private GameObject player;
+    private Vector3 initialPosition;
 
     private Story story {get; set;}
 
@@ -26,15 +29,66 @@ public class StoryManager : MonoBehaviour
 
     private bool beginningTutorial = true;
 
-    void Awake()
+    void Start()
     {
-        instance = this;
-        SaveSlots slot = SaveHandler.instance.loadSlot(PlayerPrefs.GetInt("choosenSlot"));
+       if(FindInactiveObject.instance == null)
+     {
+          Debug.Log("It's null!");
+     }
 
-        if(slot.missionNumber == 0)
+     else
+     {
+        Debug.Log("tdk Null");
+     }
+        instance = this;
+
+         SaveSlots slot = SaveHandler.instance.loadSlot(PlayerPrefs.GetInt("choosenSlot"));
+
+        if(slot.chapterNumber == 1)
+        {
+            if(slot.playerGender == 0)
+            {
+                initialPosition = new Vector3(1125.646f, 201.7f, 796.8095f);
+            }
+
+            else
+            {
+                initialPosition = new Vector3(1130.106f, 206.8f, 804.8292f);
+            }
+
+            float distance = Vector3.Distance(initialPosition, new Vector3(slot.lastPosition.x_pos, slot.lastPosition.y_pos, slot.lastPosition.z_pos));
+            if(slot.missionNumber == 0 && distance <= 50f)
+            {
+                assignStory(getBeginningOfChapterStory());
+            }
+        }
+
+        else if(slot.chapterNumber == 2)
+        {
+            initialPosition = new Vector3(555.7f, 193.94f, 2891.723f);
+
+            float distance = Vector3.Distance(initialPosition, new Vector3(slot.lastPosition.x_pos, slot.lastPosition.y_pos, slot.lastPosition.z_pos));
+            if(slot.missionNumber == 0 && distance <= 50f)
+            {
+                assignStory(getBeginningOfChapterStory());
+            }
+        }
+
+        else
         {
             assignStory(getBeginningOfChapterStory());
         }
+
+        if(slot.playerGender == 0)
+        {
+            player = FindInactiveObject.instance.find("Male MC Model");
+        }
+
+        else
+        {
+            player = FindInactiveObject.instance.find("Female MC Model");
+        }
+       
     }
 
     private Story getBeginningOfChapterStory()
@@ -120,7 +174,7 @@ public class StoryManager : MonoBehaviour
                         new MainCharacterDialog(false, characterExpression.angry, "Penjelajah waktu, iya, dan kemungkinan dia penjelajah waktu ilegal yang aku cari", null),
                         new MainCharacterDialog(false, characterExpression.neutral, "Sisanya tidak penting...", null),
                         new MainCharacterDialog(false, characterExpression.neutral, "Nih aku kembalikan, sekarang aku permisi dulu ya...", null),
-                        new MainCharacterDialog(true, characterExpression.angry, "Hmph! Masih keras kepala...", new string[]{"Yudha_Pier", "Yudha Paguruyung"}),
+                        new MainCharacterDialog(true, characterExpression.angry, "Hmph! Masih keras kepala...", new string[]{"Yudha_Pier"}),
                         new MainCharacterDialog(true, characterExpression.neutral, "(Tapi sekarang sebaiknya aku kemana...)", null),
                         new MainCharacterDialog(true, characterExpression.neutral, "(Apa aku ikut dia saja ya..dia sepertinya lebih familiar dengan dunia ini dari aku)", null),     
                         new MainCharacterDialog(true, characterExpression.neutral, "(Dia pasti akan mengeluh lagi kalau aku mengikutinya, tapi ya sudahlah aku tidak peduli juga)", null),       
@@ -283,6 +337,8 @@ public class StoryManager : MonoBehaviour
                     SaveHandler.instance.saveItem(clues[1], PlayerPrefs.GetInt("choosenSlot"));
                     SaveHandler.instance.saveSlot(slot, slot.slot);
                     SceneManage.instance.LoadScene(6);
+                    Destroy(missionManager);
+                    Destroy(player);
                     break;
                }
                
@@ -293,6 +349,8 @@ public class StoryManager : MonoBehaviour
                     slot.goalNumber = 0;
                     SaveHandler.instance.saveSlot(slot, slot.slot);
                     SceneManage.instance.LoadScene(3);
+                    Destroy(missionManager);
+                    Destroy(player);
                 break;
                }
               

@@ -40,7 +40,18 @@ public class KeyconceptsUI : MonoBehaviour
             for(int i=sections[currentSection].minNumber;i<=sections[currentSection].maxNumber;i++)
             {
                 KeyConcepts concept = SaveHandler.instance.loadKeyconcepts(PlayerPrefs.GetInt("choosenSlot"), i);
-                setKeyConcept(concept, concept.keyNumber);
+
+                SaveSlots slot = SaveHandler.instance.loadSlot(PlayerPrefs.GetInt("choosenSlot"));
+
+                if(slot.chapterNumber == 1)
+                {
+                    setKeyConcept(concept, concept.keyNumber);
+                }
+                else
+                {
+                    setKeyConcept(concept, (concept.keyNumber - sections[currentSection].minNumber));
+                }
+                
             }
         }
         
@@ -62,7 +73,7 @@ public class KeyconceptsUI : MonoBehaviour
 
     public void goUp()
     {
-       if(currentSection - 1 >= sections.Length)
+       if(currentSection - 1 >= 0)
        {
             currentSection -= 1;
 
@@ -107,9 +118,9 @@ public class KeyconceptsUI : MonoBehaviour
         }
 
     
-        KeyConcepts concept = SaveHandler.instance.loadKeyconcepts(PlayerPrefs.GetInt("choosenSlot"), number);
+        KeyConcepts concept = SaveHandler.instance.loadKeyconcepts(PlayerPrefs.GetInt("choosenSlot"), (sections[currentSection].minNumber + number));
 
-        if(concept.keyNumber == number)
+        if(concept.keyNumber == sections[currentSection].minNumber + number)
         {
             if(concept.unlocked == true)
             {

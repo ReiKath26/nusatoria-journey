@@ -239,7 +239,7 @@ public class SaveHandler : MonoBehaviour
     public void unlockKeyConcept(int number, int slotNumber)
     {
 
-        for(int i=0; i<18; i++)
+        for(int i=0; i<24; i++)
         {
              KeyConcepts key =  loadKeyconcepts(slotNumber, i);
             if(key.keyNumber == number)

@@ -13,7 +13,7 @@ public class ReviewGoal : Goal
         this.recipientName = rec;
         base.initialize(desc, required, storyType);
             
-        recipient = GameObject.Find(this.recipientName);
+        recipient = FindInactiveObject.instance.find(this.recipientName);
    }
 
     public GameObject getRecipient()

@@ -21,7 +21,16 @@ public class ExplorationGoal : Goal
         interactionInstance = new GameObject[interactionInstanceNames.Length];
         foreach(string instanceName in interactionInstanceNames)
         {
-            GameObject obj = GameObject.Find(instanceName);
+               if(FindInactiveObject.instance == null)
+     {
+          Debug.Log("It's null!");
+     }
+
+     else
+     {
+        Debug.Log("nay Null");
+     }
+            GameObject obj = FindInactiveObject.instance.find(instanceName);
             interactionInstance[count] = obj;
             count++;
         }
