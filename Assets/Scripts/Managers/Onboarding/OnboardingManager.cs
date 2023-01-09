@@ -142,7 +142,7 @@ public class OnboardingManager : MonoBehaviour
         keyDesc = "Pada tahun 1831, Gillavary digantikan oleh Jacob Elout. Pada Agustus 1831 Belanda yang dipimpin Jacob Elout dapat menguasai Benteng Marapalam, yang merupakan kunci untuk menguasai Lintau, akibatnya beberapa nagari di sekitarnya ikut menyerah. Datangnya bantuan pasukan dari Jawa pada tahun 1832 membuat Belanda semakin ofensif terhadap kekuatan kaum Padri di berbagai daerah.",
         unlocked = false},
          new KeyConcepts() {keyNumber = 19, keyName = "Penyerangan Francis",
-        keyDesc = "Pada tahun 1833, dengan kekuatan yang berlipat ganda Belanda melakukan penyerangan terhadap pos-pos pertahanan kaum Padri. Elout digantikan oleh E. Francis.",
+        keyDesc = "Pada tahun 1833, dengan kekuatan yang berlipat ganda Belanda melakukan penyerangan terhadap pos-pos pertahanan kaum Padri. Elout digantikan oleh E. Francis. Tetapi setelah sekian lama, pasukan Belanda mulai kewalahan menangani kaum adat dan padri yang bersatu",
         unlocked = false},
          new KeyConcepts() {keyNumber = 20, keyName = "Plakat Panjang",
         keyDesc = "Plakat Panjang adalah pernyataan atau janji khidmat yang isinya tidak akan ada lagi peperangan antara Belanda dan kaum Padri. Setelah pengumuman Plakat Panjang ini kemudian Belanda mulai menawarkan perdamaian kepada para pemimpin Padri. Dengan kebijakan baru itu beberapa tokoh Padri dikontak oleh Belanda dalam rangka mencapai perdamaian. Beberapa tokoh memenuhi ajakan Belanda untuk berdamai, sementara yang tidak setuju masih melanjutkan perlawanan. Pertahanan terakhir kaum Padri berada di tangan Tuanku Imam Bonjol.",
@@ -185,7 +185,7 @@ public class OnboardingManager : MonoBehaviour
             SaveHandler.instance.saveSlot(slot, slotNumber);
         }
 
-        for(int i=0;i<18;i++)
+        for(int i=0;i<24;i++)
         {
             SaveHandler.instance.saveKeyconcepts(concepts[i], slotNumber, i);
         }

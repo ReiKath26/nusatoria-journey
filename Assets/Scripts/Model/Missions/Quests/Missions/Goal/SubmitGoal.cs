@@ -14,7 +14,7 @@ public class SubmitGoal : Goal
         this.recipientName = rec;
         base.initialize(desc, required, storyType);
             
-        recipient = GameObject.Find(this.recipientName);
+        recipient = FindInactiveObject.instance.find(this.recipientName);
         neededItem = items;
     }
 

@@ -16,7 +16,7 @@ public class JudgementGoal : Goal
         base.initialize(desc, required, null);
         this.isMain = main;
             
-        recipient = GameObject.Find(this.recipientName);
+        recipient = FindInactiveObject.instance.find(this.recipientName);
         score = 0f;
     }
 
