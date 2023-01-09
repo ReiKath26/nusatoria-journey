@@ -15,6 +15,9 @@ public class StoryManager : MonoBehaviour
     [SerializeField] private GameObject spriteObject;
     [SerializeField] private GameObject backgroundObject;
     [SerializeField] private GameObject nextButton;
+    [SerializeField] private GameObject missionManager;
+    private GameObject player;
+    private Vector3 initialPosition;
 
     private Story story {get; set;}
 
@@ -26,15 +29,66 @@ public class StoryManager : MonoBehaviour
 
     private bool beginningTutorial = true;
 
-    void Awake()
+    void Start()
     {
-        instance = this;
-        SaveSlots slot = SaveHandler.instance.loadSlot(PlayerPrefs.GetInt("choosenSlot"));
+       if(FindInactiveObject.instance == null)
+     {
+          Debug.Log("It's null!");
+     }
 
-        if(slot.missionNumber == 0)
+     else
+     {
+        Debug.Log("tdk Null");
+     }
+        instance = this;
+
+         SaveSlots slot = SaveHandler.instance.loadSlot(PlayerPrefs.GetInt("choosenSlot"));
+
+        if(slot.chapterNumber == 1)
+        {
+            if(slot.playerGender == 0)
+            {
+                initialPosition = new Vector3(1125.646f, 201.7f, 796.8095f);
+            }
+
+            else
+            {
+                initialPosition = new Vector3(1130.106f, 206.8f, 804.8292f);
+            }
+
+            float distance = Vector3.Distance(initialPosition, new Vector3(slot.lastPosition.x_pos, slot.lastPosition.y_pos, slot.lastPosition.z_pos));
+            if(slot.missionNumber == 0 && distance <= 50f)
+            {
+                assignStory(getBeginningOfChapterStory());
+            }
+        }
+
+        else if(slot.chapterNumber == 2)
+        {
+            initialPosition = new Vector3(555.7f, 193.94f, 2891.723f);
+
+            float distance = Vector3.Distance(initialPosition, new Vector3(slot.lastPosition.x_pos, slot.lastPosition.y_pos, slot.lastPosition.z_pos));
+            if(slot.missionNumber == 0 && distance <= 50f)
+            {
+                assignStory(getBeginningOfChapterStory());
+            }
+        }
+
+        else
         {
             assignStory(getBeginningOfChapterStory());
         }
+
+        if(slot.playerGender == 0)
+        {
+            player = FindInactiveObject.instance.find("Male MC Model");
+        }
+
+        else
+        {
+            player = FindInactiveObject.instance.find("Female MC Model");
+        }
+       
     }
 
     private Story getBeginningOfChapterStory()
@@ -105,12 +159,12 @@ public class StoryManager : MonoBehaviour
                {
                     List<Dialogs> dialouge = new List<Dialogs>
                     {
-                        new MainCharacterDialog(true, characterExpression.hurt, "(Semua monolog yang muncul seperti ada diluar kepalaku itu terasa aneh...", null),
-                        new MainCharacterDialog(true, characterExpression.hurt, "(Sebenarnya tempat apa ini...", null),
+                        new MainCharacterDialog(true, characterExpression.hurt, "Jadi...ini Minangkabau...", null),
+                        new MainCharacterDialog(true, characterExpression.hurt, "Suasana disini sangat berbeda dari di Jawa, tapi aku penasaran apakah aku akan menemui konflik yang sama disini...", null),
                         new MainCharacterDialog(true, characterExpression.neutral, "(Oh iya, jurnal yang aku temukan tadi sebaiknya aku...)", null),
                         new MainCharacterDialog(true, characterExpression.neutral, "(Ah...dimana aku menaruhnya?)", null),
                         new MainCharacterDialog(false, characterExpression.think, "Hmmm...menarik...", new string[]{"Yudha_Pier"}),
-                        new MainCharacterDialog(true, characterExpression.angry, "Hei, jangan mengambil barang orang seenak jidat!", null),
+                        new MainCharacterDialog(true, characterExpression.angry, "Ahh! Jangan muncul tiba-tiba begitu dan jangan mengambil barang orang seenak jidat!", null),
                         new MainCharacterDialog(false, characterExpression.hurt, "Apa? Kamu menemukan petunjuk maka seharusnya kamu memberikannya pada polisi terpercaya", null),
                         new MainCharacterDialog(true, characterExpression.angry, "Polisi terpercaya tidak akan meninggalkan warga tidak bersalah...", null),
                         new MainCharacterDialog(false, characterExpression.angry, "Hmph!", null),
@@ -119,10 +173,11 @@ public class StoryManager : MonoBehaviour
                         new MainCharacterDialog(true, characterExpression.shook, "Jadi dia itu...", null),
                         new MainCharacterDialog(false, characterExpression.angry, "Penjelajah waktu, iya, dan kemungkinan dia penjelajah waktu ilegal yang aku cari", null),
                         new MainCharacterDialog(false, characterExpression.neutral, "Sisanya tidak penting...", null),
-                        new MainCharacterDialog(false, characterExpression.neutral, "Sekarang kamu mau mulai bergerak dan ikut denganku, atau mau tinggal disini?", null),
-                        new MainCharacterDialog(true, characterExpression.angry, "Tentu aku akan bergerak dari sini, tidak perlu anda mengingatkanku", null),
-                        new MainCharacterDialog(false, characterExpression.angry, "Hmph!", new string[]{"Yudha_Pier"})
-
+                        new MainCharacterDialog(false, characterExpression.neutral, "Nih aku kembalikan, sekarang aku permisi dulu ya...", null),
+                        new MainCharacterDialog(true, characterExpression.angry, "Hmph! Masih keras kepala...", new string[]{"Yudha_Pier"}),
+                        new MainCharacterDialog(true, characterExpression.neutral, "(Tapi sekarang sebaiknya aku kemana...)", null),
+                        new MainCharacterDialog(true, characterExpression.neutral, "(Apa aku ikut dia saja ya..dia sepertinya lebih familiar dengan dunia ini dari aku)", null),     
+                        new MainCharacterDialog(true, characterExpression.neutral, "(Dia pasti akan mengeluh lagi kalau aku mengikutinya, tapi ya sudahlah aku tidak peduli juga)", null),       
                     };
                     Story thisStory = new Story("?? ?? ??, ?? - Pelabuhan Minang", dialouge, false, null);
                     return thisStory;
@@ -282,6 +337,8 @@ public class StoryManager : MonoBehaviour
                     SaveHandler.instance.saveItem(clues[1], PlayerPrefs.GetInt("choosenSlot"));
                     SaveHandler.instance.saveSlot(slot, slot.slot);
                     SceneManage.instance.LoadScene(6);
+                    Destroy(missionManager);
+                    Destroy(player);
                     break;
                }
                
@@ -290,9 +347,10 @@ public class StoryManager : MonoBehaviour
                     slot.chapterNumber = 3;
                     slot.missionNumber = 0;
                     slot.goalNumber = 0;
-                    SaveHandler.instance.saveItem(clues[2], PlayerPrefs.GetInt("choosenSlot"));
                     SaveHandler.instance.saveSlot(slot, slot.slot);
                     SceneManage.instance.LoadScene(3);
+                    Destroy(missionManager);
+                    Destroy(player);
                 break;
                }
               

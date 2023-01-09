@@ -19,7 +19,7 @@ public class GatherGoal : Goal
         interactionInstance = new GameObject[interactionInstanceNames.Length];
         foreach(string instanceName in interactionInstanceNames)
         {
-            GameObject obj = GameObject.Find(instanceName);
+            GameObject obj = FindInactiveObject.instance.find(instanceName);
             interactionInstance[count] = obj;
             count++;
         }

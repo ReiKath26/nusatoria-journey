@@ -13,62 +13,76 @@ public class KeyconceptsUI : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI keyconceptTitle;
     [SerializeField] private TextMeshProUGUI keyconceptDesc;
-    [SerializeField] private int minIndexNum;
-    [SerializeField] private int maxIndexNum;
+    [SerializeField] private KeyConceptUISection[] sections;
 
     [SerializeField] private GameObject upButton;
     [SerializeField] private GameObject downButton;
 
-    private int defaultMinIndex;
+    private int currentSection;
 
     void Awake()
     {
-        defaultMinIndex = minIndexNum;
+        currentSection = 0;
+
+        if(downButton != null && upButton != null)
+        {
+            downButton.SetActive(true);
+            upButton.SetActive(false);
+        }
+   
     }
 
 
     private void Update()
     {
-        for(int i=minIndexNum;i<=maxIndexNum;i++)
+        if(currentSection < sections.Length)
         {
-            KeyConcepts concept = SaveHandler.instance.loadKeyconcepts(PlayerPrefs.GetInt("choosenSlot"), i);
-            setKeyConcept(concept, concept.keyNumber);
+            for(int i=sections[currentSection].minNumber;i<=sections[currentSection].maxNumber;i++)
+            {
+                KeyConcepts concept = SaveHandler.instance.loadKeyconcepts(PlayerPrefs.GetInt("choosenSlot"), i);
+
+                SaveSlots slot = SaveHandler.instance.loadSlot(PlayerPrefs.GetInt("choosenSlot"));
+
+                if(slot.chapterNumber == 1)
+                {
+                    setKeyConcept(concept, concept.keyNumber);
+                }
+                else
+                {
+                    setKeyConcept(concept, (concept.keyNumber - sections[currentSection].minNumber));
+                }
+                
+            }
         }
+        
     }
 
     public void goDown()
     {
-        if(minIndexNum + 6 < 18)
-        {
-            minIndexNum = minIndexNum + 6;
-            if(maxIndexNum + 6 < 18)
+       if(currentSection + 1 < sections.Length)
+       {
+            currentSection += 1;
+            if(currentSection == sections.Length -1)
             {
-                maxIndexNum = maxIndexNum + 6;
+                downButton.SetActive(false);
             }
-
-            else
-            {
-                maxIndexNum = maxIndexNum + (18- minIndexNum);
-            }
-        }
+            upButton.SetActive(true);
+       }
       
     }
 
     public void goUp()
     {
-        if(maxIndexNum - 6 > defaultMinIndex)
-        {
-            maxIndexNum = maxIndexNum - 6;
-            if(minIndexNum - 6 > defaultMinIndex)
-            {
-                minIndexNum = minIndexNum - 6;
-            }
+       if(currentSection - 1 >= 0)
+       {
+            currentSection -= 1;
 
-            else
+            if(currentSection == 0)
             {
-                minIndexNum = defaultMinIndex;
+                 upButton.SetActive(false);
             }
-        }
+            downButton.SetActive(true);
+       }
     }
 
     public void setKeyConcept(KeyConcepts keyconcept, int number)
@@ -104,9 +118,9 @@ public class KeyconceptsUI : MonoBehaviour
         }
 
     
-        KeyConcepts concept = SaveHandler.instance.loadKeyconcepts(PlayerPrefs.GetInt("choosenSlot"), number);
+        KeyConcepts concept = SaveHandler.instance.loadKeyconcepts(PlayerPrefs.GetInt("choosenSlot"), (sections[currentSection].minNumber + number));
 
-        if(concept.keyNumber == number)
+        if(concept.keyNumber == sections[currentSection].minNumber + number)
         {
             if(concept.unlocked == true)
             {
