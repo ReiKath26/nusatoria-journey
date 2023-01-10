@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2145540
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6987,7 +6987,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 327
+  m_RootOrder: 326
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &195395201
 GameObject:
@@ -11439,7 +11439,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &337636358
 MonoBehaviour:
@@ -23865,7 +23865,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 57.496, y: 0, z: 0.611}
 --- !u!114 &759742550
 MonoBehaviour:
@@ -23879,8 +23879,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1509a0194dab4b2b9c8da32076be427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target_0: {fileID: 12133353}
-  target_1: {fileID: 16585682}
   touchField: {fileID: 547173579}
 --- !u!1001 &763335056
 PrefabInstance:
@@ -60394,7 +60392,7 @@ Transform:
   - {fileID: 209404012}
   - {fileID: 496659186}
   m_Father: {fileID: 0}
-  m_RootOrder: 330
+  m_RootOrder: 329
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2072429048
 GameObject:
