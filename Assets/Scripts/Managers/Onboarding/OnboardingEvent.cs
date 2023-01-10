@@ -22,7 +22,7 @@ public class OnboardingEvent : MonoBehaviour
    public void triggerOnboarding(int SlotSelected)
    {
         PlayerPrefs.SetInt("choosenSlot", SlotSelected);
-        SceneManage.instance.LoadScene(2);
+        SceneManage.instance.LoadScene(1);
    }
 
    public void loadSavedGameSlots(int number)
@@ -59,6 +59,9 @@ public class OnboardingEvent : MonoBehaviour
                case 2:
                 activeSlots[number].chapter.text = "Chapter 2: Pencarian Kebebasan Tanpa Henti";
                 break;
+               case 3:
+               activeSlots[number].chapter.text = "Bersambung...";
+               break;
                default: break;
           }
 
@@ -83,18 +86,19 @@ public class OnboardingEvent : MonoBehaviour
      switch(slot.chapterNumber)
      {
           case 0:
-          SceneManage.instance.LoadScene(4);
+          SceneManage.instance.LoadScene(2);
           break;
 
           case 1:
-          SceneManage.instance.LoadScene(5);
+          SceneManage.instance.LoadScene(3);
           break;
 
           case 2:
-          SceneManage.instance.LoadScene(6);
+          SceneManage.instance.LoadScene(4);
           break;
 
-          default: break;
+          default: 
+          break;
      }
    }
 }

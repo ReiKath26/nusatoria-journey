@@ -324,7 +324,7 @@ public class StoryManager : MonoBehaviour
                     slot.goalNumber = 0;
                     SaveHandler.instance.saveItem(clues[0], PlayerPrefs.GetInt("choosenSlot"));
                     SaveHandler.instance.saveSlot(slot, slot.slot);
-                    SceneManage.instance.LoadScene(5);
+                    SceneManage.instance.LoadScene(3);
                     break;
                }
               
@@ -336,7 +336,7 @@ public class StoryManager : MonoBehaviour
                     slot.lastPosition = new PlayerPosition() {x_pos = 555.7f, y_pos = 193.94f, z_pos = 2891.723f};
                     SaveHandler.instance.saveItem(clues[1], PlayerPrefs.GetInt("choosenSlot"));
                     SaveHandler.instance.saveSlot(slot, slot.slot);
-                    SceneManage.instance.LoadScene(6);
+                    SceneManage.instance.LoadScene(4);
                     Destroy(missionManager);
                     Destroy(player);
                     break;
@@ -348,7 +348,7 @@ public class StoryManager : MonoBehaviour
                     slot.missionNumber = 0;
                     slot.goalNumber = 0;
                     SaveHandler.instance.saveSlot(slot, slot.slot);
-                    SceneManage.instance.LoadScene(3);
+                    SceneManage.instance.LoadScene(0);
                     Destroy(missionManager);
                     Destroy(player);
                 break;

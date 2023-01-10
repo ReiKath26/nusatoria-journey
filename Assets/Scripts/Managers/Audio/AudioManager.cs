@@ -11,27 +11,13 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] private AudioMixerGroup musicMixerGroup;
     [SerializeField] private AudioMixerGroup soundEffectsMixerGroup;
-    [SerializeField] private int sceneNumber;
 
     public static AudioManager instance;
 
    void Awake()
    {
-        int thisScene = SceneManager.GetActiveScene().buildIndex;
-
-
-        if(thisScene > sceneNumber)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        else
-        {
-            instance = this;
-        }
         
-        DontDestroyOnLoad(gameObject);
+        instance = this;
 
         foreach (Sound s in sounds)
         {
@@ -56,23 +42,6 @@ public class AudioManager : MonoBehaviour
             {
                 s.source.Play();
             }
-        }
-   }
-
-   void Update()
-   {
-     int thisScene = SceneManager.GetActiveScene().buildIndex;
-
-
-        if(thisScene > sceneNumber)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        else
-        {
-            instance = this;
         }
    }
 
