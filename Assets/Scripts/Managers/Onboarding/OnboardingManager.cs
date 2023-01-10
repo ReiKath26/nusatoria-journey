@@ -195,7 +195,7 @@ public class OnboardingManager : MonoBehaviour
             SaveHandler.instance.saveInventory(inventory[j], slotNumber, j);
         }
         
-        SceneManage.instance.LoadScene(4);
+        SceneManage.instance.LoadScene(2);
     }
 
     public void resetData()

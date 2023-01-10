@@ -76,6 +76,8 @@ public class MissionManager : MonoBehaviour
 
    public static MissionManager instance;
 
+   public bool canShowPath = true;
+
    void Start()
    {      
      
@@ -169,6 +171,7 @@ public class MissionManager : MonoBehaviour
           checkMission();
      }
 
+     canShowPath = true;
      displayPathToGoal();
      SaveHandler.instance.saveSlot(slot, slot.slot);
    
@@ -526,7 +529,7 @@ public class MissionManager : MonoBehaviour
 
      if(currentGoal is ExplorationGoal exp_goal)
      {
-          if(exp_goal.usingPath() == true)
+          if(exp_goal.usingPath() == true && canShowPath == true)
           {
                lineRenderer.SetActive(true);
           int count = 0;
@@ -558,7 +561,7 @@ public class MissionManager : MonoBehaviour
 
      else if(currentGoal is GatherGoal gth_goal)
      {
-          if(gth_goal.usingPath() == true)
+          if(gth_goal.usingPath() == true && canShowPath == true)
           {
                lineRenderer.SetActive(true);
           int count = 0;
@@ -590,56 +593,67 @@ public class MissionManager : MonoBehaviour
 
      else if(currentGoal is SubmitGoal sbm_goal)
      {
-          lineRenderer.SetActive(true);
-          int count = 0;
-          Transform[] positions = new Transform[2];
-     
-          positions[0] = player.transform;
-          positions[1] = sbm_goal.getRecipient().transform;
-
-          _line.positionCount = positions.Length;
-
-          foreach(Transform pos in positions)
+          if(canShowPath == true)
           {
-               _line.SetPosition(count, pos.position);
-               count++;
+               lineRenderer.SetActive(true);
+               int count = 0;
+               Transform[] positions = new Transform[2];
+     
+               positions[0] = player.transform;
+               positions[1] = sbm_goal.getRecipient().transform;
+
+               _line.positionCount = positions.Length;
+
+               foreach(Transform pos in positions)
+               {
+                    _line.SetPosition(count, pos.position);
+                    count++;
+               }
           }
+         
      }
 
      else if(currentGoal is JudgementGoal jdg_goal)
      {
-          lineRenderer.SetActive(true);
-          int count = 0;
-          Transform[] positions = new Transform[2];
-     
-          positions[0] = player.transform;
-          positions[1] = jdg_goal.getRecipient().transform;
-
-          _line.positionCount = positions.Length;
-
-          foreach(Transform pos in positions)
+          if(canShowPath == true)
           {
-               _line.SetPosition(count, pos.position);
-               count++;
+               lineRenderer.SetActive(true);
+               int count = 0;
+               Transform[] positions = new Transform[2];
+     
+               positions[0] = player.transform;
+               positions[1] = jdg_goal.getRecipient().transform;
+
+               _line.positionCount = positions.Length;
+
+               foreach(Transform pos in positions)
+               {
+                    _line.SetPosition(count, pos.position);
+                    count++;
+               }
           }
      }
 
      else if(currentGoal is ReviewGoal rvw_goal)
      {
-          lineRenderer.SetActive(true);
-          int count = 0;
-          Transform[] positions = new Transform[2];
-     
-          positions[0] = player.transform;
-          positions[1] = rvw_goal.getRecipient().transform;
-
-          _line.positionCount = positions.Length;
-
-          foreach(Transform pos in positions)
+          if(canShowPath == true)
           {
-               _line.SetPosition(count, pos.position);
-               count++;
+               lineRenderer.SetActive(true);
+               int count = 0;
+               Transform[] positions = new Transform[2];
+     
+               positions[0] = player.transform;
+               positions[1] = rvw_goal.getRecipient().transform;
+
+               _line.positionCount = positions.Length;
+
+               foreach(Transform pos in positions)
+               {
+                    _line.SetPosition(count, pos.position);
+                    count++;
+               }
           }
+          
      }
 
    }
@@ -732,7 +746,7 @@ public class MissionManager : MonoBehaviour
      }
 
      else if(currentGoal is JudgementGoal jdg_goal)
-     {
+     { 
           if(interactor == jdg_goal.getRecipient())
           {
                startJudgement();

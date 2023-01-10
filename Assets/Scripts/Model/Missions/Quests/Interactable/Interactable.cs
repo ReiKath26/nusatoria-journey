@@ -23,6 +23,7 @@ public class Interactable : MonoBehaviour
           {
                if(slot.missionNumber == min_number)
                {
+                    MissionManager.instance.canShowPath = false;
                     MissionManager.instance.triggerInteraction(gameObject);
                     interactionTriggered = true;
                     break;
