@@ -2098,14 +2098,14 @@ public class MissionManager : MonoBehaviour
             new NPCDialog("T.Baurekhsa", "Dan kami akan bertingkah seakan kami ingin berdagang, untuk menginfiltrasi benteng mereka", null), 
             new NPCDialog("T.Baurekhsa", "Setelah itu kami akan memulai serangan dan mulai mendatangkan pasukan-pasukan tambahan pada bulan-bulan ke depan", null),
             new MainCharacterDialog(true, characterExpression.neutral, "(Aku masih khawatir terkait persenjataan yang dimiliki pasukan mereka...)", null),
-            new NPCDialog("T.Baurekhsa", "Baiklah, karena persiapan semuanya sudah beres, bisakah kamu sampaikan ini kepada Sultan?", null),
-            new NPCDialog("T.Baurekhsa", "Beritahu padanya kami siap menyerang kapan pun ia perintahkan", null),
-            new MainCharacterDialog(true, characterExpression.neutral, "Baiklah...", null),
-            new MainCharacterDialog(true, characterExpression.neutral, "(Sepertinya aku akan kembali ke Mataram)", null),
-            new NPCDialog("T.Baurekhsa", "Hmmm...tapi sempat tidak ya...", null),
-            new MainCharacterDialog(true, characterExpression.shook, "Apa anda mengatakan sesuatu?", null),
-            new NPCDialog("T.Baurekhsa", "Oh tidak kok, sebaiknya kamu mulai berjalan ke Mataram sekarang", null),
-            new MainCharacterDialog(true, characterExpression.neutral, "......", null),
+            new NPCDialog("T.Baurekhsa", "Baiklah, karena persiapan semuanya sudah beres, kita sudah siap untuk melakukan penyerangan ke Batavia", null),
+            new NPCDialog("T.Baurekhsa", "...dan sebaiknya kamu sekarang mencari tempat yang aman agar terhindari dari perang dek Player...", null),
+            new NPCDialog("T.Baurekhsa", "Jangan pergi ke Batavia dengan alasan apapun kalau kamu tidak mau ikut mendapat dampak perang...", null),
+            new MainCharacterDialog(true, characterExpression.think, "Hmmm....", null),
+            new MainCharacterDialog(true, characterExpression.neutral, "(Tapi daripada aku diam saja seperti sapi ompong, menonton jalannya perang sepertinya akan menarik...)", null),
+            new MainCharacterDialog(true, characterExpression.neutral, "(Tidak peduli apa yang Tumenggung Baurekhsa bilang, aku akan ke Batavia setelah ini)", null),
+            new MainCharacterDialog(true, characterExpression.neutral, "(Entah konsekuensi apa yang akan menantiku nanti dengan membawa diriku sendiri ke ranah bahaya hanya karena rasa penasaran...)", null),
+
 
 
         }, false, null)
@@ -2114,37 +2114,6 @@ public class MissionManager : MonoBehaviour
                         new Item("Karung_gula", "Karung Gula", "Karung berisi gula dari perkebunan bambu Mataram", 3),
                         new Item("Coconut", "Kelapa", "Kelapa yang tentunya tidak jatuh dari pohon dimana tidak ada pohon kelapa di sekitarnya...", 2)
                     })
-                }), 
-                  new Mission(new List<Goal>
-                {
-                    new ExplorationGoal("Pergi untuk mengantarkan pesan kepada Sultan Agung", 1, new string[] {"Sultan Agung"}, new int[] {-1}, new Story[]{
-                        new Story("Sesampainya kembali ke kota untuk bertemu dengan Sultan Agung...", new List<Dialogs>
-        {
-            new NPCDialog("Sultan Agung", "Dek Player, kamu akhirnya sampai...", new string[]{"Tumenggung Baurekhsa"}),
-            new MainCharacterDialog(true, characterExpression.shook, "Akhirnya?", null),
-            new NPCDialog("Sultan Agung", " Iya, aku mendapat pesan dari Tumenggung Baurekhsa kalau kamu sedang berjalan kemari sekitar sebulan yang lalu", null),
-            new MainCharacterDialog(true, characterExpression.shook, "Sebulan?! Aku hanya berjalan selama beberapa menit?!", null),
-            new NPCDialog("Sultan Agung", "Mungkin karena kamu menikmati keindahan alam dan perjalanan jadi tidak terasa", null),
-            new MainCharacterDialog(true, characterExpression.think, "(Aneh sekali...tadi itu benar-benar tidak terasa seperti satu bulan)", null),
-            new MainCharacterDialog(true, characterExpression.shook, "(Bahkan aku tidak tau tanggal berapa sekarang di dunia antaberanta ini...)", null),
-            new NPCDialog("Sultan Agung", "Kamu baik-baik saja, dek Player?", null),
-            new MainCharacterDialog(true, characterExpression.neutral, "Sultan, kalau boleh bertanya, sekarang ini bulan dan tahun berapa ya?", null),
-            new NPCDialog("Sultan Agung", " Agustus 1628, dek MC...Tumenggung Baurekhsa dan pasukannya baru saja akan berangkat ke Batavia", null),
-            new NPCDialog("Sultan Agung", "Dan waktu kamu pergi ke Batavia waktu itu...", null),
-            new MainCharacterDialog(true, characterExpression.neutral, "...berapa lama Sultan menunggu sampai aku kembali kemari?", null),
-            new NPCDialog("Sultan Agung", "Hmmm...sekitar 3 atau 4 bulan? Saya lupa sih", null),
-            new MainCharacterDialog(true, characterExpression.hurt, "(Oke...ini tidak benar...waktu memang berjalan sangat aneh di tempat ini....)", null),
-            new NPCDialog("Sultan Agung", "Ngomong-ngomong soal itu, saya ingin mengecek kondisi pasukan di Batavia", null),
-            new NPCDialog("Sultan Agung", "Tapi jika saya pergi kesana secara langsung sekarang, nanti akan menimbulkan curiga", null),
-            new NPCDialog("Sultan Agung", "Hmmmm..bisakah saya meminta bantuan lagi, dek Player?", null),
-            new MainCharacterDialog(true, characterExpression.neutral, " Anda ingin saya...kembali ke Batavia lagi?", null),
-            new NPCDialog("Sultan Agung", "Kira-kira begitu, saya tau itu perjalanan yang panjang tapi...", null),
-            new MainCharacterDialog(true, characterExpression.neutral, "Tidak apa-apa, Sultan, saya akan kesana", null),
-            new MainCharacterDialog(true, characterExpression.neutral, "Lebih baik daripada saya berdiam disini tanpa melakukan apapun", null),
-            new NPCDialog("Sultan Agung", "Baik kalau begitu, terimakasih dek Player, berhati-hatilah ketika masuk ke daerah perang!", new string[]{"War Zone"}),
-            
-        }, false, null)
-                    }, true)
                 }), 
 
                   new Mission(new List<Goal>
@@ -2156,10 +2125,13 @@ public class MissionManager : MonoBehaviour
             new NPCDialog("Warga", " Hei, kalau saya jadi kamu, saya tidak akan pergi masuk ke benteng", null),
             new MainCharacterDialog(true, characterExpression.neutral, "Memangnya kenapa, pak?", null),
             new NPCDialog("Warga", "Perang besar sedang terjadi disana, warga-warga dari Mataram itu menyerang dan terjadi perang yang sudah berjalan berbulan-bulan sekarang", null),
-            new MainCharacterDialog(true, characterExpression.hurt, "....tidak lagi...", null),
-            new NPCDialog("Warga", "Ya saya setuju, saya juga sudah lelah dengan berbagai perang yang terjadi", null),
+            new MainCharacterDialog(true, characterExpression.shook, "Berbulan-bulan?", null),
+            new NPCDialog("Warga", "Ya saya setuju, saya juga sudah lelah dengan berbagai perang selama itu", null),
             new MainCharacterDialog(true, characterExpression.neutral, "Sekarang ini...memangnya bulan apa, pak?", null),
             new NPCDialog("Warga", "Bulan Desember, tanggal 6, saya rasa perang itu akan mulai mereda beberapa saat lagi...", null),
+            new MainCharacterDialog(true, characterExpression.neutral, "(Desember 6...aneh sekali...padahal aku hanya berjalan beberapa menit...)", null),
+            new MainCharacterDialog(true, characterExpression.think, "(Apa selalu begitu semenjak aku disini, aku berjalan beberapa menit tapi waktu berjalan secara berbeda di dunia ini)", null),
+             new MainCharacterDialog(true, characterExpression.think, "(Hmmmm...aku pikirkan ini nanti saja, yang jelas sayang sekali aku melewatkan perang yang ada)", null),
             new NPCDialog("T. Baurekhsa", " PASUKAN! MUNDUR!", null),
             new MainCharacterDialog(true, characterExpression.shook, "Itu...suara Tumenggung...", null),
             new NPCDialog("Warga", "Yap, orang-orang Mataram itu tidak punya kesempatan melawan Belanda dengan senjata canggih seperti itu", null),
@@ -2179,31 +2151,161 @@ public class MissionManager : MonoBehaviour
             new MainCharacterDialog(true, characterExpression.neutral, "Jadi setelah perjuangan itu mereka kalah juga ", null),
             new NPCDialog("Warga", " Iya tapi memang kita tidak akan selalu menang dalam hidup...hanya bisa berusaha sekuat yang kita bisa", null),
             new MainCharacterDialog(true, characterExpression.happy, "(Wow...warga ini filosofikal juga...)", null),
-            new NPCDialog("Pasukan Belanda", "Hey, what are you doing? (Hei, apa yang kamu lakukan?)", null),
-            new MainCharacterDialog(true, characterExpression.shook, "(Oh tidak...sebaiknya aku mencatat semua informasi itu dan cepat kembali ke Sultan Agung)", null),
+            new NPCDialog("Pejuang Jawa (?)", "Hei, apa yang kamu lakukan?", null),
+            new MainCharacterDialog(true, characterExpression.hurt, "(Oh tidak...)", null),
 
         }, false, "War")
                     }, true)
                 }), 
+
+                 new Mission(new List<Goal>
+                {
+                    new ExplorationGoal("Pergi menemui orang yang seperti pejuang dari jawa", 1, new string[] {"Pejuang Jawa"}, new int[] {-1}, new Story[]{
+                        new Story("Kamu terpaksa menemui orang yang berpakaian seperti pejuang dari jawa itu...", new List<Dialogs>
+
+        {
+       
+            new NPCDialog("Pejuang Jawa (?)", "Kamu sedang apa disitu anak kecil, kamu sebaiknya pergi, ini medan perang!", null),
+            new MainCharacterDialog(true, characterExpression.angry, "Aku juga baru akan pergi sampai bapak menghentikan saya...", null),
+            new NPCDialog("Pejuang Jawa (?)", "Hmmmm...aku sepertinya pernah tau kamu, kamu yang sempat membantu Tumenggung Baurekhsa waktu itu kan?", null),
+            new MainCharacterDialog(true, characterExpression.think, "(Bagaimana bapak ini bisa tau...padahal aku tidak melihat ada siapapun disana waktu aku membantu Tumenggung...)", null),
+            new NPCDialog("Pejuang Jawa (?)", "Tapi kalau kamu benar teman Tumenggung waktu itu, kamu tidak keberatan kan kalau aku mengecek...seberapa banyak yang kamu tau tentang perang disini...", null),
+            new MainCharacterDialog(true, characterExpression.think, "Tentu...tapi untuk apa?", null),
+            new NPCDialog("Pejuang Jawa (?)", "Tenang, kamu cukup menjawab beberapa pertanyaan dariku saja...", null),
+             new MainCharacterDialog(true, characterExpression.hurt, "Baiklah...? Anda bahkan tidak menjawab pertanyaan saya...", null),
+
+        }, false, null)
+                    }, true)
+                }), 
+
+          
+ //=================================//
+
+                new Mission(new List<Goal>
+                {
+                    new JudgementGoal("Menjawab beberapa pertanyaan dari pejuang jawa", 10, "Pejuang Jawa", true)
+                }), 
+
                   new Mission(new List<Goal>
                 {
-                    new ExplorationGoal("Kembali ke Sultan Agung", 1, new string[] {"Sultan Agung"}, new int[] {-1}, new Story[]{
+                    new ReviewGoal("Mereview kembali beberapa kejadian bersama Tumenggung Baurekhsa", 1, "Tumenggung Baurekhsa", new Story[]{
+                        new Story("Tumenggung Baurekhsa selesai memberikan review singkat...", new List<Dialogs>
+                        {
+                               new NPCDialog("Tumenggung Baurekhsa", "Sekarang kamu seharusnya sudah lebih paham...", null),
+                               new NPCDialog("Tumenggung Baurekhsa", "Bagaimana sedikit kuis untuk mengisi waktu?", null),
+                              new MainCharacterDialog(true, characterExpression.hurt, "Baiklah, aku rasa tidak masalah...", null)
+                        }, false, "Judgement")
+                    }),
+                    new JudgementGoal("Menjawab beberapa pertanyaan dari pejuang jawa", 5, "Pejuang Jawa", false)
+                }), 
+
+                 new Mission(new List<Goal>
+                {
+                  new ExplorationGoal("Kembali ke Sultan Agung", 1, new string[] {"Sultan Agung"}, new int[] {-1}, new Story[]{
                         new Story("Sultan Agung nampak seperti sedang banyak pikiran, tentu hal ini terkait dengan kekalahan mereka dalam perang", new List<Dialogs>
         {
-            new NPCDialog("Sultan Agung", ".......", new string[]{"War Zone"}),
+            new NPCDialog("Sultan Agung", "...", new string[]{"War Zone"}),
             new NPCDialog("Sultan Agung", "Oh, dek Player! Saya sudah lama tidak melihatmu, kamu dari mana saja?", null),
-            new MainCharacterDialog(true, characterExpression.neutral, "Huftt...hufftt....tentu dari Batavia...setelah anda mengirimku...", null),
-            new NPCDialog("Sultan Agung", "Haha...benar juga...", null),
-            new NPCDialog("Sultan Agung", "Tapi ini bukan saat yang tepat lagi sayangnya untuk berbicara dan ramah tamah", null),
-            new NPCDialog("Sultan Agung", "Kami akan menyiapkan serangan kembali ke Batavia", null),
-            new MainCharacterDialog(true, characterExpression.shook, "Lagi? Tapi bukannya anda baru saja kalah, akankah lebih baik kalau Mataram memulihkan diri dari perang?", null),
-            new NPCDialog("Sultan Agung", "Baru saja? Ini sudah bulan Mei 1629, kami sudah menaruh kekalahan itu di belakang kami", null),
-            new MainCharacterDialog(true, characterExpression.shook, "(Tunggu...aku terlempar ke Mei 1629?)", null),
-            new MainCharacterDialog(true, characterExpression.shook, "(Tempat ini benar-benar aneh ini membuat kepalaku pusing)", null),
-            new MainCharacterDialog(true, characterExpression.shook, "(Bagaimana aku bisa berjalan hanya selama beberapa menit membuat waktu berjalan sejauh itu?)", null),
-            new MainCharacterDialog(true, characterExpression.neutral, "(Aku harus mencari informasi lebih lanjut untuk tau cara keluar dari sini...)", null),
-            new NPCDialog("Sultan Agung", "Intinya kami sekarang akan mempersiapkan serangan selanjutnya", null),
-            new NPCDialog("Sultan Agung", "Kami sudah belajar dari kekalahan sebelumnya...", null),
+            new MainCharacterDialog(true, characterExpression.neutral, "....dari Batavia Sultan, tadi aku bertemu dengan pasukanmu yang bertingkah cukup aneh sih...", null),
+            new NPCDialog("Sultan Agung", "Begitu kah..hmmm...kalau bagaimana perang disana kalau boleh tau...", null),
+            new MainCharacterDialog(true, characterExpression.hurt, "Aku....ingin menyampaikannya pada anda, tapi bisakah anda memberikanku waktu untuk mengingat-ngingat kembali seluruh kejadiannya dari yang aku dengar?", null),
+            new NPCDialog("Sultan Agung", "Oh tentu, saya punya beberapa pertanyaan untukmu, tapi saya bisa menunggu", null),
+     
+            
+        }, false, "Judgement")
+                    }, true),
+                    new ReviewGoal("Mereview kembali beberapa kejadian bersama Sultan Agung", 1, "Sultan Agung", new Story[]{
+                        new Story("Kamu berhasil mereview kembali seluruh kejadian perang...", new List<Dialogs>{
+                               new NPCDialog("Sultan Agung", "Apa kamu sudah lebih ingat sekarang, dek Player?", null),
+                               new MainCharacterDialog(true, characterExpression.neutral, "Tentu, aku sudah siap untuk menjawab pertanyaan-pertanyaan anda...", null),
+                        }, false, null)
+                    }),
+                    new JudgementGoal("Menjawab beberapa pertanyaan dari Sultan Agung", 5, "Sultan Agung", false)
+                }), 
+
+                //good
+
+                new Mission(new List<Goal>
+                {
+                  new ExplorationGoal("Ikut pejuang palsu tersebut ke benteng", 1, new string[] {"Tumenggung Baurekhsa"}, new int[] {-1}, new Story[]{
+                        new Story("Sebelum kamu bisa bereaksi, kamu telah ditarik oleh pejuang yang ternyata kaki tangan Belanda itu dan kamu ditaruh dipinggir benteng bersama dengan Tumenggung Baurekhsa yang ada disana...", new List<Dialogs>
+        {
+          new NPCDialog("T. Baurekhsa", "Player, apa yang kamu lakukan disini? Saya sudah melarang kamu untuk kemari kan?", null),
+            new MainCharacterDialog(true, characterExpression.angry, "Aku dijebak oleh seseorang yang berpakaian sebagai pasukan anda...", null),
+             new MainCharacterDialog(true, characterExpression.shook, "Anda sendiri kenapa masih disini pak? Apa anda...", null),
+             new NPCDialog("T. Baurekhsa", "....", null),
+             new NPCDialog("T. Baurekhsa", "Saya tertangkap oleh Belanda, waktu saya tidak akan lama lagi", null),
+              new NPCDialog("T. Baurekhsa", "Mereka sudah membicarakan tentang eksekusi untuk mereka yang tertangkap, tapi saya sudah tau resiko yang saya ambil demi berjuang untuk warga Mataram dan Jawa...", null),
+             new NPCDialog("T. Baurekhsa", "Tapi lupakan soal itu, sekarang kita bahas rencana agar kamu dapat melarikan diri dari sini", null),
+              new MainCharacterDialog(true, characterExpression.shook, "Hanya saya? Tapi Tumenggung bagaimana...", null),
+              new NPCDialog("T. Baurekhsa", "Tidak usah terlalu dipikirkan, dek Player", null),
+              new NPCDialog("T. Baurekhsa", "Saya akan mengecohkan perhatian seluruh pasukan yang ada sehingga kamu bisa keluar dari benteng ini...", null),
+               new MainCharacterDialog(true, characterExpression.sad, "Tapi...", null),
+                 new NPCDialog("T. Baurekhsa", "Sudah tidak apa-apa, dek Player. Sampaikan salamku pada sultan...", null),
+                  new NPCDialog("T. Baurekhsa", "Oh iya kalau aku boleh meminta tolongmu untuk sesuatu...", null),
+                    new MainCharacterDialog(true, characterExpression.neutral, "Apapun yang bisa ku bantu", null),
+                    new NPCDialog("T. Baurekhsa", "Kamu sudah tau salah satu penyebab kami kalah adalah kekurangan perbekalan.", null),
+                    new NPCDialog("T. Baurekhsa", "Jadi setelah kamu keluar dari sini, kamu akan melewati Cirebon dan Priyangan", null),
+                     new NPCDialog("T. Baurekhsa", "Lokasi itu lebih dekat dengan Batavia dari Mataram sehingga cocok untuk membangun lumbung", null),
+                     new NPCDialog("T. Baurekhsa", "Saya berpikir kalau kamu berbicara dengan Sultan Agung, dia akan memikirkan hal yang sama", null),
+                      new MainCharacterDialog(true, characterExpression.neutral, "Jadi anda ingin saya mencarikan lokasi untuk lumbung tersebut?", null),
+                      new NPCDialog("T. Baurekhsa", "Iya...kamu ini memang anak yang cermat!", null),
+                        new NPCDialog("T. Baurekhsa", "Saya ingin berbicara lebih banyak denganmu karena kamu mengingatkan saya dengan anak saya...", null),
+                        new NPCDialog("T. Baurekhsa", "Tapi kita harus bergegas...sebaiknya kamu segera keluar dari sini", null),
+                         new MainCharacterDialog(true, characterExpression.sad, "Baiklah...terimakasih untuk semuanya, pak Tumenggung Baurekhsa...", null),
+                          new NPCDialog("T. Baurekhsa", "Terimakasih Player, selamat jalan!", new string[]{"Spot Tree 1", "Spot Tree 2", "Spot Tree 3"}),
+     
+            
+        }, false, null)
+                    }, true)
+                }),
+
+                //decent
+
+                 new Mission(new List<Goal>
+                {
+                  new ExplorationGoal("Berbicara kepada Tumenggung Baurekhsa", 1, new string[] {"Tumenggung Baurekhsa"}, new int[] {-1}, new Story[]{
+                        new Story("Tumenggung tersenyum melihat perkembangan pemahamanmu, tapi kamu bisa melihat kesedihan di matanya...", new List<Dialogs>
+        {
+             new NPCDialog("T. Baurekhsa", "Baiklah, karena kamu sudah paham, sekarang kita bahas rencana agar kamu dapat melarikan diri dari sini", null),
+              new MainCharacterDialog(true, characterExpression.shook, "Hanya saya? Tapi Tumenggung bagaimana...", null),
+              new NPCDialog("T. Baurekhsa", "Tidak usah terlalu dipikirkan, dek Player", null),
+              new NPCDialog("T. Baurekhsa", "Saya akan mengecohkan perhatian seluruh pasukan yang ada sehingga kamu bisa keluar dari benteng ini...", null),
+               new MainCharacterDialog(true, characterExpression.sad, "Tapi...", null),
+                 new NPCDialog("T. Baurekhsa", "Sudah tidak apa-apa, dek Player. Sampaikan salamku pada sultan...", null),
+                  new NPCDialog("T. Baurekhsa", "Oh iya kalau aku boleh meminta tolongmu untuk sesuatu...", null),
+                    new MainCharacterDialog(true, characterExpression.neutral, "Apapun yang bisa ku bantu", null),
+                    new NPCDialog("T. Baurekhsa", "Kamu sudah tau salah satu penyebab kami kalah adalah kekurangan perbekalan.", null),
+                    new NPCDialog("T. Baurekhsa", "Jadi setelah kamu keluar dari sini, kamu akan melewati Cirebon dan Priyangan", null),
+                     new NPCDialog("T. Baurekhsa", "Lokasi itu lebih dekat dengan Batavia dari Mataram sehingga cocok untuk membangun lumbung", null),
+                     new NPCDialog("T. Baurekhsa", "Saya berpikir kalau kamu berbicara dengan Sultan Agung, dia akan memikirkan hal yang sama", null),
+                      new MainCharacterDialog(true, characterExpression.neutral, "Jadi anda ingin saya mencarikan lokasi untuk lumbung tersebut?", null),
+                      new NPCDialog("T. Baurekhsa", "Iya...kamu ini memang anak yang cermat!", null),
+                        new NPCDialog("T. Baurekhsa", "Saya ingin berbicara lebih banyak denganmu karena kamu mengingatkan saya dengan anak saya...", null),
+                        new NPCDialog("T. Baurekhsa", "Tapi kita harus bergegas...sebaiknya kamu segera keluar dari sini", null),
+                         new MainCharacterDialog(true, characterExpression.sad, "Baiklah...terimakasih untuk semuanya, pak Tumenggung Baurekhsa...", null),
+                          new NPCDialog("T. Baurekhsa", "Terimakasih Player, selamat jalan!", new string[]{"Spot Tree 1", "Spot Tree 2", "Spot Tree 3"}),
+     
+            
+        }, false, null)
+                    }, true)
+                }), 
+
+                //bad
+
+                 new Mission(new List<Goal>
+                {
+                  new ExplorationGoal("Berbicara kepada Sultan Agung", 1, new string[] {"Sultan Agung"}, new int[] {-1}, new Story[]{
+                        new Story("Sultan Agung mendengarkanmu dengan seksama meskipun kamu kadang tampak ragu dalam menjawab...", new List<Dialogs>
+        {
+             new NPCDialog("Sultan Agung", "Begitu ya...terimakasih sudah berusaha menyampaikannya kepadaku, Player", null),
+             new NPCDialog("Sultan Agung", "Sekarang sebaiknya saya mulai mempersiapkan untuk serangan selanjutnya...", null),
+             new MainCharacterDialog(true, characterExpression.neutral, "Tapi apakah tidak terlalu cepat jika ingin memulai menyerang lagi sekarang?", null),
+             new NPCDialog("Sultan Agung", "Tidak juga, kami sudah menaruh kekalahan itu di belakang kami, dan karena sudah beberapa bulan juga sejak kekalahan kami itu", null),
+             new MainCharacterDialog(true, characterExpression.shook, "(Beberapa bulan?!, apa aku terlempar jauh ke beberapa bulan hanya dengan berjalan lagi?!", null),
+              new MainCharacterDialog(true, characterExpression.shook, "Kalau begitu...bukannya seharusnya anda sudah mengetahui semua yang saya sampaikan barusan?", null),
+              new NPCDialog("Sultan Agung", "Memang, tapi sebagai teman dan saksi kami, saya ingin memastikan kamu mendapat pengertian yang benar tentang kehidupan dan peperangan kami", null),
+            new NPCDialog("Sultan Agung", "Intinya, kami sudah belajar dari kekalahan sebelumnya...", null),
             new NPCDialog("Sultan Agung", "Bahwa kami kurang perbekalan saat itu", null),
             new MainCharacterDialog(true, characterExpression.happy, " (Setidaknya mereka belajar dari kesalahan sebelumnya dan mencoba memperbaiki strategi mereka...)", null),
             new NPCDialog("Sultan Agung", "Jadi kami akan mencoba mencari akal untuk membangun lumbung di tempat yang tidak mencurigakan", null),
@@ -2222,11 +2324,14 @@ public class MissionManager : MonoBehaviour
             new MainCharacterDialog(true, characterExpression.neutral, "Tapi....dimana arah ke Cirebon dan Priyangan?", null),
             new NPCDialog("Sultan Agung", " Sini saya akan menandai sekitaran lokasinya dipetamu...dan sekarang kamu siap berangkat!", null),
             new NPCDialog("Sultan Agung", "Terimakasih Player, saya akan menunggu kabar baiknya", new string[]{"Spot Tree 1", "Spot Tree 2", "Spot Tree 3"}),
+     
             
-        }, false, "Mataram")
+        }, false, null)
                     }, true)
                 }), 
 
+
+//=================================//
                   new Mission(new List<Goal>
                 {
                     new ExplorationGoal("Membantu mencarikan lokasi lumbung di Priyangan", 2, new string[] {"Spot Tree 2", "Spot Tree 1"}, new int[] {-1, -1}, new Story[]{
@@ -2359,6 +2464,8 @@ public class MissionManager : MonoBehaviour
         }, false, null)
                     }, true)
                 }), 
+
+//=================================//
 
                   new Mission(new List<Goal>
                 {
@@ -2567,6 +2674,7 @@ public class MissionManager : MonoBehaviour
                     }, true)
                 }), 
 
+//=================================//
                 //ending
                 new Mission(new List<Goal>{
                      new ExplorationGoal("Pergi ke lokasi selanjutnya dengan kapal", 1, new string[] {"Next Chapter"}, new int[] {-1}, new Story[]{
