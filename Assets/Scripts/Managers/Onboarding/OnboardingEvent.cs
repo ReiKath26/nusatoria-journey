@@ -57,7 +57,7 @@ public class OnboardingEvent : MonoBehaviour
                activeSlots[number].chapter.text = "Chapter 1: Terjebak di Dalam Kegelapan";
                break;
                case 2:
-                activeSlots[number].chapter.text = "Chapter 2: Pencarian Kebebasan Tanpa Henti";
+                activeSlots[number].chapter.text = "Chapter 2: Warna yang Berbeda";
                 break;
                case 3:
                activeSlots[number].chapter.text = "Bersambung...";

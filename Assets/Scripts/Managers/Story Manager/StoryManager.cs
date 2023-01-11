@@ -137,7 +137,7 @@ public class StoryManager : MonoBehaviour
                         new CutsceneDialog("cutscene_voc", "Dan itu mendorong segala macam usaha, bagi rakyat Nusantara, untuk memperjuangkan kemerdekaan mereka", null)
 
                     };
-                    Story thisStory = new Story("14 November 2195, 11:00 - Jalanan Kota Jakarta", dialouge, true, null);
+                    Story thisStory = new Story("Prologue: Permulaan dari Segalanya || 14 November 2195, 11:00 - Jalanan Kota Jakarta", dialouge, true, null);
                     return thisStory;
                }
               
@@ -151,35 +151,79 @@ public class StoryManager : MonoBehaviour
                         new MainCharacterDialog(true, characterExpression.neutral, "(Sebaiknya aku mencari informasi dan mencatat petunjuk yang aku dapat untuk mencari tau tempat apa ini...)", null),
                         new MainCharacterDialog(true, characterExpression.neutral, "(Dan kalau aku sudah tau, baru aku dapat memikirkan cara keluar dari sini...)", null)
                     };
-                    Story thisStory = new Story("?? ?? ??, ?? - ???", dialouge, false, null);
+                    Story thisStory = new Story("Chapter 1: Terjebak dalam Kegelapan || ?? ?? ??, ?? - ???", dialouge, false, null);
                     return thisStory;
                }
                
                case 2:
                {
-                    List<Dialogs> dialouge = new List<Dialogs>
+                    List<Dialogs> dialouge;
+                    
+
+                    if(slot.understandingLevel == 1)
                     {
-                        new MainCharacterDialog(true, characterExpression.hurt, "Jadi...ini Minangkabau...", null),
-                        new MainCharacterDialog(true, characterExpression.hurt, "Suasana disini sangat berbeda dari di Jawa, tapi aku penasaran apakah aku akan menemui konflik yang sama disini...", null),
-                        new MainCharacterDialog(true, characterExpression.neutral, "(Oh iya, jurnal yang aku temukan tadi sebaiknya aku...)", null),
-                        new MainCharacterDialog(true, characterExpression.neutral, "(Ah...dimana aku menaruhnya?)", null),
-                        new MainCharacterDialog(false, characterExpression.think, "Hmmm...menarik...", new string[]{"Yudha_Pier"}),
-                        new MainCharacterDialog(true, characterExpression.angry, "Ahh! Jangan muncul tiba-tiba begitu dan jangan mengambil barang orang seenak jidat!", null),
-                        new MainCharacterDialog(false, characterExpression.hurt, "Apa? Kamu menemukan petunjuk maka seharusnya kamu memberikannya pada polisi terpercaya", null),
-                        new MainCharacterDialog(true, characterExpression.angry, "Polisi terpercaya tidak akan meninggalkan warga tidak bersalah...", null),
-                        new MainCharacterDialog(false, characterExpression.angry, "Hmph!", null),
-                        new MainCharacterDialog(false, characterExpression.neutral, "Jika kamu harus tau, jurnal ini milik seseorang yang memulai projek dengan nama yang disamarkan", null),
-                        new MainCharacterDialog(false, characterExpression.neutral, "Dia bercerita tentang semua kejadian yang kita lalui tadi dan bagaimana dia melihatnya langsung", null),
-                        new MainCharacterDialog(true, characterExpression.shook, "Jadi dia itu...", null),
-                        new MainCharacterDialog(false, characterExpression.angry, "Penjelajah waktu, iya, dan kemungkinan dia penjelajah waktu ilegal yang aku cari", null),
-                        new MainCharacterDialog(false, characterExpression.neutral, "Sisanya tidak penting...", null),
-                        new MainCharacterDialog(false, characterExpression.neutral, "Nih aku kembalikan, sekarang aku permisi dulu ya...", null),
-                        new MainCharacterDialog(true, characterExpression.angry, "Hmph! Masih keras kepala...", new string[]{"Yudha_Pier"}),
-                        new MainCharacterDialog(true, characterExpression.neutral, "(Tapi sekarang sebaiknya aku kemana...)", null),
-                        new MainCharacterDialog(true, characterExpression.neutral, "(Apa aku ikut dia saja ya..dia sepertinya lebih familiar dengan dunia ini dari aku)", null),     
-                        new MainCharacterDialog(true, characterExpression.neutral, "(Dia pasti akan mengeluh lagi kalau aku mengikutinya, tapi ya sudahlah aku tidak peduli juga)", null),       
-                    };
-                    Story thisStory = new Story("?? ?? ??, ?? - Pelabuhan Minang", dialouge, false, null);
+                        dialouge = new List<Dialogs>
+                        {
+                            new MainCharacterDialog(true, characterExpression.hurt, "Jadi...ini Minangkabau...", new string[]{"Yudha_Pier"}),
+                            new MainCharacterDialog(true, characterExpression.hurt, "Suasana disini sangat berbeda dari di Jawa, tapi aku penasaran apakah aku akan menemui konflik yang sama disini...", null),
+                            new MainCharacterDialog(true, characterExpression.hurt, "Tapi disini aku tidak punya pengetahuan apapun atau harus kemana, jadi aku sepertinya stuck untuk sekarang...", null),
+                            new MainCharacterDialog(true, characterExpression.hurt, "Tapi kalau begitu bagaimana aku bisa keluar dari tempat ini...", null),
+                            new MainCharacterDialog(true, characterExpression.hurt, "Seingatku ada kejadian bersejarah juga di Minang ini...tapi apa ya....", new string[]{"Yudha_Pier"}),
+                            new MainCharacterDialog(true, characterExpression.think, "Hmmm..orang yang berdiri di tembok itu sepertinya ke arah sana, aku ikuti dia saja deh daripada tidak bergerak sama sekali...", null),
+                        };
+                    }
+
+                    else if(slot.understandingLevel == 2)
+                    {
+                        dialouge = new List<Dialogs>
+                        {
+                            new MainCharacterDialog(true, characterExpression.hurt, "Jadi...ini Minangkabau...", null),
+                            new MainCharacterDialog(true, characterExpression.hurt, "Suasana disini sangat berbeda dari di Jawa, tapi aku penasaran apakah aku akan menemui konflik yang sama disini...", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "(Oh iya, jurnal yang aku temukan tadi sebaiknya aku...)", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "(Ah...dimana aku menaruhnya?)", null),
+                            new MainCharacterDialog(false, characterExpression.think, "Hmmm...menarik...", new string[]{"Yudha_Pier"}),
+                            new MainCharacterDialog(true, characterExpression.angry, "Ahh! Jangan muncul tiba-tiba begitu dan jangan mengambil barang orang seenak jidat!", null),
+                            new MainCharacterDialog(false, characterExpression.hurt, "Apa? Kamu menemukan petunjuk maka seharusnya kamu memberikannya pada polisi terpercaya", null),
+                            new MainCharacterDialog(true, characterExpression.angry, "Polisi terpercaya tidak akan meninggalkan warga tidak bersalah...", null),
+                            new MainCharacterDialog(false, characterExpression.angry, "Hmph!", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Jika kamu harus tau, jurnal ini milik seseorang yang memulai projek dengan nama yang disamarkan", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Dia bercerita tentang semua kejadian yang kita lalui tadi dan bagaimana dia melihatnya langsung", null),
+                            new MainCharacterDialog(true, characterExpression.shook, "Jadi dia itu...", null),
+                            new MainCharacterDialog(false, characterExpression.angry, "Penjelajah waktu, iya, dan kemungkinan dia penjelajah waktu ilegal yang aku cari", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Sisanya tidak penting...", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Nih aku kembalikan, sekarang aku permisi dulu ya...", null),
+                            new MainCharacterDialog(true, characterExpression.angry, "Hmph! Masih keras kepala...", new string[]{"Yudha_Pier"}),
+                            new MainCharacterDialog(true, characterExpression.neutral, "(Tapi sekarang sebaiknya aku kemana...)", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "(Apa aku ikut dia saja ya..dia sepertinya lebih familiar dengan dunia ini dari aku)", null),     
+                            new MainCharacterDialog(true, characterExpression.neutral, "(Dia pasti akan mengeluh lagi kalau aku mengikutinya, tapi ya sudahlah aku tidak peduli juga)", null),       
+                        };
+                    }
+
+                    else
+                    {
+                        dialouge = new List<Dialogs>
+                        {
+                            new MainCharacterDialog(true, characterExpression.hurt, "Jadi...ini Minangkabau...", null),
+                            new MainCharacterDialog(true, characterExpression.hurt, "Suasana disini sangat berbeda dari di Jawa, tapi aku penasaran apakah aku akan menemui konflik yang sama disini...", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "(Oh iya, jurnal yang aku temukan tadi sebaiknya aku...)", null),
+                            new MainCharacterDialog(true, characterExpression.neutral, "(Ah...dimana aku menaruhnya?)", null),
+                            new MainCharacterDialog(false, characterExpression.think, "Hei lagi, anak kecil! Bagi dong bacaannya!", new string[]{"Yudha_Pier"}),
+                            new MainCharacterDialog(true, characterExpression.angry, "Ahh! Jangan muncul tiba-tiba begitu dan jangan mengambil barang orang seenak jidat!", null),
+                            new MainCharacterDialog(false, characterExpression.think, "Hei hei, kan kita sudah bekerja sama, jadi kita harus saling berbagi petunjuk dong!", null),
+                            new MainCharacterDialog(true, characterExpression.angry, "Terserah anda saja, jadi apa isi jurnal itu?", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Sabar-sabar, ini aku bacakan isinya untukmu ya...", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Intinya jurnal ini milik seseorang yang memulai projek dengan nama yang disamarkan", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Dia bercerita tentang semua kejadian yang kita lalui tadi dan bagaimana dia melihatnya langsung", null),
+                            new MainCharacterDialog(true, characterExpression.shook, "Jadi dia itu...", null),
+                            new MainCharacterDialog(false, characterExpression.angry, "Penjelajah waktu, iya, dan kemungkinan dia penjelajah waktu ilegal yang aku cari", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Sisanya tidak penting...", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Nih aku kembalikan, sekarang aku ini sebenarnya masih lebih suka kerja sendiri sih....", null),
+                            new MainCharacterDialog(false, characterExpression.neutral, "Tapi aku akan membiasakan diri dengan adanya kamu di tim, jadi sekarang sebaiknya kita bergegas...", null),
+                            new MainCharacterDialog(true, characterExpression.shook, "Hei, tunggu dulu!", new string[]{"Yudha_Pier"}),
+                        };
+                    }
+                    
+                    Story thisStory = new Story("Chapter 2: Warna yang Berbeda || 1821, Pagi Hari - Pelabuhan Minang", dialouge, false, null);
                     return thisStory;
                }
               
