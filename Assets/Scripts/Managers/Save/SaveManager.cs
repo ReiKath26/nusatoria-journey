@@ -7,9 +7,9 @@ using System.IO;
 
 public static class SaveManager
 {
-    public static readonly string save_folder = Application.persistentDataPath + "/GameSaves/";
-    public static readonly string keyconcept_object_save_folder = Application.persistentDataPath+ "/KeyConcepts/";
-    public static readonly string inventory_object_save_folder = Application.persistentDataPath + "/Inventory/";
+    public static readonly string save_folder = Application.persistentDataPath + "/GameData/";
+    public static readonly string keyconcept_object_save_folder = Application.persistentDataPath + "/GameData/" + "/KeyConcepts/";
+    public static readonly string inventory_object_save_folder = Application.persistentDataPath  + "/GameData/" + "/Inventory/";
 
     public static void Init()
     {
@@ -105,6 +105,32 @@ public static class SaveManager
         else
         {
             return null;
+        }
+    }
+
+    public static void deleteSaveSlot(int slotNumber)
+    {
+        if(File.Exists(save_folder + "/slotSave_" + slotNumber + ".json"))
+        {
+            File.Delete(save_folder + "/slotSave_" + slotNumber + ".json");
+        }
+       
+
+        for(int i=0;i<24;i++)
+        {
+            if(File.Exists(keyconcept_object_save_folder + "/playerGlossary_" + slotNumber + "_" + i + ".json"))
+            {
+                 File.Delete(keyconcept_object_save_folder + "/playerGlossary_" + slotNumber + "_" + i + ".json");
+            }
+            
+        }
+
+        for(int j=0;j<8;j++)
+        {
+             if (File.Exists(inventory_object_save_folder + "/playerInventory_" + slotNumber + "_" + j + ".json"))
+             {
+                 File.Delete(inventory_object_save_folder + "/playerInventory_" + slotNumber + "_" + j + ".json");
+             }
         }
     }
 }

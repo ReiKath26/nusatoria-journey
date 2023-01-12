@@ -21,14 +21,6 @@ MonoBehaviour:
     m_Address: Watch
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: b5113ff06b5cc446c8c2d8b3542e7673
-    m_Address: Pen
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: b85caff235ce04994b460839ad04b594
-    m_Address: police_badge
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 38dd858ff9b62433183039f7dae76056
     m_Address: Map
     m_ReadOnly: 0
@@ -195,6 +187,10 @@ MonoBehaviour:
     m_SerializedLabels: []
   - m_GUID: 9031dae8e1bc546dbb072d3402e2e4e5
     m_Address: tut_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e218aa8503f3d412c9959035d5a5a051
+    m_Address: Assets/Items/chest-key.png
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

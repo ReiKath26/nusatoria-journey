@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Choice : MonoBehaviour
+public class Choice
 {
     public string choiceDescription;
     public bool correct;

@@ -7,6 +7,7 @@ public class OnboardingEvent : MonoBehaviour
 
     public GameObject [] emptySlots;
     public ActiveSlotData [] activeSlots;
+    public GameObject deletePopUp;
 
 
     void Start()
@@ -33,6 +34,7 @@ public class OnboardingEvent : MonoBehaviour
        {
           emptySlots[number].SetActive(false);
           activeSlots[number].holder.SetActive(true);
+          activeSlots[number].deleteButton.SetActive(true);
 
           if (slot.playerGender == 0)
           {
@@ -71,6 +73,7 @@ public class OnboardingEvent : MonoBehaviour
        {
           emptySlots[number].SetActive(true);
           activeSlots[number].holder.SetActive(false);
+          activeSlots[number].deleteButton.SetActive(false);
        }
 
        
@@ -100,5 +103,20 @@ public class OnboardingEvent : MonoBehaviour
           default: 
           break;
      }
+   }
+
+   public void onDeleteButtonClicked(int select)
+   {
+          Debug.Log("Click");
+          PlayerPrefs.SetInt("choosenSlot", select);
+          deletePopUp.SetActive(true);
+   }
+
+   public void delete()
+   {
+     SaveHandler.instance.deleteSlot(PlayerPrefs.GetInt("choosenSlot"));
+     deletePopUp.SetActive(false);
+
+     loadSavedGameSlots(PlayerPrefs.GetInt("choosenSlot") - 1);
    }
 }

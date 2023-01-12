@@ -7,6 +7,7 @@ public class PlayerInteractUI : MonoBehaviour
 {
     [SerializeField] private GameObject interactionGameObject;
     [SerializeField] private PlayerInteraction playerInteraction;
+    [SerializeField] private GameObject missionButton;
     [SerializeField] private TextMeshProUGUI interactionText;
 
     private void Update()
@@ -30,9 +31,21 @@ public class PlayerInteractUI : MonoBehaviour
                 interactionValid = false;
             }
 
-            if(interactionValid == true || interactbale.getTitle() != "")
+            if(interactionValid == true)
             {
                 Show(playerInteraction.GetInteractableObject());
+                missionButton.SetActive(true);
+            }
+
+            else if(interactbale.getTitle() != "")
+            {
+                Show(playerInteraction.GetInteractableObject());
+                missionButton.SetActive(false);
+            }
+
+            else
+            {
+                SceneManage.instance.closePopUp(interactionGameObject);
             }
  
         }

@@ -12,4 +12,5 @@ public class ActiveSlotData
     public TextMeshProUGUI name;
     public TextMeshProUGUI time;
     public TextMeshProUGUI chapter;
+    public GameObject deleteButton;
 }

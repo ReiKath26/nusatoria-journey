@@ -249,19 +249,11 @@ public class SaveHandler : MonoBehaviour
                 return;
             }
         }
-
-      
-        // foreach(KeyConcepts concept in slot.player_glossary.conceptList)
-        // {
-        //     Debug.Log("KeyNumber:" + concept.keyNumber);
-        //     if(concept.keyNumber == number)
-        //     {
-        //         Debug.Log("Approved?");
-        //         concept.unlocked = true;
-        //         Debug.Log("Concept status:" + concept.unlocked);
-        //         saveSlot(slot, slotNumber);
-        //     }
-        // }
  
+    }
+
+    public void deleteSlot(int number)
+    {
+        SaveManager.deleteSaveSlot(number);
     }
 }
