@@ -58717,7 +58717,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 15060bf95e5e3465aa25baea36357b27,
         type: 3}
       propertyPath: m_Name
-      value: Pejuang Jawa_Gun NPC
+      value: Pejuang Jawa
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15060bf95e5e3465aa25baea36357b27, type: 3}
