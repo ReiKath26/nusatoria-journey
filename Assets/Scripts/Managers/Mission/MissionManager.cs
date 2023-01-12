@@ -2229,7 +2229,7 @@ public class MissionManager : MonoBehaviour
                         new Story("Dari luar pintu gerbang benteng, terlihat derunya perang antara pasukan Mataram dan Belanda", new List<Dialogs>
 
         {
-            new NPCDialog("Warga", " Hei, kalau saya jadi kamu, saya tidak akan pergi masuk ke benteng", null),
+            new NPCDialog("Warga", " Hei, kalau saya jadi kamu, saya tidak akan pergi masuk ke benteng", new string[]{"War Zone", "Tumenggung Baurekhsa"}),
             new MainCharacterDialog(true, characterExpression.neutral, "Memangnya kenapa, pak?", null),
             new NPCDialog("Warga", "Perang besar sedang terjadi disana, warga-warga dari Mataram itu menyerang dan terjadi perang yang sudah berjalan berbulan-bulan sekarang", null),
             new MainCharacterDialog(true, characterExpression.shook, "Berbulan-bulan?", null),
@@ -2258,7 +2258,7 @@ public class MissionManager : MonoBehaviour
             new MainCharacterDialog(true, characterExpression.neutral, "Jadi setelah perjuangan itu mereka kalah juga ", null),
             new NPCDialog("Warga", " Iya tapi memang kita tidak akan selalu menang dalam hidup...hanya bisa berusaha sekuat yang kita bisa", null),
             new MainCharacterDialog(true, characterExpression.happy, "(Wow...warga ini filosofikal juga...)", null),
-            new NPCDialog("Pejuang Jawa (?)", "Hei, apa yang kamu lakukan?", null),
+            new NPCDialog("Pejuang Jawa (?)", "Hei, apa yang kamu lakukan?", new string[]{"Pejuang Jawa"}),
             new MainCharacterDialog(true, characterExpression.hurt, "(Oh tidak...)", null),
 
         }, false, "War")
@@ -2279,7 +2279,7 @@ public class MissionManager : MonoBehaviour
             new NPCDialog("Pejuang Jawa (?)", "Tapi kalau kamu benar teman Tumenggung waktu itu, kamu tidak keberatan kan kalau aku mengecek...seberapa banyak yang kamu tau tentang perang disini...", null),
             new MainCharacterDialog(true, characterExpression.think, "Tentu...tapi untuk apa?", null),
             new NPCDialog("Pejuang Jawa (?)", "Tenang, kamu cukup menjawab beberapa pertanyaan dariku saja...", null),
-             new MainCharacterDialog(true, characterExpression.hurt, "Baiklah...? Anda bahkan tidak menjawab pertanyaan saya...", null),
+             new MainCharacterDialog(true, characterExpression.hurt, "Baiklah...? Anda bahkan tidak menjawab pertanyaan saya...", new string[]{"Tumenggung Baurekhsa Shoot"}),
 
         }, false, null)
                     }, true)
@@ -2377,7 +2377,7 @@ public class MissionManager : MonoBehaviour
                         new NPCDialog("T. Baurekhsa", "Saya ingin berbicara lebih banyak denganmu karena kamu mengingatkan saya dengan anak saya...", null),
                         new NPCDialog("T. Baurekhsa", "Tapi kita harus bergegas...sebaiknya kamu segera keluar dari sini", null),
                          new MainCharacterDialog(true, characterExpression.sad, "Baiklah...terimakasih untuk semuanya, pak Tumenggung Baurekhsa...", null),
-                          new NPCDialog("T. Baurekhsa", "Terimakasih Player, selamat jalan!", new string[]{"Spot Tree 1", "Spot Tree 2", "Spot Tree 3"}),
+                          new NPCDialog("T. Baurekhsa", "Terimakasih Player, selamat jalan!", new string[]{"Spot Tree 1", "Spot Tree 2", "Spot Tree 3", "Tumenggung Baurekhsa Shoot"}),
      
             
         }, false, null)
@@ -2408,7 +2408,7 @@ public class MissionManager : MonoBehaviour
                         new NPCDialog("T. Baurekhsa", "Saya ingin berbicara lebih banyak denganmu karena kamu mengingatkan saya dengan anak saya...", null),
                         new NPCDialog("T. Baurekhsa", "Tapi kita harus bergegas...sebaiknya kamu segera keluar dari sini", null),
                          new MainCharacterDialog(true, characterExpression.sad, "Baiklah...terimakasih untuk semuanya, pak Tumenggung Baurekhsa...", null),
-                          new NPCDialog("T. Baurekhsa", "Terimakasih Player, selamat jalan!", new string[]{"Spot Tree 1", "Spot Tree 2", "Spot Tree 3"}),
+                          new NPCDialog("T. Baurekhsa", "Terimakasih Player, selamat jalan!", new string[]{"Spot Tree 1", "Spot Tree 2", "Spot Tree 3", "Tumenggung Baurekhsa Shoot"}),
      
             
         }, false, null)
@@ -2447,7 +2447,7 @@ public class MissionManager : MonoBehaviour
             new MainCharacterDialog(true, characterExpression.neutral, "Oh baiklah, aku rasa aku bisa coba", null),
             new MainCharacterDialog(true, characterExpression.neutral, "Tapi....dimana arah ke Cirebon dan Priyangan?", null),
             new NPCDialog("Sultan Agung", " Sini saya akan menandai sekitaran lokasinya dipetamu...dan sekarang kamu siap berangkat!", null),
-            new NPCDialog("Sultan Agung", "Terimakasih Player, saya akan menunggu kabar baiknya", new string[]{"Spot Tree 1", "Spot Tree 2", "Spot Tree 3"}),
+            new NPCDialog("Sultan Agung", "Terimakasih Player, saya akan menunggu kabar baiknya", new string[]{"Spot Tree 1", "Spot Tree 2", "Spot Tree 3", "Tumenggung Baurekhsa Shoot"}),
      
             
         }, false, null)
