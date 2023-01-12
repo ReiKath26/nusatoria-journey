@@ -87,12 +87,12 @@ public class MissionManager : MonoBehaviour
      {
           if(slot.missionNumber == 10 || slot.missionNumber == 11)
           {
-               slot.missionNumber = 9;
+               slot.missionNumber = 8;
           }
 
           else if(slot.missionNumber == 21 || slot.missionNumber == 22)
           {
-               slot.missionNumber = 20;
+               slot.missionNumber = 19;
           }
      }
 
@@ -108,12 +108,12 @@ public class MissionManager : MonoBehaviour
           }
           if(slot.missionNumber == 14)
           {
-               slot.missionNumber = 13;
+               slot.missionNumber = 12;
           }
 
           else if(slot.missionNumber == 29)
           {
-               slot.missionNumber = 28;
+               slot.missionNumber = 27;
           }
      }
       
