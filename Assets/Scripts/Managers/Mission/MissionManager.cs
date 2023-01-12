@@ -85,9 +85,14 @@ public class MissionManager : MonoBehaviour
       slot = SaveHandler.instance.loadSlot(PlayerPrefs.GetInt("choosenSlot"));
      if(slot.chapterNumber == 1)
      {
-          if(slot.missionNumber == 16 || slot.missionNumber == 17)
+          if(slot.missionNumber == 10 || slot.missionNumber == 11)
           {
-               slot.missionNumber = 15;
+               slot.missionNumber = 9;
+          }
+
+          else if(slot.missionNumber == 21 || slot.missionNumber == 22)
+          {
+               slot.missionNumber = 20;
           }
      }
 
@@ -265,7 +270,7 @@ public class MissionManager : MonoBehaviour
           
                                    Story badStory = new Story("Pejuang itu menggelengkan kepalanya dan pergi", new List<Dialogs>
                                    {
-                                        new MainCharacterDialog(true, characterExpression.hurt, "Pejuang yang aneh...tapi aku bisa pergi sekarang sepertinya...", null)
+                                        new MainCharacterDialog(true, characterExpression.hurt, "Pejuang yang aneh...tapi aku bisa pergi sekarang sepertinya...", new string[]{"Pejuang Jawa"})
                                    }, false, null);
 
                                    StoryManager.instance.assignStory(badStory);
@@ -337,7 +342,7 @@ public class MissionManager : MonoBehaviour
                                    new NPCDialog("Pejuang Jawa (?)", "Hmmmm...", null),
                                    new NPCDialog("Pejuang Jawa (?)", "Baiklah coba sekarang kamu ikut denganku", null),
                                    new MainCharacterDialog(true, characterExpression.angry, "Kenapa aku harus ikut dengan anda...", null),
-                                    new NPCDialog("Pejuang Jawa (?)", "Tidak usah banyak tanya, ikut saja...", null),
+                                    new NPCDialog("Pejuang Jawa (?)", "Tidak usah banyak tanya, ikut saja...", new string[]{"Pejuang Jawa"}),
                                }, false, null);
 
                                StoryManager.instance.assignStory(badStory);
@@ -2317,7 +2322,7 @@ public class MissionManager : MonoBehaviour
                               new MainCharacterDialog(true, characterExpression.hurt, "Baiklah, aku rasa tidak masalah...", null)
                         }, false, null)
                     }),
-                    new JudgementGoal("Menjawab beberapa pertanyaan dari pejuang jawa", 5, "Pejuang Jawa", false)
+                    new JudgementGoal("Menjawab beberapa pertanyaan dari Tumenggung Baurekhsa", 5, "Tumenggung Baurekhsa Shoot", false)
                 }), 
 
                  new Mission(new List<Goal>
@@ -2351,7 +2356,7 @@ public class MissionManager : MonoBehaviour
                   new ExplorationGoal("Ikut pejuang masuk ke benteng", 1, new string[] {"Tumenggung Baurekhsa"}, new int[] {-1}, new Story[]{
                         new Story("Sebelum kamu bisa bereaksi, kamu telah ditarik oleh pejuang itu masuk ke Benteng Batavia...", new List<Dialogs>
         {
-           new MainCharacterDialog(true, characterExpression.angry, "Hei, apa yang anda lakukan?", null),
+           new MainCharacterDialog(true, characterExpression.angry, "Hei, apa yang anda lakukan?", new string[]{"Pejuang Jawa"}),
            new NPCDialog("Pejuang Jawa (?)", "Berisik! Kamu masuk saja sana bersama temanmu itu!", null),
            new MainCharacterDialog(true, characterExpression.angry, "Oh anda ini ternyata pejuang palsu...dasar...", null),
           new NPCDialog("T. Baurekhsa", "Player, apa yang kamu lakukan disini? Saya sudah melarang kamu untuk kemari kan?", null),
