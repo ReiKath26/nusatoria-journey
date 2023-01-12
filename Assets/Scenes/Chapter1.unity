@@ -2243,7 +2243,7 @@ MonoBehaviour:
     itemName: 
     itemDesc: 
     itemCount: 0
-  missionNumber: 080000000c000000
+  missionNumber: 0700000011000000
   interactionTitle: 
   interactionDialog: []
   isNpc: 1
@@ -16020,6 +16020,118 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 20, y: 40, z: 25}
   m_Center: {x: 32, y: 20, z: -45}
+--- !u!1001 &408016987
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: f0bb7d7576229b642b7036cd6dc246e4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 336
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f0bb7d7576229b642b7036cd6dc246e4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -561
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f0bb7d7576229b642b7036cd6dc246e4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 211.6
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f0bb7d7576229b642b7036cd6dc246e4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1618
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f0bb7d7576229b642b7036cd6dc246e4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.18128781
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f0bb7d7576229b642b7036cd6dc246e4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f0bb7d7576229b642b7036cd6dc246e4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.9834301
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f0bb7d7576229b642b7036cd6dc246e4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f0bb7d7576229b642b7036cd6dc246e4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f0bb7d7576229b642b7036cd6dc246e4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -200.89
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f0bb7d7576229b642b7036cd6dc246e4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f0bb7d7576229b642b7036cd6dc246e4,
+        type: 3}
+      propertyPath: m_Name
+      value: Tumenggung Baurekhsa Shoot
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f0bb7d7576229b642b7036cd6dc246e4, type: 3}
+--- !u!1 &408016988 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f0bb7d7576229b642b7036cd6dc246e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 408016987}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &408016989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408016988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab0d90a6267184b8bbcb4c4912e1b281, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactName: T. Baurekhsa
+  item:
+    itemSprite: 
+    itemName: 
+    itemDesc: 
+    itemCount: 0
+  missionNumber: 0a0000000c0000000d000000
+  interactionTitle: Tumenggung Baurkehsa adalah pemimpin pasukan Sultan Agung
+  interactionDialog:
+  - Tapi sekarang dia tertangkap, aku hanya berharap nasibnya tidak akan berakhir
+    tragis...
+  isNpc: 1
+--- !u!65 &408016990
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408016988}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 20, y: 30, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &408708853
 GameObject:
   m_ObjectHideFlags: 0
@@ -32024,7 +32136,7 @@ MonoBehaviour:
     itemName: 
     itemDesc: 
     itemCount: 0
-  missionNumber: 0a000000
+  missionNumber: 0f000000
   interactionTitle: 
   interactionDialog: []
   isNpc: 0
@@ -36458,7 +36570,7 @@ MonoBehaviour:
     itemName: 
     itemDesc: 
     itemCount: 0
-  missionNumber: 17000000
+  missionNumber: 1c000000
   interactionTitle: 
   interactionDialog: []
   isNpc: 0
@@ -40594,7 +40706,7 @@ MonoBehaviour:
     itemName: 
     itemDesc: 
     itemCount: 0
-  missionNumber: 0a000000
+  missionNumber: 0f000000
   interactionTitle: 
   interactionDialog: []
   isNpc: 0
@@ -41713,7 +41825,7 @@ MonoBehaviour:
     itemName: 
     itemDesc: 
     itemCount: 0
-  missionNumber: 0a000000
+  missionNumber: 0f000000
   interactionTitle: 
   interactionDialog: []
   isNpc: 0
@@ -44316,7 +44428,7 @@ MonoBehaviour:
     itemName: Lencana Polisi
     itemDesc: Apa ada polisi di sekitar sini?
     itemCount: 1
-  missionNumber: 0e0000000f000000100000001200000013000000
+  missionNumber: 1300000014000000150000001700000018000000
   interactionTitle: Kepala Pedagang ini juga kepala kapal yang akan menuju minang
   interactionDialog:
   - Aku tidak akan lupa semua pertanyaan yang ia tanyakan hanya untuk mengetesku
@@ -46497,7 +46609,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -48}
+  m_AnchoredPosition: {x: 0, y: -47.999985}
   m_SizeDelta: {x: 3840, y: 2286.333}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1402329011
@@ -49458,7 +49570,7 @@ MonoBehaviour:
     itemName: 
     itemDesc: 
     itemCount: 0
-  missionNumber: 1100000016000000
+  missionNumber: 160000001b000000
   interactionTitle: 
   interactionDialog: []
   isNpc: 0
@@ -55590,7 +55702,7 @@ MonoBehaviour:
     itemName: 
     itemDesc: 
     itemCount: 0
-  missionNumber: 000000000300000007000000090000000d000000
+  missionNumber: 00000000030000000b0000000e00000012000000
   interactionTitle: Sultan Agung merupakan raja yang memerintah kerajaan Mataram
   interactionDialog:
   - Wilayah kekuasaannya meliputi sebagian besar wilayah di Pulau Jawa, terutama
@@ -58468,6 +58580,116 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 18.842829, y: 43.809006, z: 26.13895}
   m_Center: {x: -0.000061035156, y: 0, z: 0.00012207031}
+--- !u!1001 &1807639446
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 15060bf95e5e3465aa25baea36357b27,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 335
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 15060bf95e5e3465aa25baea36357b27,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -571.9673
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 15060bf95e5e3465aa25baea36357b27,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 198.6
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 15060bf95e5e3465aa25baea36357b27,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1260.5825
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 15060bf95e5e3465aa25baea36357b27,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.13920997
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 15060bf95e5e3465aa25baea36357b27,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.0014218956
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 15060bf95e5e3465aa25baea36357b27,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.9902601
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 15060bf95e5e3465aa25baea36357b27,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0018924202
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 15060bf95e5e3465aa25baea36357b27,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0.192
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 15060bf95e5e3465aa25baea36357b27,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 196.005
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 15060bf95e5e3465aa25baea36357b27,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0.192
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 15060bf95e5e3465aa25baea36357b27,
+        type: 3}
+      propertyPath: m_Name
+      value: Pejuang Jawa_Gun NPC
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 15060bf95e5e3465aa25baea36357b27, type: 3}
+--- !u!1 &1807639447 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 15060bf95e5e3465aa25baea36357b27,
+    type: 3}
+  m_PrefabInstance: {fileID: 1807639446}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1807639448
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807639447}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 30, z: 10}
+  m_Center: {x: -40, y: 10, z: 0}
+--- !u!114 &1807639449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807639447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab0d90a6267184b8bbcb4c4912e1b281, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactName: Pejuang (?)
+  item:
+    itemSprite: 
+    itemName: 
+    itemDesc: 
+    itemCount: 0
+  missionNumber: 0800000009000000
+  interactionTitle: 
+  interactionDialog: []
+  isNpc: 1
 --- !u!1 &1810416715
 GameObject:
   m_ObjectHideFlags: 0
@@ -62272,7 +62494,7 @@ MonoBehaviour:
     itemName: Peta yang sudah ditandai
     itemDesc: Peta yang sudah ditandai untuk kebutuhan khusus
     itemCount: 1
-  missionNumber: 0b000000
+  missionNumber: 10000000
   interactionTitle: 
   interactionDialog: []
   isNpc: 1
@@ -65995,7 +66217,7 @@ MonoBehaviour:
     itemName: 
     itemDesc: 
     itemCount: 0
-  missionNumber: 130000001400000015000000
+  missionNumber: 18000000190000001a000000
   interactionTitle: 
   interactionDialog: []
   isNpc: 1

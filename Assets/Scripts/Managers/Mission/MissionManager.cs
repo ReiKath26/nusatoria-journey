@@ -258,17 +258,34 @@ public class MissionManager : MonoBehaviour
                     {
                           if(slot.chapterNumber == 1)
                          {
-                            slot.missionNumber = 17;
-                            needReviewType = new questionType[]{questionType.latarBelakang_sa, questionType.seranganSatu_sa, questionType.seranganDua_sa, questionType.akhir_sa};
-          
-                              Story badStory = new Story("Tatapan dari kepala pedagang memberitahumu kalau kamu sudah gagal dalam tes kecilnya", new List<Dialogs>
+                              if(slot.missionNumber == 9)
                               {
-                                   new NPCDialog("Kepala Pedagang", "Bah! Jelas kamu berbohong!", null),
-                                   new NPCDialog("Kepala Pedagang", "Pergi dari sini dan jangan menunjukan wajahmu didepan saya lagi", null),
-                                   new MainCharacterDialog(true, characterExpression.hurt, "Sudahlah tidak ada gunanya aku berdebat dengannya, sebaiknya aku mencari bantuan orang lain", null)
-                               }, false, null);
+                                   slot.missionNumber = 11;
+                                   needReviewType = new questionType[]{questionType.latarBelakang_sa, questionType.seranganSatu_sa};
+          
+                                   Story badStory = new Story("Pejuang itu menggelengkan kepalanya dan pergi", new List<Dialogs>
+                                   {
+                                        new MainCharacterDialog(true, characterExpression.hurt, "Pejuang yang aneh...tapi aku bisa pergi sekarang sepertinya...", null)
+                                   }, false, null);
 
-                               StoryManager.instance.assignStory(badStory);
+                                   StoryManager.instance.assignStory(badStory);
+                              }
+
+                              else
+                              {
+                                   slot.missionNumber = 22;
+                                   needReviewType = new questionType[]{questionType.latarBelakang_sa, questionType.seranganSatu_sa, questionType.seranganDua_sa, questionType.akhir_sa};
+          
+                                   Story badStory = new Story("Tatapan dari kepala pedagang memberitahumu kalau kamu sudah gagal dalam tes kecilnya", new List<Dialogs>
+                                   {
+                                        new NPCDialog("Kepala Pedagang", "Bah! Jelas kamu berbohong!", null),
+                                        new NPCDialog("Kepala Pedagang", "Pergi dari sini dan jangan menunjukan wajahmu didepan saya lagi", null),
+                                        new MainCharacterDialog(true, characterExpression.hurt, "Sudahlah tidak ada gunanya aku berdebat dengannya, sebaiknya aku mencari bantuan orang lain", null)
+                                   }, false, null);
+
+                                   StoryManager.instance.assignStory(badStory);
+                              }
+                           
 
                          }
 
@@ -277,6 +294,7 @@ public class MissionManager : MonoBehaviour
                               if(slot.missionNumber == 13)
                               {
                                    slot.missionNumber = 14;
+                                   needReviewType = new questionType[]{questionType.latarBelakang_padri, questionType.perjuangan_tl, questionType.perjuangan_kp};
                                    Story badStory = new Story("Pasukan itu langsung membawamu dan Yudha paksa tanpa peringatan", new List<Dialogs>
                                    {
                                         new NPCDialog("Pasukan Kaum Padri", "Sudah sekarang kalian ikut denganku, orang-orang mencurigakan", null),
@@ -291,6 +309,7 @@ public class MissionManager : MonoBehaviour
                               else
                               {
                                    slot.missionNumber = 28;
+                                   needReviewType = new questionType[]{questionType.faseKedua_padri, questionType.faseKetiga_padri, questionType.akhirPerang_padri};
                                    Story badStory = new Story("Paman Putri mendengarkanmu dengan seksama, tapi karena beberapa jawabanmu tidak sesuai yang dia ingat, Yudha memperhatikanmu dengan tatapan yang kurang enak", new List<Dialogs>
                                    {
                                         new NPCDialog("Paman Putri", "Hmmm...apakah itu sudah semuanya?", null),
@@ -309,9 +328,26 @@ public class MissionManager : MonoBehaviour
                {
                    if(slot.chapterNumber == 1)
                    {
-                         slot.missionNumber = 16;
+                         if(slot.missionNumber == 9)
+                         {
+                              slot.missionNumber = 10;
 
-                           Story badStory = new Story("Kepala Pedagang nampak ragu...", new List<Dialogs>
+                              Story badStory = new Story("Pejuang itu tampak memikirkan sesuatu...", new List<Dialogs>
+                              {
+                                   new NPCDialog("Pejuang Jawa (?)", "Hmmmm...", null),
+                                   new NPCDialog("Pejuang Jawa (?)", "Baiklah coba sekarang kamu ikut denganku", null),
+                                   new MainCharacterDialog(true, characterExpression.angry, "Kenapa aku harus ikut dengan anda...", null),
+                                    new NPCDialog("Pejuang Jawa (?)", "Tidak usah banyak tanya, ikut saja...", null),
+                               }, false, null);
+
+                               StoryManager.instance.assignStory(badStory);
+                         }
+
+                         else
+                         {
+                              slot.missionNumber = 20;
+
+                              Story badStory = new Story("Kepala Pedagang nampak ragu...", new List<Dialogs>
                               {
                                    new NPCDialog("Kepala Pedagang", "Lumayan sih...", null),
                                    new NPCDialog("Kepala Pedagang", "Tapi ada beberapa yang kamu salah mengerti, aku harus memperbaiki pemahamanmu tentang itu", null),
@@ -319,6 +355,8 @@ public class MissionManager : MonoBehaviour
                                }, false, null);
 
                                StoryManager.instance.assignStory(badStory);
+                         }
+                         
 
                    }
 
@@ -357,7 +395,16 @@ public class MissionManager : MonoBehaviour
 
                    if(slot.chapterNumber == 1)
                    {
-                         slot.missionNumber = 19;
+                         if(slot.missionNumber == 9)
+                         {
+                              slot.missionNumber = 12;
+                         }
+
+                         else
+                         {
+                              slot.missionNumber = 24;
+                         }
+                         
                    }
 
                    else
@@ -389,7 +436,7 @@ public class MissionManager : MonoBehaviour
                          slot.goalNumber = 0;
                          displayGoal();
                     }
-                
+               
                     else
                     {
                          if(slot.chapterNumber == 1)
@@ -500,7 +547,17 @@ public class MissionManager : MonoBehaviour
      {
           if(slot.chapterNumber == 1)
           {
-               if(slot.missionNumber == 19)
+               if(slot.missionNumber == 10)
+               {
+                    slot.missionNumber = 13;
+               }
+
+               else if(slot.missionNumber == 11)
+               {
+                     slot.missionNumber = 14;
+               }
+
+               else if(slot.missionNumber == 19)
                {
                     if(slot.understandingLevel == 2)
                     {
@@ -512,15 +569,15 @@ public class MissionManager : MonoBehaviour
                          slot.missionNumber = 20;
                     }
                }
-               if(slot.missionNumber == 20 || slot.missionNumber == 21 || slot.missionNumber == 22)
+
+               else if(slot.missionNumber == 20 || slot.missionNumber == 21 || slot.missionNumber == 22)
                {
                     slot.missionNumber = 23;
                }
 
                else
-
                {
-                       slot.missionNumber++; 
+                    slot.missionNumber++; 
                }
           }
        
@@ -889,35 +946,35 @@ public class MissionManager : MonoBehaviour
       {
           easyQuestion = new List<Question>
           {
-               new Question("Kepala Pedagang", "Apa yang kamu bisa pelajari dari serangan Sultan Agung?", 
+               new Question("Pertanyaan", "Apa yang kamu bisa pelajari dari serangan Sultan Agung?", 
                new Choice[]
                {
                     new Choice("Untuk tidak menyerah membela apa yang benar", true),
                     new Choice("Untuk selalu mempersiapkan segala sesuatu dengan baik", true),
                     new Choice("Untuk belajar dari kesalahan dan menjadi lebih baik kedepannya", true)
                }, level.easy, questionType.akhir_sa),
-               new Question("Kepala Pedagang", "Apa akibat dari penyerangan Jepara oleh Van den Marct?", 
+               new Question("Pertanyaan", "Apa akibat dari penyerangan Jepara oleh Van den Marct?", 
                new Choice[]
                {
                     new Choice("Mataram mengalami kebakaran", false),
                     new Choice("Mataram mengalami kerugian besar", true),
                     new Choice("Mataram berhasil menangani serangan tersebut", false)
                }, level.easy, questionType.latarBelakang_sa),
-               new Question("Kepala Pedagang", "Apa yang menghalangi cita-cita Sultan Agung?", 
+               new Question("Pertanyaan", "Apa yang menghalangi cita-cita Sultan Agung?", 
                new Choice[]
                {
                     new Choice("Keberadaan Spanyol di tanah Jawa", false),
                     new Choice("Keberadaan Inggris di tanah Jawa", false),
                     new Choice("Keberadaan Belanda di tanah Jawa", true)
                }, level.easy, questionType.latarBelakang_sa),
-               new Question("Kepala Pedagang", "Apa kamu masih ingat apa cita-cita dari Sultan Agung?", 
+               new Question("Pertanyaan", "Apa kamu masih ingat apa cita-cita dari Sultan Agung?", 
                new Choice[]
                {
                     new Choice("Membubarkan keberdaan kongsi dagang VOC", false),
                     new Choice("Menyatukan seluruh rakyatnya", false),
                     new Choice("Menyatukan tanah Jawa dan mengusir bangsa asing", true)
                }, level.easy, questionType.latarBelakang_sa),
-               new Question("Kepala Pedagang", "Apa yang dilakukan J.P. Coen dalam masa kekuasaannya?", 
+               new Question("Pertanyaan", "Apa yang dilakukan J.P. Coen dalam masa kekuasaannya?", 
                new Choice[]
                {
                     new Choice("Membantu warga Mataram", false),
@@ -926,7 +983,7 @@ public class MissionManager : MonoBehaviour
                }, level.easy, questionType.latarBelakang_sa),
 
 
-               new Question("Kepala Pedagang", "Apa yang dilakukan Sultan Agung setelah serangannya tidak berhasil?", 
+               new Question("Pertanyaan", "Apa yang dilakukan Sultan Agung setelah serangannya tidak berhasil?", 
                new Choice[]
                {
                     new Choice("Ia menyerah pada Belanda", false),
@@ -934,7 +991,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Ia mati di medan pertempuran", false)
                }, level.easy, questionType.akhir_sa),
 
-               new Question("Kepala Pedagang", "Siapa yang menyuruh Van den Marct untuk menyerang Jepara?", 
+               new Question("Pertanyaan", "Siapa yang menyuruh Van den Marct untuk menyerang Jepara?", 
                new Choice[]
                {
                     new Choice("J. P. Coen", true),
@@ -942,21 +999,21 @@ public class MissionManager : MonoBehaviour
                     new Choice("Daendels", false)
                }, level.easy, questionType.latarBelakang_sa),
 
-               new Question("Kepala Pedagang", "Apa hasil dari serangan pertama Sultan Agung?", 
+               new Question("Pertanyaan", "Apa hasil dari serangan pertama Sultan Agung?", 
                new Choice[]
                {
                     new Choice("Pasukan Mataram berhasil memukul mundur VOC", false),
                     new Choice("Pasukan Mataram gagal dan terpaksa mundur", true),
                     new Choice("Pasukan Mataram mengadakan perjanjian damai dengan Belandaa", false)
                }, level.easy, questionType.seranganSatu_sa),
-               new Question("Kepala Pedagang", "Apa hasil dari serangan kedua Sultan Agung?", 
+               new Question("Pertanyaan", "Apa hasil dari serangan kedua Sultan Agung?", 
                new Choice[]
                {
                     new Choice("Pasukan Mataram gagal karena wabah dan lumbung perbekalan hancur", true),
                     new Choice("Pasukan Mataram berhasil memukul mundur VOC", false),
                     new Choice("Kerajaan Mataram dikuasai Belanda", false)
                }, level.easy, questionType.seranganDua_sa),
-               new Question("Kepala Pedagang", "Apa yang terjadi setelah Sultan Agung meninggal?", 
+               new Question("Pertanyaan", "Apa yang terjadi setelah Sultan Agung meninggal?", 
                new Choice[]
                {
                     new Choice("Raja yang baru memukul mundur VOC dari Mataram", false),
@@ -968,42 +1025,42 @@ public class MissionManager : MonoBehaviour
 
           mediumQuestion = new List<Question>
           {
-               new Question("Kepala Pedagang", "Kejadian apa yang menjadi penyebab memburuknya hubungan Mataram dan Belanda?", 
+               new Question("Pertanyaan", "Kejadian apa yang menjadi penyebab memburuknya hubungan Mataram dan Belanda?", 
                new Choice[]
                {
                     new Choice("Belanda yang serakah dan ingin memonopoli perdagangan di Mataram", false),
                     new Choice("Terangkatnya J.P. Coen menjadi Gubernur Jendral VOC", false),
                     new Choice("Perintah J.P. Coen pada Van den Marct untuk menyerang Jepara", true)
                }, level.medium, questionType.latarBelakang_sa),
-               new Question("Kepala Pedagang", "Kapan serangan Mataram terhadap VOC pertama kali terjadi?", 
+               new Question("Pertanyaan", "Kapan serangan Mataram terhadap VOC pertama kali terjadi?", 
                new Choice[]
                {
                     new Choice("Agustus 1628", true),
                     new Choice("Oktober 1628", false),
                     new Choice("Desember 1628", false)
                }, level.medium, questionType.seranganSatu_sa),
-               new Question("Kepala Pedagang", "Apa yang terjadi setelah serangan-serangan Sultan Agung?", 
+               new Question("Pertanyaan", "Apa yang terjadi setelah serangan-serangan Sultan Agung?", 
                new Choice[]
                {
                     new Choice("Sultan Agung melancarkan serangan lagi dan menang", false),
                     new Choice("Mataram mulai menurun sepeninggal Sultan Agung", true),
                     new Choice("Mataram tetap berjaya dibawah raja baru sepeninggal Sultan Agung", false)
                }, level.medium, questionType.akhir_sa),
-               new Question("Kepala Pedagang", "Dimana serangan Mataram terhadap VOC pertama kali terjadi?", 
+               new Question("Pertanyaan", "Dimana serangan Mataram terhadap VOC pertama kali terjadi?", 
                new Choice[]
                {
                     new Choice("Batavia", true),
                     new Choice("Cirebon", false),
                     new Choice("Jepara", false)
                }, level.medium, questionType.seranganSatu_sa),
-               new Question("Kepala Pedagang", "Kapan Mataram melancarkan serangan kedua mereka?", 
+               new Question("Pertanyaan", "Kapan Mataram melancarkan serangan kedua mereka?", 
                new Choice[]
                {
                     new Choice("1628", true),
                     new Choice("1629", false),
                     new Choice("1630", false)
                }, level.medium, questionType.seranganDua_sa),
-               new Question("Kepala Pedagang", "Di tahun berapa Sultan Agung meninggal dunia?", 
+               new Question("Pertanyaan", "Di tahun berapa Sultan Agung meninggal dunia?", 
                new Choice[]
                {
                     new Choice("1646", false),
@@ -1011,7 +1068,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("1645", true)
                }, level.medium, questionType.akhir_sa),
 
-               new Question("Kepala Pedagang", "Setelah pasukan Tumenggung Baureksa menyerang Batavia, menyusul pasukan Mataram kedua pada bulan...", 
+               new Question("Pertanyaan", "Setelah pasukan Tumenggung Baureksa menyerang Batavia, menyusul pasukan Mataram kedua pada bulan...", 
                new Choice[]
                {
                     new Choice("September 1628", false),
@@ -1019,21 +1076,21 @@ public class MissionManager : MonoBehaviour
                     new Choice("Desember 1628", false)
                }, level.medium, questionType.seranganSatu_sa),
 
-               new Question("Kepala Pedagang", "Kapan J.P. Coen mempunyai kontrol penuh atas kota Batavia?", 
+               new Question("Pertanyaan", "Kapan J.P. Coen mempunyai kontrol penuh atas kota Batavia?", 
                new Choice[]
                {
                     new Choice("1620", false),
                     new Choice("1619", true),
                     new Choice("1618", false)
                }, level.medium, questionType.latarBelakang_sa),
-               new Question("Kepala Pedagang", "Siapa nama pemimpin pasukan serangan pertama Sultan Agung?", 
+               new Question("Pertanyaan", "Siapa nama pemimpin pasukan serangan pertama Sultan Agung?", 
                new Choice[]
                {
                     new Choice("Tumenggung Baurekhsa", true),
                     new Choice("Tumenggung Prabuwijaya", false),
                     new Choice("Tumenggung Sura Agul Agul", false)
                }, level.medium, questionType.seranganSatu_sa),
-               new Question("Kepala Pedagang", "Kapan tanggal mundurnya Pasukan Mataram pada serangan pertama?", 
+               new Question("Pertanyaan", "Kapan tanggal mundurnya Pasukan Mataram pada serangan pertama?", 
                new Choice[]
                {
                     new Choice("9 Desember 1628", false),
@@ -1045,35 +1102,35 @@ public class MissionManager : MonoBehaviour
 
           hardQuestion = new List<Question>
           {
-               new Question("Kepala Pedagang", "Dimana Pasukan Sultan Agung membangun lumbung perbekalan untuk serangan kedua?", 
+               new Question("Pertanyaan", "Dimana Pasukan Sultan Agung membangun lumbung perbekalan untuk serangan kedua?", 
                new Choice[]
                {
                     new Choice("Batavia dan Bandung", false),
                     new Choice("Cirebon dan Priyangan", true),
                     new Choice("Priyangan dan Jepara", false)
                }, level.hard, questionType.seranganDua_sa),
-               new Question("Kepala Pedagang", "Apa faktor yang menyebabkan kekalahan pasukan Mataram pada serangan pertama?", 
+               new Question("Pertanyaan", "Apa faktor yang menyebabkan kekalahan pasukan Mataram pada serangan pertama?", 
                new Choice[]
                {
                     new Choice("Belanda membakar kapal dari Mataram", false),
                     new Choice("Kekurangan perbekalan", true),
                     new Choice("Tumenggung Baureksha terbunuh", false)
                }, level.hard, questionType.seranganSatu_sa),
-               new Question("Kepala Pedagang", "Apa faktor yang menyebabkan kekalahan pasukan Mataram pada serangan pertama?", 
+               new Question("Pertanyaan", "Apa faktor yang menyebabkan kekalahan pasukan Mataram pada serangan pertama?", 
                new Choice[]
                {
                     new Choice("Belanda memblokade kapal pasukan Mataram", false),
                     new Choice("Adanya mata-mata dari Belanda yang masuk", false),
                     new Choice("Persenjataan Belanda yang lebih modern", true)
                }, level.hard, questionType.seranganSatu_sa),
-               new Question("Kepala Pedagang", "Apa penyebab dari kegagalan serangan kedua?", 
+               new Question("Pertanyaan", "Apa penyebab dari kegagalan serangan kedua?", 
                new Choice[]
                {
                     new Choice("Cuaca yang buruk di medan pertempuran", false),
                     new Choice("Belanda mengambil alih lumbung perbekalan", false),
                     new Choice("Wabah kolera dan malaria ", true)
                }, level.hard, questionType.seranganDua_sa),
-               new Question("Kepala Pedagang", "Nama kaki tangan Belanda yang diminta untuk menyerang Jepara adalah...", 
+               new Question("Pertanyaan", "Nama kaki tangan Belanda yang diminta untuk menyerang Jepara adalah...", 
                new Choice[]
                {
                     new Choice("Van den Bosch", false),
@@ -1082,7 +1139,7 @@ public class MissionManager : MonoBehaviour
                }, level.hard, questionType.latarBelakang_sa),
 
 
-               new Question("Kepala Pedagang", "J. P. Coen berkuasa dari tahun..", 
+               new Question("Pertanyaan", "J. P. Coen berkuasa dari tahun..", 
                new Choice[]
                {
                     new Choice("1618 -1624 dan 1628 - 1629", false),
@@ -1090,7 +1147,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("1620 - 1624 dan 1628 -1630", false)
                }, level.hard, questionType.latarBelakang_sa),
 
-               new Question("Kepala Pedagang", "Apa yang menyebabkan para penguasa di pulau Jawa tidak suka dengan keberadaan J.P. Coen dan VOC?", 
+               new Question("Pertanyaan", "Apa yang menyebabkan para penguasa di pulau Jawa tidak suka dengan keberadaan J.P. Coen dan VOC?", 
                new Choice[]
                {
                     new Choice("Tindakan semena-mena dan eksploitasi hasil bumi", true),
@@ -1098,14 +1155,14 @@ public class MissionManager : MonoBehaviour
                     new Choice("Dianggap sebagai orang asing dan tidak berhak ada di Nusantara", false)
                }, level.hard, questionType.latarBelakang_sa),
 
-               new Question("Kepala Pedagang", "Siapa nama dua bersaudara yang menyusul pasukan Tumenggung Baureksa pada serangan pertama?", 
+               new Question("Pertanyaan", "Siapa nama dua bersaudara yang menyusul pasukan Tumenggung Baureksa pada serangan pertama?", 
                new Choice[]
                {
                     new Choice("Kiai Dipati Mandurojo dan Upa Santa", true),
                     new Choice("Kiai Dipati Mandurojo dan Upa Santo", false),
                     new Choice("Kiai Bupati Mandurojo dan Upa Santo", false)
                }, level.hard, questionType.seranganSatu_sa),
-               new Question("Kepala Pedagang", "Apa yang terjadi setelah serangan pertama Mataram gagal?", 
+               new Question("Pertanyaan", "Apa yang terjadi setelah serangan pertama Mataram gagal?", 
                new Choice[]
                {
                     new Choice("Mataram terpaksa mundur", true),
@@ -1122,7 +1179,7 @@ public class MissionManager : MonoBehaviour
           {
                 easyQuestion = new List<Question>
           {
-               new Question("Pasukan", "Siapa nama dari orang Belanda yang mengadakan perjanjian persahabatan dengan kaum Adat?",
+               new Question("Pertanyaan", "Siapa nama dari orang Belanda yang mengadakan perjanjian persahabatan dengan kaum Adat?",
                new Choice[]
                {
                     new Choice("Jack Du Puy", false),
@@ -1130,7 +1187,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Jamie Du Puy", false)
                }, level.easy, questionType.latarBelakang_padri),
 
-               new Question("Pasukan", "Apa yang terjadi setelah Simawang diduduki Belanda?",
+               new Question("Pertanyaan", "Apa yang terjadi setelah Simawang diduduki Belanda?",
                new Choice[]
                {
                     new Choice("Kaum Padri tidak merespons apa-apa", false),
@@ -1138,7 +1195,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Kaum Padri menentang keras tindakan tersebut", true)
                }, level.easy, questionType.latarBelakang_padri),
 
-               new Question("Pasukan", "Siapa nama tuanku yang memimpin perjuangan di Lintau?",
+               new Question("Pertanyaan", "Siapa nama tuanku yang memimpin perjuangan di Lintau?",
                new Choice[]
                {
                     new Choice("Tuanku Imam Bonjol", false),
@@ -1146,7 +1203,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Tuanku Nan Renceh", false)
                }, level.easy, questionType.perjuangan_tl),
 
-               new Question("Pasukan", "Berapa banyak pasukan yang dikerahkan Tuanku Lintau untuk mengadakan serangan?",
+               new Question("Pertanyaan", "Berapa banyak Pasukan yang dikerahkan Tuanku Lintau untuk mengadakan serangan?",
                new Choice[]
                {
                     new Choice("15.000 sampai 20.000", false),
@@ -1154,7 +1211,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("20.000 sampai 25.000", true)
                }, level.easy, questionType.perjuangan_tl),
 
-               new Question("Pasukan", "James Du Puy mengadakan perjanjian persahabatan dengan tokoh Adat. yaitu...",
+               new Question("Pertanyaan", "James Du Puy mengadakan perjanjian persahabatan dengan tokoh Adat. yaitu...",
                new Choice[]
                {
                     new Choice("Tuanku Suruaso dan 12 Penghulu Minangkabau", false),
@@ -1162,7 +1219,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Tuanku Suruaso dan 14 Penghulu Minangkabau", true)
                }, level.easy, questionType.latarBelakang_padri),
 
-               new Question("Pasukan", "Dimana Tuanku Nan Renceh memimpin pasukannya?",
+               new Question("Pertanyaan", "Dimana Tuanku Nan Renceh memimpin pasukannya?",
                new Choice[]
                {
                     new Choice("Baso", true),
@@ -1170,7 +1227,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Lintau", false)
                }, level.easy, questionType.latarBelakang_padri),
 
-               new Question("Pasukan", "Berapa pasukan yang meninggal setelah serangan Tuanku Lintau?",
+               new Question("Pertanyaan", "Berapa pasukan yang meninggal setelah serangan Tuanku Lintau?",
                new Choice[]
                {
                     new Choice("150 orang", false),
@@ -1178,7 +1235,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("350 orang", true)
                }, level.easy, questionType.perjuangan_tl),
 
-               new Question("Pasukan", "Bagaimana sikap Kaum Padri pada Kaum Adat pada awalnya?",
+               new Question("Pertanyaan", "Bagaimana sikap Kaum Padri pada Kaum Adat pada awalnya?",
                new Choice[]
                {
                     new Choice("Mendukung apa yang Kaum Adat lakukan", false),
@@ -1186,7 +1243,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Biasa saja terhadap apa yang Kaum Adat lakukan", false)
                }, level.easy, questionType.perjuangan_tl),
 
-               new Question("Pasukan", "Berapa pasukan Eropa termasuk kaum Adat yang dipersiapkan oleh Belanda untuk melawan serangan Tuanku Lintau?",
+               new Question("Pertanyaan", "Berapa pasukan Eropa termasuk kaum Adat yang dipersiapkan oleh Belanda untuk melawan serangan Tuanku Lintau?",
                new Choice[]
                {
                     new Choice("100 serdadu Eropa ", false),
@@ -1196,7 +1253,7 @@ public class MissionManager : MonoBehaviour
           };
                 mediumQuestion = new List<Question>
                 { 
-                new Question("Pasukan", "Apa penyebab kaum Adat dan Kaum Padri bertentangan?",
+                new Question("Pertanyaan", "Apa penyebab kaum Adat dan Kaum Padri bertentangan?",
                 new Choice[]
                 {
                     new Choice("Kaum Adat bersikap kurang ajar terhadap Kaum Padri", false),
@@ -1204,7 +1261,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Kaum Padri mengajarkan pembaruan praktik Islam", false)
                 }, level.medium, questionType.latarBelakang_padri),
 
-                new Question("Pasukan", "Kapan perjanjian persahabatan antara Belanda dan kaum Adat terjadi?",
+                new Question("Pertanyaan", "Kapan perjanjian persahabatan antara Belanda dan kaum Adat terjadi?",
                 new Choice[]
                 {
                     new Choice("10 April 1821", false),
@@ -1212,7 +1269,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("10 Februari 1821", true)
                 }, level.medium, questionType.latarBelakang_padri),
 
-                new Question("Pasukan", "Pada tahun berapa ya Perang Padri mulai?",
+                new Question("Pertanyaan", "Pada tahun berapa ya Perang Padri mulai?",
                 new Choice[]
                 {
                     new Choice("1820", false),
@@ -1220,7 +1277,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("1822", false)
                 }, level.medium, questionType.latarBelakang_padri),
 
-                new Question("Pasukan", "Hasil dari serangan Tuanku Lintau adalah...",
+                new Question("Pertanyaan", "Hasil dari serangan Tuanku Lintau adalah...",
                 new Choice[]
                 {
                     new Choice("Tuanku Lintau menang dari pasukan Belanda", false),
@@ -1228,7 +1285,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Tuanku Lintau mundur ke Lintau", true)
                 }, level.medium, questionType.perjuangan_tl),
 
-                new Question("Pasukan", "Apa saja yang dilakukan oleh Kaum Adat yang dilarang oleh ajaran Islam?",
+                new Question("Pertanyaan", "Apa saja yang dilakukan oleh Kaum Adat yang dilarang oleh ajaran Islam?",
                 new Choice[]
                 {
                     new Choice("Judi, memelihara ayam, dan minum-minuman keras", false),
@@ -1236,7 +1293,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Judi, sabung ayam, dan minum-minuman keras", true)
                 }, level.medium, questionType.latarBelakang_padri),
 
-                new Question("Pasukan", "James Du Puy diangkat menjadi residen di Minangkabau pada tahun...",
+                new Question("Pertanyaan", "James Du Puy diangkat menjadi residen di Minangkabau pada tahun...",
                 new Choice[]
                 {
                     new Choice("1821", true),
@@ -1244,7 +1301,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("1823", false)
                 }, level.medium, questionType.latarBelakang_padri),
 
-                new Question("Pasukan", "Perjanjian Masang dibuat karena...",
+                new Question("Pertanyaan", "Perjanjian Masang dibuat karena...",
                 new Choice[]
                 {
                     new Choice("Belanda merasa terdesak dengan kaum Padri", true),
@@ -1252,7 +1309,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Belanda menginginkan persahabatan dengan kaum Padri", false)
                 }, level.medium, questionType.perjuangan_kp),
 
-                new Question("Pasukan", "Fase pertama Perang Padri terjadi dari tahun sampai tahun berapa?",
+                new Question("Pertanyaan", "Fase pertama Perang Padri terjadi dari tahun sampai tahun berapa?",
                 new Choice[]
                 {
                     new Choice("1821 - 1824", false),
@@ -1263,7 +1320,7 @@ public class MissionManager : MonoBehaviour
 
                 hardQuestion = new List<Question>
                 {
-               new Question("Pasukan", "Apa nama wilayah yang berhasil diduduki oleh Belanda karena bantuan kaum Adat?",
+               new Question("Pertanyaan", "Apa nama wilayah yang berhasil diduduki oleh Belanda karena bantuan kaum Adat?",
                 new Choice[]
                {
                     new Choice("Sipinang", false),
@@ -1271,7 +1328,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Simawang", true)
                }, level.hard, questionType.latarBelakang_padri),
 
-               new Question("Pasukan", "Apa yang dilakukan kaum Padri pada September 1821?",
+               new Question("Pertanyaan", "Apa yang dilakukan kaum Padri pada September 1821?",
                 new Choice[]
                {
                     new Choice("Bekerja sama dengan Belanda untuk mengalahkan kaum Adat", false),
@@ -1279,7 +1336,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Menyerang pos-pos patroli Belanda di berbagai tempat", true)
                }, level.hard, questionType.perjuangan_kp),
 
-               new Question("Pasukan", "Berapa pasukan pribumi yang dipersiapkan oleh Belanda untuk melawan serangan Tuanku Lintau?",
+               new Question("Pertanyaan", "Berapa pasukan pribumi yang dipersiapkan oleh Belanda untuk melawan serangan Tuanku Lintau?",
                 new Choice[]
                {
                     new Choice("30.000 pasukan orang pribumi termasuk kaum Adat", false),
@@ -1287,7 +1344,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("10.000 pasukan pribumi termasuk kaum Adat", true)
                }, level.hard, questionType.perjuangan_tl),
 
-               new Question("Pasukan", "Apa yang terjadi setelah perjanjian Masang ya?",
+               new Question("Pertanyaan", "Apa yang terjadi setelah perjanjian Masang ya?",
                 new Choice[]
                {
                     new Choice("Belanda menepati perjanjiannya", false),
@@ -1295,7 +1352,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Belanda memanfaatkan perdamaian untuk menduduki daerah lain", true)
                }, level.hard, questionType.perjuangan_kp),
 
-               new Question("Pasukan", "Apa akibat dari ditangkapnya Tuanku Mensiangan?",
+               new Question("Pertanyaan", "Apa akibat dari ditangkapnya Tuanku Mensiangan?",
                 new Choice[]
                {
                     new Choice("Kaum Padri meminta Belanda untuk menepati janjinya", false),
@@ -1303,7 +1360,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Kaum Padri menyatakan pembatalan kesepakatan dalam Perjanjian Masang", true)
                }, level.hard, questionType.perjuangan_kp),
 
-               new Question("Pasukan", "Apa yang terjadi pada tanggal 10 Februari 1821?",
+               new Question("Pertanyaan", "Apa yang terjadi pada tanggal 10 Februari 1821?",
                 new Choice[]
                {
                     new Choice("Tuanku Lintau melakukan penyerangan pada Belanda", false),
@@ -1311,7 +1368,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Perjanjian damai antara Belanda dan Kaum Padri", false)
                }, level.hard, questionType.latarBelakang_padri),
 
-               new Question("Pasukan", "Pada September 1822 kaum Padri berhasil mengusir Belanda dari...",
+               new Question("Pertanyaan", "Pada September 1822 kaum Padri berhasil mengusir Belanda dari...",
                 new Choice[]
                {
                     new Choice("Sungai Puar, Duduk Sigandang, dan Tajong Alam", false),
@@ -1319,7 +1376,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Sungai Puar, Duduk Sigandang, dan Tanjung Alam", false)
                }, level.hard, questionType.perjuangan_kp),
 
-               new Question("Pasukan", "Apa yang terjadi di Kapau pada tahun 1823?",
+               new Question("Pertanyaan", "Apa yang terjadi di Kapau pada tahun 1823?",
                 new Choice[]
                {
                     new Choice("Pasukan Padri mengalahkan Pasukan Kaum Adat", false),
@@ -1333,7 +1390,7 @@ public class MissionManager : MonoBehaviour
           {
                easyQuestion = new List<Question>
                {
-               new Question("Yudha", "Imam Bonjol dibawa ke Batavia dan akhirnya dibuang ke...",
+               new Question("Pertanyaan", "Imam Bonjol dibawa ke Batavia dan akhirnya dibuang ke...",
                new Choice[]
                {
                     new Choice("Cirebon", false),
@@ -1341,7 +1398,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Cianjur", true)
                }, level.easy, questionType.akhirPerang_padri),
 
-               new Question("Yudha", "Setelah bersatu, akhirnya kaum Adat dan Kaum Padri memutuskan untuk...",
+               new Question("Pertanyaan", "Setelah bersatu, akhirnya kaum Adat dan Kaum Padri memutuskan untuk...",
                new Choice[]
                {
                     new Choice("Bergerak dan menyerang pos-pos tentara Belanda", true),
@@ -1349,7 +1406,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Melakukan perang gerilya", false)
                }, level.easy, questionType.faseKetiga_padri),
 
-               new Question("Yudha", "Belanda pada fase ketiga, ingin menguasai suatu benteng yang ada di Lintau yang bernama...",
+               new Question("Pertanyaan", "Belanda pada fase ketiga, ingin menguasai suatu benteng yang ada di Lintau yang bernama...",
                new Choice[]
                {
                     new Choice("Benteng Mataram", false),
@@ -1357,7 +1414,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Benteng Malapalam", false)
                }, level.easy, questionType.faseKetiga_padri),
 
-               new Question("Yudha", "Pelajaran apa yang bisa dipetik dari peristiwa ini adalah...",
+               new Question("Pertanyaan", "Pelajaran apa yang bisa dipetik dari peristiwa ini adalah...",
                new Choice[]
                {
                     new Choice("Pantang menyerah meski terpojok", true),
@@ -1365,7 +1422,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Belajar dari masa lalu dan tidak mengulangi kesalahan yang sama", true)
                }, level.easy, questionType.akhirPerang_padri),
 
-               new Question("Yudha", "Belanda membuat seseorang membujuk para pemuka kaum Padri untuk berdamai, yaitu...",
+               new Question("Pertanyaan", "Belanda membuat seseorang membujuk para pemuka kaum Padri untuk berdamai, yaitu...",
                new Choice[]
                {
                     new Choice("Rafaiman Ajufri", false),
@@ -1373,7 +1430,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Sulaiman Aljufri", true)
                }, level.easy, questionType.faseKedua_padri),
 
-               new Question("Yudha", "Pada tahun 1831, Gillavary digantikan oleh seseorang yang bernama...",
+               new Question("Pertanyaan", "Pada tahun 1831, Gillavary digantikan oleh seseorang yang bernama...",
                new Choice[]
                {
                     new Choice("Jacob Elout", true),
@@ -1381,7 +1438,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("James Elout", false)
                }, level.easy, questionType.faseKetiga_padri),
 
-               new Question("Yudha", "Pada tahun 1832 Belanda semakin ofensif pada kaum Padri karena...",
+               new Question("Pertanyaan", "Pada tahun 1832 Belanda semakin ofensif pada kaum Padri karena...",
                new Choice[]
                {
                     new Choice("Datangnya bantuan dari Belanda", false),
@@ -1389,7 +1446,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Datangnya bantuan dari Inggris", false)
                }, level.easy, questionType.faseKetiga_padri),
 
-               new Question("Yudha", "Sebelum diasingkan, Imam Bonjol sempat dibawa ke tempat kekuasaan Belanda di...",
+               new Question("Pertanyaan", "Sebelum diasingkan, Imam Bonjol sempat dibawa ke tempat kekuasaan Belanda di...",
                new Choice[]
                {
                     new Choice("Batavia", true),
@@ -1397,7 +1454,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Jepara", false)
                }, level.easy, questionType.akhirPerang_padri),
 
-               new Question("Yudha", "Benteng pertahanan terakhir Kaum Padri bernama...",
+               new Question("Pertanyaan", "Benteng pertahanan terakhir Kaum Padri bernama...",
                new Choice[]
                {
                     new Choice("Benteng Lintau", false),
@@ -1405,7 +1462,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Benteng Bonjol", true)
                }, level.easy, questionType.faseKetiga_padri),
 
-               new Question("Yudha", "Nama pengganti dari Jacob Elout yang menyerang pos-pos pertahanan Padri adalah",
+               new Question("Pertanyaan", "Nama pengganti dari Jacob Elout yang menyerang pos-pos pertahanan Padri adalah",
                new Choice[]
                {
                     new Choice("Frank", false),
@@ -1417,7 +1474,7 @@ public class MissionManager : MonoBehaviour
 
                mediumQuestion = new List<Question>
                {
-               new Question("Yudha", "Belanda akhirnya merasa tersudut dengan kaum Adat dan Padri yang bersatu sehingga mereka membuat janji damai dalam bentuk...",
+               new Question("Pertanyaan", "Belanda akhirnya merasa tersudut dengan kaum Adat dan Padri yang bersatu sehingga mereka membuat janji damai dalam bentuk...",
                new Choice[]
                {
                     new Choice("Plakat Padang", false),
@@ -1425,7 +1482,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Plakat Panjang", true)
                 }, level.medium, questionType.faseKetiga_padri),
 
-               new Question("Yudha", "Pada fase ketiga perang padri, pertahanan terakhir kaum Padri berada di tangan...",
+               new Question("Pertanyaan", "Pada fase ketiga perang padri, pertahanan terakhir kaum Padri berada di tangan...",
                new Choice[]
                {
                     new Choice("Tuanku Nan Renceh", false),
@@ -1433,7 +1490,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Tuanku Imam Bonjol", true)
                 }, level.medium, questionType.faseKetiga_padri),
 
-               new Question("Yudha", "Perjanjian Padang terjadi pada...",
+               new Question("Pertanyaan", "Perjanjian Padang terjadi pada...",
                new Choice[]
                {
                     new Choice("15 Oktober 1825", false),
@@ -1441,7 +1498,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("15 November 1825", true)
                 }, level.medium, questionType.faseKedua_padri),
 
-               new Question("Yudha", "Apa yang Belanda lakukan di fase kedua perang Padri?",
+               new Question("Pertanyaan", "Apa yang Belanda lakukan di fase kedua perang Padri?",
                new Choice[]
                {
                     new Choice("Belanda ingin berperang melawan kaum Padri", false),
@@ -1449,7 +1506,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Belanda ingin memutus kerjasamanya dengan kaum Adat", false)
                 }, level.medium, questionType.faseKedua_padri),
 
-               new Question("Yudha", "Pemimpin pasukan Belanda yang menyerang nagari di Ampek Angkek adalah...",
+               new Question("Pertanyaan", "Pemimpin pasukan Belanda yang menyerang nagari di Ampek Angkek adalah...",
                new Choice[]
                {
                     new Choice("Gillavary", false),
@@ -1457,7 +1514,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Francis", true)
                 }, level.medium, questionType.faseKetiga_padri),
 
-               new Question("Yudha", "Apa syarat yang diajukan Imam Bonjol ketika Belanda mengajukan perjanjian damai dengannya?",
+               new Question("Pertanyaan", "Apa syarat yang diajukan Imam Bonjol ketika Belanda mengajukan perjanjian damai dengannya?",
                new Choice[]
                {
                     new Choice("Agar Belanda pergi dari Nusantara", false),
@@ -1465,7 +1522,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Agar Belanda tidak mendukung kaum Adat", false)
                 }, level.medium, questionType.faseKedua_padri),
           
-               new Question("Yudha", "Nama nagari yang diserang Belanda setelah persatuan antara kaum padri dan kaum adat adalah...",
+               new Question("Pertanyaan", "Nama nagari yang diserang Belanda setelah persatuan antara kaum padri dan kaum adat adalah...",
                new Choice[]
                {
                     new Choice("Ampu Angkuk", false),
@@ -1473,7 +1530,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Ampek Angkek", true)
                 }, level.medium, questionType.faseKetiga_padri),
 
-               new Question("Yudha", "Siasat apa yang dipakai Francis untuk menangkap Imam Bonjol yang lolos dari pengepungan?",
+               new Question("Pertanyaan", "Siasat apa yang dipakai Francis untuk menangkap Imam Bonjol yang lolos dari pengepungan?",
                new Choice[]
                {
                     new Choice("Tipu muslihat menawarkan perjanjian damai", true),
@@ -1485,7 +1542,7 @@ public class MissionManager : MonoBehaviour
 
                 hardQuestion = new List<Question>
                 {
-               new Question("Yudha", "Benteng di perbukitan dekat Bonjol jatuh ke tangan Belanda pada bulan...",
+               new Question("Pertanyaan", "Benteng di perbukitan dekat Bonjol jatuh ke tangan Belanda pada bulan...",
                new Choice[]
                {
                     new Choice("Juni 1836", false),
@@ -1493,7 +1550,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Agustus 1835", true)
                }, level.hard, questionType.faseKetiga_padri),
 
-               new Question("Yudha", "Kota tempat Belanda menyerang Kaum Padri bernama...",
+               new Question("Pertanyaan", "Kota tempat Belanda menyerang Kaum Padri bernama...",
                new Choice[]
                {
                     new Choice("Koto Tuo", true),
@@ -1501,7 +1558,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Minangkabau", false)
                }, level.hard, questionType.faseKetiga_padri),
 
-               new Question("Yudha", "Akhirnya pada tanggal 16 Agustus 1837, Benteng Bonjol..",
+               new Question("Pertanyaan", "Akhirnya pada tanggal 16 Agustus 1837, Benteng Bonjol..",
                new Choice[]
                {
                     new Choice("Berhasil dipertahanakan dari ancaman Belanda", false),
@@ -1509,7 +1566,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Ditinggalkan oleh Belanda", false)
                }, level.hard, questionType.faseKetiga_padri),
 
-               new Question("Yudha", "Yang mana yang bukan isi dari Perjanjian Padang? ",
+               new Question("Pertanyaan", "Yang mana yang bukan isi dari Perjanjian Padang? ",
                new Choice[]
                {
                     new Choice("Praktik adu ayam akan terus dilanjutkan", true),
@@ -1517,7 +1574,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Belanda dan Kaum Padri akan melindungi para pedagang dan orang-orang dalam perjalanan", false)
                }, level.hard, questionType.faseKedua_padri),
 
-               new Question("Yudha", "Berikut ini merupakan tempat yang diakui sebagai kekuasaan pemimpin padri dalam perjanjian padang adalah...",
+               new Question("Pertanyaan", "Berikut ini merupakan tempat yang diakui sebagai kekuasaan pemimpin padri dalam perjanjian padang adalah...",
                new Choice[]
                {
                     new Choice("Sigandang", true),
@@ -1525,7 +1582,7 @@ public class MissionManager : MonoBehaviour
                     new Choice("Ciremai", false)
                }, level.hard, questionType.faseKedua_padri),
 
-               new Question("Yudha", "Plakat Panjang adalah",
+               new Question("Pertanyaan", "Plakat Panjang adalah",
                new Choice[]
                {
                     new Choice("Janji khidmat simbol tidak akan ada lagi perang antara Belanda dan Kaum Padri", true),
@@ -1545,9 +1602,29 @@ public class MissionManager : MonoBehaviour
                 {
                case 0:
                {
-                    randomQuestion(5, easyQuestion);
-                    randomQuestion(5, mediumQuestion);
-                    randomQuestion(5, hardQuestion);
+                    if(slot.chapterNumber == 1)
+                    {
+                         if(slot.missionNumber == 9)
+                         {
+                              randomQuestion(2, easyQuestion);
+                              randomQuestion(2, mediumQuestion);
+                              randomQuestion(1, hardQuestion);
+                         }
+
+                         else
+                         {
+                              randomQuestion(3, easyQuestion);
+                              randomQuestion(4, mediumQuestion);
+                              randomQuestion(3, hardQuestion);
+                         }
+                    }
+
+                    else
+                    {
+                         randomQuestion(5, easyQuestion);
+                         randomQuestion(5, mediumQuestion);
+                         randomQuestion(5, hardQuestion);
+                    }
                     break;
                }
               
@@ -1605,9 +1682,39 @@ public class MissionManager : MonoBehaviour
           for(int i=0; i<num;i++)
           {
                int index = -1;
-               index = Random.Range(0, toBeRolled.Count);
-               questionDataList.Add(toBeRolled[index]);
-               toBeRolled.RemoveAt(index);
+              
+               if(slot.chapterNumber == 1)
+               {
+                    if(slot.missionNumber == 9)
+                    {
+                         index = 0;
+                         while(toBeRolled[index].getQuestionType() != questionType.latarBelakang_sa && toBeRolled[index].getQuestionType() != questionType.seranganSatu_sa)
+                         {
+                              index = Random.Range(0, toBeRolled.Count);
+                         }
+
+                         questionDataList.Add(toBeRolled[index]);
+                         toBeRolled.RemoveAt(index);
+
+                    }
+
+                    else
+                    {
+                         index = Random.Range(0, toBeRolled.Count);
+                         questionDataList.Add(toBeRolled[index]);
+                         toBeRolled.RemoveAt(index);
+                    }
+                    
+               }
+
+               else
+               {
+                    index = Random.Range(0, toBeRolled.Count);
+                    questionDataList.Add(toBeRolled[index]);
+                    toBeRolled.RemoveAt(index);
+               }
+               
+              
           }
    }
 
@@ -2183,18 +2290,32 @@ public class MissionManager : MonoBehaviour
 
                 new Mission(new List<Goal>
                 {
-                    new JudgementGoal("Menjawab beberapa pertanyaan dari pejuang jawa", 10, "Pejuang Jawa", true)
+                    new JudgementGoal("Menjawab beberapa pertanyaan dari pejuang jawa", 5, "Pejuang Jawa", true)
                 }), 
 
                   new Mission(new List<Goal>
                 {
-                    new ReviewGoal("Mereview kembali beberapa kejadian bersama Tumenggung Baurekhsa", 1, "Tumenggung Baurekhsa", new Story[]{
+                    new ExplorationGoal("Ikut pejuang jawa masuk ke Benteng Batavia", 1, new string[]{"Tumenggung Baurekhsa Shoot"}, new int[]{-1}, new Story[]{
+                         new Story("Kamu dibawa masuk ke Benteng Batavia dan melihat Tumenggung Baurekhsa yang nampak seperti ditawan disana...", new List<Dialogs>
+                         {
+                              new MainCharacterDialog(true, characterExpression.angry, "Hei, apa yang anda lakukan?", null),
+                              new NPCDialog("Pejuang Jawa (?)", "Berisik! Kamu masuk saja sana bersama temanmu itu!", null),
+                              new MainCharacterDialog(true, characterExpression.angry, "Oh anda ini ternyata pejuang palsu...dasar...", null),
+                              new NPCDialog("T. Baurekhsa", "Player, apa yang kamu lakukan disini? Saya sudah melarang kamu untuk kemari kan?", null),
+                              new MainCharacterDialog(true, characterExpression.angry, "Aku dijebak oleh seseorang yang berpakaian sebagai pasukan anda...", null),
+                              new MainCharacterDialog(true, characterExpression.shook, "Anda sendiri kenapa masih disini pak? Apa anda...", null),
+                              new NPCDialog("T. Baurekhsa", "....", null),
+                              new MainCharacterDialog(true, characterExpression.sad, "Bolehkah saya mengetahui apa yang terjadi?", null),
+                              new NPCDialog("T. Baurekhsa", "Baiklah, saya bisa mereview beberapa kejadiannya untuk kamu, Player...", null),
+                         }, false, "Judgement")
+                    }, true),
+                    new ReviewGoal("Mereview kembali beberapa kejadian bersama Tumenggung Baurekhsa", 1, "Tumenggung Baurekhsa Shoot", new Story[]{
                         new Story("Tumenggung Baurekhsa selesai memberikan review singkat...", new List<Dialogs>
                         {
                                new NPCDialog("Tumenggung Baurekhsa", "Sekarang kamu seharusnya sudah lebih paham...", null),
                                new NPCDialog("Tumenggung Baurekhsa", "Bagaimana sedikit kuis untuk mengisi waktu?", null),
                               new MainCharacterDialog(true, characterExpression.hurt, "Baiklah, aku rasa tidak masalah...", null)
-                        }, false, "Judgement")
+                        }, false, null)
                     }),
                     new JudgementGoal("Menjawab beberapa pertanyaan dari pejuang jawa", 5, "Pejuang Jawa", false)
                 }), 
@@ -2227,9 +2348,12 @@ public class MissionManager : MonoBehaviour
 
                 new Mission(new List<Goal>
                 {
-                  new ExplorationGoal("Ikut pejuang palsu tersebut ke benteng", 1, new string[] {"Tumenggung Baurekhsa"}, new int[] {-1}, new Story[]{
-                        new Story("Sebelum kamu bisa bereaksi, kamu telah ditarik oleh pejuang yang ternyata kaki tangan Belanda itu dan kamu ditaruh dipinggir benteng bersama dengan Tumenggung Baurekhsa yang ada disana...", new List<Dialogs>
+                  new ExplorationGoal("Ikut pejuang masuk ke benteng", 1, new string[] {"Tumenggung Baurekhsa"}, new int[] {-1}, new Story[]{
+                        new Story("Sebelum kamu bisa bereaksi, kamu telah ditarik oleh pejuang itu masuk ke Benteng Batavia...", new List<Dialogs>
         {
+           new MainCharacterDialog(true, characterExpression.angry, "Hei, apa yang anda lakukan?", null),
+           new NPCDialog("Pejuang Jawa (?)", "Berisik! Kamu masuk saja sana bersama temanmu itu!", null),
+           new MainCharacterDialog(true, characterExpression.angry, "Oh anda ini ternyata pejuang palsu...dasar...", null),
           new NPCDialog("T. Baurekhsa", "Player, apa yang kamu lakukan disini? Saya sudah melarang kamu untuk kemari kan?", null),
             new MainCharacterDialog(true, characterExpression.angry, "Aku dijebak oleh seseorang yang berpakaian sebagai pasukan anda...", null),
              new MainCharacterDialog(true, characterExpression.shook, "Anda sendiri kenapa masih disini pak? Apa anda...", null),
@@ -2469,7 +2593,7 @@ public class MissionManager : MonoBehaviour
 
                   new Mission(new List<Goal>
                 {
-                    new JudgementGoal("Menyelesaikan tantangan Judgement dari Kepala Pedagang", 15, "Kepala Pedagang NPC", true)
+                    new JudgementGoal("Menyelesaikan tantangan Judgement dari Kepala Pedagang", 10, "Kepala Pedagang NPC", true)
                 }), 
 
                   new Mission(new List<Goal>
