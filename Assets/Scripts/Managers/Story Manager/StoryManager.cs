@@ -27,19 +27,11 @@ public class StoryManager : MonoBehaviour
 
     public static StoryManager instance;
 
-    private bool beginningTutorial = true;
+    private bool beginningTutorial;
 
     void Start()
     {
-       if(FindInactiveObject.instance == null)
-     {
-          Debug.Log("It's null!");
-     }
-
-     else
-     {
-        Debug.Log("tdk Null");
-     }
+        beginningTutorial = true;
         instance = this;
 
          SaveSlots slot = SaveHandler.instance.loadSlot(PlayerPrefs.GetInt("choosenSlot"));
@@ -411,7 +403,7 @@ public class StoryManager : MonoBehaviour
         foreach( char c in line.ToCharArray())
         {
             dialogTextHolder.text += c;
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.005f);
         }
          nextButton.SetActive(true);
         AudioManager.instance.Stop("Typewritter");

@@ -2158,7 +2158,7 @@ public class MissionManager : MonoBehaviour
          new NPCDialog("Sultan Agung", "Terkait itu, kamu bisa temui pemimpin pasukan saya, Tumenggung Baurekhsa", null),
          new NPCDialog("Sultan Agung", "Seharusnya dia sekarang ada di gudang perbekalan di dekat Pelabuhan Jepara", null),
          new NPCDialog("Sultan Agung", "Coba kamu kesana dan nanti ikuti saja instruksi darinya", null),
-         new MainCharacterDialog(true, characterExpression.neutral, "Baik, Sultan!", null),
+         new MainCharacterDialog(true, characterExpression.neutral, "Baik, Sultan!", new string[]{"Tumenggung Baurekhsa"}),
         }, false, null)
                     }, true)
                 }), 
