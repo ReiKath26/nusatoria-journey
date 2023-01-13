@@ -190,7 +190,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: e218aa8503f3d412c9959035d5a5a051
-    m_Address: Assets/Items/chest-key.png
+    m_Address: key
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

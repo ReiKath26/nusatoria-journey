@@ -35,4 +35,9 @@ public class Review
     {
         done = true;
     }
+
+    public void resetReview()
+    {
+        done = false;
+    }
 }

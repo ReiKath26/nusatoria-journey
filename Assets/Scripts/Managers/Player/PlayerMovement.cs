@@ -15,34 +15,37 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        SaveSlots slot = SaveHandler.instance.loadSlot(PlayerPrefs.GetInt("choosenSlot"));
         RaycastHit hit;
         Ray downRay = new Ray(transform.position, -Vector3.up);
 
         if(Physics.Raycast(downRay, out hit))
         {
+           
+                if(follow.getAngle() >= 90 && follow.getAngle() < 180)
+                {
+                    
+                    _rigidBody.velocity = new Vector3(joystick.Vertical * _movementSpeed, hit.distance > 0 ? -hit.distance : 0, -joystick.Horizontal * _movementSpeed);
+                }
+
+                else if(follow.getAngle() >= 180 && follow.getAngle() < 270)
+                {
+                    _rigidBody.velocity = new Vector3(-joystick.Horizontal * _movementSpeed, hit.distance > 0 ? -hit.distance : 0, -joystick.Vertical * _movementSpeed);
+                }
+
+                else if(follow.getAngle() >= 270 && follow.getAngle() < 360)
+                {
+                    _rigidBody.velocity = new Vector3(-joystick.Vertical * _movementSpeed, hit.distance > 0 ? -hit.distance : 0, joystick.Horizontal * _movementSpeed);
+                }
+
+                else 
+                {
+                    _rigidBody.velocity = new Vector3(joystick.Horizontal * _movementSpeed, hit.distance > 0 ? -hit.distance : 0, joystick.Vertical * _movementSpeed);
+                }
             
-            if(follow.getAngle() >= 90 && follow.getAngle() < 180)
-            {
-                _rigidBody.velocity = new Vector3(joystick.Vertical * _movementSpeed, -hit.distance, -joystick.Horizontal * _movementSpeed);
-            }
-
-             else if(follow.getAngle() >= 180 && follow.getAngle() < 270)
-            {
-                _rigidBody.velocity = new Vector3(-joystick.Horizontal * _movementSpeed, -hit.distance, -joystick.Vertical * _movementSpeed);
-            }
-
-            else if(follow.getAngle() >= 270 && follow.getAngle() < 360)
-            {
-                _rigidBody.velocity = new Vector3(-joystick.Vertical * _movementSpeed, -hit.distance, joystick.Horizontal * _movementSpeed);
-            }
-
-             else 
-            {
-                _rigidBody.velocity = new Vector3(joystick.Horizontal * _movementSpeed, -hit.distance, joystick.Vertical * _movementSpeed);
-            }
         }
 
-        SaveSlots slot = SaveHandler.instance.loadSlot(PlayerPrefs.GetInt("choosenSlot"));
+       
 
         if (joystick.Horizontal != 0 || joystick.Vertical != 0)
         {
