@@ -2036,7 +2036,7 @@ public class MissionManager : MonoBehaviour
                         new Story("Kamu bertemu dengan seseorang didekat gerbang kota...", new List<Dialogs>
                         {
                             new NPCDialog("???", "Hei, kamu!", null),
-                            new MainCharacterDialog(true, characterExpression.shook, "(Hmmm..NPC disini bisa berinteraksi layaknya orang asli ternyata...)", null),
+                            new MainCharacterDialog(true, characterExpression.shook, "(Hmmm..tokoh disini bisa berinteraksi layaknya orang asli ternyata...)", null),
                             new MainCharacterDialog(true, characterExpression.neutral, "(Tapi sebaiknya aku menanggapinya, siapa tau dengan berinteraksi dengannya aku jadi membuka jalan di simulasi ini)", null),
                             new MainCharacterDialog(true, characterExpression.neutral, "Iya...pak?", null),
                             new NPCDialog("???", "Hahaha, baru kali ini saya dipanggil pak oleh warga disini", null),
@@ -2231,7 +2231,7 @@ public class MissionManager : MonoBehaviour
             new NPCDialog("T.Baurekhsa", "Jangan pergi ke Batavia dengan alasan apapun kalau kamu tidak mau ikut mendapat dampak perang...", null),
             new MainCharacterDialog(true, characterExpression.think, "Hmmm....", null),
             new MainCharacterDialog(true, characterExpression.neutral, "(Satu hal yang aku pelajari yang biasa terjadi di permainan semacam ini...)", null),
-            new MainCharacterDialog(true, characterExpression.neutral, "(Ketika NPC bilang jangan ke suatu tempat, justru kamu harus ke tempat tersebut...)", null),
+            new MainCharacterDialog(true, characterExpression.neutral, "(Ketika tokoh bilang jangan ke suatu tempat, justru kamu harus ke tempat tersebut...)", null),
             new MainCharacterDialog(true, characterExpression.neutral, "(Jadi aku lebih baik ke Batavia setelah ini, karena akan lebih seru juga kalau bisa melihat perang secara langsung)", null),
 
 
@@ -2278,7 +2278,7 @@ public class MissionManager : MonoBehaviour
             new NPCDialog("Warga", " Iya tapi memang kita tidak akan selalu menang dalam hidup...hanya bisa berusaha sekuat yang kita bisa", null),
             new MainCharacterDialog(true, characterExpression.happy, "(Wow...warga ini filosofikal juga...)", null),
             new MainCharacterDialog(true, characterExpression.happy, "(Tapi aku rasa info yang aku dapat disini sudah cukup, sebaiknya aku kembali ke Mataram sekarang untuk melihat kelanjutannya...)", null),
-            new MainCharacterDialog(true, characterExpression.neutral, "(Sepertinya perjalananku masih jauh untuk dapat menemukan NPC yang memegang kuncinya, tidak ada dari mereka yang sudah ku temui yang sepertinya membawanya)", null),
+            new MainCharacterDialog(true, characterExpression.neutral, "(Sepertinya perjalananku masih jauh untuk dapat menemukan tokoh yang memegang kuncinya, tidak ada dari mereka yang sudah ku temui yang sepertinya membawanya)", null),
 
 
         }, false, "War")
@@ -2497,7 +2497,7 @@ public class MissionManager : MonoBehaviour
             new MainCharacterDialog(true, characterExpression.neutral, "Sepertinya aku sudah menemukan tempat yang cukup baik...", null),
             new MainCharacterDialog(true, characterExpression.sad, "Sayang sekali bapak-bapak yang aku temui tadi bukan orang yang membawa kunci sesungguhnya...", null),
             new MainCharacterDialog(true, characterExpression.sad, "Sampai ada acara aku ditangkap segala olehnya", null),
-              new MainCharacterDialog(true, characterExpression.think, "Tapi kalau dipikir lagi NPC disini dapat berinteraksi denganku dengan sangat baik", null),
+              new MainCharacterDialog(true, characterExpression.think, "Tapi kalau dipikir lagi tokoh disini dapat berinteraksi denganku dengan sangat baik", null),
               new MainCharacterDialog(true, characterExpression.think, "Apa saja mungkin sih dengan teknologi yang ada sekarang...", null),
               new MainCharacterDialog(true, characterExpression.neutral, "Sekarang sebaiknya aku kembali saja ke Sultan Agung", null),
         }, false, null)
@@ -2695,7 +2695,7 @@ public class MissionManager : MonoBehaviour
                          new NPCDialog("Pedagang", "Oke nak, setelah saya negosiasikan....", null),
                          new NPCDialog("PC", "Hai pemain...ini orang tutorial yang sedang berbicara...", null),
                          new MainCharacterDialog(true, characterExpression.shook, "Apa yang...", null),
-                         new NPCDialog("PC", "Kamu baru saja mengaktifkan dialog tambahan jika kasusnya kamu gagal mendapatkan kunci itu sampai akhir karena gagal melakukan tantangan akhir dari NPC tersebut.", null),
+                         new NPCDialog("PC", "Kamu baru saja mengaktifkan dialog tambahan jika kasusnya kamu gagal mendapatkan kunci itu sampai akhir karena gagal melakukan tantangan akhir dari tokoh tersebut.", null),
                           new NPCDialog("PC", "Karena kebaikan hati dari projek ini, jadi untuk pertama kalinya ketika kamu gagal, kami akan memberitahu kamu dimana lokasi pintunya", null),
                            new NPCDialog("PC", "Tetapi selanjutnya jika kamu gagal untuk mendapatkan kunci itu, maka kamu otomatis akan terperangkap di daerah itu, sampai ada pemain lain yang menemukan kuncinya", null),
                            new MainCharacterDialog(true, characterExpression.shook, "Astaga...gawat kalau begitu jadinya...", null),
@@ -2741,7 +2741,7 @@ public class MissionManager : MonoBehaviour
                         new Story("Kamu pun mengikuti detektif itu sampai ke suatu tempat yang ramai dengan aktivitas warga...", new List<Dialogs>
                         {
                             new MainCharacterDialog(false, characterExpression.neutral, "Oh kamu sudah disini ternyata...", null),
-                            new MainCharacterDialog(false, characterExpression.happy, "Oke kita langsung ke bisnis saja, kamu ini pandai mencari informasi dari NPC kan?", null),
+                            new MainCharacterDialog(false, characterExpression.happy, "Oke kita langsung ke bisnis saja, kamu ini pandai mencari informasi dari tokoh-tokoh disini kan?", null),
                             new MainCharacterDialog(true, characterExpression.hurt, "Iya...?", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Mungkin kamu akan berbakat sebagai detektif", null),
                             new MainCharacterDialog(false, characterExpression.neutral, "Oke sebaiknya kita berpencar dan mencari informasi disini", null),

@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.8867924, g: 0.8867924, b: 0.8867924, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 56113b3b655ab7349bab4d7d405c258a, type: 2}
   m_HaloStrength: 0.5
@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 0}
+  m_Sun: {fileID: 824630728}
   m_IndirectSpecularColor: {r: 0.23089361, g: 0.6025145, b: 0.9881196, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
@@ -6654,7 +6654,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ReferenceResolution: {x: 2160, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
@@ -8780,7 +8780,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.0065311487}
+  m_AnchoredPosition: {x: 0, y: -0.0048525706}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &207867498
@@ -18207,7 +18207,7 @@ RectTransform:
   m_GameObject: {fileID: 447440754}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 47}
-  m_LocalScale: {x: 0.5070571, y: 0.5070571, z: 0.5070571}
+  m_LocalScale: {x: 0.5446015, y: 0.5446015, z: 0.5446015}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 106822003}
@@ -19125,17 +19125,17 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0, b: 0.053242683, a: 1}
-      key1: {r: 1, g: 0.5557916, b: 0, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
+      key0: {r: 0, g: 0.9914341, b: 1, a: 1}
+      key1: {r: 0, g: 0.5592723, b: 1, a: 1}
+      key2: {r: 1, g: 0.5557916, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 771
+      ctime0: 1157
       ctime1: 65535
-      ctime2: 0
+      ctime2: 65535
       ctime3: 0
       ctime4: 0
       ctime5: 0
@@ -19333,7 +19333,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 816, y: -366}
+  m_AnchoredPosition: {x: 873, y: -366}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &485058796
@@ -27161,14 +27161,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 759742546}
-  m_LocalRotation: {x: 0.48094994, y: -0.00256447, z: 0.004674818, w: 0.8767319}
-  m_LocalPosition: {x: 1124.7523, y: 351, z: 709.2}
+  m_LocalRotation: {x: 0.22598962, y: -0.0037329143, z: 0.0038073328, w: 0.97411513}
+  m_LocalPosition: {x: 1125, y: 260, z: 700}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 57.496, y: 0, z: 0.611}
+  m_LocalEulerAnglesHint: {x: 26.124, y: -0.354, z: 0.366}
 --- !u!114 &759742550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28783,8 +28783,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1.15
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -28842,7 +28842,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 824630727}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 11.3, z: 16.48}
+  m_LocalPosition: {x: -263, y: 686, z: 1060}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -31998,7 +31998,8 @@ MonoBehaviour:
       yang diperlukan dalam misi)'
   - tutorialImage: tut_3
     tutorialText: 'Misi: Misi akan muncul di panel diatas layar, ikuti penanda yang
-      muncul untuk menuju ke lokasi misi bila tersedia '
+      muncul untuk menuju ke lokasi misi bila tersedia (Klik tab (!) di kanan atas
+      layar untuk membuka dan menutup panel)'
   - tutorialImage: tut_4
     tutorialText: 'Konsep Kunci: Anda akan membuka konsep kunci setelah menyelesaikan
       misi tertentu dan dapat membukanya di smartphone'
@@ -48299,7 +48300,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -55881,7 +55882,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -808, y: 511}
+  m_AnchoredPosition: {x: -934, y: 511}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1718065770
@@ -56217,7 +56218,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 5e878f58b2ecdc54f82722aaa1f6d419,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 452.5
+      value: 392.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5e878f58b2ecdc54f82722aaa1f6d419,
         type: 3}
@@ -56227,7 +56228,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 5e878f58b2ecdc54f82722aaa1f6d419,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1062.5
+      value: 1059.8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5e878f58b2ecdc54f82722aaa1f6d419,
         type: 3}

@@ -50,13 +50,13 @@ public class CameraFollow : MonoBehaviour
 
         if(slot.chapterNumber == 1)
         {
-              transform.position = target.transform.position + Quaternion.AngleAxis(CameraAngle, Vector3.up) * new Vector3(-0.894f, 149.3f, -87.6095f);
+              transform.position = target.transform.position + Quaternion.AngleAxis(CameraAngle, Vector3.up) * new Vector3(-0.646f, 58.3f, -96.8f);
               transform.rotation = Quaternion.LookRotation(target.transform.position + Vector3.up * 2f - transform.position, Vector3.up);
         }
 
         else
         {
-            transform.position = target.transform.position + Quaternion.AngleAxis(CameraAngle, Vector3.up) * new Vector3(9.3f, 145.7f, -83.723f);
+            transform.position = target.transform.position + Quaternion.AngleAxis(CameraAngle, Vector3.up) * new Vector3(-65.1446f, 68.46f, -51.023f);
             transform.rotation = Quaternion.LookRotation(target.transform.position + Vector3.up * 2f - transform.position, Vector3.up);
         }
 

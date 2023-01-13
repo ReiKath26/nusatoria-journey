@@ -27,8 +27,13 @@ public class Interactable : MonoBehaviour
 
                     if(isNpc == true)
                     {
+
                          Vector3 rotation = new Vector3(interactor.position.x - transform.position.x, 0.0f, interactor.position.z - transform.position.z);
-                         transform.rotation = Quaternion.LookRotation(rotation);
+                         Quaternion targetRotation = Quaternion.LookRotation(rotation);
+                         Quaternion playerRotation = Quaternion.LookRotation(- rotation);
+
+                         StartCoroutine(RotateOnInteraction(targetRotation, playerRotation, interactor));
+
                     }
 
                     if(MissionManager.instance.getCurrentGoal().getCompletion() == true)
@@ -45,6 +50,24 @@ public class Interactable : MonoBehaviour
           }
 
 
+   }
+
+   IEnumerator RotateOnInteraction(Quaternion npc_target, Quaternion player_target, Transform player)
+   {
+          float time = 0;
+          float duration = 1f;
+
+          while(time < duration)
+          {
+               transform.rotation = Quaternion.Slerp(transform.rotation, npc_target, time/duration);
+               player.rotation = Quaternion.Slerp(player.rotation, player_target, time/duration);
+
+               time += Time.deltaTime;
+               yield return null;
+          }
+
+          transform.rotation = npc_target;
+          player.rotation = player_target;
    }
 
    public void showInteraction()

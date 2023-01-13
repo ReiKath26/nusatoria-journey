@@ -31,7 +31,7 @@ public class StoryManager : MonoBehaviour
 
     void Start()
     {
-        beginningTutorial = true;
+       
         instance = this;
 
          SaveSlots slot = SaveHandler.instance.loadSlot(PlayerPrefs.GetInt("choosenSlot"));
@@ -52,6 +52,7 @@ public class StoryManager : MonoBehaviour
             if(slot.missionNumber == 0 && distance <= 50f)
             {
                 assignStory(getBeginningOfChapterStory());
+                beginningTutorial = true;
             }
         }
 
@@ -98,9 +99,7 @@ public class StoryManager : MonoBehaviour
                         new MainCharacterDialog(true, characterExpression.neutral, "(Aku mau bilang sampai hari ini..tapi tidak mungkin kan sebuah petualangan yang tak terduga muncul begitu saja)", null),
                         new MainCharacterDialog(true, characterExpression.think, "Hmmmm? Poster apa ini?", null),
                         new MainCharacterDialog(true, characterExpression.think, "Dicari penjelajah waktu ilegal...bila melihat tanda-tanda penjelajahan waktu ilegal hubungi Detektif Yudha dari...", null),
-                        new MainCharacterDialog(true, characterExpression.think, "Tapi bagaimana kita bisa tau orang itu penjelajah waktu ilegal atau tidak...", null),
-                        new MainCharacterDialog(true, characterExpression.neutral, "Lagian kenapa mereka anti sekali dengan penjelajahan waktu", null),
-                        new MainCharacterDialog(true, characterExpression.happy, "Kalau aku punya dana, aku pasti mau melakukan pertualangan...", null),
+                        new MainCharacterDialog(true, characterExpression.think, "Hmmm...mereka masih menentang penjelajahan waktu rupanya, padahal tidak semua penjelajah waktu jahat seperti yang mereka bilang...", null),
                         new MainCharacterDialog(false, characterExpression.neutral, "...", null),
                         new MainCharacterDialog(true, characterExpression.think, "Hmmm...orang itu baru saja masuk ke rumah yang lama tak berpenghuni itu...", null),
                         new MainCharacterDialog(true, characterExpression.think, "Saaangatt tidak mencurigakan...", null),
@@ -111,21 +110,20 @@ public class StoryManager : MonoBehaviour
                         new MainCharacterDialog(false, characterExpression.neutral, "Hmmm...", null),
                         new MainCharacterDialog(true, characterExpression.shook, "(Apa itu...tidak mungkin...mesin waktu?!)", null),
                         new MainCharacterDialog(false, characterExpression.neutral, "Baiklah...sekarang melakukannya seperti biasa...", null),
-                        new MainCharacterDialog(true, characterExpression.shook, "(Apa dia menghidupkan mesin waktu itu?", null),
-                        new MainCharacterDialog(true, characterExpression.angry, "Hei, apa yang anda lakukan?!", null),
                         new MainCharacterDialog(false, characterExpression.neutral, "Hmmmm? Oh hanya anak kecil...", null),
+                        new MainCharacterDialog(true, characterExpression.shook, "(Oh tidak...aku ketahuan....)", null),
                         new MainCharacterDialog(false, characterExpression.neutral, "Jangan ikut campur anak kecil, kecuali kamu ingin berurusan dengan kepolisian...", null),
                         new MainCharacterDialog(true, characterExpression.shook, "Anda seorang polisi?", null),
                         new MainCharacterDialog(false, characterExpression.neutral, "Memangnya tidak terlihat ya?", null),
                         new MainCharacterDialog(false, characterExpression.neutral, "Namaku Yudha, seorang detektif kepolisian, itu saja yang perlu kamu tau", null),
                         new MainCharacterDialog(false, characterExpression.neutral, "Sekarang sebaiknya kamu minggir dan jangan menyentuh apapun", null),
-                        new MainCharacterDialog(true, characterExpression.think, "Apa anda menyelidiki sesuatu sampai masuk ke rumah terpencil seperti ini?", null),
-                        new MainCharacterDialog(false, characterExpression.angry, "Bukan urusanmu, anak kecil...", null),
-                        new MainCharacterDialog(true, characterExpression.neutral, "Oke terserah saja, ngomong-ngomong gelap sekali disini, aku nyalakan lampunya ya...", null),
+                        new MainCharacterDialog(true, characterExpression.think, "Jadi anda detektif yang...", null),
+                        new MainCharacterDialog(true, characterExpression.neutral, "Baiklah kalau begitu, aku kira anda penjelajah waktu...", null),
+                        new MainCharacterDialog(false, characterExpression.neutral, "Tidak, justru aku sedang mengejar penjelajah waktu itu, dan mesin ini sepertinya ada kaitan dengannya", null),
+                        new MainCharacterDialog(true, characterExpression.happy, "Baiklah...ngomong-ngomong gelap sekali disini, aku nyalakan lampunya ya...", null),
                         new MainCharacterDialog(false, characterExpression.shook, "Hei sudah aku bilang, jangan sentuh apapun!", null),
                         new NPCDialog("PC", "Mengaktifkan Projek Nusatoria", null),
                         new MainCharacterDialog(false, characterExpression.shook, "Oh tidak...", null),
-                         new NPCDialog("PC", "*glitch*", null),
                         new CutsceneDialog("cutscene_ship", "Semua bermula dari kedatangan yang tidak diantisipasi oleh Nusantara", null),
                         new CutsceneDialog("cutscene_ship", "Pada tahun 1596, Cornelis de Houtman mendarat di Banten melalui Selat Sunda", null),
                         new CutsceneDialog("cutscene_ship", "Pelayaran ini membuka perdagangan antara Belanda dan Nusantara", null),
@@ -155,10 +153,9 @@ public class StoryManager : MonoBehaviour
                         new NPCDialog("PC", "Untuk dapat menyelesaikan eksplorasi satu bagian dunia, anda harus menemukan pintu keluar dari bagian tersebut...", null),
                         new NPCDialog("PC", "Informasi terkait dimana pintu keluar tersebut tersimpan di sebuah peti rahasia...", null),
                         new NPCDialog("PC", "...yang memerlukan sebuah kunci untuk membukanya", null),
-                        new NPCDialog("PC", "Untuk mendapatkan kunci tersebut, anda harus mencari tau NPC yang mana di dunia ini yang memiliki kunci tersebut", null),
+                        new NPCDialog("PC", "Untuk mendapatkan kunci tersebut, anda harus mencari tau tokoh yang mana di dunia ini yang memiliki kunci tersebut", null),
                         new NPCDialog("PC", "Hal ini dapat anda lakukan dengan mengikuti simulasi kisah sejarah yang digambarkan di daerah tersebut", null),
-                        new NPCDialog("PC", "Sampai akhirnya rangkaian NPC NPC di cerita tersebut akan mengarahkan anda ke NPC tersebut yang akan memberikan anda tantangan terakhir untuk mendapatkan kunci tersebut", null),
-                        new NPCDialog("PC", "Untuk informasi lain terkait sistematis dari petualangan di dunia ini, sudah diupload ke ponsel anda dan anda bisa buka melalui tab (?) atau tutorial", null),
+                        new NPCDialog("PC", "Untuk informasi lain terkait sistematis dari petualangan di dunia ini, sudah diupload ke ponsel anda dan anda bisa buka melalui tab (?) di kiri layar", null),
                         new MainCharacterDialog(true, characterExpression.shook, "Wah jadi aku benar-benar terperangkap di dunia simulasi petualangan sejarah yang aneh...", null),
                         new MainCharacterDialog(true, characterExpression.think, "Tapi sepertinya aku tidak punya pilihan lain, sebaiknya aku cek dulu detail teknis lainnya dan mulai mengikuti simulasi seperti yang orang itu bilang", null),
                        
@@ -289,13 +286,21 @@ public class StoryManager : MonoBehaviour
 
     public void onButtonClick()
     {
-        Debug.Log(dialogCount);
-        Debug.Log(story.dialogs.Count);
         if( story != null && dialogCount < story.dialogs.Count)
         {
             nextLine(story.dialogs[dialogCount]);
             story.dialogs[dialogCount].showLine();
             dialogCount++;
+
+            SaveSlots slot = SaveHandler.instance.loadSlot(PlayerPrefs.GetInt("choosenSlot"));
+            if(slot.chapterNumber == 0)
+            {
+                if(dialogCount == 12)
+                {
+                    AudioManager.instance.Stop("Crowd");
+                    AudioManager.instance.Play("Judgement");
+                }
+            }
         }
 
         else
