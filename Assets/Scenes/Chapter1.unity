@@ -2201,10 +2201,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6067942788277655712, guid: 06ed38187550b8145ba218b3ad6528cc,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -6067942788277655712, guid: 06ed38187550b8145ba218b3ad6528cc,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2427768999281476138, guid: 06ed38187550b8145ba218b3ad6528cc,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: -2427768999281476138, guid: 06ed38187550b8145ba218b3ad6528cc,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 780593857566792427, guid: 06ed38187550b8145ba218b3ad6528cc,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 780593857566792427, guid: 06ed38187550b8145ba218b3ad6528cc,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 06ed38187550b8145ba218b3ad6528cc,
         type: 3}
       propertyPath: m_Name
       value: Batavia NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 06ed38187550b8145ba218b3ad6528cc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06ed38187550b8145ba218b3ad6528cc, type: 3}
@@ -2226,7 +2261,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 15, y: 30, z: 10}
-  m_Center: {x: -18, y: 5, z: 0}
+  m_Center: {x: -5, y: 5, z: 0}
 --- !u!114 &55772906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4828,8 +4863,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6870,8 +6905,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7603,8 +7638,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -27584,6 +27619,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Batavia Fort Gate
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: be94616a5aa814be784c74d720263d4e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be94616a5aa814be784c74d720263d4e, type: 3}
 --- !u!1 &783750341 stripped
@@ -31958,8 +31998,7 @@ MonoBehaviour:
       yang diperlukan dalam misi)'
   - tutorialImage: tut_3
     tutorialText: 'Misi: Misi akan muncul di panel diatas layar, ikuti penanda yang
-      muncul untuk menuju ke lokasi misi (beberapa misi tidak memiliki penanda, jadi
-      anda bebas mengeksplorasi sekitar)'
+      muncul untuk menuju ke lokasi misi bila tersedia '
   - tutorialImage: tut_4
     tutorialText: 'Konsep Kunci: Anda akan membuka konsep kunci setelah menyelesaikan
       misi tertentu dan dapat membukanya di smartphone'
@@ -31968,9 +32007,9 @@ MonoBehaviour:
       klik barang untuk melihat nama dan penjelasan dari barang, beberapa misi akan
       juga memerlukan barang tersebut untuk menyelesaikannya'
   - tutorialImage: tut_6
-    tutorialText: 'Kuis Judgement: Jawab semua pertanyaan warga penguji untuk melanjutkan
-      ke misi berikutnya atau mereview kembali materi jika dirasa pemahaman masih
-      kurang '
+    tutorialText: 'Kuis: Jawab semua pertanyaan warga penguji untuk berkesempatan
+      mendapatkan kunci dari daerah tersebut. Skenario yang berbeda mungkin akan
+      muncul tergantung pada nilai dari kuis anda'
   tutorialOverlay: {fileID: 851996793}
   gameOverlay: {fileID: 591133792}
   tutorialSprite: {fileID: 1368943215}
@@ -39444,6 +39483,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chest
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7eff536c1f97843688b31399c4f061c3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7eff536c1f97843688b31399c4f061c3, type: 3}
 --- !u!1 &1155526171 stripped
@@ -40590,8 +40634,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -41010,8 +41054,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -41408,8 +41452,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -44814,7 +44858,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 8961303403ce434498099d3e4bec9e16,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1084
+      value: 1053.8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8961303403ce434498099d3e4bec9e16,
         type: 3}
@@ -44824,7 +44868,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 8961303403ce434498099d3e4bec9e16,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2115
+      value: 2095.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8961303403ce434498099d3e4bec9e16,
         type: 3}
@@ -44861,10 +44905,65 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4422189112998256896, guid: 8961303403ce434498099d3e4bec9e16,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.8
+      objectReference: {fileID: 0}
+    - target: {fileID: -4422189112998256896, guid: 8961303403ce434498099d3e4bec9e16,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.9
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8961303403ce434498099d3e4bec9e16,
         type: 3}
       propertyPath: m_Name
       value: Kepala Pedagang NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8961303403ce434498099d3e4bec9e16,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1382332821042425497, guid: 8961303403ce434498099d3e4bec9e16,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1382332821042425497, guid: 8961303403ce434498099d3e4bec9e16,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518980002003577502, guid: 8961303403ce434498099d3e4bec9e16,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518980002003577502, guid: 8961303403ce434498099d3e4bec9e16,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5570216905711501561, guid: 8961303403ce434498099d3e4bec9e16,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5570216905711501561, guid: 8961303403ce434498099d3e4bec9e16,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429264744925529233, guid: 8961303403ce434498099d3e4bec9e16,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429264744925529233, guid: 8961303403ce434498099d3e4bec9e16,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8961303403ce434498099d3e4bec9e16, type: 3}
@@ -44911,7 +45010,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 20, y: 30, z: 10}
-  m_Center: {x: 20, y: 0, z: 0}
+  m_Center: {x: 4, y: 0, z: 0}
 --- !u!1 &1345387651
 GameObject:
   m_ObjectHideFlags: 0
@@ -46998,8 +47097,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -49420,8 +49519,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -50021,6 +50120,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pedagang Anak NPC
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 442d77462e202be45a10a819ea2ed6d5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 442d77462e202be45a10a819ea2ed6d5, type: 3}
 --- !u!1 &1531071218 stripped
@@ -50050,7 +50154,7 @@ MonoBehaviour:
   missionNumber: 1400000017000000
   interactionTitle: 
   interactionDialog: []
-  isNpc: 0
+  isNpc: 1
 --- !u!65 &1531071220
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -50747,8 +50851,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -55960,8 +56064,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -56113,7 +56217,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 5e878f58b2ecdc54f82722aaa1f6d419,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 460.64984
+      value: 452.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5e878f58b2ecdc54f82722aaa1f6d419,
         type: 3}
@@ -56123,7 +56227,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 5e878f58b2ecdc54f82722aaa1f6d419,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1066.6245
+      value: 1062.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5e878f58b2ecdc54f82722aaa1f6d419,
         type: 3}
@@ -56160,10 +56264,85 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7528005492289332680, guid: 5e878f58b2ecdc54f82722aaa1f6d419,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.85
+      objectReference: {fileID: 0}
+    - target: {fileID: -7528005492289332680, guid: 5e878f58b2ecdc54f82722aaa1f6d419,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3351094568058733161, guid: 5e878f58b2ecdc54f82722aaa1f6d419,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.05
+      objectReference: {fileID: 0}
+    - target: {fileID: -3351094568058733161, guid: 5e878f58b2ecdc54f82722aaa1f6d419,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5e878f58b2ecdc54f82722aaa1f6d419,
         type: 3}
       propertyPath: m_Name
       value: Sultan Agung
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5e878f58b2ecdc54f82722aaa1f6d419,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1382332821042425497, guid: 5e878f58b2ecdc54f82722aaa1f6d419,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 1382332821042425497, guid: 5e878f58b2ecdc54f82722aaa1f6d419,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2902008074560218088, guid: 5e878f58b2ecdc54f82722aaa1f6d419,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2902008074560218088, guid: 5e878f58b2ecdc54f82722aaa1f6d419,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429264744925529233, guid: 5e878f58b2ecdc54f82722aaa1f6d419,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429264744925529233, guid: 5e878f58b2ecdc54f82722aaa1f6d419,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8038730020884269254, guid: 5e878f58b2ecdc54f82722aaa1f6d419,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8038730020884269254, guid: 5e878f58b2ecdc54f82722aaa1f6d419,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8804625046137572299, guid: 5e878f58b2ecdc54f82722aaa1f6d419,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8804625046137572299, guid: 5e878f58b2ecdc54f82722aaa1f6d419,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e878f58b2ecdc54f82722aaa1f6d419, type: 3}
@@ -56211,7 +56390,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 10, y: 30, z: 7}
-  m_Center: {x: -20, y: 10, z: 0}
+  m_Center: {x: -3, y: 10, z: 0}
 --- !u!1 &1733733307
 GameObject:
   m_ObjectHideFlags: 0
@@ -58624,8 +58803,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -64861,8 +65040,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

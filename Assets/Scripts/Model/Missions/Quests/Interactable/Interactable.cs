@@ -5,7 +5,6 @@ using TMPro;
 
 public class Interactable : MonoBehaviour
 {
-     //why is this error again?
    [SerializeField] private string interactName;
    [SerializeField] private Item item;
    [SerializeField] private int[] missionNumber;
@@ -25,6 +24,12 @@ public class Interactable : MonoBehaviour
                {
                     MissionManager.instance.triggerInteraction(gameObject);
                     interactionTriggered = true;
+
+                    if(isNpc == true)
+                    {
+                         Vector3 rotation = new Vector3(interactor.position.x - transform.position.x, 0.0f, interactor.position.z - transform.position.z);
+                         transform.rotation = Quaternion.LookRotation(rotation);
+                    }
 
                     if(MissionManager.instance.getCurrentGoal().getCompletion() == true)
                     {

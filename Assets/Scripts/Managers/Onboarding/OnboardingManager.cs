@@ -95,7 +95,7 @@ public class OnboardingManager : MonoBehaviour
         keyDesc = "Pada Agustus 1628, kapal pasukan Mataram dibawah pimpinan Tumenggung Baureksa mendarat dan menyerang Batavia. Selanjutnya, menyusul pasukan Tumenggung Sura Agul-Agul, dan kedua bersaudara yaitu Kiai Dipati Mandurojo dan Upa Santa pada Oktober 1628. Terjadi peperangan sengit antara pasukan Mataram dan VOC. Namun serangan ini gagal karena kurangnya perbekalan serta persenjataan VOC yang lebih modern. Akhirnya, Mataram terpaksa mundur terlebih dahulu pada 6 Desember 1628.",
         unlocked = false},
         new KeyConcepts() {keyNumber = 4, keyName = "Serangan Kedua Sultan Agung",
-        keyDesc = "Sultan Agung tidak menyerah dan terus melancarkan serangan, tetapi tidak ada yang berhasil. Sepeninggal Sultan Agung di tahun 1645, Kerajaan Mataram semakin lemah sehingga akhirnya dapat dikuasai VOC.",
+        keyDesc = "Serangan kembali diluncurkan pada tahun 1629 kini dengan persiapan yang lebih matang. Pasukan Sultan Agung membangun lumbung-lumbung perbekalan di Cirebon dan Karawang. Namun karena kelemahan yang sama dengan serangan sebelumnya, adanya wabah kolera dan malaria, serta lumbung perbekalan yang dihancurkan oleh VOC, maka serangan ini pun mengalami kegagalan.",
         unlocked = false},
         new KeyConcepts() {keyNumber = 5, keyName = "Akhir Serangan Sultan Agung",
         keyDesc = "Sultan Agung tidak menyerah dan terus melancarkan serangan, tetapi tidak ada yang berhasil. Sepeninggal Sultan Agung di tahun 1645, Kerajaan Mataram semakin lemah sehingga akhirnya dapat dikuasai VOC.",
