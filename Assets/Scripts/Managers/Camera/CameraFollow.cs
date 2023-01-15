@@ -36,17 +36,11 @@ public class CameraFollow : MonoBehaviour
     void FixedUpdate()
     {
         
-              CameraAngle += touchField.TouchDist.x * CameraAngleSpeed;
-
-              if(CameraAngle > 360)
-              {
-                CameraAngle -= 360;
-              }
-
-              else if(CameraAngle < 0)
-              {
-                CameraAngle += 360;
-              }
+            // while(CameraAngle < 360 && touchField.TouchDist.x != 0)
+            // {
+                CameraAngle += touchField.TouchDist.x * CameraAngleSpeed;
+                target.transform.rotation = Quaternion.AngleAxis (CameraAngle  + Vector3.SignedAngle (Vector3.forward, Vector3.forward * 0.001f, Vector3.up), Vector3.up);
+            // }
 
         if(slot.chapterNumber == 1)
         {

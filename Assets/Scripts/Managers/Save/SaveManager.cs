@@ -7,9 +7,9 @@ using System.IO;
 
 public static class SaveManager
 {
-    public static readonly string save_folder = Application.dataPath + "/GameData/";
-    public static readonly string keyconcept_object_save_folder = Application.dataPath + "/GameData/" + "/KeyConcepts/";
-    public static readonly string inventory_object_save_folder = Application.dataPath  + "/GameData/" + "/Inventory/";
+    public static readonly string save_folder = Application.persistentDataPath + "/GameData/";
+    public static readonly string keyconcept_object_save_folder = Application.persistentDataPath + "/GameData/" + "/KeyConcepts/";
+    public static readonly string inventory_object_save_folder = Application.persistentDataPath  + "/GameData/" + "/Inventory/";
 
     public static void Init()
     {

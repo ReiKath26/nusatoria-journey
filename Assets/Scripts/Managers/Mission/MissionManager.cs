@@ -2505,7 +2505,7 @@ public class MissionManager : MonoBehaviour
                     new GatherGoal("Membantu mencarikan lokasi lumbung di Cirebon", 1, new string[] {"Spot Tree 3"}, new Story[]{
                         new Story("Kamu menemukan lokasi di balik kawasan rumah warga", new List<Dialogs>
         {
-            new MainCharacterDialog(true, characterExpression.neutral, "Tempat ini cukup baik, aku akan menandainya", new string[] {"Spot Tree 3"}),
+            new MainCharacterDialog(true, characterExpression.neutral, "Tempat ini cukup baik, aku akan menandainya", null),
             new MainCharacterDialog(true, characterExpression.neutral, "Sepertinya aku sudah menemukan tempat yang cukup baik...", null),
             new MainCharacterDialog(true, characterExpression.sad, "Sayang sekali bapak-bapak yang aku temui tadi bukan orang yang membawa kunci sesungguhnya...", null),
             new MainCharacterDialog(true, characterExpression.sad, "Sampai ada acara aku ditangkap segala olehnya", null),
@@ -2568,8 +2568,7 @@ public class MissionManager : MonoBehaviour
         new MainCharacterDialog(true, characterExpression.neutral, "Saya teman dari Sultan Agung, pak...ia mengirim saya untuk pergi ke bapak", null),
         new NPCDialog("Kepala Pedagang", "Anak kecil...teman dari mendiang Sultan...", null),
         new MainCharacterDialog(true, characterExpression.shook, "Mendiang? Jangan-jangan.", null),
-        new NPCDialog("Kepala Pedagang", "Hah? Kamu ini mengaku teman dari mendiang Sultan tapi bahkan tidak tau dia meninggal di tahun 1645 ini", null),
-        new MainCharacterDialog(true, characterExpression.shook, "(Sekarang tahun 1645??? Aku tidak paham bagaimana waktu berjalan di dunia ini lagi...kenapa aku terlempar bertahun-tahun hanya dengan berjalan ke tempat yang berdekatan...)", null),
+        new NPCDialog("Kepala Pedagang", "Hah? Kamu ini mengaku teman dari mendiang Sultan tapi bahkan tidak tau dia meninggal di tahun 1645", null),
         new NPCDialog("Kepala Pedagang", "Sepeninggal beliau Mataram semakin melemah dan membuka peluang untuk orang-orang Belanda itu untuk menguasai Mataram, sangat disayangkan...", null),
         new MainCharacterDialog(true, characterExpression.sad, "(Jadi itu akhir dari serangan Sultan Agung...)", null),
         new MainCharacterDialog(true, characterExpression.sad, "Tapi sampai akhir pun dia tidak menyerah berjuang demi rakyatnya)", null),
