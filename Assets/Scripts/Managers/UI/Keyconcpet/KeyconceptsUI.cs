@@ -20,6 +20,7 @@ public class KeyconceptsUI : MonoBehaviour
 
     private int currentSection;
 
+
     void Awake()
     {
         currentSection = 0;

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1580293444}
-  m_IndirectSpecularColor: {r: 0.2879274, g: 0.8101783, b: 0.73296654, a: 1}
+  m_IndirectSpecularColor: {r: 0.28794804, g: 0.8102844, b: 0.733325, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10874,6 +10874,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: James
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bc36b37a684d1224292c6a9ce4db3044,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc36b37a684d1224292c6a9ce4db3044, type: 3}
 --- !u!1 &277448488 stripped
@@ -12000,7 +12005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 --- !u!95 &314492672
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -12017,7 +12022,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!65 &314492673
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28452,7 +28457,7 @@ MonoBehaviour:
   _movementSpeed: 50
 --- !u!95 &784945441
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -28469,7 +28474,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!65 &784945442
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44543,7 +44548,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 1218bf0ba4fdd4591b9aae5759ca11a9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 218.3
+      value: 206.2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1218bf0ba4fdd4591b9aae5759ca11a9,
         type: 3}
@@ -64919,7 +64924,7 @@ RectTransform:
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1811493989
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -64936,7 +64941,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1001 &1811599033
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69056,7 +69061,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 81a4ca7dcc3e94bd0bfaaec9907eae65,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 196
+      value: 182.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 81a4ca7dcc3e94bd0bfaaec9907eae65,
         type: 3}
