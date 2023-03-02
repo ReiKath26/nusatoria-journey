@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System.Linq;
+using System;
 
 public class MissionManager : MonoBehaviour
 {
@@ -78,10 +79,14 @@ public class MissionManager : MonoBehaviour
 
    public bool canShowPath = true;
 
+   [SerializeField] private TextMeshProUGUI timerText;
+   private float currentTime;
+   private bool stopwatchactive = false;
+
    void Start()
    {      
-     
-      slot = SaveHandler.instance.loadSlot(PlayerPrefs.GetInt("choosenSlot"));
+     currentTime = 0;
+     slot = SaveHandler.instance.loadSlot(PlayerPrefs.GetInt("choosenSlot"));
      if(slot.chapterNumber == 1)
      {
           if(slot.missionNumber == 19 || slot.missionNumber == 20)
@@ -250,8 +255,17 @@ public class MissionManager : MonoBehaviour
         checkGoal();
         setCurrGoal();
         displayPathToGoal();
+
+        if(stopwatchactive == true)
+        {
+          currentTime = currentTime + Time.deltaTime;
+          Debug.Log("Time: " + currentTime);
+        }
+
+        TimeSpan time = TimeSpan.FromSeconds(currentTime);
+        timerText.text = time.ToString(@"mm\:ss\:fff");
    }
-   
+    
    private void checkGoal()
    {
      Debug.Log("Hit!");
@@ -914,6 +928,7 @@ public class MissionManager : MonoBehaviour
    public void startJudgement()
    {
        setUpQuestion();
+       stopwatchactive = true;
        questionOverlay.SetActive(true);
        gameOverlay.SetActive(false);
 
@@ -1719,7 +1734,7 @@ public class MissionManager : MonoBehaviour
                          index = 0;
                          while(toBeRolled[index].getQuestionType() != questionType.latarBelakang_sa && toBeRolled[index].getQuestionType() != questionType.seranganSatu_sa)
                          {
-                              index = Random.Range(0, toBeRolled.Count);
+                              index = UnityEngine.Random.Range(0, toBeRolled.Count);
                          }
 
                          questionDataList.Add(toBeRolled[index]);
@@ -1729,7 +1744,7 @@ public class MissionManager : MonoBehaviour
 
                     else
                     {
-                         index = Random.Range(0, toBeRolled.Count);
+                         index = UnityEngine.Random.Range(0, toBeRolled.Count);
                          questionDataList.Add(toBeRolled[index]);
                          toBeRolled.RemoveAt(index);
                     }
@@ -1738,7 +1753,7 @@ public class MissionManager : MonoBehaviour
 
                else
                {
-                    index = Random.Range(0, toBeRolled.Count);
+                    index = UnityEngine.Random.Range(0, toBeRolled.Count);
                     questionDataList.Add(toBeRolled[index]);
                     toBeRolled.RemoveAt(index);
                }
@@ -1750,32 +1765,62 @@ public class MissionManager : MonoBehaviour
 
     private int evaluateResult(float score)
     {
-         
+        stopwatchactive = false; 
         goodValue = good.Evaluate(score);
         decentValue = decent.Evaluate(score);
         poorValue = poor.Evaluate(score);
+
+        Debug.Log("Good: " + goodValue);
+        Debug.Log("Decent: " + decentValue);
+        Debug.Log("Poor: " + poorValue);
 
          if(currentGoal is JudgementGoal jdg_goal)
           {
                if(jdg_goal.getMain() == true)
                {
-                    if(goodValue > decentValue && goodValue > poorValue)
+                    if(goodValue == 1)
                     {
                          slot.understandingLevel = 3;
                     }
 
-                     else if(decentValue >= goodValue && decentValue > poorValue )
+                     else if(decentValue == 1 )
                     {
                          slot.understandingLevel = 2;
                     }
 
-                     else if(poorValue >= decentValue)
+                     else if(poorValue == 1)
                     {
                          slot.understandingLevel = 1;
                     }
 
+                    else if(goodValue < 1 && goodValue > 0 && decentValue < 1 && decentValue > 0)
+                    {
+                         if(currentTime <=(jdg_goal.getRequired()/5)*30)
+                         {
+                              slot.understandingLevel = 3;
+                         }
+
+                         else
+                         {
+                              slot.understandingLevel = 2;
+                         }
+                    }
+
+                    else if(decentValue < 1 && decentValue > 0 && poorValue < 1 && poorValue > 0)
+                    {
+                          if(currentTime <=(jdg_goal.getRequired()/5)*30)
+                         {
+                              slot.understandingLevel = 2;
+                         }
+
+                         else
+                         {
+                              slot.understandingLevel = 1;
+                         }
+                    }
+
                     SaveHandler.instance.saveSlot(slot, slot.slot);
-                     return slot.understandingLevel;
+                    return slot.understandingLevel;
 
                }
                
@@ -1783,19 +1828,46 @@ public class MissionManager : MonoBehaviour
                {
                     int u_level = 0;
 
-                    if(goodValue > decentValue && goodValue > poorValue)
+                    if(goodValue == 1)
                     {
                          u_level = 3;
                     }
 
-                     else if(decentValue >= goodValue && decentValue > poorValue )
+                     else if(decentValue == 1 )
                     {
                          u_level = 2;
                     }
 
-                     else if(poorValue >= decentValue)
+                     else if(poorValue == 1)
                     {
                          u_level = 1;
+                    }
+
+                    else if(goodValue < 1 && goodValue > 0 && decentValue < 1 && decentValue > 0)
+                    {
+                         if(currentTime <=(jdg_goal.getRequired()/5)*30)
+                         {
+
+                              u_level = 3;
+                         }
+
+                         else
+                         {
+                              u_level = 2;
+                         }
+                    }
+
+                    else if(decentValue < 1 && decentValue > 0 && poorValue < 1 && poorValue > 0)
+                    {
+                          if(currentTime <=(jdg_goal.getRequired()/5)*30)
+                         {
+                              u_level = 2;
+                         }
+
+                         else
+                         {
+                              u_level = 1;
+                         }
                     }
 
                     return u_level;
@@ -1803,6 +1875,7 @@ public class MissionManager : MonoBehaviour
                }
           }
 
+          currentTime = 0;
           return 0;
 
        

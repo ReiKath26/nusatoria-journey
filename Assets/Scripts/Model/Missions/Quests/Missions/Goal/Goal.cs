@@ -36,6 +36,11 @@ public class Goal
       currentAmount++;
    }
 
+   public int getRequired()
+   {
+      return requiredAmount;
+   }
+
    public int getCurrentAmount()
    {
      return currentAmount;
